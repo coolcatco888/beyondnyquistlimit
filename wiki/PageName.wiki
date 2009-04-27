@@ -1,11 +1,8 @@
 #summary Dev Links
 
 = Introduction =
-
 Post links for useful developer information here
 
 
-= Details =
-
-*Links*
+= Links =
  * Zacharus Engine - http://www.assembla.com/wiki/show/dSkoGmV-mr3A63ab7jnrAJ
