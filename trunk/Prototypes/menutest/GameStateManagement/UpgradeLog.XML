@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GameStateManagementWindows">
+</Property><Property Name="Solution File" Value="D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\GameStateManagementWindows.sln">
+</Property><Property Name="Date" Value="April 27, 2009">
+</Property><Property Name="Time" Value="14:27:46 PM">
+</Property></Properties><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagementWindows.csproj" Description="Project file successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\GameStateManagementWindows.csproj">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Game.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Game.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Properties\AssemblyInfo.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="ScreenManager\GameScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\ScreenManager\GameScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="ScreenManager\InputState.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\ScreenManager\InputState.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="ScreenManager\ScreenManager.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\ScreenManager\ScreenManager.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\BackgroundScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\BackgroundScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\GameplayScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\GameplayScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\LoadingScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\LoadingScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\MainMenuScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\MainMenuScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\MenuEntry.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\MenuEntry.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\MenuScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\MenuScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\MessageBoxScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\MessageBoxScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\OptionsMenuScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\OptionsMenuScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\PauseMenuScreen.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\PauseMenuScreen.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Screens\PlayerIndexEventArgs.cs" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Screens\PlayerIndexEventArgs.cs">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateSample.PNG" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\GameStateSample.PNG">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="Game.ico" Description="File successfully backed up as D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Backup\Game.ico">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagementWindows.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="GameStateManagementWindows" Source="GameStateManagementWindows.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagementWindows.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="GameStateManagementWindows" Source="GameStateManagementWindows.csproj" Description="Upgraded XNA Framework References.">
+</Event><Event ErrorLevel="0" Project="Content" Source="background.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content" Source="blank.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content" Source="Content.contentproj" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content" Source="gamefont.spritefont" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content" Source="gradient.png" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event><Event ErrorLevel="0" Project="Content" Source="menufont.spritefont" Description="Copied XNA Game Studio Content Project content to backup location.">
+</Event></UpgradeLog>
