@@ -81,9 +81,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
-    <Compile Include="GameWindows\ScreenPanel.cs" />
-    <Compile Include="GameWindows\ScreenItem.cs" />
-    <Compile Include="GameWindows\ScreenTextItem.cs" />
+    <Compile Include="GameWindows\ImageComponent2D.cs" />
+    <Compile Include="GameWindows\Component2D.cs" />
+    <Compile Include="GameWindows\PanelComponent2D.cs" />
+    <Compile Include="GameWindows\TextComponent2D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenManager\GameScreen.cs" />
     <Compile Include="ScreenManager\InputState.cs" />
