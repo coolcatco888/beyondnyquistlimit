@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\background.xnb</Output>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\background.xnb</Output>
       <Time>2008-10-22T14:21:42-07:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\blank.xnb</Output>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\blank.xnb</Output>
       <Time>2008-10-22T14:21:42-07:00</Time>
     </Item>
     <Item>
@@ -25,25 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gradient.xnb</Output>
-      <Time>2008-10-22T14:21:42-07:00</Time>
-    </Item>
-    <Item>
-      <Source>gamefont.spritefont</Source>
-      <Name>gamefont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb</Output>
-      <Time>2008-10-22T14:21:42-07:00</Time>
-    </Item>
-    <Item>
-      <Source>menufont.spritefont</Source>
-      <Name>menufont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\gradient.xnb</Output>
       <Time>2008-10-22T14:21:42-07:00</Time>
     </Item>
     <Item>
@@ -52,18 +34,36 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\menubg.xnb</Output>
       <Time>2009-04-27T18:44:49.140625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>gamefont.spritefont</Source>
+      <Name>gamefont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\gamefont.xnb</Output>
+      <Time>2008-10-22T14:21:42-07:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2008-10-22T14:21:42-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

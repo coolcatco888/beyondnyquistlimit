@@ -11,6 +11,7 @@
 using Microsoft.Xna.Framework;
 using GameStateManagement.GameWindows;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 #endregion
 
 namespace GameStateManagement
@@ -20,8 +21,40 @@ namespace GameStateManagement
     /// </summary>
     class MainMenuScreen : MenuScreen
     {
-        ScreenPanel panel;
         #region Initialization
+
+        private ContentManager content;
+
+        private SpriteFont font;
+
+        private Texture2D image;
+
+        private PanelComponent2D panel;
+
+        /// <summary>
+        /// Load graphics content for the game.
+        /// </summary>
+        public override void LoadContent()
+        {
+            if (content == null)
+                content = new ContentManager(ScreenManager.Game.Services, "Content");
+
+            font = content.Load<SpriteFont>("menufont");
+            image = content.Load<Texture2D>("menubg");
+            
+            panel.PanelItems.Add(new ImageComponent2D(new Vector2(0, 0), image));
+            panel.PanelItems.Add(new TextComponent2D("What?", Color.White, font, new Vector2(10, 10)));
+            panel.PanelItems.Add(new TextComponent2D("Who?", Color.White, font, new Vector2(10, 50)));
+        }
+
+
+        /// <summary>
+        /// Unload graphics content used by the game.
+        /// </summary>
+        public override void UnloadContent()
+        {
+            content.Unload();
+        }
 
 
 
@@ -46,8 +79,7 @@ namespace GameStateManagement
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
 
-            
-
+            panel = new PanelComponent2D(new Vector2(250, 200));
         }
 
 
@@ -56,27 +88,14 @@ namespace GameStateManagement
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                        bool coveredByOtherScreen)
         {
-            if (ScreenManager.menuImage == null)
-            {
-                panel = new ScreenPanel(new Vector2(0, 0), ScreenManager.menuImage);
-                panel.PanelItems.Add(new ScreenTextItem("SampleText", Color.White, ScreenManager.Font, new Vector2(100, 100)));
-            }
-
-            if (panel != null)
-            {
-                panel.Update(gameTime);
-            }
+            panel.Update(gameTime);
             base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
         }
 
         public override void Draw(GameTime gameTime)
         {
-            
             base.Draw(gameTime);
-            if (panel != null)
-            {
-                panel.Draw(gameTime, ScreenManager.SpriteBatch);
-            }
+            panel.Draw(gameTime, ScreenManager.SpriteBatch);
         }
 
         #region Handle Input
