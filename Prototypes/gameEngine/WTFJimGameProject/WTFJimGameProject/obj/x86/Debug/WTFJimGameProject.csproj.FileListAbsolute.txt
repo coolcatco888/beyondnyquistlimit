@@ -1,0 +1,6 @@
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.exe
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.pdb
