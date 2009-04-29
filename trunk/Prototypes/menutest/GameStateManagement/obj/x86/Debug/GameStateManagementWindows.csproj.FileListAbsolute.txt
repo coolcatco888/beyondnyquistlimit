@@ -22,3 +22,4 @@ D:\work\jimwtf\Prototypes\menutest\GameStateManagement\obj\x86\Debug\ResolveAsse
 D:\work\jimwtf\Prototypes\menutest\GameStateManagement\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\work\jimwtf\Prototypes\menutest\GameStateManagement\obj\x86\Debug\GameStateManagement.exe
 D:\work\jimwtf\Prototypes\menutest\GameStateManagement\obj\x86\Debug\GameStateManagement.pdb
+D:\work\jimwtf\Prototypes\menutest\GameStateManagement\bin\x86\Debug\MenuPanels\mainpanel.xml

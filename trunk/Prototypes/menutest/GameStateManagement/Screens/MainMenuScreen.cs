@@ -39,12 +39,8 @@ namespace GameStateManagement
             if (content == null)
                 content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-            font = content.Load<SpriteFont>("menufont");
-            image = content.Load<Texture2D>("menubg");
-            
-            panel.PanelItems.Add(new ImageComponent2D(new Vector2(0, 0), image));
-            panel.PanelItems.Add(new TextComponent2D("What?", Color.White, font, new Vector2(10, 10)));
-            panel.PanelItems.Add(new TextComponent2D("Who?", Color.White, font, new Vector2(10, 50)));
+            XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(content, "MenuPanels\\mainpanel.xml");
+            panel = componentBuilder.Panel;
         }
 
 
@@ -78,8 +74,6 @@ namespace GameStateManagement
             MenuEntries.Add(playGameMenuEntry);
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
-
-            panel = new PanelComponent2D(new Vector2(250, 200));
         }
 
 
