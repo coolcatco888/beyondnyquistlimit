@@ -44,12 +44,13 @@ namespace GameStateManagement.GameWindows
 
         #endregion
 
-        public TextComponent2D(string text, Color color, SpriteFont font, Vector2 position)
+        public TextComponent2D(Vector2 position, string text, Color color, SpriteFont font)
         {
+            this.position = position;
             this.text = text;
             this.color = color;
             this.font = font;
-            this.position = position;
+            
         }
 
         public override void Update(GameTime gameTime)

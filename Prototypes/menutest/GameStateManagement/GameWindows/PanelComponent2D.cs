@@ -8,7 +8,8 @@ using Microsoft.Xna.Framework.Graphics;
 namespace GameStateManagement.GameWindows
 {
     /// <summary>
-    /// Essentially a collection of Components to be drawn with an offset
+    /// Essentially a collection of Components to be drawn relative to the panel location.
+    /// 0,0 is the panel's top left hand corner.
     /// When implementing menus, have the menu image as the first item added.
     /// 
     /// See MainMenuScreen LoadContent() for how to setup
