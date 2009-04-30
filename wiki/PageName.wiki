@@ -5,5 +5,6 @@ Post links for useful developer information here
 
 
 = Links =
+ * Using SVN with Visual Studio - http://www.west-wind.com/presentations/subversion/#Adding_Projects_and_Files_to_Source_Control
  * Zacharus Engine - http://www.assembla.com/wiki/show/dSkoGmV-mr3A63ab7jnrAJ
  * Game State Management (Transitioning from menu to gameplay) - http://creators.xna.com/en-GB/samples/gamestatemanagement
