@@ -77,9 +77,42 @@ namespace SpriteSample
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            KeyboardState keyState = Keyboard.GetState();
+            GamePadState padState = GamePad.GetState(PlayerIndex.One);
+
+            if (padState.ThumbSticks.Left.Y > 0)
+            {
+                if (padState.ThumbSticks.Left.X > 0)
+                    theif.ActorOrientation = Orientation.Northeast;
+                else if (padState.ThumbSticks.Left.X < 0)
+                    theif.ActorOrientation = Orientation.Northwest;
+                else
+                    theif.ActorOrientation = Orientation.North;
+            }
+            else if (padState.ThumbSticks.Left.Y < 0)
+            {
+                if (padState.ThumbSticks.Left.X > 0)
+                    theif.ActorOrientation = Orientation.Southeast;
+                else if (padState.ThumbSticks.Left.X < 0)
+                    theif.ActorOrientation = Orientation.Southwest;
+                else
+                    theif.ActorOrientation = Orientation.South;
+            }
+            else if (padState.ThumbSticks.Left.X > 0)
+            {
+                theif.ActorOrientation = Orientation.East;
+            }
+            else if (padState.ThumbSticks.Left.X < 0)
+            {
+                theif.ActorOrientation = Orientation.West;
+            }
+            else
+            {
+                theif.Idle();
+            }
 
 #if !XBOX
+            KeyboardState keyState = Keyboard.GetState();
+
             if (keyState.IsKeyDown(Keys.LeftShift))
                 theif.State = Actor.ActorState.Running;
             else

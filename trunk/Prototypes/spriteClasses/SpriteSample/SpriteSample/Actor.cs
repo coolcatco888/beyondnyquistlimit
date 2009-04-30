@@ -116,7 +116,12 @@ namespace SpriteSample
         /// <summary>
         /// Time to elapse before frame is incremented.
         /// </summary>
-        float interval = 1000.0f / 10.0f;
+        float interval = 1000.0f / 15.0f;
+
+        /// <summary>
+        /// Double buffering for sequence frames.
+        /// </summary>
+        bool isBufferFrame = false;
 
         #endregion
 
@@ -161,71 +166,79 @@ namespace SpriteSample
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-            string title = State.ToString() + ActorOrientation.ToString();
-            if (currentSequence.Title + currentSequence.Orientation.ToString() != title)
+            if (isBufferFrame)
             {
-                PlaySequence(animations[title]);
+                string title = State.ToString() + ActorOrientation.ToString();
+                if (currentSequence.Title + currentSequence.Orientation.ToString() != title)
+                {
+                    PlaySequence(animations[title]);
+                }
+                else if (timer > interval)
+                {
+                    // Reset to first frame if sequence loops.
+                    if (currentSequence.IsLoop && currentFrame == currentSequence.EndFrame)
+                    {
+                        currentFrame = currentSequence.StartFrame;
+                    }
+
+                    // Remain on last frame if sequence does not loop.
+                    else if (!currentSequence.IsLoop && currentFrame == currentSequence.EndFrame)
+                    {
+                    }
+                    else
+                    {
+                        currentFrame++;
+                    }
+
+                    sourceRectangle = new Rectangle(currentFrame * (spriteWidth + spritePadding),
+                        currentSequence.SheetRow * (spriteHeight + spritePadding), spriteWidth, spriteHeight);
+
+                    switch (ActorOrientation)
+                    {
+                        case Orientation.North:
+                            destinationRectangle.Y -= currentSequence.Speed;
+                            break;
+
+                        case Orientation.Northeast:
+                            destinationRectangle.Y -= currentSequence.Speed;
+                            destinationRectangle.X += currentSequence.Speed;
+                            break;
+
+                        case Orientation.East:
+                            destinationRectangle.X += currentSequence.Speed;
+                            break;
+
+                        case Orientation.Southeast:
+                            destinationRectangle.Y += currentSequence.Speed;
+                            destinationRectangle.X += currentSequence.Speed;
+                            break;
+
+                        case Orientation.South:
+                            destinationRectangle.Y += currentSequence.Speed;
+                            break;
+
+                        case Orientation.Southwest:
+                            destinationRectangle.Y += currentSequence.Speed;
+                            destinationRectangle.X -= currentSequence.Speed;
+                            break;
+
+                        case Orientation.West:
+                            destinationRectangle.X -= currentSequence.Speed;
+                            break;
+
+                        case Orientation.Northwest:
+                            destinationRectangle.Y -= currentSequence.Speed;
+                            destinationRectangle.X -= currentSequence.Speed;
+                            break;
+                    }
+
+                    timer = 0.0f;
+                    isBufferFrame = false;
+                }
             }
-            else if (timer > interval)
+            else
             {
-                // Reset to first frame if sequence loops.
-                if (currentSequence.IsLoop && currentFrame == currentSequence.EndFrame)
-                {
-                    currentFrame = currentSequence.StartFrame;
-                }
-
-                // Remain on last frame if sequence does not loop.
-                else if (!currentSequence.IsLoop && currentFrame == currentSequence.EndFrame)
-                {
-                }
-                else
-                {
-                    currentFrame++;
-                }
-
-                sourceRectangle = new Rectangle(currentFrame * (spriteWidth + spritePadding),
-                    currentSequence.SheetRow * (spriteHeight + spritePadding), spriteWidth, spriteHeight);
-
-                switch (ActorOrientation)
-                {
-                    case Orientation.North:
-                        destinationRectangle.Y -= currentSequence.Speed;
-                        break;
-
-                    case Orientation.Northeast:
-                        destinationRectangle.Y -= currentSequence.Speed;
-                        destinationRectangle.X += currentSequence.Speed;
-                        break;
-
-                    case Orientation.East:
-                        destinationRectangle.X += currentSequence.Speed;
-                        break;
-
-                    case Orientation.Southeast:
-                        destinationRectangle.Y += currentSequence.Speed;
-                        destinationRectangle.X += currentSequence.Speed;
-                        break;
-
-                    case Orientation.South:
-                        destinationRectangle.Y += currentSequence.Speed;
-                        break;
-
-                    case Orientation.Southwest:
-                        destinationRectangle.Y += currentSequence.Speed;
-                        destinationRectangle.X -= currentSequence.Speed;
-                        break;
-
-                    case Orientation.West:
-                        destinationRectangle.X -= currentSequence.Speed;
-                        break;
-
-                    case Orientation.Northwest:
-                        destinationRectangle.Y -= currentSequence.Speed;
-                        destinationRectangle.X -= currentSequence.Speed;
-                        break;
-                }
-
-                timer = 0.0f;
+                isBufferFrame = true;
             }
             return;
         }
