@@ -20,6 +20,7 @@ namespace SpriteSample
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Actor theif;
 
         public Game1()
         {
@@ -36,7 +37,6 @@ namespace SpriteSample
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -48,6 +48,11 @@ namespace SpriteSample
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            theif = new Actor(Content.Load<Texture2D>("theifWalkRun"));
+            theif.AddBasicSequences();
+            theif.PlaySequence("IdleSouth");
+
 
             // TODO: use this.Content to load your game content here
         }
@@ -72,6 +77,76 @@ namespace SpriteSample
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
+            KeyboardState keyState = Keyboard.GetState();
+
+#if !XBOX
+            if (keyState.IsKeyDown(Keys.LeftShift))
+                theif.State = Actor.ActorState.Running;
+            else
+                theif.State = Actor.ActorState.Walking;
+
+
+            if (keyState.IsKeyDown(Keys.Up))
+            {
+                if (keyState.IsKeyDown(Keys.Right))
+                    theif.ActorOrientation = Orientation.Northeast;
+                else if (keyState.IsKeyDown(Keys.Left))
+                    theif.ActorOrientation = Orientation.Northwest;
+                else
+                    theif.ActorOrientation = Orientation.North;
+            }
+            else if (keyState.IsKeyDown(Keys.Down))
+            {
+                if (keyState.IsKeyDown(Keys.Right))
+                    theif.ActorOrientation = Orientation.Southeast;
+                else if (keyState.IsKeyDown(Keys.Left))
+                    theif.ActorOrientation = Orientation.Southwest;
+                else
+                    theif.ActorOrientation = Orientation.South;
+            }
+            else if (keyState.IsKeyDown(Keys.Right))
+            {
+                theif.ActorOrientation = Orientation.East;
+            }
+            else if (keyState.IsKeyDown(Keys.Left))
+            {
+                theif.ActorOrientation = Orientation.West;
+            }
+            else
+            {
+                theif.Idle();
+            }
+            /*
+            if(keyState.IsKeyDown(Keys.LeftShift))
+            {
+                if (keyState.IsKeyDown(Keys.Up))
+                    theif.PlaySequence("RunningNorth");
+                else if (keyState.IsKeyDown(Keys.Down))
+                    theif.PlaySequence("RunningSouth");
+                else if (keyState.IsKeyDown(Keys.Right))
+                    theif.PlaySequence("RunningEast");
+                else if (keyState.IsKeyDown(Keys.Left))
+                    theif.PlaySequence("RunningWest");
+                else
+                    theif.Idle();
+            }
+            else
+            {
+                if (keyState.IsKeyDown(Keys.Up))
+                    theif.PlaySequence("WalkingNorth");
+                else if (keyState.IsKeyDown(Keys.Down))
+                    theif.PlaySequence("WalkingSouth");
+                else if (keyState.IsKeyDown(Keys.Right))
+                    theif.PlaySequence("WalkingEast");
+                else if (keyState.IsKeyDown(Keys.Left))
+                    theif.PlaySequence("WalkingWest");
+                else
+                    theif.Idle();
+            }
+             */
+#endif
+
+            theif.UpdateSequence(gameTime);
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -86,6 +161,11 @@ namespace SpriteSample
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            spriteBatch.Begin();
+
+            theif.Draw(spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
