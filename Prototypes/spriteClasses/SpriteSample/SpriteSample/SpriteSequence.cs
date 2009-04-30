@@ -50,22 +50,55 @@ namespace SpriteSample
         /// <summary>
         /// Whether or not this sequence should loop on completion.
         /// </summary>
-        private Boolean loop;
-        public Boolean Loop
+        private Boolean isLoop;
+        public Boolean IsLoop
         {
-            get { return loop; }
-            set { loop = value; }
+            get { return isLoop; }
+            set { isLoop = value; }
+        }
+
+        /// <summary>
+        /// Whether or not this sequence may be interrupted.
+        /// </summary>
+        private Boolean isInterruptable;
+        public Boolean IsInterruptable
+        {
+            get { return isInterruptable; }
+            set { isInterruptable = value; }
+        }
+
+        /// <summary>
+        /// Orientation of sprite sequence.
+        /// </summary>
+        private Orientation orientation;
+        public Orientation Orientation
+        {
+            get { return orientation; }
+            set { orientation = value; }
+        }
+
+        /// <summary>
+        /// Travel speed of sprite during this sequence.
+        /// </summary>
+        private int speed;
+        public int Speed
+        {
+            get { return speed; }
+            set { speed = value; }
         }
 
         public SpriteSequence() { }
 
-        public SpriteSequence(string title, int sheetRow, int startFrame, int endFrame, Boolean loop)
+        public SpriteSequence(string title, Orientation orientation, int speed, int sheetRow, int startFrame, int endFrame, Boolean loop, Boolean interruptable)
         {
             this.Title = title;
+            this.Orientation = orientation;
+            this.Speed = speed;
             this.SheetRow = sheetRow;
             this.StartFrame = startFrame;
             this.EndFrame = endFrame;
-            this.Loop = loop;
+            this.IsLoop = loop;
+            this.IsInterruptable = interruptable;
         }
     }
 }
