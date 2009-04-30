@@ -1,0 +1,5 @@
+D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.dll
+D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.pdb
+D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.dll
+D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.pdb
