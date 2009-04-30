@@ -1,0 +1,10 @@
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks.xnb
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\terrain.xnb
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Terrain.exe
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Terrain.pdb
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\obj\x86\Debug\Terrain.exe
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\obj\x86\Debug\Terrain.pdb
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb
+D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\heightmap2.xnb
