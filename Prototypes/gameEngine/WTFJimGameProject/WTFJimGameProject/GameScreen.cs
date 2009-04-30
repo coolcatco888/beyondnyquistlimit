@@ -112,6 +112,18 @@ namespace WTFJimGameProject
             initialized = true;
         }
 
+        /// <summary>
+        /// Load graphics content for the screen.
+        /// </summary>
+        public virtual void LoadContent() { }
+
+
+        /// <summary>
+        /// Unload content for the screen.
+        /// </summary>
+        public virtual void UnloadContent() { }
+
+
         public virtual void Update()
         {
             // Create a temporary list so we don't crash if

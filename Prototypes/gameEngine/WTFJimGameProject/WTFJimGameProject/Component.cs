@@ -13,6 +13,8 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace WTFJimGameProject
 {
+
+    //TODO: This may have to be deprecated use Rectangle class from C# library?
     public class BoundingRectangle
     {
         Vector2 topLeft;
@@ -47,7 +49,14 @@ namespace WTFJimGameProject
 
     public interface I2DComponent
     {
+        //TODO - Decide whether this is needed
         BoundingRectangle Bounds { get; set;}
+        Vector2 Position { get; set; }
+        SpriteBatch SpriteBatch { get; set; }
+
+        void Update();
+
+        void Draw();
     }
 
     public interface ITextComponent
@@ -55,7 +64,8 @@ namespace WTFJimGameProject
         //TODO: Add more parameters
         String Text { get; set; }
     }
-
+    //TODO - Should this be abstract?  (I don't see the reason why a Component should be instantiated.
+    //An abstract class does not have to have abstract methods)
     public class Component
     {
         #region Parameters

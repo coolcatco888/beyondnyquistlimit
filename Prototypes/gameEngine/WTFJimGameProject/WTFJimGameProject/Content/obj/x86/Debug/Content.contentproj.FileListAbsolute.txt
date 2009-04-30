@@ -1,1 +1,2 @@
 D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\Content\obj\x86\Debug\ResolveAssemblyReference.cache

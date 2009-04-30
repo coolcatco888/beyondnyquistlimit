@@ -26,6 +26,15 @@ namespace WTFJimGameProject
         SpriteBatch spriteBatch;
         SpriteFont spriteFont;
 
+        /// <summary>
+        /// A default SpriteBatch shared by all the screens. This saves
+        /// each screen having to bother creating their own local instance.
+        /// </summary>
+        public SpriteBatch SpriteBatch
+        {
+            get { return spriteBatch; }
+        }
+
         GameScreenCollection gameScreens;
 
         public GameScreenCollection GameScreens
@@ -58,7 +67,23 @@ namespace WTFJimGameProject
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(base.Game.GraphicsDevice);
+
+            foreach (GameScreen screen in gameScreens)
+            {
+                screen.LoadContent();
+            }
+
             base.LoadContent();
+        }
+
+        protected override void UnloadContent()
+        {
+            foreach (GameScreen screen in gameScreens)
+            {
+                screen.UnloadContent();
+            }
+
+            base.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)

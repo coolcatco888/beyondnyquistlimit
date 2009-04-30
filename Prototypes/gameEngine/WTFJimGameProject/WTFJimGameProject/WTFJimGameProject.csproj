@@ -88,6 +88,10 @@
     <Compile Include="ComponentCollection.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="GameScreenCollection.cs" />
+    <Compile Include="GameWindows\ImageComponent2D.cs" />
+    <Compile Include="GameWindows\PanelComponent2D.cs" />
+    <Compile Include="GameWindows\TextComponent2D.cs" />
+    <Compile Include="GameWindows\XMLPanel2DBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="GameBase.cs" />
@@ -98,6 +102,9 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="MenuPanels\mainpanel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">
