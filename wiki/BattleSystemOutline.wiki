@@ -1,0 +1,21 @@
+#summary Discussion about battle system
+#labels Phase-Requirements
+
+= Introduction =
+
+This is the general plan of the battle system.  Feel free to add details that I may have missed.
+
+
+= Details =
+
+Three basic types:
+ * Flat - Only flat will be described here in detail
+ * Tiered
+ * Rolling
+
+
+*Flat*
+
+Terrains can be created using heightmaps however the flat parts will be where the battle will occur.  Invisible walls background obstacles will prevent the player from leaving the battle area.  Battle Area obstacles such as rocks, rivers will be impassable and will have an invisible wall surrounding them.  Projectiles may be able to pass through them.
+
+http://img22.imageshack.us/my.php?image=battlesystem.png
