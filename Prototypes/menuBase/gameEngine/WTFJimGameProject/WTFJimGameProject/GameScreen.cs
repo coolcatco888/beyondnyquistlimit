@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 
 namespace WTFJimGameProject
 {
@@ -123,6 +124,13 @@ namespace WTFJimGameProject
         /// Unload content for the screen.
         /// </summary>
         public virtual void UnloadContent() { }
+
+        /// <summary>
+        /// Allows the screen to handle user input. Unlike Update, this method
+        /// is only called when the screen is active, and not when some other
+        /// screen has taken the focus.
+        /// </summary>
+        public virtual void HandleInput(InputState input) { }
 
 
         public virtual void Update(GameTime gameTime)

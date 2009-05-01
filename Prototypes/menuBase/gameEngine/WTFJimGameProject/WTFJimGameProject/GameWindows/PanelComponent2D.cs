@@ -17,14 +17,15 @@ namespace WTFJimGameProject.GameWindows
     /// </summary>
     class PanelComponent2D : Component
     {
-        private Vector2 position;
+        protected Vector2 position;
 
-        private SpriteBatch spriteBatch;
+        protected SpriteBatch spriteBatch;
 
-        private List<I2DComponent> panelItems = new List<I2DComponent>();
+        protected List<I2DComponent> panelItems = new List<I2DComponent>();
 
         public List<I2DComponent> PanelItems
         {
+            set { panelItems = value; }
             get { return panelItems; }
         }
 

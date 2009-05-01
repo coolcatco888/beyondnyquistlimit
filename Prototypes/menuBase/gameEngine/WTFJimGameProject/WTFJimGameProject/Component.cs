@@ -21,6 +21,12 @@ namespace WTFJimGameProject
 
         private bool visible;
 
+        public bool Visible
+        {
+            get { return visible; }
+            set { visible = value; }
+        }
+
         public bool Initialized
         {
             get { return initialized; }
