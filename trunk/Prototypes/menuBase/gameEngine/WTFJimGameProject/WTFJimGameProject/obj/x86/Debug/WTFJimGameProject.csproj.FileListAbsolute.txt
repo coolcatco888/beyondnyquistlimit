@@ -1,0 +1,24 @@
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.exe
+D:\Work\Visual Studio 2008\Projects\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.pdb
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.exe
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.pdb
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\MenuPanels\mainpanel.xml
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menubg.xnb
+D:\work\jimwtf\Prototypes\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menufont.xnb
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.exe
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.pdb
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\MenuPanels\mainpanel.xml
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menubg.xnb
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menufont.xnb
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
+D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
