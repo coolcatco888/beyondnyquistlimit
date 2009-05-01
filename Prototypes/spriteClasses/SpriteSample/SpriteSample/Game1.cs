@@ -76,7 +76,7 @@ namespace SpriteSample
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
+            /*
             GamePadState padState = GamePad.GetState(PlayerIndex.One);
 
             if (padState.ThumbSticks.Left.Y > 0)
@@ -108,7 +108,7 @@ namespace SpriteSample
             else
             {
                 theif.Idle();
-            }
+            }*/
 
 #if !XBOX
             KeyboardState keyState = Keyboard.GetState();
