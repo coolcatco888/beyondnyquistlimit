@@ -1,0 +1,6 @@
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\bin\x86\Debug\AudioManager.exe
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\bin\x86\Debug\AudioManager.pdb
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\obj\x86\Debug\AudioManager.exe
+D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\obj\x86\Debug\AudioManager.pdb
