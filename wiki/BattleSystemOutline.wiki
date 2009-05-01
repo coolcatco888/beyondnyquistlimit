@@ -18,4 +18,4 @@ Three basic types:
 
 Terrains can be created using heightmaps however the flat parts will be where the battle will occur.  Invisible walls background obstacles will prevent the player from leaving the battle area.  Battle Area obstacles such as rocks, rivers will be impassable and will have an invisible wall surrounding them.  Projectiles may be able to pass through them.
 
-http://img22.imageshack.us/img22/9466/battlesystem.png
+http://jimwtf.googlecode.com/files/battlesystem.PNG
