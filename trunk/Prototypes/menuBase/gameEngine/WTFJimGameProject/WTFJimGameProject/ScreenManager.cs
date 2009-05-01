@@ -26,6 +26,8 @@ namespace WTFJimGameProject
         SpriteBatch spriteBatch;
         SpriteFont spriteFont;
 
+        InputState input = new InputState();
+
         /// <summary>
         /// A default SpriteBatch shared by all the screens. This saves
         /// each screen having to bother creating their own local instance.
@@ -89,6 +91,9 @@ namespace WTFJimGameProject
         public override void Update(GameTime gameTime)
         {
 
+            // Read the keyboard and gamepad.
+            input.Update();
+
             // Populate the temp list
             foreach (GameScreen screen in gameScreens)
                 if(screen.Enabled)
@@ -109,7 +114,10 @@ namespace WTFJimGameProject
             // Update remaining components
             foreach (GameScreen screen in updateList)
                 if (screen.Initialized)
+                {
+                    screen.HandleInput(input);
                     screen.Update(gameTime);
+                }
 
             // Clear list
             updateList.Clear();

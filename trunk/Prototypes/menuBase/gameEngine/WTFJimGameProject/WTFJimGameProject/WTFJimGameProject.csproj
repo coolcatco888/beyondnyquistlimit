@@ -95,6 +95,7 @@
     <Compile Include="GameWindows\PanelComponent2D.cs" />
     <Compile Include="GameWindows\TextComponent2D.cs" />
     <Compile Include="GameWindows\XMLPanel2DBuilder.cs" />
+    <Compile Include="InputState.cs" />
     <Compile Include="MenuScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

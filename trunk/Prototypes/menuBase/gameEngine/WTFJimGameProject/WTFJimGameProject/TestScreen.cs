@@ -36,8 +36,7 @@ namespace WTFJimGameProject
 
             //NOTE: This just builds the menupanel but there is no functionality yet.
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, content, "MenuPanels\\mainpanel.xml");
-            panel = componentBuilder.Panel;
-        
+            panel = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 3);
             base.LoadContent();
         }
 
