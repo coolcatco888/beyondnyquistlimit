@@ -49,6 +49,26 @@ namespace SpriteSample
         }
 
         /// <summary>
+        /// Up orientation of this actor.
+        /// </summary>
+        private Vector3 up;
+        public Vector3 Up
+        {
+            get { return up; }
+            set { up = value; }
+        }
+
+        /// <summary>
+        /// Forward orientation of this actor.
+        /// </summary>
+        private Vector3 forward;
+        public Vector3 Forward
+        {
+            get { return forward; }
+            set { forward = value; }
+        }
+
+        /// <summary>
         /// Current orientation of this actor.
         /// </summary>
         private Orientation actorOrientation = Orientation.South;
@@ -249,6 +269,16 @@ namespace SpriteSample
                 destinationRectangle,
                 sourceRectangle,
                 Color.White);
+        }
+
+        public void Draw(BillboardDrawer billboardDrawer,
+            Vector3 cameraPosition, Matrix view, Matrix projection)
+        {
+            Matrix world = Matrix.CreateTranslation(0, 1, 0) *
+                Matrix.CreateScale(800) *
+                Matrix.CreateConstrainedBillboard(mapPosition, cameraPosition, Up, null, null);
+
+            billboardDrawer.DrawBillboard(spriteSheet, 1, world, view, projection);
         }
 
         public void AddBasicSequences()
