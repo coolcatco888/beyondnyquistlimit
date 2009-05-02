@@ -60,7 +60,8 @@ namespace TheGame
 
         public virtual void Initialize(GameScreen parent)
         {
-            //TODO: add component to parent
+            this.parent = parent;
+            parent.Components.Add(this);
             initialized = true;
         }
 
