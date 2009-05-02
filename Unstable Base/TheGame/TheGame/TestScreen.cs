@@ -18,7 +18,19 @@ namespace TheGame
         public TestScreen(String name)
             : base(name)
         {
-            Components.Add(new TestComponent(this));
+            new TestComponent(this);
+
+            BasicModel temp;
+
+            temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
+
+            temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
+            temp.Scale = 0.3f;
+            temp.Position = new Vector3(1.0f, 1.2f, 0.3f);
+
+            temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
+            temp.Scale = 1.0f;
+            temp.Position = new Vector3(0.0f, -2.2f, -4.5f);
         }
     }
 }
