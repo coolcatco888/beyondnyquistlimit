@@ -113,9 +113,13 @@ namespace TheGame
 
         public override void Update(GameTime gameTime)
         {
-            Quaternion rot = Quaternion.CreateFromYawPitchRoll(0.001f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f);
+            KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
-            rotation *= rot;
+            if (keyboardDevice != null && keyboardDevice.IsKeyDown(Keys.R))
+            {
+                Quaternion rot = Quaternion.CreateFromYawPitchRoll(0.001f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f);
+                rotation *= rot;
+            }
 
             base.Update(gameTime);
         }
