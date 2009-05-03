@@ -1,0 +1,14 @@
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\bin\x86\Debug\TheGame.exe
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\bin\x86\Debug\TheGame.pdb
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\TheGame.exe
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\TheGame.pdb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
