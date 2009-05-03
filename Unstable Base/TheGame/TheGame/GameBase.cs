@@ -43,8 +43,13 @@ namespace TheGame
 
             Camera camera = new Camera(GameEngine.BaseScreen);
             camera.Position = new Vector3(0.0f, 0.0f, 5.0f);
-
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
+
+            GamepadDevice gamepadDevice = new GamepadDevice(GameEngine.BaseScreen, PlayerIndex.One);
+            GameEngine.Services.AddService(typeof(GamepadDevice), gamepadDevice);
+
+            KeyboardDevice keyboardDevice = new KeyboardDevice(GameEngine.BaseScreen);
+            GameEngine.Services.AddService(typeof(KeyboardDevice), keyboardDevice);
 
             new TestScreen("test");
 
