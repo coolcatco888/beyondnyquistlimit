@@ -30,7 +30,7 @@ namespace WTFJimGameProject
 
             Components.Add(screenManager);
 
-            TestScreen t = new TestScreen("test", screenManager);
+            MainMenuScreen t = new MainMenuScreen("test", screenManager);
         }
 
         /// <summary>

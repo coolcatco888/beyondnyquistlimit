@@ -84,6 +84,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlankScreen.cs" />
     <Compile Include="ComponentInterfaces.cs" />
     <Compile Include="Component.cs" />
     <Compile Include="ComponentCollection.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="GameBase.cs" />
     <Compile Include="ScreenManager.cs" />
-    <Compile Include="TestScreen.cs" />
+    <Compile Include="MainMenuScreen.cs" />
     <Compile Include="TestSquare.cs" />
   </ItemGroup>
   <ItemGroup>
