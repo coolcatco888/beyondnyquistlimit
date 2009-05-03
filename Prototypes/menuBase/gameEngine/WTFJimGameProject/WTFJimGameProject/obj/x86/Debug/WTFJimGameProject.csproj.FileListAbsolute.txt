@@ -22,3 +22,12 @@ D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProjec
 D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menufont.xnb
 D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
 D:\work\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\MenuPanels\mainpanel.xml
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menubg.xnb
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\Content\menufont.xnb
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.exe
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\bin\x86\Debug\WTFJimGameProject.pdb
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.exe
+C:\Documents and Settings\Tang\My Documents\Visual Studio 2008\Projects\jimwtf\Prototypes\menuBase\gameEngine\WTFJimGameProject\WTFJimGameProject\obj\x86\Debug\WTFJimGameProject.pdb

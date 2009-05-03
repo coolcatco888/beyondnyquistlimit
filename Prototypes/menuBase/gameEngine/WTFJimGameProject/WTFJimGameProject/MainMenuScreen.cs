@@ -15,14 +15,12 @@ using WTFJimGameProject.GameWindows;
 
 namespace WTFJimGameProject
 {
-    class TestScreen : GameScreen
+    class MainMenuScreen : MenuScreen
     {
         /// <summary>
         /// Handles the loading and unloading of game content.
         /// </summary>
         ContentManager content;
-
-        PanelComponent2D panel;
 
         public override void Initialize()
         {
@@ -34,10 +32,43 @@ namespace WTFJimGameProject
             if (content == null)
                 content = new ContentManager(Owner.Game.Services, "Content");
 
-            //NOTE: This just builds the menupanel but there is no functionality yet.
+            //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, content, "MenuPanels\\mainpanel.xml");
-            panel = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 3);
+
+            //Make it into functional menu
+            menu = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 2);
+
+            //Add to drawable components
+            Components.Add(menu);
             base.LoadContent();
+        }
+
+        /// <summary>
+        /// Handles the input specifically for this menu.
+        /// </summary>
+        /// <param name="input"></param>
+        public override void HandleInput(InputState input)
+        {
+            base.HandleInput(input);
+            PlayerIndex playerIndex;
+            if (input.IsMenuSelect(ControllingPlayer, out playerIndex))
+            {
+                string menuOption = menu.GetCurrentText();
+
+                switch (menuOption)
+                {
+                    case "Exit Game":
+                        Dispose();
+                        Owner.Game.Exit();
+                        break;
+
+                    case "Start Game":
+                        //TODO - Screen Manager must have an add and remove method
+                        (new BlankScreen("Game", Owner)).LoadContent();
+                        this.Visible = false;
+                        break;
+                }
+            }
         }
 
         public override void Dispose()
@@ -46,7 +77,7 @@ namespace WTFJimGameProject
             content.Dispose();
         }
 
-        public TestScreen(string name, ScreenManager owner)
+        public MainMenuScreen(string name, ScreenManager owner)
             : base(name, owner)
         {
             Components.Add(new TestSquare(this));
@@ -55,13 +86,11 @@ namespace WTFJimGameProject
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            panel.Update(gameTime);
         }
 
         public override void Draw()
         {
             base.Draw();
-            panel.Draw();
         }
     }
 }
