@@ -99,6 +99,7 @@
     <Compile Include="Components\Display\PanelComponent2D.cs" />
     <Compile Include="Components\Display\TextComponent2D.cs" />
     <Compile Include="Components\Display\XMLPanel2DBuilder.cs" />
+    <Compile Include="Game Screens\ConfirmQuitScreen.cs" />
     <Compile Include="Game Screens\MainMenuScreen.cs" />
     <Compile Include="Game Screens\MenuScreen.cs" />
     <Compile Include="GameEngine.cs" />
@@ -119,6 +120,9 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="MenuPanels\quitpanel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MenuPanels\mainpanel.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
