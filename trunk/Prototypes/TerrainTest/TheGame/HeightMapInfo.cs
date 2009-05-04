@@ -64,7 +64,7 @@ namespace TheGame
         // Gets the height of the map at the position
         public float GetHeight(Vector3 position)
         {
-            // the position of the object on the map
+            // the position of the object on the bitmap
             Vector3 positionOnMap = position - heightmapPosition;
 
             // find the position of the 
@@ -72,20 +72,22 @@ namespace TheGame
             left = (int)positionOnMap.X / (int)terrainScale;
             top = (int)positionOnMap.Z / (int)terrainScale;
 
-            float xNormalized = (positionOnMap.X % terrainScale) / terrainScale;
-            float zNormalized = (positionOnMap.Z % terrainScale) / terrainScale;
+            //float xNormalized = (positionOnMap.X % terrainScale) / terrainScale;
+            //float zNormalized = (positionOnMap.Z % terrainScale) / terrainScale;
 
-            float topHeight = MathHelper.Lerp(
-                heights[left, top],
-                heights[left + 1, top],
-                xNormalized);
+            //float topHeight = MathHelper.Lerp(
+            //    heights[left, top],
+            //    heights[left + 1, top],
+            //    xNormalized);
 
-            float bottomHeight = MathHelper.Lerp(
-                heights[left, top + 1],
-                heights[left + 1, top + 1],
-                xNormalized);
+            //float bottomHeight = MathHelper.Lerp(
+            //    heights[left, top + 1],
+            //    heights[left + 1, top + 1],
+            //    xNormalized);
 
-            return MathHelper.Lerp(topHeight, bottomHeight, zNormalized);
+            //return MathHelper.Lerp(topHeight, bottomHeight, zNormalized);
+            float height = heights[left, top];
+            return heights[left, top];
         }
     }
 

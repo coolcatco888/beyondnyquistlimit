@@ -114,6 +114,9 @@ namespace TheGame
 
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            HeightMapInfo heightInfo = ((Level)Parent).TerrainHeightMap;
+            Vector3 oldPosition = this.Position;
+
             if (isBufferFrame)
             {
                 string title = State.ToString() + ActorOrientation.ToString();
@@ -142,44 +145,92 @@ namespace TheGame
                     vertices[1].TextureCoordinate = new Vector2(currentFrame * spriteUnit.X + spriteUnit.X, currentSequence.SheetRow * spriteUnit.Y);
                     vertices[2].TextureCoordinate = new Vector2(currentFrame * spriteUnit.X + spriteUnit.X, currentSequence.SheetRow * spriteUnit.Y + spriteUnit.Y);
                     vertices[3].TextureCoordinate = new Vector2(currentFrame * spriteUnit.X, currentSequence.SheetRow * spriteUnit.Y + spriteUnit.Y);
-                    
+
                     // Update position.
                     switch (ActorOrientation)
                     {
                         case Orientation.North:
                             position.Z -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.Northeast:
                             position.Z -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             position.X += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.East:
                             position.X += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.Southeast:
                             position.Z += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             position.X += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.South:
                             position.Z += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.Southwest:
                             position.Z += currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             position.X -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.West:
                             position.X -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
 
                         case Orientation.Northwest:
                             position.Z -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             position.X -= currentSequence.Speed;
+                            if (heightInfo.GetHeight(position) != -1.0f)
+                            {
+                                position = oldPosition;
+                            }
                             break;
                     }
                     
@@ -280,14 +331,14 @@ namespace TheGame
             animations.Add("IdleNortheast", new SpriteSequence("Idle", Orientation.Northeast, 0, 2, 0, 0, false, true));
             animations.Add("IdleSouthwest", new SpriteSequence("Idle", Orientation.Southwest, 0, 1, 0, 0, false, true));
             animations.Add("IdleSoutheast", new SpriteSequence("Idle", Orientation.Southeast, 0, 2, 0, 0, false, true));
-            animations.Add("WalkingNorthwest", new SpriteSequence("Walking", Orientation.Northwest, 0.8f, 1, 1, 6, true, true));
+            animations.Add("WalkingNorthwest", new SpriteSequence("Walking", Orientation.Northwest, 0.4f, 1, 1, 6, true, true));
             animations.Add("WalkingNortheast", new SpriteSequence("Walking", Orientation.Northeast, 0.4f, 2, 1, 6, true, true));
             animations.Add("WalkingSouthwest", new SpriteSequence("Walking", Orientation.Southwest, 0.4f, 1, 1, 6, true, true));
-            animations.Add("WalkingSoutheast", new SpriteSequence("Walking", Orientation.Southeast, 0.8f, 2, 1, 6, true, true));
-            animations.Add("RunningNorthwest", new SpriteSequence("Running", Orientation.Northwest, 1.6f, 1, 7, 12, true, true));
+            animations.Add("WalkingSoutheast", new SpriteSequence("Walking", Orientation.Southeast, 0.4f, 2, 1, 6, true, true));
+            animations.Add("RunningNorthwest", new SpriteSequence("Running", Orientation.Northwest, 0.8f, 1, 7, 12, true, true));
             animations.Add("RunningNortheast", new SpriteSequence("Running", Orientation.Northeast, 0.8f, 2, 7, 12, true, true));
             animations.Add("RunningSouthwest", new SpriteSequence("Running", Orientation.Southwest, 0.8f, 1, 7, 12, true, true));
-            animations.Add("RunningSoutheast", new SpriteSequence("Running", Orientation.Southeast, 1.6f, 2, 7, 12, true, true));
+            animations.Add("RunningSoutheast", new SpriteSequence("Running", Orientation.Southeast, 0.8f, 2, 7, 12, true, true));
 
             currentSequence = animations["IdleSouth"];
             currentFrame = currentSequence.StartFrame;

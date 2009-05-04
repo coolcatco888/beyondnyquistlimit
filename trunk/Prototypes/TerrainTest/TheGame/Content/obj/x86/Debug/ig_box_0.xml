@@ -3,7 +3,7 @@
   <Asset Type="Graphics:NodeContent">
     <Name>RootNode</Name>
     <Identity>
-      <SourceFilename>D:\work\wtfjim\Prototypes\TerrainTest\TheGame\Content\ig_box.fbx</SourceFilename>
+      <SourceFilename>D:\Work\wtfjim\Prototypes\TerrainTest\TheGame\Content\ig_box.fbx</SourceFilename>
       <SourceTool>FbxImporter</SourceTool>
     </Identity>
     <Transform>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</Transform>
@@ -48,7 +48,7 @@
     <Resource ID="#Resource1" Type="Graphics:BasicMaterialContent">
       <Name>Scene_Root</Name>
       <Identity>
-        <SourceFilename>D:\work\wtfjim\Prototypes\TerrainTest\TheGame\Content\ig_box.fbx</SourceFilename>
+        <SourceFilename>D:\Work\wtfjim\Prototypes\TerrainTest\TheGame\Content\ig_box.fbx</SourceFilename>
         <SourceTool>FbxImporter</SourceTool>
       </Identity>
       <OpaqueData>
