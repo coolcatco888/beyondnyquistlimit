@@ -15,7 +15,7 @@ namespace TheGame
         VertexDeclaration vertexDeclaration = new VertexDeclaration(
                 GameEngine.Graphics, VertexPositionTexture.VertexElements);
 
-        Texture2D texture2D;
+        protected Texture2D texture2D;
 
         /// <summary>
         /// Current position of this billboard on the world map.
@@ -37,18 +37,37 @@ namespace TheGame
             set { scale = value; }
         }
 
+        /// <summary>
+        /// Width of a sprite.
+        /// </summary>
+        protected int spriteWidth;
+
+        /// <summary>
+        /// Height of a sprite.
+        /// </summary>
+        protected int spriteHeight;
+
+        /// <summary>
+        /// Number of pixels padding between sprites on sprite sheet.
+        /// </summary>
+        protected int spritePadding;
+
         protected VertexPositionTexture[] vertices;
 
         BasicEffect basicEffect;
 
         #endregion  // Fields
 
-        public Billboard(GameScreen parent, Texture2D texture2D) : base(parent)
+        public Billboard(GameScreen parent, Texture2D texture2D, int spriteWidth, int spriteHeight, int spritePadding)
+            : base(parent)
         {
             visible = true;
 
             // Assign texture.
             this.texture2D = texture2D;
+            this.spriteWidth = spriteWidth;
+            this.spriteHeight = spriteHeight;
+            this.spritePadding = spritePadding;
 
             scale = 1.0f;
             position = new Vector3(0.0f, 0.0f, 0.0f);

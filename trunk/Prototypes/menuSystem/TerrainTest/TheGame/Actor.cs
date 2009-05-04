@@ -88,6 +88,9 @@ namespace TheGame
         /// </summary>
         float interval = 1000.0f / 15.0f;
 
+        /// <summary>
+        /// Unit area of sprite relative to sprite sheet; between 0 & 1.
+        /// </summary>
         Vector2 spriteUnit;
 
         /// <summary>
@@ -95,13 +98,13 @@ namespace TheGame
         /// </summary>
         bool isBufferFrame = false;
 
-        public Actor(GameScreen parent, Texture2D spriteSheet, int spriteWidth, int spriteHeight, int spritePadding)
-            : base(parent, spriteSheet)
-        {
-            this.spriteHeight = spriteHeight;
-            this.spriteWidth = spriteWidth;
-            this.spritePadding = spritePadding;
+        // OMG ASPLODE!!!
+        SpriteEffect asplode;
+        float timer2 = 0.0f;
 
+        public Actor(GameScreen parent, Texture2D spriteSheet, int spriteWidth, int spriteHeight, int spritePadding)
+            : base(parent, spriteSheet, spriteWidth, spriteHeight, spritePadding)
+        {
             spriteUnit = new Vector2((float)(spriteWidth + spritePadding) / (float)spriteSheet.Width,
                 (float)(spriteHeight + spritePadding) / (float)spriteSheet.Height);
 
@@ -163,6 +166,10 @@ namespace TheGame
                             {
                                 position = oldPosition;
                             }
+                            else
+                            {
+                                oldPosition = position;
+                            }
                             position.X += currentSequence.Speed;
                             if (heightInfo.GetHeight(position) != -1.0f)
                             {
@@ -183,6 +190,10 @@ namespace TheGame
                             if (heightInfo.GetHeight(position) != -1.0f)
                             {
                                 position = oldPosition;
+                            }
+                            else
+                            {
+                                oldPosition = position;
                             }
                             position.X += currentSequence.Speed;
                             if (heightInfo.GetHeight(position) != -1.0f)
@@ -205,6 +216,10 @@ namespace TheGame
                             {
                                 position = oldPosition;
                             }
+                            else
+                            {
+                                oldPosition = position;
+                            }
                             position.X -= currentSequence.Speed;
                             if (heightInfo.GetHeight(position) != -1.0f)
                             {
@@ -226,6 +241,10 @@ namespace TheGame
                             {
                                 position = oldPosition;
                             }
+                            else
+                            {
+                                oldPosition = position;
+                            }
                             position.X -= currentSequence.Speed;
                             if (heightInfo.GetHeight(position) != -1.0f)
                             {
@@ -241,6 +260,15 @@ namespace TheGame
             else
             {
                 isBufferFrame = true;
+            }
+
+            // OMG ASPLODE SO MUCH!!!
+            timer2 += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+            if (timer2 > 500.0f)
+            {
+                asplode = new SpriteEffect(base.Parent, GameEngine.Content.Load<Texture2D>("sprite_sheet"),
+                    64, 64, 0, new SpriteSequence(0, 0, 15, false), new Vector3(position.X, position.Y, position.Z - 0.1f), 1);
+                timer2 = 0.0f;
             }
 
             base.Update(gameTime);

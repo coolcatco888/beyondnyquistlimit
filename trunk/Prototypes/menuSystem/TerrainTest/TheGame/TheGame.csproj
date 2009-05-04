@@ -122,6 +122,7 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Components\TestComponent.cs" />
     <Compile Include="Game Screens\TestScreen.cs" />
+    <Compile Include="SpriteEffect.cs" />
     <Compile Include="SpriteSequence.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
