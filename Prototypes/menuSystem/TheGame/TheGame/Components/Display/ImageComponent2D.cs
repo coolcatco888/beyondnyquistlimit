@@ -13,9 +13,9 @@ namespace TheGame.Components.Display
     /// </summary>
     class ImageComponent2D : DisplayComponent2D
     {
-        private Texture2D image;
+        protected Texture2D image;
 
-        private Color tint;
+        protected Color tint;
 
         public Texture2D Image
         {

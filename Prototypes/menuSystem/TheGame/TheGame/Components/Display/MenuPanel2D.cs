@@ -76,35 +76,29 @@ namespace TheGame.Components.Display
             newPanel.startIndex = startIndex;
             newPanel.currentIndex = startIndex;
             newPanel.endIndex = endIndex;
-            newPanel.PanelItems = panel.PanelItems;
+            newPanel.PanelItems = ConvertTextToMenuEntries(panel.PanelItems, newPanel);
             return newPanel;
         }
 
-        public override void Draw(GameTime gameTime)
+        private static PanelComponents ConvertTextToMenuEntries(PanelComponents components, MenuPanel2D owner)
         {
-            int i = 0;
-            foreach (DisplayComponent2D item in panelItems)
-            {
+            PanelComponents newComponents = new PanelComponents(owner);
 
-                Vector2 origninalPos = item.Position;
-                if (item is TextComponent2D && i == currentIndex)
+            int i = 0;
+            foreach (DisplayComponent2D component in components)
+            {
+                DisplayComponent2D current = component;
+                if (component is TextComponent2D)
                 {
-                    TextComponent2D textItem = (TextComponent2D) item;
-                    Color originalColor = textItem.Color;
-                    textItem.Position = origninalPos + position;
-                    textItem.Color = highlightColor;
-                    textItem.Draw(gameTime);
-                    textItem.Position = origninalPos;
-                    textItem.Color = originalColor;
+                    current = MenuTextComponent2D.CreateMenuTextComponent2D((TextComponent2D) component, owner.HighlightColor, i == owner.StartIndex);
+                    owner.Parent.Components.Remove(component);
                 }
-                else
-                {
-                    item.Position = origninalPos + position;
-                    item.Draw(gameTime);
-                    item.Position = origninalPos;
-                }
+                current.Position = current.Position - owner.Position;
+                newComponents.Add(current);
                 i++;
             }
+
+            return newComponents;
         }
 
         /// <summary>
@@ -112,7 +106,9 @@ namespace TheGame.Components.Display
         /// </summary>
         public void Next()
         {
+            ((MenuTextComponent2D)panelItems[currentIndex]).Selected = false;
             currentIndex = currentIndex == endIndex ? startIndex : currentIndex + 1;
+            ((MenuTextComponent2D)panelItems[currentIndex]).Selected = true;
         }
 
         /// <summary>
@@ -120,7 +116,9 @@ namespace TheGame.Components.Display
         /// </summary>
         public void Previous()
         {
+            ((MenuTextComponent2D)panelItems[currentIndex]).Selected = false;
             currentIndex = currentIndex == startIndex ? endIndex : currentIndex - 1;
+            ((MenuTextComponent2D)panelItems[currentIndex]).Selected = true;
         }
 
         /// <summary>

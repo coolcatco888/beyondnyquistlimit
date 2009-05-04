@@ -17,7 +17,7 @@ namespace TheGame.Components.Display
     /// </summary>
     class PanelComponent2D : DisplayComponent2D
     {
-        protected PanelComponents panelItems = new PanelComponents();
+        protected PanelComponents panelItems;
 
         public PanelComponents PanelItems
         {
@@ -28,6 +28,7 @@ namespace TheGame.Components.Display
         public PanelComponent2D(GameScreen parent, Vector2 position) : base(parent)
         {
             this.position = position;
+            this.panelItems = new PanelComponents(this);
         }
 
         public override void Update(GameTime gameTime)
@@ -37,43 +38,25 @@ namespace TheGame.Components.Display
                 item.Update(gameTime);
             }
         }
-
-        public override void Draw(GameTime gameTime)
-        {
-            foreach (DisplayComponent2D item in panelItems)
-            {
-                Vector2 origninalPos = item.Position;
-                item.Position = origninalPos + position;
-                item.Draw(gameTime);
-                item.Position = origninalPos;
-            }
-        }
     }
 
     class PanelComponents : List<DisplayComponent2D>
     {
+        PanelComponent2D owner;
+
+        public PanelComponents(PanelComponent2D owner)
+        {
+            this.owner = owner;
+        }
+        
         /// <summary>
-        /// Adds the components into the component list and removes the parent screen's reference
-        /// to the component.  This ensures that drawing and updating of subcomponents are handled by 
-        /// the panel and not the screen as the panel modifies its children's attributes upon drawing.
-        /// 
-        /// Please Review.
-        /// 
-        /// FIXME: Retain the Parent's refernce to all subcomponents while at the same time,
-        /// keeping each subcomponent's position relative, while enabling the menu to still
-        /// modify its highlighted color based on the subcomponent's selection status.
-        /// 
-        /// Possible solution:
-        /// - Make all of the subcomponent's position absolute upon addition to the panel
-        /// - Having a MenuTextComponent2D extend from TextComponent2D to handle text highlight
-        /// 
-        /// Issues:
-        /// - Breaks first contition
+        /// Adds the components into the component list and converts the component's position to the absolute
+        /// screen position.
         /// </summary>
         /// <param name="item"></param>
         public new void Add(DisplayComponent2D item)
         {
-            item.Parent.Components.Remove(item);
+            item.Position = item.Position + owner.Position;
             base.Add(item);
         }
     }
