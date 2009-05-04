@@ -7,13 +7,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
-      <Time>2009-05-04T13:56:40.3125-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
+      <Time>2009-05-04T14:41:03.109375-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-04T14:00:30.984375-07:00</Value>
+        <Value>2009-05-04T16:25:06.46875-07:00</Value>
       </Dependency>
-      <Request>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
+      <Request>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>Terrain\MountainGrass.png</Source>
@@ -21,8 +21,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
-      <Time>2009-05-04T13:56:38.625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
+      <Time>2009-05-04T14:41:01.15625-07:00</Time>
     </Item>
     <Item>
       <Source>Terrain\rocks.bmp</Source>
@@ -30,8 +30,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
-      <Time>2009-05-04T13:56:38.640625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
+      <Time>2009-05-04T14:41:01.171875-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\redsky\redskyback.bmp</Source>
@@ -39,8 +39,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
-      <Time>2009-05-04T13:56:37.734375-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
+      <Time>2009-05-04T14:41:00.109375-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\redsky\redskyfront.bmp</Source>
@@ -48,8 +48,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
-      <Time>2009-05-04T13:56:37.75-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
+      <Time>2009-05-04T14:41:00.125-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\redsky\redskyleft.bmp</Source>
@@ -57,8 +57,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
-      <Time>2009-05-04T13:56:37.765625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
+      <Time>2009-05-04T14:41:00.125-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\redsky\redskyright.bmp</Source>
@@ -66,8 +66,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
-      <Time>2009-05-04T13:56:37.765625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
+      <Time>2009-05-04T14:41:00.125-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\redsky\redskytop.bmp</Source>
@@ -75,8 +75,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
-      <Time>2009-05-04T13:56:37.75-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
+      <Time>2009-05-04T14:41:00.109375-07:00</Time>
     </Item>
     <Item>
       <Source>theifWalkRun.png</Source>
@@ -84,8 +84,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\theifWalkRun.xnb</Output>
-      <Time>2009-05-04T13:56:40.328125-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\theifWalkRun.xnb</Output>
+      <Time>2009-05-04T14:41:03.125-07:00</Time>
     </Item>
     <Item>
       <Source>Terrain\terrain.bmp</Source>
@@ -93,9 +93,9 @@
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
-      <Time>2009-05-04T13:56:38.59375-07:00</Time>
-      <Request>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
+      <Time>2009-05-04T14:41:01.125-07:00</Time>
+      <Request>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
     </Item>
     <Item>
       <Source>menubg.png</Source>
@@ -103,8 +103,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\menubg.xnb</Output>
-      <Time>2009-05-04T13:56:40.3125-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Time>2009-05-04T14:41:03.109375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>sprite_sheet.tga</Source>
+      <Name>sprite_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\sprite_sheet.xnb</Output>
+      <Time>2009-05-04T14:41:03.140625-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\skybox.fx</Source>
@@ -112,8 +121,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
-      <Time>2009-05-04T13:56:37.859375-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
+      <Time>2009-05-04T14:41:00.28125-07:00</Time>
     </Item>
     <Item>
       <Source>menufont.spritefont</Source>
@@ -121,15 +130,15 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\menufont.xnb</Output>
-      <Time>2009-05-04T13:56:40.328125-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2009-05-04T14:41:03.125-07:00</Time>
     </Item>
     <Item>
       <Source>ig_box.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ig_box_0.xml</Output>
-      <Time>2009-05-04T13:56:40.3125-07:00</Time>
+      <Time>2009-05-04T14:41:03.109375-07:00</Time>
     </Item>
     <Item>
       <Source>ig_box_tex.png</Source>
@@ -143,8 +152,8 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
-      <Time>2009-05-04T13:56:40.34375-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
+      <Time>2009-05-04T14:41:03.140625-07:00</Time>
     </Item>
     <Item>
       <Source>Terrain\MountainGrass.png</Source>
@@ -158,32 +167,23 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
-      <Time>2009-05-04T13:56:38.625-07:00</Time>
-    </Item>
-    <Item>
-      <Source>sprite_sheet.tga</Source>
-      <Name>sprite_sheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\sprite_sheet.xnb</Output>
-      <Time>2009-05-04T14:11:15.65625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
+      <Time>2009-05-04T14:41:01.15625-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
-        <Value>2009-05-04T14:00:28.828125-07:00</Value>
+        <Key>D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
+        <Value>2009-05-04T16:25:04.34375-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
