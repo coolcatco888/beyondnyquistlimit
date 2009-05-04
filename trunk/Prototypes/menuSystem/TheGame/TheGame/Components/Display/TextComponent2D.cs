@@ -14,11 +14,11 @@ namespace TheGame.Components.Display
     {
         #region Fields
 
-        private string text;
+        protected string text;
 
-        private Color color;
+        protected Color color;
 
-        private SpriteFont font;
+        protected SpriteFont font;
 
         #endregion
 

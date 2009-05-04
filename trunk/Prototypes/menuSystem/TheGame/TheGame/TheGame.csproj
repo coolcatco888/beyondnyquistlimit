@@ -95,6 +95,7 @@
     <Compile Include="Components\Display\I2DComponent.cs" />
     <Compile Include="Components\Display\ImageComponent2D.cs" />
     <Compile Include="Components\Display\MenuPanel2D.cs" />
+    <Compile Include="Components\Display\MenuTextComponent2D.cs" />
     <Compile Include="Components\Display\PanelComponent2D.cs" />
     <Compile Include="Components\Display\TextComponent2D.cs" />
     <Compile Include="Components\Display\XMLPanel2DBuilder.cs" />
