@@ -56,6 +56,19 @@ namespace TheGame.Components.Display
         /// Adds the components into the component list and removes the parent screen's reference
         /// to the component.  This ensures that drawing and updating of subcomponents are handled by 
         /// the panel and not the screen as the panel modifies its children's attributes upon drawing.
+        /// 
+        /// Please Review.
+        /// 
+        /// FIXME: Retain the Parent's refernce to all subcomponents while at the same time,
+        /// keeping each subcomponent's position relative, while enabling the menu to still
+        /// modify its highlighted color based on the subcomponent's selection status.
+        /// 
+        /// Possible solution:
+        /// - Make all of the subcomponent's position absolute upon addition to the panel
+        /// - Having a MenuTextComponent2D extend from TextComponent2D to handle text highlight
+        /// 
+        /// Issues:
+        /// - Breaks first contition
         /// </summary>
         /// <param name="item"></param>
         public new void Add(DisplayComponent2D item)
