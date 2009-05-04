@@ -8,6 +8,10 @@ Content\Skybox\redsky\redskyright.xnb
 Content\Skybox\redsky\redskytop.xnb
 Content\theifWalkRun.xnb
 Content\Terrain\terrain.xnb
+Content\menubg.xnb
 Content\Skybox\skybox.xnb
+Content\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+MenuPanels\mainpanel.xml
+MenuPanels\quitpanel.xml

@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using TheGame.Game_Screens;
 
 namespace TheGame
 {
@@ -51,7 +52,11 @@ namespace TheGame
             KeyboardDevice keyboardDevice = new KeyboardDevice(GameEngine.BaseScreen);
             GameEngine.Services.AddService(typeof(KeyboardDevice), keyboardDevice);
 
-            new Level("test", "Terrain\\terrain");
+
+            new MainMenuScreen("main");
+            
+            
+            //new TestScreen("test");
 
             base.Initialize();
         }

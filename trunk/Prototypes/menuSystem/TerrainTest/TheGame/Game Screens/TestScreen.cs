@@ -20,21 +20,21 @@ namespace TheGame
         {
             new TestComponent(this);
 
-            Terrain temp;
+            //Terrain temp;
 
             //BasicModel temp;
 
-            Skybox sky;
+            //Skybox sky;
 
             //sky = new Skybox(this, "redsky");
 
-            temp = new Terrain(this, "Terrain\\terrain");
-            temp.Position = new Vector3(0.0f, 0.0f, 0.0f);
+            //temp = new Terrain(this, "Terrain\\terrain");
+            //temp.Position = new Vector3(0.0f, 0.0f, 0.0f);
 
-            Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
+            //Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
 
 
-            //temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
+            BasicModel temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
 
             //temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
             //temp.Scale = 0.3f;
@@ -43,6 +43,19 @@ namespace TheGame
             //temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
             //temp.Scale = 1.0f;
             //temp.Position = new Vector3(0.0f, -2.2f, -4.5f);
+        }
+
+        public override void Update()
+        {
+            
+            base.Update();
+
+            KeyboardDevice kd = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+            if (kd.IsKeyDown(Keys.S))
+            {
+                new Level("testlevel", "Terrain\\terrain");
+                this.Dispose();
+            }
         }
     }
 }
