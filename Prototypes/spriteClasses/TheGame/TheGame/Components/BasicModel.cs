@@ -115,11 +115,17 @@ namespace TheGame
         {
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
-            if (keyboardDevice != null && keyboardDevice.IsKeyDown(Keys.R))
+            if (keyboardDevice != null && keyboardDevice.IsKeyDown(Keys.A))
             {
-                Quaternion rot = Quaternion.CreateFromYawPitchRoll(0.001f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f);
-                rotation *= rot;
+                position.X -= 0.01f;
             }
+            if (keyboardDevice != null && keyboardDevice.IsKeyDown(Keys.D))
+            {
+                position.X += 0.01f;
+            }
+
+            Quaternion rot = Quaternion.CreateFromYawPitchRoll(0.001f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f);
+            rotation *= rot;
 
             base.Update(gameTime);
         }

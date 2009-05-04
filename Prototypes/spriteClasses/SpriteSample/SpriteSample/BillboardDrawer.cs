@@ -44,6 +44,7 @@ namespace SpriteSample
         public void DrawBillboard(Texture2D texture, float textureRepeatCount,
             Matrix world, Matrix view, Matrix projection)
         {
+
             // Assign texture of basicEffect.
             basicEffect.Texture = texture;
             basicEffect.TextureEnabled = true;
