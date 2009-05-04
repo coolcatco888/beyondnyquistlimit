@@ -91,14 +91,22 @@ namespace TheGame
 
         public SpriteSequence(string title, Orientation orientation, float speed, int sheetRow, int startFrame, int endFrame, Boolean loop, Boolean interruptable)
         {
-            this.Title = title;
-            this.Orientation = orientation;
-            this.Speed = speed;
-            this.SheetRow = sheetRow;
-            this.StartFrame = startFrame;
-            this.EndFrame = endFrame;
-            this.IsLoop = loop;
-            this.IsInterruptable = interruptable;
+            this.title = title;
+            this.orientation = orientation;
+            this.speed = speed;
+            this.sheetRow = sheetRow;
+            this.startFrame = startFrame;
+            this.endFrame = endFrame;
+            this.isLoop = loop;
+            this.isInterruptable = interruptable;
+        }
+
+        public SpriteSequence(int sheetRow, int startFrame, int endFrame, Boolean loop)
+        {
+            this.sheetRow = sheetRow;
+            this.startFrame = startFrame;
+            this.endFrame = endFrame;
+            this.isLoop = loop;
         }
     }
 }

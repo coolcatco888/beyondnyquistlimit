@@ -8,3 +8,8 @@ D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Debug\T
 D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\TheGamePipeline.dll
 D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\TheGamePipeline.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Debug\TheGamePipeline.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\TheGamePipeline.dll
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Debug\TheGamePipeline.pdb

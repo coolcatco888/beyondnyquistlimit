@@ -56,6 +56,7 @@ namespace TheGame
             terrainHeightMap = levelMap.HeightMapInfo;
 
             Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
+            actor.Position = new Vector3(0.0f, 0.0f, -30.0f);
         }
 
     }
