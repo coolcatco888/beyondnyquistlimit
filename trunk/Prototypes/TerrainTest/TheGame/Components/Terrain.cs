@@ -19,6 +19,8 @@ namespace TheGame
     class Terrain : Component, IDrawableComponent, I3DComponent
     {
         #region Fields
+
+        // Terrain model built from a bitmap
         Model terrain;
         //HeightInfo heightInfo;
         String fileName;
@@ -31,6 +33,7 @@ namespace TheGame
             }
         }
         HeightMapInfo heightMapInfo;
+
         #endregion
 
         #region IDrawableComponent Members

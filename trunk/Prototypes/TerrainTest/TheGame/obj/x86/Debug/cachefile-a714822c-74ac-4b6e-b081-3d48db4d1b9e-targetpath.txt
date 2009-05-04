@@ -1,6 +1,13 @@
 Content\ig_box.xnb
-Content\terrain.xnb
-Content\MountainGrass.xnb
-Content\rocks.xnb
+Content\Terrain\MountainGrass.xnb
+Content\Terrain\rocks.xnb
+Content\Skybox\redsky\redskyback.xnb
+Content\Skybox\redsky\redskyfront.xnb
+Content\Skybox\redsky\redskyleft.xnb
+Content\Skybox\redsky\redskyright.xnb
+Content\Skybox\redsky\redskytop.xnb
+Content\theifWalkRun.xnb
+Content\Terrain\terrain.xnb
+Content\Skybox\skybox.xnb
 Content\ig_box_tex_0.xnb
-Content\MountainGrass_0.xnb
+Content\Terrain\MountainGrass_0.xnb

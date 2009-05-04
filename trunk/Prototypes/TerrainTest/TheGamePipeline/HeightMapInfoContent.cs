@@ -52,9 +52,16 @@ namespace TheGamePipeline
             {
                 for (int x = 0; x < heightmap.Width; x++)
                 {
-                    heights[x, y] = (heightmap.GetPixel(x, y) - 1) * terrainbumpiness;
+                    if (heightmap.GetPixel(x, y) == 0)
+                    {
+                        heights[x, y] = -1.0f;
+                    }
+                    else
+                    {
+                        heights[x, y] = ((heightmap.GetPixel(x, y)) * terrainbumpiness);
+                    }
                 }
-            }
+            } 
         }
     }
 
