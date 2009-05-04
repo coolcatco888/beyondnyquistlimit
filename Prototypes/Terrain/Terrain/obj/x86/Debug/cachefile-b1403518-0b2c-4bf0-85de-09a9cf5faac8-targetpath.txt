@@ -1,4 +1,6 @@
 Content\rocks.xnb
 Content\terrain.xnb
-Content\heightmap2.xnb
+Content\MountainGrass.xnb
+Content\black.xnb
+Content\darkgray.xnb
 Content\rocks_0.xnb

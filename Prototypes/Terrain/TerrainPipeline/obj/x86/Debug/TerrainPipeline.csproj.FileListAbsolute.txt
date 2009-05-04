@@ -3,3 +3,8 @@ D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\bin\x86\Debug\Terrai
 D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.dll
 D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.pdb
+D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.dll
+D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.pdb
+D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.dll
+D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\obj\x86\Debug\TerrainPipeline.pdb
