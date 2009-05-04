@@ -64,6 +64,13 @@ namespace TheGame
         }
 
         static Game game;
+
+        //TODO: Remove me and add wrapper methods
+        public static Game Game
+        {
+            get { return game; }
+        }
+
         static ScreenManager screenManager;
 
 
