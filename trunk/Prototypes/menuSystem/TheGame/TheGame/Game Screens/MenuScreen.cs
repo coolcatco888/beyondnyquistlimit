@@ -9,6 +9,8 @@ namespace TheGame.Game_Screens
 {
     abstract class MenuScreen : GameScreen
     {
+        protected Keys prev = Keys.Up,
+            next = Keys.Down;
         protected MenuPanel2D menu = null;
         protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
         protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
@@ -28,12 +30,12 @@ namespace TheGame.Game_Screens
 
         protected virtual void HandleInput()
         {
-            if (keyboardDevice.WasKeyPressed(Keys.Up))
+            if (keyboardDevice.WasKeyPressed(prev))
             {
                 menu.Previous();
             }
 
-            if (keyboardDevice.WasKeyPressed(Keys.Down))
+            if (keyboardDevice.WasKeyPressed(next))
             {
                 menu.Next();
             }
