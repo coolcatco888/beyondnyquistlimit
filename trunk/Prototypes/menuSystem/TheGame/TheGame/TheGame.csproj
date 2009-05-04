@@ -91,6 +91,15 @@
     <Compile Include="Components\Component.cs" />
     <Compile Include="ComponentCollection.cs" />
     <Compile Include="Components\ComponentInterfaces.cs" />
+    <Compile Include="Components\Display\DisplayComponent2D.cs" />
+    <Compile Include="Components\Display\I2DComponent.cs" />
+    <Compile Include="Components\Display\ImageComponent2D.cs" />
+    <Compile Include="Components\Display\MenuPanel2D.cs" />
+    <Compile Include="Components\Display\PanelComponent2D.cs" />
+    <Compile Include="Components\Display\TextComponent2D.cs" />
+    <Compile Include="Components\Display\XMLPanel2DBuilder.cs" />
+    <Compile Include="Game Screens\MainMenuScreen.cs" />
+    <Compile Include="Game Screens\MenuScreen.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Game Screens\GameScreen.cs" />
     <Compile Include="GameScreenCollection.cs" />
@@ -109,6 +118,9 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="MenuPanels\mainpanel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <NestedContentProject Include="Content\Content.contentproj">

@@ -66,6 +66,12 @@ namespace TheGame
         static Game game;
         static ScreenManager screenManager;
 
+        //TODO: Make/Use GameEngine.ExitProgram() method when it is done.
+        public static Game Game
+        {
+            get { return game; }
+        }
+
 
         public static GameScreen BaseScreen
         {

@@ -7,20 +7,20 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
-      <Time>2009-05-01T20:56:37.203125-07:00</Time>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
+      <Time>2009-05-03T14:19:39.546875-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-01T21:12:01.359375-07:00</Value>
+        <Value>2009-05-03T14:34:11.1875-07:00</Value>
       </Dependency>
-      <Request>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
+      <Request>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>ig_box.fbx</Source>
       <Importer>FbxImporter</Importer>
       <Options>IntermediateFile, DontCacheImportedData</Options>
       <Output>obj\x86\Debug\ig_box_0.xml</Output>
-      <Time>2009-05-01T20:56:37.203125-07:00</Time>
+      <Time>2009-05-03T14:19:39.546875-07:00</Time>
     </Item>
     <Item>
       <Source>ig_box_tex.png</Source>
@@ -34,18 +34,36 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
-      <Time>2009-05-01T20:56:37.21875-07:00</Time>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
+      <Time>2009-05-03T14:19:39.546875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>menubg.png</Source>
+      <Name>menubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\menubg.xnb</Output>
+      <Time>2009-05-03T16:22:41.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>menufont.spritefont</Source>
+      <Name>menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\menufont.xnb</Output>
+      <Time>2009-05-03T16:22:41.984375-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
