@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks.xnb</Output>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\rocks.xnb</Output>
       <Time>2009-04-30T10:01:52.171875-07:00</Time>
     </Item>
     <Item>
@@ -16,19 +16,38 @@
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\terrain.xnb</Output>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\terrain.xnb</Output>
       <Time>2009-04-30T10:02:04-07:00</Time>
-      <Request>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Request>
+      <Request>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Request>
     </Item>
     <Item>
-      <Source>heightmap2.bmp</Source>
-      <Name>heightmap2</Name>
+      <Source>MountainGrass.png</Source>
+      <Name>MountainGrass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\MountainGrass.xnb</Output>
+      <Time>2009-05-01T12:36:46.640625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>black.bmp</Source>
+      <Name>black</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\heightmap2.xnb</Output>
-      <Time>2009-04-30T10:48:22.0625-07:00</Time>
-      <Request>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Request>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\black.xnb</Output>
+      <Time>2009-05-01T13:26:36.890625-07:00</Time>
+      <Request>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>darkgray.bmp</Source>
+      <Name>darkgray</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\darkgray.xnb</Output>
+      <Time>2009-05-01T13:05:50.546875-07:00</Time>
+      <Request>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Request>
     </Item>
     <Item>
       <Source>rocks.bmp</Source>
@@ -42,7 +61,7 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Output>
+      <Output>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\rocks_0.xnb</Output>
       <Time>2009-04-30T10:01:52.171875-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -50,15 +69,15 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\work\wtfjim\Prototypes\Terrain\Terrain\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\work\wtfjim\Prototypes\Terrain\Terrain\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\work\wtfjim\Prototypes\Terrain\Terrain\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\work\wtfjim\Prototypes\Terrain\Terrain\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>D:\Work\Visual Studio 2008\Projects\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.dll</Key>
-        <Value>2009-04-30T10:54:30.3125-07:00</Value>
+        <Key>D:\work\wtfjim\Prototypes\Terrain\TerrainPipeline\bin\x86\Debug\TerrainPipeline.dll</Key>
+        <Value>2009-05-01T15:29:28.484375-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

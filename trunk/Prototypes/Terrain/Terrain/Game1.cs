@@ -20,8 +20,12 @@ namespace Terrain
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        GraphicsDevice device;
 
         Model terrain;
+        Matrix projectionMatrix;
+        Matrix viewMatrix;
+        HeightInfo heightMapInfo;
 
         public Game1()
         {
@@ -37,7 +41,16 @@ namespace Terrain
         /// </summary>
         protected override void Initialize()
         {
+            device = graphics.GraphicsDevice;
             // TODO: Add your initialization logic here
+
+            Viewport viewport = device.Viewport;
+
+            float aspectRatio = (float)viewport.Width / (float)viewport.Height;
+
+            projectionMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
+                                                                    aspectRatio,
+                                                                    1, 10000);
 
             base.Initialize();
         }
@@ -53,6 +66,15 @@ namespace Terrain
 
             // TODO: use this.Content to load your game content here
             terrain = Content.Load<Model>("terrain");
+
+            heightMapInfo = terrain.Tag as HeightInfo;
+            if (heightMapInfo == null)
+            {
+                string message = "The terrain model did not have a HeightMapInfo " +
+                    "object attached. Are you sure you are using the " +
+                    "TerrainProcessor?";
+                throw new InvalidOperationException(message);
+            }
         }
 
         /// <summary>
@@ -91,14 +113,6 @@ namespace Terrain
 
             // TODO: Add your drawing code here
 
-            Viewport viewport = device.Viewport;
-
-            float aspectRatio = (float)viewport.Width / (float)viewport.Height;
-
-            Matrix projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4,
-                                                                    aspectRatio,
-                                                                    1, 10000);
-
             // Calculate a view matrix, moving the camera around a circle.
             float time = (float)gameTime.TotalGameTime.TotalSeconds * 0.333f;
 
@@ -117,7 +131,7 @@ namespace Terrain
                 foreach(BasicEffect effect in mesh.Effects)
                 {
                     effect.View = view;
-                    effect.Projection = projection;
+                    effect.Projection = projectionMatrix;
 
                     effect.EnableDefaultLighting();
 

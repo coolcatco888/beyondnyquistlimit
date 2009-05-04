@@ -55,8 +55,34 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="heightmap2.bmp">
-      <Name>heightmap2</Name>
+    <Compile Include="MountainGrass.png">
+      <Name>MountainGrass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="white.bmp">
+      <Name>white</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="black.bmp">
+      <Name>black</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+    </Compile>
+    <Content Include="lightgray.bmp">
+      <Name>lightgray</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="darkgray.bmp">
+      <Name>darkgray</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
     </Compile>

@@ -1,1 +1,2 @@
 D:\Work\Visual Studio 2008\Projects\Terrain\Terrain\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\wtfjim\Prototypes\Terrain\Terrain\Content\obj\x86\Debug\ResolveAssemblyReference.cache
