@@ -12,3 +12,14 @@ D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\TheGame.exe
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\TheGame.exe
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\TheGame.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\MenuPanels\mainpanel.xml
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\menubg.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\menufont.xnb
