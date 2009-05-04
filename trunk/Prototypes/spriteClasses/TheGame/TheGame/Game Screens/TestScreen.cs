@@ -20,6 +20,10 @@ namespace TheGame
         {
             new TestComponent(this);
 
+            //Billboard board = new Billboard(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"));
+
+            Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
+            /*
             BasicModel temp;
 
             temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
@@ -31,6 +35,7 @@ namespace TheGame
             temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
             temp.Scale = 1.0f;
             temp.Position = new Vector3(0.0f, -2.2f, -4.5f);
+             */
         }
     }
 }
