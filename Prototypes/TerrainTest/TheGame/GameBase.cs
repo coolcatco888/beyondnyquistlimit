@@ -51,7 +51,7 @@ namespace TheGame
             KeyboardDevice keyboardDevice = new KeyboardDevice(GameEngine.BaseScreen);
             GameEngine.Services.AddService(typeof(KeyboardDevice), keyboardDevice);
 
-            new TestScreen("test");
+            new Level("test", "Terrain\\terrain");
 
             base.Initialize();
         }

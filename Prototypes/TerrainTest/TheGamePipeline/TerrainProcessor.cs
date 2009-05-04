@@ -16,7 +16,7 @@ namespace TheGamePipeline
     [ContentProcessor]
     public class TerrainProcessor : ContentProcessor<Texture2DContent, ModelContent>
     {
-        const float terrainScale = 0.5f;
+        const float terrainScale = 1.0f;
         const float terrainBumpiness = 10;
         const float texCoordScale = 0.05f;
         const string terrainTexture = "MountainGrass.png";
