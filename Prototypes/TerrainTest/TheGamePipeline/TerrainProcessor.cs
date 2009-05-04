@@ -16,8 +16,8 @@ namespace TheGamePipeline
     [ContentProcessor]
     public class TerrainProcessor : ContentProcessor<Texture2DContent, ModelContent>
     {
-        const float terrainScale = 3;
-        const float terrainBumpiness = 30;
+        const float terrainScale = 0.5f;
+        const float terrainBumpiness = 10;
         const float texCoordScale = 0.05f;
         const string terrainTexture = "MountainGrass.png";
 
@@ -46,7 +46,15 @@ namespace TheGamePipeline
                     position.X = (x - heightfield.Width / 2) * terrainScale;
                     position.Z = (y - heightfield.Height / 2) * terrainScale;
 
-                    position.Y = (heightfield.GetPixel(x, y) - 1) * terrainBumpiness;
+                    if(heightfield.GetPixel(x, y) == 0)
+                    {
+                        position.Y = -1.0f;
+                    }
+                    else
+                    {
+                        position.Y = ((heightfield.GetPixel(x, y)) * terrainBumpiness);
+                    }
+                    
 
                     builder.CreatePosition(position);
                 }

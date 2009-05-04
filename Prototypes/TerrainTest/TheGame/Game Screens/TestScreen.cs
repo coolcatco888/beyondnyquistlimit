@@ -24,8 +24,14 @@ namespace TheGame
 
             //BasicModel temp;
 
-            temp = new Terrain(this, "terrain");
+            Skybox sky;
+
+            //sky = new Skybox(this, "redsky");
+
+            temp = new Terrain(this, "Terrain\\terrain");
             temp.Position = new Vector3(0.0f, 0.0f, 0.0f);
+
+            Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
 
 
             //temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));

@@ -42,29 +42,81 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="terrain.bmp">
-      <Name>terrain</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TerrainProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\TheGamePipeline\TheGamePipeline.csproj">
       <Project>{6F254F92-3E1E-4687-8F70-D6C366201B4A}</Project>
       <Name>TheGamePipeline</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MountainGrass.png">
+    <Compile Include="Terrain\MountainGrass.png">
       <Name>MountainGrass</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
-    <Compile Include="rocks.bmp">
+    <Compile Include="Terrain\rocks.bmp">
       <Name>rocks</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\skybox.fx">
+      <Name>skybox</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\redsky\redskyback.bmp">
+      <Name>redskyback</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\redsky\redskyfront.bmp">
+      <Name>redskyfront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\redsky\redskyleft.bmp">
+      <Name>redskyleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\redsky\redskyright.bmp">
+      <Name>redskyright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Skybox\redsky\redskytop.bmp">
+      <Name>redskytop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="theifWalkRun.png">
+      <Name>theifWalkRun</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Terrain\terrain.bmp">
+      <Name>terrain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Skybox\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

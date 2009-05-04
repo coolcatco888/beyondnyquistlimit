@@ -98,7 +98,7 @@ namespace TheGame
 
         public override void Initialize(GameScreen parent)
         {
-            position = Vector3.Zero;
+            position = new Vector3(0.0f, 1.0f, 0.0f);
             rotation = Quaternion.Identity;
             lookAt = -Vector3.UnitZ;
 
@@ -112,6 +112,19 @@ namespace TheGame
             view = Matrix.CreateLookAt(position, position + lookAt, Vector3.Up);
  
             base.Update(gameTime);
+        }
+
+        public Vector3 Direction
+        {
+            get
+            {
+                Vector3 r = -Vector3.UnitZ;
+                Matrix rotationMatrix = Matrix.CreateFromYawPitchRoll(rotation.X, rotation.Y, rotation.Z);
+
+                Vector3.TransformNormal(ref r, ref rotationMatrix, out r);
+
+                return r;
+            }
         }
 
         #endregion
