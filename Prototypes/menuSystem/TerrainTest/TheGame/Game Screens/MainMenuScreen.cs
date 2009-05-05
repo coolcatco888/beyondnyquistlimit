@@ -5,6 +5,8 @@ using System.Text;
 using TheGame.Components.Display;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame.Game_Screens
 {
@@ -12,6 +14,10 @@ namespace TheGame.Game_Screens
     {
 
         private ContentManager content;
+
+        private GameWeaponMenuPanel2D weaponPanel;
+
+        private Texture2D item;
 
         public override void Initialize()
         {
@@ -26,11 +32,23 @@ namespace TheGame.Game_Screens
             //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, content, "MenuPanels\\mainpanel.xml");
 
+            item = content.Load<Texture2D>("item");
+            weaponPanel = new GameWeaponMenuPanel2D(this, new Vector2(300, 300));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.ConvertPositionsToCircularPositions();
+
+
             //Make it into functional menu
             menu = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 3);
 
             //Add to drawable components
             Components.Add(menu);
+            Components.Add(weaponPanel);
         }
 
         public MainMenuScreen(string name)
