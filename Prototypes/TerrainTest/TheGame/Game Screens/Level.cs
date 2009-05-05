@@ -50,7 +50,7 @@ namespace TheGame
         public Level(string name, string terrainFileName)
             : base(name)
         {
-            new TestComponent(this);
+            //new TestComponent(this);
 
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;

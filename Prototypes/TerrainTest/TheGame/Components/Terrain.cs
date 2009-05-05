@@ -42,6 +42,12 @@ namespace TheGame
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
+            GameEngine.Graphics.RenderState.DepthBufferEnable = true;
+            GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
+            GameEngine.Graphics.RenderState.AlphaTestEnable = false;
+            GameEngine.Graphics.SamplerStates[0].AddressU = TextureAddressMode.Wrap;
+            GameEngine.Graphics.SamplerStates[0].AddressV = TextureAddressMode.Wrap;
+
             foreach (ModelMesh mesh in terrain.Meshes)
             {
                 foreach (BasicEffect effect in mesh.Effects)

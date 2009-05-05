@@ -151,7 +151,7 @@ namespace TheGame
                     {
                         case Orientation.North:
                             position.Z -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != -1.0f || heightInfo.IsOnHeightMap(position) == false)
                             {
                                 position = oldPosition;
                             }

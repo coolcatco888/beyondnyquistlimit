@@ -18,7 +18,7 @@ namespace TheGame
         public TestScreen(String name)
             : base(name)
         {
-            new TestComponent(this);
+            //new TestComponent(this);
 
             Terrain temp;
 
@@ -28,10 +28,10 @@ namespace TheGame
 
             //sky = new Skybox(this, "redsky");
 
-            temp = new Terrain(this, "Terrain\\terrain");
-            temp.Position = new Vector3(0.0f, 0.0f, 0.0f);
+            //temp = new Terrain(this, "Terrain\\terrain");
+            //temp.Position = new Vector3(0.0f, 0.0f, 0.0f);
 
-            Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
+            //Actor actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
 
 
             //temp = new BasicModel(this, GameEngine.Content.Load<Model>("ig_box"));
