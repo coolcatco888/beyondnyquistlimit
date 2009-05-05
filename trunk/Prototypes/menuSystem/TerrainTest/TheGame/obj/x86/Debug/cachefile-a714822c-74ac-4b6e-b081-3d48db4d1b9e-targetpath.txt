@@ -10,6 +10,7 @@ Content\theifWalkRun.xnb
 Content\Terrain\terrain.xnb
 Content\menubg.xnb
 Content\sprite_sheet.xnb
+Content\item.xnb
 Content\Skybox\skybox.xnb
 Content\menufont.xnb
 Content\ig_box_tex_0.xnb

@@ -102,3 +102,5 @@ D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\ResolveAs
 D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\TheGame.exe
 D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\TheGame.pdb
+D:\Work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\sprite_sheet.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\item.xnb

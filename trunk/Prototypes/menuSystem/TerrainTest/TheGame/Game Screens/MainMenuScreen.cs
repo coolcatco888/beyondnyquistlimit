@@ -70,7 +70,7 @@ namespace TheGame.Game_Screens
                         //new TestScreen("test");
                         break;
                     case "Exit Game":
-                        //GameEngine.Game.Exit();
+                        GameEngine.Game.Exit();
                         break;
                 }
             }
