@@ -151,7 +151,7 @@ namespace TheGame
 
             VertexPositionTexture[] data = new VertexPositionTexture[4 * 5];
 
-            Vector3 vExtents = new Vector3(500, 500, 500);
+            Vector3 vExtents = new Vector3(200, 200, 200);
             //back
             data[0].Position = new Vector3(vExtents.X, -vExtents.Y, -vExtents.Z);
             data[0].TextureCoordinate.X = 1.0f; data[0].TextureCoordinate.Y = 1.0f;

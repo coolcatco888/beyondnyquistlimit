@@ -96,6 +96,7 @@
     <Compile Include="Components\Skybox.cs" />
     <Compile Include="Components\Terrain.cs" />
     <Compile Include="Game Screens\Level.cs" />
+    <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Game Screens\GameScreen.cs" />
     <Compile Include="GameScreenCollection.cs" />
