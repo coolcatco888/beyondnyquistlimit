@@ -42,7 +42,7 @@ namespace TheGame.Components.Display
 
     class PanelComponents : List<DisplayComponent2D>
     {
-        PanelComponent2D owner;
+        protected PanelComponent2D owner;
 
         public PanelComponents(PanelComponent2D owner)
         {
