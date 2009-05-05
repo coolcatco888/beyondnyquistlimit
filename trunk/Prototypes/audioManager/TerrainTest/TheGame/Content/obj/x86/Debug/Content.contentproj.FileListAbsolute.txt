@@ -1,0 +1,8 @@
+D:\Work\Visual Studio 2008\Projects\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\wtfjim\Prototypes\TerrainTest\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\audioManager\TerrainTest\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\audioManager\TerrainTest\TheGame\Content\obj\x86\Debug\Asplosions.xml
