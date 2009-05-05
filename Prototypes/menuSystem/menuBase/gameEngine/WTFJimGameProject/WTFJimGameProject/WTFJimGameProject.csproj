@@ -90,6 +90,7 @@
     <Compile Include="ComponentCollection.cs" />
     <Compile Include="GameScreen.cs" />
     <Compile Include="GameScreenCollection.cs" />
+    <Compile Include="GameWindows\GameWeaponMenuPanel2D.cs" />
     <Compile Include="GameWindows\I2DComponent.cs" />
     <Compile Include="GameWindows\ImageComponent2D.cs" />
     <Compile Include="GameWindows\MenuPanel2D.cs" />
