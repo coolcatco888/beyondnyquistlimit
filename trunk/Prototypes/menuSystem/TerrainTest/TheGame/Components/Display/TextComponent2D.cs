@@ -20,6 +20,8 @@ namespace TheGame.Components.Display
 
         protected SpriteFont font;
 
+        protected float scale;
+
         #endregion
 
         #region Properties
@@ -43,20 +45,33 @@ namespace TheGame.Components.Display
             get { return font; }
         }
 
+        public float Scale
+        {
+            set { scale = value; }
+            get { return scale; }
+        }
+
         #endregion
 
-        public TextComponent2D(GameScreen parent, Vector2 position, string text, Color color, SpriteFont font) : base(parent)
+        public TextComponent2D(GameScreen parent, Vector2 position, string text, Color color, SpriteFont font)
+            : this(parent, position, text, color, font, 1.0f)
+        {
+
+        }
+
+        public TextComponent2D(GameScreen parent, Vector2 position, string text, Color color, SpriteFont font, float scale) : base(parent)
         {
             this.position = position;
             this.text = text;
             this.color = color;
             this.font = font;
+            this.scale = scale;
         }
 
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.DrawString(font, text, position, color);
+            spriteBatch.DrawString(font, text, position, color, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
             spriteBatch.End();
         }
 

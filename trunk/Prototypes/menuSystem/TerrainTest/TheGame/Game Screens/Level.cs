@@ -23,11 +23,15 @@ namespace TheGame
 
         private Texture2D item;
 
+        private SpriteFont font;
+
         private Actor actor;
 
         protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
         protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
         private GameWeaponMenuPanel2D weaponPanel;
+
+        private Random random;
 
         public HeightMapInfo TerrainHeightMap
         {
@@ -71,6 +75,9 @@ namespace TheGame
             terrainHeightMap = levelMap.HeightMapInfo;
 
             item = GameEngine.Content.Load<Texture2D>("itemsm");
+            font = GameEngine.Content.Load<SpriteFont>("menufont");
+
+            random = new Random();
 
             actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
             actor.Position = new Vector3(0.0f, 0.0f, -30.0f);
@@ -106,6 +113,17 @@ namespace TheGame
                 }
 
             }
+            
+
+            if (gamepadDevice.WasButtonPressed(Buttons.X) || keyboardDevice.WasKeyPressed(Keys.Space))
+            {
+                new HitTextComponent2D(this, GetActorScreenCoordinates(), -random.Next(300), Color.Red, font);
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.Y) || keyboardDevice.WasKeyPressed(Keys.LeftControl))
+            {
+                new HitTextComponent2D(this, GetActorScreenCoordinates(), random.Next(300), Color.Green, font);
+            }
         }
 
         private void CreateWeaponPanel()
@@ -121,19 +139,6 @@ namespace TheGame
 
         private Vector2 GetActorScreenCoordinates()
         {
-            //Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-            //int width = GameEngine.Graphics.Viewport.Width,
-            //    height = GameEngine.Graphics.Viewport.Height,
-            //    halfWidth = width / 2,
-            //    halfHeight = height / 2;
-
-            //Vector3 actorPosition = new Vector3(actor.Position.X, actor.Position.Y, actor.Position.Z);
-            //Matrix transform = camera.View * camera.Projection;
-            //Vector3.Transform(actorPosition, transform);
-
-            //float scaleFactor = 1;
-
-            //TODO: Fix Scaling Issue
             Vector2 coords = TransformPositionToScreenCoordinates(actor.Position);
 
             return coords;

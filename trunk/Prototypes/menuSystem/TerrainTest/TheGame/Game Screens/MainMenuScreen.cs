@@ -19,6 +19,8 @@ namespace TheGame.Game_Screens
 
         private Texture2D item;
 
+        private SpriteFont font;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -33,6 +35,7 @@ namespace TheGame.Game_Screens
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, content, "MenuPanels\\mainpanel.xml");
 
             item = content.Load<Texture2D>("itemsm");
+            font = content.Load<SpriteFont>("menufont");
             //CreateWeaponPanel();
 
 
@@ -98,6 +101,16 @@ namespace TheGame.Game_Screens
                     weaponPanel = null;
                 }
                 
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.X) || keyboardDevice.WasKeyPressed(Keys.Space))
+            {
+                new HitTextComponent2D(this, new Vector2(200f, 100f), -200, Color.Red, font);
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.Y) || keyboardDevice.WasKeyPressed(Keys.LeftControl))
+            {
+                new HitTextComponent2D(this, new Vector2(200f, 50f), 200, Color.Green, font);
             }
             
 

@@ -117,13 +117,15 @@ namespace TheGame.Components.Display
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
+            
+            //Animations
+            //TODO: Make it sync with game time.
             if (curScale < 10 && !killMe)
             {
                 curScale++;
                 UpdateItemPositons(curScale);
             }
-
+            
             if (killMe && curScale > 0)
             {
                 curScale--;
