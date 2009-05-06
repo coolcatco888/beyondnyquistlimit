@@ -95,6 +95,7 @@
     <Compile Include="Components\ComponentInterfaces.cs" />
     <Compile Include="Components\Display\DisplayComponent2D.cs" />
     <Compile Include="Components\Display\GameWeaponMenuPanel2D.cs" />
+    <Compile Include="Components\Display\HitTextComponent2D.cs" />
     <Compile Include="Components\Display\I2DComponent.cs" />
     <Compile Include="Components\Display\ImageComponent2D.cs" />
     <Compile Include="Components\Display\MenuPanel2D.cs" />
