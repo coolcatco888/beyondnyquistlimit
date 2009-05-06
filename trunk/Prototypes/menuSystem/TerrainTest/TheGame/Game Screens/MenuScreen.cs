@@ -30,12 +30,12 @@ namespace TheGame.Game_Screens
 
         protected virtual void HandleInput()
         {
-            if (keyboardDevice.WasKeyPressed(prev))
+            if (keyboardDevice.WasKeyPressed(prev) || gamepadDevice.WasButtonPressed(Buttons.LeftThumbstickUp))
             {
                 menu.Previous();
             }
 
-            if (keyboardDevice.WasKeyPressed(next))
+            if (keyboardDevice.WasKeyPressed(next) || gamepadDevice.WasButtonPressed(Buttons.LeftThumbstickDown))
             {
                 menu.Next();
             }
