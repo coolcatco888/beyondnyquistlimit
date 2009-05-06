@@ -17,6 +17,7 @@ One important link here is the Game State Management sample, which is what our g
  * Sprite Sheets Ragnarok Online - http://forums.roempire.com/showthread.php?t=72995
  * Sprite Sheets We Use - http://www.geocities.com/fwuffleslunatic/
  * Drawing with sprites and 3D Objects - http://blogs.msdn.com/shawnhar/archive/2006/11/13/spritebatch-and-renderstates.aspx
+ * Content Writer and Reader for XML file loading - http://www.ziggyware.com/readarticle.php?article_id=150
 
 = Tools =
 XBOX 360 Driver for Lab Computers - http://www.microsoft.com/hardware/download/DownloadResult.aspx?category=Gaming&type=Controller&name=pk_xbox_cont&os=XP_SP1&lang=en
