@@ -89,7 +89,12 @@ namespace TheGame
                 }
                 if (weaponPanel != null)
                 {
-                    string selected = weaponPanel.SelectNewWeapon(gamepadDevice.RightStickPosition);
+                    Vector2 stickPosition = gamepadDevice.RightStickPosition;
+                    if (stickPosition == Vector2.Zero)
+                    {
+                        stickPosition.X = stickPosition.X + -0.01f;
+                    }
+                    string selected = weaponPanel.SelectNewWeapon(stickPosition);
                 }
             }
             else
@@ -116,22 +121,41 @@ namespace TheGame
 
         private Vector2 GetActorScreenCoordinates()
         {
-            Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-            int width = GameEngine.Graphics.Viewport.Width,
-                height = GameEngine.Graphics.Viewport.Height,
-                halfWidth = width / 2,
-                halfHeight = height / 2;
+            //Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+            //int width = GameEngine.Graphics.Viewport.Width,
+            //    height = GameEngine.Graphics.Viewport.Height,
+            //    halfWidth = width / 2,
+            //    halfHeight = height / 2;
 
-            Vector3 actorPosition = new Vector3(actor.Position.X, actor.Position.Y, actor.Position.Z);
-            Matrix transform = camera.View * camera.Projection;
-            Vector3.Transform(actorPosition, transform);
+            //Vector3 actorPosition = new Vector3(actor.Position.X, actor.Position.Y, actor.Position.Z);
+            //Matrix transform = camera.View * camera.Projection;
+            //Vector3.Transform(actorPosition, transform);
 
-            float scaleFactor = 1;
+            //float scaleFactor = 1;
 
             //TODO: Fix Scaling Issue
-            Vector2 coords = new Vector2(actorPosition.X * scaleFactor + halfWidth, actorPosition.Z * scaleFactor + halfHeight);
+            Vector2 coords = TransformPositionToScreenCoordinates(actor.Position);
 
             return coords;
+        }
+
+        public Vector2 TransformPositionToScreenCoordinates(Vector3 oPosition)
+        {
+            int offset = 17;//TODO: Change this once centre of billboard found!
+            Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+            Vector4 oTransformedPosition = Vector4.Transform(oPosition, camera.View * camera.Projection);
+            if (oTransformedPosition.W != 0)
+            {
+                oTransformedPosition.X = oTransformedPosition.X / oTransformedPosition.W;
+                oTransformedPosition.Y = oTransformedPosition.Y / oTransformedPosition.W;
+                oTransformedPosition.Z = oTransformedPosition.Z / oTransformedPosition.W;
+            }
+
+            Vector2 oPosition2D = new Vector2(
+              oTransformedPosition.X * GameEngine.Graphics.PresentationParameters.BackBufferWidth / 2 + GameEngine.Graphics.PresentationParameters.BackBufferWidth / 2,
+              -oTransformedPosition.Y * GameEngine.Graphics.PresentationParameters.BackBufferHeight / 2 + GameEngine.Graphics.PresentationParameters.BackBufferHeight / 2);
+
+            return new Vector2(oPosition2D.X - offset, oPosition2D.Y - offset);
         }
     }
 }
