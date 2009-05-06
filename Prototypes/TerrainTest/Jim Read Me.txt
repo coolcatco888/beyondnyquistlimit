@@ -1,0 +1,5 @@
+Hey Jim
+
+From this project, take the Terrain.cs and Skybox.cs files as well as the Level and SkyboxScreen files
+
+and the content and the pipelines
