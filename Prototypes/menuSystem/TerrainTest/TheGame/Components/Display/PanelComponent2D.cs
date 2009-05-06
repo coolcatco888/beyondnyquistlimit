@@ -38,6 +38,15 @@ namespace TheGame.Components.Display
                 item.Update(gameTime);
             }
         }
+
+        public override void Dispose()
+        {
+            foreach (DisplayComponent2D component in panelItems)
+            {
+                component.Dispose();
+            }
+            base.Dispose();
+        }
     }
 
     class PanelComponents : List<DisplayComponent2D>
@@ -60,5 +69,7 @@ namespace TheGame.Components.Display
             base.Add(item);
         }
     }
+
+    
 
 }
