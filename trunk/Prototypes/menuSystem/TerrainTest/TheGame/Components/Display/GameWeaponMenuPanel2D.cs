@@ -40,7 +40,7 @@ namespace TheGame.Components.Display
             ranges.Clear();
             Vector2 itemDirection = new Vector2(0, 1) * weapons.Count * scale + new Vector2(0, minLength);
 
-            float angle = MathHelper.TwoPi / weapons.Count;
+            float angle = scale * (MathHelper.TwoPi / weapons.Count) / maxScale;
             Quaternion rotation =
                 Quaternion.CreateFromYawPitchRoll(0, 0, angle);
             float range1 = 0, range2 = angle;
