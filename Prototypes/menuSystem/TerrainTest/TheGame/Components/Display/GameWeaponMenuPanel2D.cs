@@ -14,6 +14,8 @@ namespace TheGame.Components.Display
 
         private const int minLength = 40, maxScale = 10;
 
+        private const byte unSelectedTint = 125, selectedTint = 255;
+
         private int curScale = 0;
 
         private List<Vector2> ranges = new List<Vector2>();
@@ -51,11 +53,11 @@ namespace TheGame.Components.Display
                 component.Position = this.position + itemDirection;
                 if (ranges.Count - 1 != selected)
                 {
-                    component.Tint = new Color(component.Tint, 150);
+                    component.Tint = new Color(component.Tint, unSelectedTint);
                 }
                 else
                 {
-                    component.Tint = new Color(component.Tint, 255);
+                    component.Tint = new Color(component.Tint, selectedTint);
                 }
                 range1 += angle;
                 range2 += angle;
@@ -90,7 +92,7 @@ namespace TheGame.Components.Display
             }
             string name = "";
             ImageComponent2D weapon = weapons.Values.ElementAt(selected);
-            weapon.Tint = new Color(weapon.Tint, 150);             
+            weapon.Tint = new Color(weapon.Tint, unSelectedTint);             
             int i = 0;
             foreach (Vector2 range in ranges)
             {
@@ -103,7 +105,7 @@ namespace TheGame.Components.Display
                 i++;
             }
             weapon = weapons.Values.ElementAt(selected);
-            weapon.Tint = new Color(weapon.Tint, 255);     
+            weapon.Tint = new Color(weapon.Tint, selectedTint);     
             return name;
         }
 
@@ -131,7 +133,6 @@ namespace TheGame.Components.Display
             if (killMe && curScale == 0 && Parent != null)
             {
                 this.Dispose();
-                int thing = 0;
             }
         }
 
