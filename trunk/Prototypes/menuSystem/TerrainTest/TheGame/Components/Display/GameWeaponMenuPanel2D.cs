@@ -3,33 +3,153 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame.Components.Display
 {
-    class GameWeaponMenuPanel2D : PanelComponent2D
+    class GameWeaponMenuPanel2D : DisplayComponent2D
     {
 
-        private const int minLength = 50;
+        private Dictionary<string, ImageComponent2D> weapons = new Dictionary<string,ImageComponent2D>();
 
+        private const int minLength = 40, maxScale = 10;
 
+        private int curScale = 0;
+
+        private List<Vector2> ranges = new List<Vector2>();
+
+        private int selected = 0;
+
+        private bool killMe = false;
+        
         public GameWeaponMenuPanel2D(GameScreen parent, Vector2 position)
-            : base(parent, position)
+            : base(parent)
         {
+            this.position = position;
         }
 
-        public void ConvertPositionsToCircularPositions()
+        public void UpdateItemPositions()
         {
-            Vector2 itemDirection = new Vector2(0, 1) * panelItems.Count * 10 + new Vector2(0, minLength);
+            UpdateItemPositons(maxScale);
+        }
 
-            float angle = (2 * (float)Math.PI) / panelItems.Count;
+        private void UpdateItemPositons(int scale)
+        {
+            ranges.Clear();
+            Vector2 itemDirection = new Vector2(0, 1) * weapons.Count * scale + new Vector2(0, minLength);
+
+            float angle = MathHelper.TwoPi / weapons.Count;
             Quaternion rotation =
                 Quaternion.CreateFromYawPitchRoll(0, 0, angle);
+            float range1 = 0, range2 = angle;
 
-            foreach (DisplayComponent2D component in panelItems)
+            foreach (KeyValuePair<string, ImageComponent2D> item in weapons)
             {
+                ImageComponent2D component = item.Value;
+                ranges.Add(new Vector2(range1, range2));
                 itemDirection = Vector2.Transform(itemDirection, rotation);
                 component.Position = this.position + itemDirection;
+                if (ranges.Count - 1 != selected)
+                {
+                    component.Tint = new Color(component.Tint, 150);
+                }
+                else
+                {
+                    component.Tint = new Color(component.Tint, 255);
+                }
+                range1 += angle;
+                range2 += angle;
             }
+        }
+
+        public void AddWeapon(string name, ImageComponent2D weapon)
+        {
+            weapons.Add(name, weapon);
+            UpdateItemPositions();
+        }
+
+        public void RemoveWeapon(string name)
+        {
+            weapons.Remove(name);
+            UpdateItemPositions();
+        }
+
+        public ImageComponent2D GetWeaponImage(string name)
+        {
+            ImageComponent2D weapon = null;
+            weapons.TryGetValue(name, out weapon);
+            return weapon;
+        }
+
+        public string SelectNewWeapon(Vector2 joystickPosition)
+        {
+            float angle = (float)Math.Atan2(joystickPosition.Y, -1 * joystickPosition.X);
+            if (angle < 0)
+            {
+                angle += MathHelper.TwoPi;
+            }
+            string name = "";
+            ImageComponent2D weapon = weapons.Values.ElementAt(selected);
+            weapon.Tint = new Color(weapon.Tint, 150);             
+            int i = 0;
+            foreach (Vector2 range in ranges)
+            {
+                if (angle >= range.X && angle < range.Y)
+                {
+                    name = weapons.Keys.ElementAt(i);
+                    selected = i;
+                    break;
+                }
+                i++;
+            }
+            weapon = weapons.Values.ElementAt(selected);
+            weapon.Tint = new Color(weapon.Tint, 255);     
+            return name;
+        }
+
+        public string GetNameOfSelectedWeapon()
+        {
+            return weapons.Keys.ElementAt(selected);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+
+            if (curScale < 10 && !killMe)
+            {
+                curScale++;
+                UpdateItemPositons(curScale);
+            }
+
+            if (killMe && curScale > 0)
+            {
+                curScale--;
+                UpdateItemPositons(curScale);
+            }
+
+            if (killMe && curScale == 0 && Parent != null)
+            {
+                this.Dispose();
+                int thing = 0;
+            }
+        }
+
+        public void KillMenu()
+        {
+            killMe = true;
+        }
+
+        public override void Dispose()
+        {
+            
+            foreach (KeyValuePair<string, ImageComponent2D> item in weapons)
+            {
+                item.Value.Dispose();
+            }
+            weapons.Clear();
+            base.Dispose();
+            
         }
     }
 }

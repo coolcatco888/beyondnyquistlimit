@@ -32,15 +32,8 @@ namespace TheGame.Game_Screens
             //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, content, "MenuPanels\\mainpanel.xml");
 
-            item = content.Load<Texture2D>("item");
-            weaponPanel = new GameWeaponMenuPanel2D(this, new Vector2(300, 300));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.PanelItems.Add(new ImageComponent2D(this, Vector2.Zero, item));
-            weaponPanel.ConvertPositionsToCircularPositions();
+            item = content.Load<Texture2D>("itemsm");
+            //CreateWeaponPanel();
 
 
             //Make it into functional menu
@@ -48,7 +41,17 @@ namespace TheGame.Game_Screens
 
             //Add to drawable components
             Components.Add(menu);
-            Components.Add(weaponPanel);
+            //Components.Add(weaponPanel);
+        }
+
+        private void CreateWeaponPanel()
+        {
+            weaponPanel = new GameWeaponMenuPanel2D(this, new Vector2(500, 450));
+            weaponPanel.AddWeapon("Sword1", new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.AddWeapon("Sword2", new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.AddWeapon("Sword3", new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.AddWeapon("Sword4", new ImageComponent2D(this, Vector2.Zero, item));
+            weaponPanel.UpdateItemPositions();
         }
 
         public MainMenuScreen(string name)
@@ -74,6 +77,32 @@ namespace TheGame.Game_Screens
                         break;
                 }
             }
+
+            if (gamepadDevice.IsButtonDown(Buttons.RightShoulder))
+            {
+                if (weaponPanel == null)
+                {
+                    CreateWeaponPanel();
+                    Components.Add(weaponPanel);
+                }
+                if (weaponPanel != null)
+                {
+                    string selected = weaponPanel.SelectNewWeapon(gamepadDevice.LeftStickPosition);
+                }
+            }
+            else
+            {
+                if (weaponPanel != null)
+                {
+                    weaponPanel.KillMenu();
+                    weaponPanel = null;
+                }
+                
+            }
+            
+
+            
+            
         }
 
         public override void UnloadContent()
