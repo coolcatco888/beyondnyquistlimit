@@ -63,7 +63,7 @@ namespace TheGame.Game_Screens
         {
             base.HandleInput();
 
-            if (keyboardDevice.WasKeyPressed(Keys.Enter))
+            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.IsButtonDown(Buttons.A))
             {
                 switch (menu.GetCurrentText())
                 {

@@ -295,36 +295,37 @@ namespace TheGame
         private void controller()
         {
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+            GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
 
-            if (keyboardDevice.IsKeyDown(Keys.LeftShift))
+            if (keyboardDevice.IsKeyDown(Keys.LeftShift) || gamepadDevice.IsButtonDown(Buttons.LeftShoulder))
                 state = Actor.ActorState.Running;
             else
                 state = Actor.ActorState.Walking;
 
 
-            if (keyboardDevice.IsKeyDown(Keys.Up))
+            if (keyboardDevice.IsKeyDown(Keys.Up) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickUp))
             {
-                if (keyboardDevice.IsKeyDown(Keys.Right))
+                if (keyboardDevice.IsKeyDown(Keys.Right) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickRight))
                     actorOrientation = Orientation.Northeast;
-                else if (keyboardDevice.IsKeyDown(Keys.Left))
+                else if (keyboardDevice.IsKeyDown(Keys.Left) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickLeft))
                     actorOrientation = Orientation.Northwest;
                 else
                     actorOrientation = Orientation.North;
             }
-            else if (keyboardDevice.IsKeyDown(Keys.Down))
+            else if (keyboardDevice.IsKeyDown(Keys.Down) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickDown))
             {
-                if (keyboardDevice.IsKeyDown(Keys.Right))
+                if (keyboardDevice.IsKeyDown(Keys.Right) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickRight))
                     actorOrientation = Orientation.Southeast;
-                else if (keyboardDevice.IsKeyDown(Keys.Left))
+                else if (keyboardDevice.IsKeyDown(Keys.Left) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickLeft))
                     actorOrientation = Orientation.Southwest;
                 else
                     actorOrientation = Orientation.South;
             }
-            else if (keyboardDevice.IsKeyDown(Keys.Right))
+            else if (keyboardDevice.IsKeyDown(Keys.Right) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickRight))
             {
                 actorOrientation = Orientation.East;
             }
-            else if (keyboardDevice.IsKeyDown(Keys.Left))
+            else if (keyboardDevice.IsKeyDown(Keys.Left) || gamepadDevice.IsButtonDown(Buttons.LeftThumbstickLeft))
             {
                 actorOrientation = Orientation.West;
             }

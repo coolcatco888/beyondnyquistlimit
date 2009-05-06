@@ -89,7 +89,7 @@ namespace TheGame
                 }
                 if (weaponPanel != null)
                 {
-                    string selected = weaponPanel.SelectNewWeapon(gamepadDevice.LeftStickPosition);
+                    string selected = weaponPanel.SelectNewWeapon(gamepadDevice.RightStickPosition);
                 }
             }
             else
@@ -117,13 +117,19 @@ namespace TheGame
         private Vector2 GetActorScreenCoordinates()
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-            
+            int width = GameEngine.Graphics.Viewport.Width,
+                height = GameEngine.Graphics.Viewport.Height,
+                halfWidth = width / 2,
+                halfHeight = height / 2;
 
             Vector3 actorPosition = new Vector3(actor.Position.X, actor.Position.Y, actor.Position.Z);
-            Vector3.Transform(actorPosition, camera.View * camera.Projection);
+            Matrix transform = camera.View * camera.Projection;
+            Vector3.Transform(actorPosition, transform);
+
+            float scaleFactor = 1;
 
             //TODO: Fix Scaling Issue
-            Vector2 coords = new Vector2(actorPosition.X * 10 + 375, actorPosition.Y * 10 + 375);
+            Vector2 coords = new Vector2(actorPosition.X * scaleFactor + halfWidth, actorPosition.Z * scaleFactor + halfHeight);
 
             return coords;
         }
