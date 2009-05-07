@@ -107,15 +107,6 @@
       <Time>2009-05-05T18:57:49.171875-07:00</Time>
     </Item>
     <Item>
-      <Source>sprite_sheet.tga</Source>
-      <Name>sprite_sheet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\sprite_sheet.xnb</Output>
-      <Time>2009-05-05T18:57:49.5625-07:00</Time>
-    </Item>
-    <Item>
       <Source>Sprite Sheet Knight.png</Source>
       <Name>Sprite Sheet Knight</Name>
       <Importer>TextureImporter</Importer>
@@ -187,6 +178,24 @@
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\Shadow.xnb</Output>
       <Time>2009-05-06T20:26:12.515625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>sprite_sheet.png</Source>
+      <Name>sprite_sheet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\sprite_sheet.xnb</Output>
+      <Time>2009-05-07T13:43:05.28125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>circles.png</Source>
+      <Name>circles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\circles.xnb</Output>
+      <Time>2009-05-07T15:16:01.765625-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

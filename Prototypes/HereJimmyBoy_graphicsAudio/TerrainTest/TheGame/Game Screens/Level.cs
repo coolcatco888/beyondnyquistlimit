@@ -62,5 +62,10 @@ namespace TheGame
             audioManager.Play3DCue("music", (Camera)GameEngine.Services.GetService(typeof(Camera)));
         }
 
+        public override void Draw()
+        {
+            base.Draw();
+        }
+
     }
 }
