@@ -1,0 +1,7 @@
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestPipeline.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestPipeline.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestLibrary.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestLibrary.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\obj\x86\Debug\ContentTestPipeline.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestPipeline\obj\x86\Debug\ContentTestPipeline.pdb

@@ -1,0 +1,16 @@
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\Arial.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\FirstXmlContent.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\ContentTest.exe
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\ContentTest.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\obj\x86\Debug\ContentTest.exe
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\obj\x86\Debug\ContentTest.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\CrateSprite.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\crate.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\ContentTestLibrary.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\ContentTestLibrary.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\SpriteList.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\Items\LeatherGloves.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\KnightSprite.xnb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\spritesheet_knight_movement.xnb

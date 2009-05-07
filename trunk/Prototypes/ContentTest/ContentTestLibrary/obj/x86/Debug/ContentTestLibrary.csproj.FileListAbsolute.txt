@@ -1,0 +1,6 @@
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\bin\x86\Debug\ContentTestLibrary.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\bin\x86\Debug\ContentTestLibrary.pdb
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.dll
+D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.pdb
