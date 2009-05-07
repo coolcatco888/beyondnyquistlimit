@@ -24,6 +24,12 @@ namespace TheGame.Components.Display
 
         private bool killMe = false;
         
+        /// <summary>
+        /// Creates a circular weapon/item menu selection.  Each item is displayed in a circular fashion.
+        /// This menu grows and shrinks to accommodate for the increase and decrease of items.
+        /// </summary>
+        /// <param name="parent">Screen that contains this object</param>
+        /// <param name="position">position of the weapon panel, should take in screen coodinates of actor.</param>
         public GameWeaponMenuPanel2D(GameScreen parent, Vector2 position)
             : base(parent)
         {
@@ -35,6 +41,11 @@ namespace TheGame.Components.Display
             UpdateItemPositons(maxScale);
         }
 
+        /// <summary>
+        /// Places weapon icons in weapon panel in a circular fashion.  
+        /// Use scale = 10 to put them into their default positions.
+        /// </summary>
+        /// <param name="scale">Scales distance from centre. Range 0 - 10</param>
         private void UpdateItemPositons(int scale)
         {
             ranges.Clear();
@@ -64,18 +75,32 @@ namespace TheGame.Components.Display
             }
         }
 
+        /// <summary>
+        /// Adds a new weapon to the weapon menu. All weapon names must be unique.
+        /// </summary>
+        /// <param name="name">Name of the Weapon</param>
+        /// <param name="weapon">Image of the weapon</param>
         public void AddWeapon(string name, ImageComponent2D weapon)
         {
             weapons.Add(name, weapon);
             UpdateItemPositions();
         }
 
+        /// <summary>
+        /// Given the name of the weapon, remove from the weapon list.
+        /// </summary>
+        /// <param name="name">Name of the weapon.</param>
         public void RemoveWeapon(string name)
         {
             weapons.Remove(name);
             UpdateItemPositions();
         }
 
+        /// <summary>
+        /// Returnes the image of the weapon given its name.
+        /// </summary>
+        /// <param name="name">Name of the weapon</param>
+        /// <returns></returns>
         public ImageComponent2D GetWeaponImage(string name)
         {
             ImageComponent2D weapon = null;
@@ -83,6 +108,13 @@ namespace TheGame.Components.Display
             return weapon;
         }
 
+        /// <summary>
+        /// Since the weapons are displayed in a circular fasion, pass in a normalized vector
+        /// of the joystic position using a standard Cartesian Grid, with X and Y values ranging from -1 to 1.
+        /// Also makes the selected weapon display fully opaque and the unselected ones semi transparent.
+        /// </summary>
+        /// <param name="joystickPosition">Joystic position using a standard Cartesian Grid, with X and Y values ranging from -1 to 1</param>
+        /// <returns>Name of the weapon.</returns>
         public string SelectNewWeapon(Vector2 joystickPosition)
         {
             float angle = (float)Math.Atan2(joystickPosition.Y, -1 * joystickPosition.X);
@@ -109,11 +141,19 @@ namespace TheGame.Components.Display
             return name;
         }
 
+        /// <summary>
+        /// Gets the name of selected weapon
+        /// </summary>
+        /// <returns>Name of selected weapon.</returns>
         public string GetNameOfSelectedWeapon()
         {
             return weapons.Keys.ElementAt(selected);
         }
 
+        /// <summary>
+        /// Handles grow and shrink animations of the weapon menu panel.
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -138,6 +178,9 @@ namespace TheGame.Components.Display
             }
         }
 
+        /// <summary>
+        /// Shrinks and disposes menu.
+        /// </summary>
         public void KillMenu()
         {
             killMe = true;
