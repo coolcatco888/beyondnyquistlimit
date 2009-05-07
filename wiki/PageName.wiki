@@ -16,6 +16,7 @@ One important link here is the Game State Management sample, which is what our g
  * Game State Management (Transitioning from menu to gameplay) - http://creators.xna.com/en-GB/samples/gamestatemanagement
  * Sprite Sheets Ragnarok Online - http://forums.roempire.com/showthread.php?t=72995
  * Sprite Sheets We Use - http://www.geocities.com/fwuffleslunatic/
+ * More links to sprite makers and editors - http://forums.roempire.com/showthread.php?t=72995
  * Drawing with sprites and 3D Objects - http://blogs.msdn.com/shawnhar/archive/2006/11/13/spritebatch-and-renderstates.aspx
  * Content Writer and Reader for XML file loading - http://www.ziggyware.com/readarticle.php?article_id=150
 
