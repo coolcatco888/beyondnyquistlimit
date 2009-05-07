@@ -14,3 +14,19 @@ D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Conten
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\Items\LeatherGloves.xnb
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\KnightSprite.xnb
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTest\bin\x86\Debug\Content\spritesheet_knight_movement.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Arial.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\FirstXmlContent.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\CrateSprite.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\SpriteList.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Items\LeatherGloves.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\KnightSprite.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\crate.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\spritesheet_knight_movement.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\ContentTest.exe
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\ContentTest.pdb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\ContentTestLibrary.dll
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\ContentTestLibrary.pdb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\ContentTest.exe
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\ContentTest.pdb
