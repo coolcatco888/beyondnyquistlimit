@@ -96,13 +96,16 @@
     <Compile Include="Components\Display\DisplayComponent2D.cs" />
     <Compile Include="Components\Display\GameWeaponMenuPanel2D.cs" />
     <Compile Include="Components\Display\HitTextComponent2D.cs" />
+    <Compile Include="Components\Display\HUDComponent2D.cs" />
     <Compile Include="Components\Display\I2DComponent.cs" />
     <Compile Include="Components\Display\ImageComponent2D.cs" />
     <Compile Include="Components\Display\MenuPanel2D.cs" />
     <Compile Include="Components\Display\MenuTextComponent2D.cs" />
     <Compile Include="Components\Display\PanelComponent2D.cs" />
     <Compile Include="Components\Display\TextComponent2D.cs" />
+    <Compile Include="Components\Display\ValueBarComponent2D.cs" />
     <Compile Include="Components\Display\XMLPanel2DBuilder.cs" />
+    <Compile Include="Components\Input\Move.cs" />
     <Compile Include="Components\Skybox.cs" />
     <Compile Include="Components\Terrain.cs" />
     <Compile Include="Game Screens\ConfirmQuitScreen.cs" />
