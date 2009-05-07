@@ -115,6 +115,7 @@
     <Compile Include="Components\Input\InputDevice.cs" />
     <Compile Include="Components\Input\InputDeviceEventArgs.cs" />
     <Compile Include="Components\Input\KeyboardDevice.cs" />
+    <Compile Include="GroundEffect.cs" />
     <Compile Include="HeightMapInfo.cs" />
     <Compile Include="IAudioEmitter.cs" />
     <Compile Include="Orientation.cs" />

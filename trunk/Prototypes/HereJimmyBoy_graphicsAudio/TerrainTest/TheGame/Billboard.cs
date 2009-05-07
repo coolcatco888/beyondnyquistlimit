@@ -12,7 +12,7 @@ namespace TheGame
     {
         #region Fields
 
-        VertexDeclaration vertexDeclaration = new VertexDeclaration(
+        protected VertexDeclaration vertexDeclaration = new VertexDeclaration(
                 GameEngine.Graphics, VertexPositionTexture.VertexElements);
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace TheGame
 
         protected VertexPositionTexture[] vertices;
 
-        BasicEffect basicEffect;
+        protected BasicEffect basicEffect;
 
         #endregion  // Fields
 
@@ -74,9 +74,20 @@ namespace TheGame
             vertices[3].TextureCoordinate = new Vector2(0, 1);
         }
 
+        public Vector3 GetCenter()
+        {
+            Vector3 center;
+
+            center.X = position.X;
+            center.Y = spriteInfo.CenterHeight;
+            center.Z = position.Z;
+
+            return center;
+        }
+
         #region IDrawableComponent Members
 
-        public void Draw(GameTime gameTime)
+        public virtual void Draw(GameTime gameTime)
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 

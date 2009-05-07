@@ -122,7 +122,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\Sprite Sheet Knight.xnb</Output>
-      <Time>2009-05-05T18:57:49.5625-07:00</Time>
+      <Time>2009-05-06T18:13:30.671875-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\skybox.fx</Source>
@@ -178,6 +178,15 @@
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-05T18:57:49.671875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Shadow.png</Source>
+      <Name>Shadow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\Shadow.xnb</Output>
+      <Time>2009-05-06T20:26:12.515625-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

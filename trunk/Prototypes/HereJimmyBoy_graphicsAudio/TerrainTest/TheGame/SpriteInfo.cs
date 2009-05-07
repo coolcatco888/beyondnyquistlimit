@@ -20,6 +20,7 @@ namespace TheGame
         private int height;
         private int padSize;
         private Vector2 spriteUnit;
+        private float centerHeight;
 
         #endregion  // Fields
 
@@ -55,6 +56,11 @@ namespace TheGame
             set { spriteUnit = value; }
         }
 
+        public float CenterHeight
+        {
+            get { return CenterHeight; }
+        }
+
         #endregion  // Accessors
 
         #region Constructors
@@ -67,6 +73,8 @@ namespace TheGame
             this.width = spriteWidth;
             this.height = spriteHeight;
             this.padSize = padSize;
+
+            centerHeight = this.height / 2 - 1;
 
             spriteUnit = new Vector2((float)(width + padSize) / (float)spriteSheet.Width,
                 (float)(height + padSize) / (float)spriteSheet.Height);
