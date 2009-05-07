@@ -1,0 +1,8 @@
+Content\Arial.xnb
+Content\FirstXmlContent.xnb
+Content\CrateSprite.xnb
+Content\SpriteList.xnb
+Content\Items\LeatherGloves.xnb
+Content\KnightSprite.xnb
+Content\crate.xnb
+Content\spritesheet_knight_movement.xnb

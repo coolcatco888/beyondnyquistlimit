@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <!-- TODO: replace this Asset with your own XML asset data. -->
+  <Asset Type="ContentTestLibrary.Armor">
+    <Title>Leather Gloves</Title>
+    <Description>Gloves made out of hardened leather</Description>
+    <GoldValue>100</GoldValue>
+    <RestrictedClasses>
+      <Item>Wizard</Item>
+      <Item>Priest</Item>
+    </RestrictedClasses>
+    <MinimumLevel>2</MinimumLevel>
+    <TextureFileName>LG01</TextureFileName>
+    <ArmorSlot>Hands</ArmorSlot>
+    <Ability>nothing of note</Ability>
+    <DefenseValue>1</DefenseValue>
+  </Asset>
+</XnaContent>
