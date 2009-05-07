@@ -4,3 +4,9 @@ D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\bin\x86\Debug
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\bin\x86\Debug\ContentTestLibrary.pdb
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.dll
 D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.pdb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\bin\x86\Debug\ContentTestLibrary.dll
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\bin\x86\Debug\ContentTestLibrary.pdb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.dll
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\obj\x86\Debug\ContentTestLibrary.pdb

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="ContentTestLibrary.TerrainInfo">
+    <TerrainScale>1.0</TerrainScale>
+    <TerrainBumpiness>10.0</TerrainBumpiness>
+    <TexCoordScale>0.05</TexCoordScale>
+    <TerrainFileName>terrain</TerrainFileName>
+    <TextureTerrain>MountainGrass.png</TextureTerrain>
+  </Asset>
+</XnaContent>

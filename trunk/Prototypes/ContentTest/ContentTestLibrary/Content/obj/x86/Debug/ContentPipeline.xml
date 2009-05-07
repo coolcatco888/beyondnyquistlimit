@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

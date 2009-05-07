@@ -106,6 +106,7 @@
   <ItemGroup>
     <Compile Include="ActorInfoWriter.cs" />
     <Compile Include="CharacterClassInfoWriter.cs" />
+    <Compile Include="HeightInfoWriter.cs" />
     <Compile Include="Items\ArmorWriter.cs" />
     <Compile Include="Items\EquipmentWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
