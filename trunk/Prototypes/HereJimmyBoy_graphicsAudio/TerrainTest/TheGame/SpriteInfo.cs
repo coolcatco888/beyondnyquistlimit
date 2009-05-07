@@ -81,5 +81,10 @@ namespace TheGame
         }
 
         #endregion
+
+        public void Dispose()
+        {
+            spriteSheet.Dispose();
+        }
     }
 }

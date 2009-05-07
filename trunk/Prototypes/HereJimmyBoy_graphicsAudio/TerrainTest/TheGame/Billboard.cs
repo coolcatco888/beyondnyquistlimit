@@ -124,5 +124,12 @@ namespace TheGame
         }
 
         #endregion
+
+        public override void Dispose()
+        {
+            spriteInfo.Dispose();
+
+            base.Dispose();
+        }
     }
 }

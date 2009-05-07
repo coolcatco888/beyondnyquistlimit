@@ -12,7 +12,7 @@ namespace TheGame
     {
         #region Fields
 
-        private float rotationAngle;
+        protected float rotationAngle;
 
         #endregion  // Fields
 
@@ -26,10 +26,10 @@ namespace TheGame
         {
             rotationAngle = 0.0f;
 
-            vertices[0].Position = new Vector3(1, -1, 1);
-            vertices[1].Position = new Vector3(-1, -1, 1);
-            vertices[2].Position = new Vector3(-1, -1, -1);
-            vertices[3].Position = new Vector3(1, -1, -1);
+            vertices[0].Position = new Vector3(1, -0.99f, 1);
+            vertices[1].Position = new Vector3(-1, -0.99f, 1);
+            vertices[2].Position = new Vector3(-1, -0.99f, -1);
+            vertices[3].Position = new Vector3(1, -0.99f, -1);
         }
 
         #endregion  // Constructors
@@ -61,6 +61,11 @@ namespace TheGame
             basicEffect.End();
 
             GameEngine.Graphics.RenderState.AlphaTestEnable = false;
+        }
+
+        public override void Dispose()
+        {
+            base.Dispose();
         }
     }
 }

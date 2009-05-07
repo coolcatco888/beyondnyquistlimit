@@ -21,6 +21,8 @@ namespace TheGame
         private bool isLoop;
         private int updateCount;
 
+        private bool isComplete = false;
+
         private float timer = 0.0f;
         private float interval = 1000.0f / 25.0f;
 
@@ -71,6 +73,11 @@ namespace TheGame
             get { return currentFrame.Y; }
         }
 
+        public bool IsComplete
+        {
+            get { return isComplete; }
+        }
+
 #endregion  // Accessors
 
 #region Constructors
@@ -82,6 +89,13 @@ namespace TheGame
             this.isLoop = isLoop;
             this.velocity = velocity;
 
+            this.bufferTotal = bufferFrames;
+            this.bufferFrames = bufferFrames;
+        }
+
+        public SpriteSequence(bool isLoop, int bufferFrames)
+        {
+            this.isLoop = isLoop;
             this.bufferTotal = bufferFrames;
             this.bufferFrames = bufferFrames;
         }
@@ -107,6 +121,7 @@ namespace TheGame
                     // Remain on last frame if sequence does not loop.
                     else if (!isLoop && frameIndex == frameTotal - 1)
                     {
+                        isComplete = true;
                     }
                     else
                     {

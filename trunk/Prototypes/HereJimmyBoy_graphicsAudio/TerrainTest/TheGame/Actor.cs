@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame
 {
-    class Actor : Billboard
+    class Actor : Billboard, IAudioEmitter
     {
 #region Fields
 
@@ -21,6 +21,7 @@ namespace TheGame
         Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
         SpriteSequence currentSequence;
         private GroundEffect shadow;
+        private MagicCircleEffect circle;
 
 #endregion  // Fields
 
@@ -52,10 +53,24 @@ namespace TheGame
             : base(parent, spriteInfo)
         {
             AddBasicSequences();
-            shadow = new GroundEffect(parent, new SpriteInfo(GameEngine.Content.Load<Texture2D>("Shadow"), 64, 32, 0));
         }
 
 #endregion  // Constructors
+
+        public override void Initialize(GameScreen parent)
+        {
+            circle = new MagicCircleEffect(parent, new SpriteInfo(GameEngine.Content.Load<Texture2D>("circles"), 128, 128, 1), 0.1f, 0.05f, 0, 0);
+            //shadow = new GroundEffect(parent, new SpriteInfo(GameEngine.Content.Load<Texture2D>("Shadow"), 64, 32, 0));
+
+            base.Initialize(parent);
+        }
+
+        public override void Dispose()
+        {
+            basicEffect.Dispose();
+
+            base.Dispose();
+        }
 
 #region Update
 
@@ -75,7 +90,7 @@ namespace TheGame
 
                 UpdateVertices();
 
-                shadow.Position = this.position;
+                circle.Position = this.position;
             }
             else
             {
@@ -87,22 +102,21 @@ namespace TheGame
 
         private void UpdateVertices()
         {
+            vertices[0].TextureCoordinate = new Vector2(
+                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
+                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
 
-                    vertices[0].TextureCoordinate = new Vector2(
-                        currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                        currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+            vertices[1].TextureCoordinate = new Vector2(
+                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X,
+                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
 
-                    vertices[1].TextureCoordinate = new Vector2(
-                        currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X,
-                        currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+            vertices[2].TextureCoordinate = new Vector2(
+                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X,
+                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
 
-                    vertices[2].TextureCoordinate = new Vector2(
-                        currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X,
-                        currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
-
-                    vertices[3].TextureCoordinate = new Vector2(
-                        currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                        currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
+            vertices[3].TextureCoordinate = new Vector2(
+                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
+                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
         }
 
         private void UpdatePosition()
@@ -266,6 +280,11 @@ namespace TheGame
 
 #endregion  // Update
 
+        public override void Draw(GameTime gameTime)
+        {
+            base.Draw(gameTime);
+        }
+
 #region Methods
 
         private void playSequence(SpriteSequence sequence)
@@ -386,5 +405,24 @@ namespace TheGame
             Dying,
             Dead,
         }
+
+        #region IAudioEmitter Members
+
+        public Vector3 Forward
+        {
+            get { return Vector3.Forward; }
+        }
+
+        public Vector3 Up
+        {
+            get { return Vector3.Up; }
+        }
+
+        public Vector3 Velocity
+        {
+            get { return Vector3.Zero; }
+        }
+
+        #endregion
     }
 }
