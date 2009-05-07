@@ -20,6 +20,7 @@ namespace TheGame
         Dictionary<string, Texture2D> spriteSheets = new Dictionary<string, Texture2D>();
         Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
         SpriteSequence currentSequence;
+        private GroundEffect shadow;
 
 #endregion  // Fields
 
@@ -51,6 +52,7 @@ namespace TheGame
             : base(parent, spriteInfo)
         {
             AddBasicSequences();
+            shadow = new GroundEffect(parent, new SpriteInfo(GameEngine.Content.Load<Texture2D>("Shadow"), 64, 32, 0));
         }
 
 #endregion  // Constructors
@@ -72,6 +74,8 @@ namespace TheGame
                 UpdatePosition();
 
                 UpdateVertices();
+
+                shadow.Position = this.position;
             }
             else
             {

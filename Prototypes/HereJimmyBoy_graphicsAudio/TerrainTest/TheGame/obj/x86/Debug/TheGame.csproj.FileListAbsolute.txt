@@ -158,3 +158,4 @@ D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\Th
 D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\obj\x86\Debug\TheGame.exe
 D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\obj\x86\Debug\TheGame.pdb
+D:\work\mW\09project\jimwtf\Prototypes\HereJimmyBoy_graphicsAudio\TerrainTest\TheGame\bin\x86\Debug\Content\Shadow.xnb

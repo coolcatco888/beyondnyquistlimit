@@ -15,6 +15,7 @@ Content\Skybox\skybox.xnb
 Content\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+Content\Shadow.xnb
 Content\Asplosions.xgs
 Content\Wave Bank.xwb
 Content\Sound Bank.xsb
