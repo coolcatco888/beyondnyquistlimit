@@ -96,8 +96,10 @@
     <Compile Include="Components\Display\DisplayComponent2D.cs" />
     <Compile Include="Components\Display\GameWeaponMenuPanel2D.cs" />
     <Compile Include="Components\Display\HitTextComponent2D.cs" />
-    <Compile Include="Components\Display\HUDComponent2D.cs" />
+    <Compile Include="Components\Display\StatusDisplayComponent2D.cs" />
+    <Compile Include="Components\Display\HUDItemComponent2D.cs" />
     <Compile Include="Components\Display\I2DComponent.cs" />
+    <Compile Include="Components\Display\IGauge.cs" />
     <Compile Include="Components\Display\ImageComponent2D.cs" />
     <Compile Include="Components\Display\MenuPanel2D.cs" />
     <Compile Include="Components\Display\MenuTextComponent2D.cs" />

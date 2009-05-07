@@ -188,6 +188,24 @@
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-04T12:46:20.5625-07:00</Time>
     </Item>
+    <Item>
+      <Source>healthbar.PNG</Source>
+      <Name>healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\healthbar.xnb</Output>
+      <Time>2009-05-07T13:26:50.40625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>hud.PNG</Source>
+      <Name>hud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\hud.xnb</Output>
+      <Time>2009-05-07T13:26:50.40625-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

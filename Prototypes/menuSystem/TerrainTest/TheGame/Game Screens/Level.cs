@@ -27,11 +27,14 @@ namespace TheGame
 
         private Actor actor;
 
-        protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-        protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
         private GameWeaponMenuPanel2D weaponPanel;
 
         private Random random;
+
+        private StatusDisplayComponent2D hud;
+
+        protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+        protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
 
         public HeightMapInfo TerrainHeightMap
         {
@@ -81,6 +84,7 @@ namespace TheGame
 
             actor = new Actor(this, GameEngine.Content.Load<Texture2D>("theifWalkRun"), 64, 64, 1);
             actor.Position = new Vector3(0.0f, 0.0f, -30.0f);
+            CreateHUD();
         }
 
         public override void Update()
@@ -134,6 +138,30 @@ namespace TheGame
             weaponPanel.AddWeapon("Sword3", new ImageComponent2D(this, Vector2.Zero, item));
             weaponPanel.AddWeapon("Sword4", new ImageComponent2D(this, Vector2.Zero, item));
             weaponPanel.UpdateItemPositions();
+        }
+
+        private void CreateHUD()
+        {
+            StatusDisplay hudParams = new StatusDisplay();
+            hudParams.BarImage = GameEngine.Content.Load<Texture2D>("healthbar");
+            hudParams.FontColor = Color.White;
+            hudParams.FontScale = 0.4f;
+            hudParams.HealthBarColor = Color.Red;
+            hudParams.HealthBarMaxValue = 1000;
+            hudParams.HealthBarPos = new Vector2(58, 14);
+            hudParams.HudImage = GameEngine.Content.Load<Texture2D>("hud");
+            hudParams.Level = 1;
+            hudParams.LevelPos = new Vector2(80, 57);
+            hudParams.ManaBarColor = Color.Blue;
+            hudParams.ManaBarMaxValue = 500;
+            hudParams.ManaBarPos = new Vector2(58, 36);
+            hudParams.PlayerImage = GameEngine.Content.Load<Texture2D>("itemsm"); 
+            hudParams.PlayerImageCentrePos = new Vector2(34, 34);
+            hudParams.Position = Vector2.Zero;
+            hudParams.TextFont = GameEngine.Content.Load<SpriteFont>("menufont");
+
+            hud = new StatusDisplayComponent2D(this, hudParams);
+
         }
 
 

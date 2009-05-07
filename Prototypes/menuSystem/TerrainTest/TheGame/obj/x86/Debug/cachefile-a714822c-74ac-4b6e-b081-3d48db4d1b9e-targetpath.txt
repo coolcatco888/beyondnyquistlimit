@@ -16,3 +16,5 @@ Content\Skybox\skybox.xnb
 Content\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+Content\healthbar.xnb
+Content\hud.xnb
