@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame.Components.Display
 {
-    class ValueBarComponent2D : ImageComponent2D
+    class ValueBarComponent2D : ImageComponent2D, IGauge
     {
         private int maxValue, currentValue;
 
@@ -38,7 +38,7 @@ namespace TheGame.Components.Display
         {
             this.maxValue = maxValue;
             this.currentValue = this.maxValue;
-            horizontalScale = new Vector2(0.0f, 1.0f);
+            horizontalScale = new Vector2(1.0f, 1.0f);
             this.damageColor = damageColor;
         }
 
@@ -49,7 +49,7 @@ namespace TheGame.Components.Display
             spriteBatch.End();
         }
 
-        public void IncreaseDecreaseBarValue(int value)
+        public void IncreaseDecreaseValue(int value)
         {
             currentValue += value;
             currentValue = currentValue > maxValue ? maxValue : currentValue < 0 ? 0 : currentValue;
