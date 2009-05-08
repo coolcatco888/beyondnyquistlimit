@@ -31,7 +31,7 @@ namespace TheGame
 
         private Random random;
 
-        private StatusDisplayComponent2D hud;
+        private CharacterStatusComponent2D hud;
 
         protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
         protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
@@ -117,16 +117,19 @@ namespace TheGame
                 }
 
             }
-            
 
             if (gamepadDevice.WasButtonPressed(Buttons.X) || keyboardDevice.WasKeyPressed(Keys.Space))
             {
-                new HitTextComponent2D(this, GetActorScreenCoordinates(), -random.Next(300), Color.Red, font);
+                int value = random.Next(300);
+                new HitTextComponent2D(this, GetActorScreenCoordinates(), -value, Color.Red, font);
+                hud.Healthbar.IncreaseDecreaseValue(-value);
             }
 
             if (gamepadDevice.WasButtonPressed(Buttons.Y) || keyboardDevice.WasKeyPressed(Keys.LeftControl))
             {
-                new HitTextComponent2D(this, GetActorScreenCoordinates(), random.Next(300), Color.Green, font);
+                int value = random.Next(300);
+                new HitTextComponent2D(this, GetActorScreenCoordinates(), value, Color.Green, font);
+                hud.Healthbar.IncreaseDecreaseValue(value);
             }
         }
 
@@ -144,6 +147,7 @@ namespace TheGame
         {
             StatusDisplay hudParams = new StatusDisplay();
             hudParams.BarImage = GameEngine.Content.Load<Texture2D>("healthbar");
+            hudParams.DamageBarColor = Color.Orange;
             hudParams.FontColor = Color.White;
             hudParams.FontScale = 0.4f;
             hudParams.HealthBarColor = Color.Red;
@@ -160,7 +164,7 @@ namespace TheGame
             hudParams.Position = Vector2.Zero;
             hudParams.TextFont = GameEngine.Content.Load<SpriteFont>("menufont");
 
-            hud = new StatusDisplayComponent2D(this, hudParams);
+            hud = new CharacterStatusComponent2D(this, hudParams);
 
         }
 

@@ -5,7 +5,34 @@ using System.Text;
 
 namespace TheGame.Components.Display
 {
-    class HUDItemComponent2D
+    abstract class HUDItemComponent2D : DisplayComponent2D
     {
+        protected IGauge healthBar;
+
+        protected IGauge manaBar;
+
+        protected INumeric level;
+
+        public IGauge Healthbar
+        {
+            get { return healthBar; }
+        }
+
+        public IGauge ManaBar
+        {
+            get { return manaBar; }
+        }
+
+        public INumeric Level
+        {
+            get { return level; }
+        }
+
+        protected HUDItemComponent2D(GameScreen parent)
+            : base(parent)
+        {
+
+        }
+
     }
 }
