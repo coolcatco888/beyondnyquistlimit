@@ -1,7 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
@@ -119,7 +127,7 @@ namespace TheGame
         public virtual void UnloadContent() { }
 
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
             // Create a temporary list so we don't crash if
             // a component is added to the collection while
@@ -133,7 +141,7 @@ namespace TheGame
             // Update all components that have been initialized
             foreach (Component component in updating)
                 if (component.Initialized && component.Enabled)
-                    component.Update(GameEngine.GameTime);
+                    component.Update(gameTime);
         }
 
         public virtual void Draw()

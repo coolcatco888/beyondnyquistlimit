@@ -95,7 +95,7 @@ namespace TheGame
             // Update remaining components
             foreach (GameScreen screen in updateList)
                 if (screen.Initialized)
-                    screen.Update();
+                    screen.Update(gameTime);
 
             // Clear list
             updateList.Clear();
