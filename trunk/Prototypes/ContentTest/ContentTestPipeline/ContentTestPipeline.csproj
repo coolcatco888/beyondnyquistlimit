@@ -113,6 +113,7 @@
     <Compile Include="SpriteContentWriter.cs" />
     <Compile Include="SpriteInfoWriter.cs" />
     <Compile Include="TerrainInfoWriter.cs" />
+    <Compile Include="Items\WeaponWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContentTestLibrary\ContentTestLibrary.csproj">
