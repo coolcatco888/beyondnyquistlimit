@@ -112,6 +112,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpriteContentWriter.cs" />
     <Compile Include="SpriteInfoWriter.cs" />
+    <Compile Include="TerrainInfoWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContentTestLibrary\ContentTestLibrary.csproj">
