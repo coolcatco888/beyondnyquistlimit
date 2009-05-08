@@ -25,7 +25,7 @@ namespace TheGame
 
         public void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
-            GameEngine.Graphics.Clear(Color.Brown);
+            GameEngine.Graphics.Clear(Color.Black);
         }
 
         public bool Visible
