@@ -109,7 +109,10 @@
     <Compile Include="Components\Display\TextComponent2D.cs" />
     <Compile Include="Components\Display\ValueBarComponent2D.cs" />
     <Compile Include="Components\Display\XMLPanel2DBuilder.cs" />
+    <Compile Include="Components\Input\Direction.cs" />
+    <Compile Include="Components\Input\InputManager.cs" />
     <Compile Include="Components\Input\Move.cs" />
+    <Compile Include="Components\Input\MoveList.cs" />
     <Compile Include="Components\Skybox.cs" />
     <Compile Include="Components\Terrain.cs" />
     <Compile Include="Game Screens\ConfirmQuitScreen.cs" />

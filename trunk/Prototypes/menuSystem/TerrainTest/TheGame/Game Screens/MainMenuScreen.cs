@@ -21,6 +21,24 @@ namespace TheGame.Game_Screens
 
         private SpriteFont font;
 
+        #region ComboSequenceFields
+        // This is the master list of moves in logical order. This array is kept
+        // around in order to draw the move list on the screen in this order.
+        Move[] moves;
+        // The move list used for move detection at runtime.
+        MoveList moveList;
+
+        // The move list is used to match against an input manager for each player.
+        InputManager[] inputManagers;
+        // Stores each players' most recent move and when they pressed it.
+        Move[] playerMoves;
+        TimeSpan[] playerMoveTimes;
+        Move[] prevMoves;
+
+        // Time until the currently "active" move dissapears from the screen.
+        readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(1.0);
+        #endregion
+
         public override void Initialize()
         {
             base.Initialize();
@@ -36,7 +54,6 @@ namespace TheGame.Game_Screens
 
             item = content.Load<Texture2D>("itemsm");
             font = content.Load<SpriteFont>("menufont");
-            //CreateWeaponPanel();
 
 
             //Make it into functional menu
@@ -44,7 +61,7 @@ namespace TheGame.Game_Screens
 
             //Add to drawable components
             Components.Add(menu);
-            //Components.Add(weaponPanel);
+            new TextComponent2D(this, new Vector2(50, 400), "Combos:\nX to Punch\nA to Jump\nA, X, Y and B to Activate Spell", Color.White, font, 0.75f);
         }
 
         private void CreateWeaponPanel()
@@ -60,27 +77,58 @@ namespace TheGame.Game_Screens
         public MainMenuScreen(string name)
             : base(name)
         {
+            //See Method Definition
+            SetupComboLibraryAndInputManager();
+
+        }
+
+        /// <summary>
+        /// Example of how to setup the Combo Sequence Functionality
+        /// </summary>
+        private void SetupComboLibraryAndInputManager()
+        {
+            // Construct the master list of moves.
+            moves = new Move[]
+                {
+                    new Move("Jump",        Buttons.A) { IsSubMove = true },
+                    new Move("Punch",       Buttons.X) { IsSubMove = true },
+                    new Move("Activate Spell", Buttons.A, Buttons.X, Buttons.Y, Buttons.B),
+                };
+
+            // Construct a move list which will store its own copy of the moves array.
+            moveList = new MoveList(moves);
+
+            // Create an InputManager for each player with a sufficiently large buffer.
+            inputManagers = new InputManager[2];
+            for (int i = 0; i < inputManagers.Length; ++i)
+            {
+                inputManagers[i] =
+                    new InputManager((PlayerIndex)i, moveList.LongestMoveLength);
+            }
+
+            // Give each player a location to store their most recent move.
+            playerMoves = new Move[inputManagers.Length];
+            prevMoves = new Move[inputManagers.Length];
+            playerMoveTimes = new TimeSpan[inputManagers.Length];
         }
 
         protected override void HandleInput()
         {
             base.HandleInput();
 
-            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.IsButtonDown(Buttons.A))
-            {
-                switch (menu.GetCurrentText())
-                {
-                    case "Start Game":
-                        GameEngine.GameScreens.Remove(this);
-                        new Level("test", "Terrain\\terrain");
-                        //new TestScreen("test");
-                        break;
-                    case "Exit Game":
-                        GameEngine.Game.Exit();
-                        break;
-                }
-            }
+            //See indidual method comments for examples of intended usage
+            HandleMenuSelection();
+            HandleWeaponMenuPanel();
+            HandleComboMoves();
+            
+            
+        }
 
+        /// <summary>
+        /// Example of how to handle displaying the weapon menu panel
+        /// </summary>
+        private void HandleWeaponMenuPanel()
+        {
             if (gamepadDevice.IsButtonDown(Buttons.RightShoulder))
             {
                 if (weaponPanel == null)
@@ -93,29 +141,69 @@ namespace TheGame.Game_Screens
                     string selected = weaponPanel.SelectNewWeapon(gamepadDevice.LeftStickPosition);
                 }
             }
-            else
+            else if (weaponPanel != null)
             {
-                if (weaponPanel != null)
+                weaponPanel.KillMenu();
+                weaponPanel = null;
+            }
+        }
+
+        /// <summary>
+        /// Example of how to handle menu selections
+        /// </summary>
+        private void HandleMenuSelection()
+        {
+            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.IsButtonDown(Buttons.A))
+            {
+                switch (menu.GetCurrentText())
                 {
-                    weaponPanel.KillMenu();
-                    weaponPanel = null;
+                    case "Start Game":
+                        GameEngine.GameScreens.Remove(this);
+                        new Level("test", "Terrain\\terrain");
+                        break;
+                    case "Exit Game":
+                        GameEngine.Game.Exit();
+                        break;
                 }
-                
             }
+        }
 
-            if (gamepadDevice.WasButtonPressed(Buttons.X) || keyboardDevice.WasKeyPressed(Keys.Space))
+        /// <summary>
+        /// Example of keeping track of Combo Moves
+        /// </summary>
+        private void HandleComboMoves()
+        {
+            for (int i = 0; i < inputManagers.Length; ++i)
             {
-                new HitTextComponent2D(this, new Vector2(200f, 100f), -200, Color.Red, font);
-            }
+                // Expire old moves.
+                if (GameEngine.GameTime.TotalRealTime - playerMoveTimes[i] > MoveTimeOut)
+                {
+                    playerMoves[i] = null;
+                }
 
-            if (gamepadDevice.WasButtonPressed(Buttons.Y) || keyboardDevice.WasKeyPressed(Keys.LeftControl))
-            {
-                new HitTextComponent2D(this, new Vector2(200f, 50f), 200, Color.Green, font);
-            }
-            
+                // Get the updated input manager.
+                InputManager inputManager = inputManagers[i];
+                inputManager.Update(GameEngine.GameTime);
 
-            
-            
+                // Detection and record the current player's most recent move.
+                Move newMove = moveList.DetectMove(inputManager);
+                if (newMove != null)
+                {
+                    if (newMove != prevMoves[i])
+                    {
+                        new HitTextComponent2D(this, new Vector2(400, 400), newMove.Name, Color.Red, font);
+                        prevMoves[i] = newMove;
+                    }
+                    else
+                    {
+                        prevMoves[i] = newMove;
+                    }
+
+                    playerMoves[i] = newMove;
+                    playerMoveTimes[i] = GameEngine.GameTime.TotalRealTime;
+
+                }
+            }
         }
 
         public override void UnloadContent()

@@ -11,9 +11,15 @@ namespace TheGame.Components.Display
     {
         private int maxValue, currentValue;
 
-        private Color damageColor;
+        private Color damageColor, originalColor;
 
         private Vector2 horizontalScale;
+
+        private bool damaged = false;
+
+        private float currentFade = 0.1f;
+
+        private const float maxFade = 2.0f;
 
         public int MaxValue
         {
@@ -40,6 +46,7 @@ namespace TheGame.Components.Display
             this.currentValue = this.maxValue;
             horizontalScale = new Vector2(1.0f, 1.0f);
             this.damageColor = damageColor;
+            this.originalColor = tint;
         }
 
         public override void Draw(GameTime gameTime)
@@ -51,6 +58,7 @@ namespace TheGame.Components.Display
 
         public void IncreaseDecreaseValue(int value)
         {
+            damaged = value < 0;
             currentValue += value;
             currentValue = currentValue > maxValue ? maxValue : currentValue < 0 ? 0 : currentValue;
             horizontalScale.X = (float) currentValue / (float) maxValue;
@@ -60,6 +68,20 @@ namespace TheGame.Components.Display
         {
             base.Update(gameTime);
             //TODO: Add Damage Color Flash
+            if (damageColor != null && damaged)
+            {
+                if (currentFade < maxFade)
+                {
+                    float originalColorRatio;
+                    if(currentFade < 10)
+                    {
+                        currentFade += 0.1f;
+                        originalColorRatio = maxFade - currentFade;
+                        //tint = new Color(                        
+                    }
+                    
+                }
+            }
         }
         
     }
