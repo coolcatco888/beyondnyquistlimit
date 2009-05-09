@@ -100,12 +100,15 @@ namespace TheGame
                 }
                 if (weaponPanel != null)
                 {
+                    
                     Vector2 stickPosition = gamepadDevice.RightStickPosition;
                     if (stickPosition == Vector2.Zero)
                     {
                         stickPosition.X = stickPosition.X + -0.01f;
                     }
                     string selected = weaponPanel.SelectNewWeapon(stickPosition);
+                    weaponPanel.Position = TransformPositionToScreenCoordinates(actor.Position);
+                    weaponPanel.UpdateItemPositions();
                 }
             }
             else if (weaponPanel != null)
