@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Input;
 
-namespace TheGame.Components.Input
+namespace TheGame
 {
     /// <summary>
     /// Describes a sequences of buttons which must be pressed to active the move.

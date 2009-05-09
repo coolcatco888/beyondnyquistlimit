@@ -108,34 +108,30 @@ namespace TheGame
                     string selected = weaponPanel.SelectNewWeapon(stickPosition);
                 }
             }
-            else
+            else if (weaponPanel != null)
             {
-                if (weaponPanel != null)
-                {
-                    weaponPanel.KillMenu();
-                    weaponPanel = null;
-                }
-
+                weaponPanel.KillMenu();
+                weaponPanel = null;
             }
 
             if (gamepadDevice.WasButtonPressed(Buttons.X) || keyboardDevice.WasKeyPressed(Keys.Space))
             {
                 int value = random.Next(300);
-                new HitTextComponent2D(this, GetActorScreenCoordinates(), -value, Color.Red, font);
+                new HitTextComponent2D(this, TransformPositionToScreenCoordinates(actor.Position), -value, Color.Red, font);
                 hud.Healthbar.IncreaseDecreaseValue(-value);
             }
 
             if (gamepadDevice.WasButtonPressed(Buttons.Y) || keyboardDevice.WasKeyPressed(Keys.LeftControl))
             {
                 int value = random.Next(300);
-                new HitTextComponent2D(this, GetActorScreenCoordinates(), value, Color.Green, font);
+                new HitTextComponent2D(this, TransformPositionToScreenCoordinates(actor.Position), value, Color.Green, font);
                 hud.Healthbar.IncreaseDecreaseValue(value);
             }
         }
 
         private void CreateWeaponPanel()
         {
-            weaponPanel = new GameWeaponMenuPanel2D(this, GetActorScreenCoordinates());
+            weaponPanel = new GameWeaponMenuPanel2D(this, TransformPositionToScreenCoordinates(actor.Position));
             weaponPanel.AddWeapon("Sword1", new ImageComponent2D(this, Vector2.Zero, item));
             weaponPanel.AddWeapon("Sword2", new ImageComponent2D(this, Vector2.Zero, item));
             weaponPanel.AddWeapon("Sword3", new ImageComponent2D(this, Vector2.Zero, item));
@@ -166,14 +162,6 @@ namespace TheGame
 
             hud = new CharacterStatusComponent2D(this, hudParams);
 
-        }
-
-
-        private Vector2 GetActorScreenCoordinates()
-        {
-            Vector2 coords = TransformPositionToScreenCoordinates(actor.Position);
-
-            return coords;
         }
 
         public Vector2 TransformPositionToScreenCoordinates(Vector3 oPosition)

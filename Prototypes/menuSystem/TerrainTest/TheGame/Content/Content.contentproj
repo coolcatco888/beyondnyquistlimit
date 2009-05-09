@@ -156,6 +156,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="hud.PNG">
       <Name>hud</Name>
       <Importer>TextureImporter</Importer>
