@@ -98,7 +98,7 @@
     <Compile Include="Components\Display\HitTextComponent2D.cs" />
     <Compile Include="Components\Display\INumeric.cs" />
     <Compile Include="Components\Display\CharacterStatusComponent2D.cs" />
-    <Compile Include="Components\Display\HUDItemComponent2D.cs" />
+    <Compile Include="Components\Display\HUDStatusComponent2D.cs" />
     <Compile Include="Components\Display\I2DComponent.cs" />
     <Compile Include="Components\Display\IGauge.cs" />
     <Compile Include="Components\Display\ImageComponent2D.cs" />

@@ -141,7 +141,7 @@ namespace TheGame
 
         private void CreateHUD()
         {
-            StatusDisplay hudParams = new StatusDisplay();
+            CharacterStatusDisplayParams hudParams = new CharacterStatusDisplayParams();
             hudParams.BarImage = GameEngine.Content.Load<Texture2D>("healthbar");
             hudParams.DamageBarColor = Color.Orange;
             hudParams.FontColor = Color.White;

@@ -31,6 +31,7 @@ namespace TheGame.Components.Display
     ///</panel>
     /// </summary>
 
+    [Obsolete("Should use content pipeline method for building menu content instead.")]
     class XMLPanel2DBuilder
     {
         private GameScreen parent;
