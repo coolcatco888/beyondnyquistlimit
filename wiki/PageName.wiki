@@ -20,6 +20,7 @@ One important link here is the Game State Management sample, which is what our g
  * RO Sprite Generator - http://ro-character-simulator.ratemyserver.net/
  * Drawing with sprites and 3D Objects - http://blogs.msdn.com/shawnhar/archive/2006/11/13/spritebatch-and-renderstates.aspx
  * Content Writer and Reader for XML file loading - http://www.ziggyware.com/readarticle.php?article_id=150
+ * Loading our XBOX game to the XBOX - http://msdn.microsoft.com/en-us/library/bb975643(XNAGameStudio.20).aspx
 
 = Tools =
 XBOX 360 Driver for Lab Computers - http://www.microsoft.com/hardware/download/DownloadResult.aspx?category=Gaming&type=Controller&name=pk_xbox_cont&os=XP_SP1&lang=en
