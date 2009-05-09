@@ -80,6 +80,12 @@ namespace TheGame.Components.Display
             return newPanel;
         }
 
+        /// <summary>
+        /// Converts all the text in the panel to menu entries for iterating through
+        /// </summary>
+        /// <param name="components">Original components of the panel</param>
+        /// <param name="owner">Final menu panel to store these components</param>
+        /// <returns>The new panel components to be set on a MenuPanel2D object</returns>
         private static PanelComponents ConvertTextToMenuEntries(PanelComponents components, MenuPanel2D owner)
         {
             PanelComponents newComponents = new PanelComponents(owner);

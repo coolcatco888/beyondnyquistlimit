@@ -26,25 +26,36 @@ namespace TheGame.Components.Display
 
         #region Properties
 
-
+        /// <summary>
+        /// Displayed text
+        /// </summary>
         public string Text 
         { 
             set { text = value; } 
             get { return text; } 
         }
 
+        /// <summary>
+        /// Color of text
+        /// </summary>
         public Color Color
         {
             set { color = value; }
             get { return color; }
         }
 
+        /// <summary>
+        /// Font of text
+        /// </summary>
         public SpriteFont Font
         {
             set { font = value; }
             get { return font; }
         }
 
+        /// <summary>
+        /// Scale of text
+        /// </summary>
         public float Scale
         {
             set { scale = value; }
@@ -53,12 +64,29 @@ namespace TheGame.Components.Display
 
         #endregion
 
+        /// <summary>
+        /// Creates screen text to be displayed.
+        /// </summary>
+        /// <param name="parent">Game screen this object is displayed on</param>
+        /// <param name="position">Position the text will display at</param>
+        /// <param name="text">Text to be displayed</param>
+        /// <param name="color">Color of hit text</param>
+        /// <param name="font">Font of hit text</param>
         public TextComponent2D(GameScreen parent, Vector2 position, string text, Color color, SpriteFont font)
             : this(parent, position, text, color, font, 1.0f)
         {
 
         }
 
+        /// <summary>
+        /// Creates screen text to be displayed with specified scale.
+        /// </summary>
+        /// <param name="parent">Game screen this object is displayed on</param>
+        /// <param name="position">Position the text will display at</param>
+        /// <param name="text">Text to be displayed</param>
+        /// <param name="color">Color of text</param>
+        /// <param name="font">Font of text</param>
+        /// <param name="scale">1.0f for a normal size</param>
         public TextComponent2D(GameScreen parent, Vector2 position, string text, Color color, SpriteFont font, float scale) : base(parent)
         {
             this.position = position;

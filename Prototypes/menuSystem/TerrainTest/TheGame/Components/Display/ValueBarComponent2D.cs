@@ -7,8 +7,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame.Components.Display
 {
+    /// <summary>
+    /// Represents a health or mana bar or any bar that has a game value.
+    /// This is a very specific implementation of a gauge.
+    /// This object should be created with a grayscale rectangular image.
+    /// </summary>
     class ValueBarComponent2D : ImageComponent2D, IGauge
     {
+        
         private int maxValue, currentValue;
 
         private Color damageColor, originalColor;
@@ -21,24 +27,43 @@ namespace TheGame.Components.Display
 
         private const float maxFade = 2.0f;
 
+        /// <summary>
+        /// Keeps track of the max value of the gauge and displays it accordingly
+        /// </summary>
         public int MaxValue
         {
             set { maxValue = value < 1? 1 : maxValue; }
             get { return maxValue; }
         }
 
+        /// <summary>
+        /// Keeps track of the current value of the gauge and displays it accordingly
+        /// </summary>
         public int CurrentValue
         {
             set { currentValue = value < 0? 0 : value > maxValue? maxValue : value; }
             get { return currentValue; }
         }
 
+        /// <summary>
+        /// The bar would briefly change to the damage flash color when value decreases i.e. 
+        /// IncreaseDecreaseValue() is called with a negative value.
+        /// </summary>
         public Color DamageColor
         {
             set { damageColor = value; }
             get { return damageColor; }
         }
 
+        /// <summary>
+        /// Creates a value bar gauge
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="position"></param>
+        /// <param name="image"></param>
+        /// <param name="tint"></param>
+        /// <param name="maxValue"></param>
+        /// <param name="damageColor"></param>
         public ValueBarComponent2D(GameScreen parent, Vector2 position, Texture2D image, Color tint, int maxValue, Color damageColor) 
             : base(parent, position, image, tint)
         {
