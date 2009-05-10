@@ -69,6 +69,8 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -82,16 +84,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ActorInfo.cs" />
-    <Compile Include="CharacterClassInfo.cs" />
-    <Compile Include="HeightMapInfo.cs" />
+    <Compile Include="Characters\ActorInfo.cs" />
+    <Compile Include="Characters\CharacterClassInfo.cs" />
+    <Compile Include="MonsterInfo.cs" />
+    <Compile Include="Terrain\HeightMapInfo.cs" />
     <Compile Include="Items\Armor.cs" />
     <Compile Include="Items\Equipment.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Characters\PlayerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sprite.cs" />
-    <Compile Include="SpriteInfo.cs" />
-    <Compile Include="TerrainInfo.cs" />
+    <Compile Include="Characters\Sprite.cs" />
+    <Compile Include="Characters\SpriteInfo.cs" />
+    <Compile Include="Terrain\TerrainInfo.cs" />
     <Compile Include="Items\Weapon.cs" />
   </ItemGroup>
   <ItemGroup>

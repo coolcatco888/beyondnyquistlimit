@@ -5,6 +5,6 @@
     <TerrainBumpiness>10.0</TerrainBumpiness>
     <TexCoordScale>0.05</TexCoordScale>
     <TerrainFileName>terrain</TerrainFileName>
-    <TextureTerrain>MountainGrass.png</TextureTerrain>
+    <TerrainTexture>MountainGrass.png</TerrainTexture>
   </Asset>
 </XnaContent>
