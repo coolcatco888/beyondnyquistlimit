@@ -17,6 +17,8 @@ namespace TheGame.Components.Display
 
         protected Color tint;
 
+        protected Vector2 scale;
+
         public Texture2D Image
         {
             set { image = value; }
@@ -27,6 +29,12 @@ namespace TheGame.Components.Display
         {
             set { tint = value; }
             get { return tint; }
+        }
+
+        public Vector2 Scale
+        {
+            set { scale = value; }
+            get { return scale; }
         }
 
         /// <summary>
@@ -57,17 +65,32 @@ namespace TheGame.Components.Display
         /// <param name="image"></param>
         /// <param name="tint"></param>
 
-        public ImageComponent2D(GameScreen parent, Vector2 position, Texture2D image, Color tint) : base(parent)
+        public ImageComponent2D(GameScreen parent, Vector2 position, Texture2D image, Color tint)
+            : this(parent, position, image, tint, Vector2.One)
+        {
+        }
+
+        /// <summary>
+        /// Creates a panel with a background image with a tint color, keep in mind panel items can be placed
+        /// outside of a menu but generally shouldn't.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="image"></param>
+        /// <param name="tint"></param>
+
+        public ImageComponent2D(GameScreen parent, Vector2 position, Texture2D image, Color tint, Vector2 scale)
+            : base(parent)
         {
             this.position = position;
             this.image = image;
             this.tint = tint;
+            this.scale = scale;
         }
 
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(image, position, tint);
+            spriteBatch.Draw(image, position, null, tint, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
             spriteBatch.End();
         }
     }

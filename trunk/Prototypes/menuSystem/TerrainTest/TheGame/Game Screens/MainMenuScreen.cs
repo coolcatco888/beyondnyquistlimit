@@ -153,7 +153,7 @@ namespace TheGame.Game_Screens
         /// </summary>
         private void HandleMenuSelection()
         {
-            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.IsButtonDown(Buttons.A))
+            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.WasButtonPressed(Buttons.A))
             {
                 switch (menu.GetCurrentText())
                 {

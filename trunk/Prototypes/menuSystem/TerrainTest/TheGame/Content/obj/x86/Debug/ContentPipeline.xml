@@ -206,6 +206,15 @@
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-04T12:46:20.5625-07:00</Time>
     </Item>
+    <Item>
+      <Source>blank.png</Source>
+      <Name>blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\blank.xnb</Output>
+      <Time>2009-05-10T12:13:53.9375-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
