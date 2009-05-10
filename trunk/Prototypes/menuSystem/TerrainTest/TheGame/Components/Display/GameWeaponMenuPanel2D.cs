@@ -22,7 +22,7 @@ namespace TheGame.Components.Display
 
         private int selected = 0;
 
-        private bool killMe = false;
+        private bool killMe = false, deployed = false;
         
         /// <summary>
         /// Creates a circular weapon/item menu selection.  Each item is displayed in a circular fashion.
@@ -38,7 +38,10 @@ namespace TheGame.Components.Display
 
         public void UpdateItemPositions()
         {
-            UpdateItemPositons(maxScale);
+            if (deployed)
+            {
+                UpdateItemPositons(maxScale);
+            }
         }
 
         /// <summary>
@@ -72,6 +75,7 @@ namespace TheGame.Components.Display
                 }
                 range1 += angle;
                 range2 += angle;
+                component.Visible = true;
             }
         }
 
@@ -83,6 +87,7 @@ namespace TheGame.Components.Display
         public void AddWeapon(string name, ImageComponent2D weapon)
         {
             weapons.Add(name, weapon);
+            weapon.Visible = false;
             UpdateItemPositions();
         }
 
@@ -164,6 +169,10 @@ namespace TheGame.Components.Display
             {
                 curScale++;
                 UpdateItemPositons(curScale);
+            }
+            else
+            {
+                deployed = true;
             }
             
             if (killMe && curScale > 0)
