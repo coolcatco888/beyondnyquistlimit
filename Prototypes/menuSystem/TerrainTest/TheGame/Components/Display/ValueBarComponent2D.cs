@@ -19,8 +19,6 @@ namespace TheGame.Components.Display
 
         private Color damageColor, originalColor;
 
-        private Vector2 horizontalScale;
-
         private bool damaged = false;
 
         private float currentFade = 0.1f;
@@ -69,16 +67,9 @@ namespace TheGame.Components.Display
         {
             this.maxValue = maxValue < 1? 1 : maxValue;
             this.currentValue = this.maxValue;
-            horizontalScale = new Vector2(1.0f, 1.0f);
+            this.scale = new Vector2(1.0f, 1.0f);
             this.damageColor = damageColor;
             this.originalColor = tint;
-        }
-
-        public override void Draw(GameTime gameTime)
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(image, position, null, tint, 0.0f, Vector2.Zero, horizontalScale, SpriteEffects.None, 0.0f);
-            spriteBatch.End();
         }
 
         public void IncreaseDecreaseValue(int value)
@@ -86,7 +77,7 @@ namespace TheGame.Components.Display
             damaged = value < 0;
             currentValue += value;
             currentValue = currentValue > maxValue ? maxValue : currentValue < 0 ? 0 : currentValue;
-            horizontalScale.X = (float) currentValue / (float) maxValue;
+            this.scale.X = (float) currentValue / (float) maxValue;
         }
 
         public override void Update(GameTime gameTime)

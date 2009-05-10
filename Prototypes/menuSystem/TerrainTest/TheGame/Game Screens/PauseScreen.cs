@@ -37,7 +37,10 @@ namespace TheGame.Game_Screens
             : base(name)
         {
             this.sender = sender;
-            this.fadeScreen = new ImageComponent2D(this, Vector2.Zero, new Texture2D(GameEngine.Graphics, GameEngine.Graphics.Viewport.Width, GameEngine.Graphics.Viewport.Height), new Color(Color.Black, 127));
+            Texture2D blank = GameEngine.Content.Load<Texture2D>("blank");
+
+         
+            this.fadeScreen = new ImageComponent2D(this, Vector2.Zero, blank, new Color(Color.Black, 100), new Vector2(GameEngine.Graphics.Viewport.Width, GameEngine.Graphics.Viewport.Height));
             this.Components.Add(fadeScreen);
             GameEngine.BaseScreen.AlwaysUpdate = true;
             this.BlocksUpdate = true;
@@ -48,7 +51,7 @@ namespace TheGame.Game_Screens
 
         protected override void HandleInput()
         {
-            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.IsButtonDown(Buttons.A))
+            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.WasButtonPressed(Buttons.A))
             {
                 switch (menu.GetCurrentText())
                 {
@@ -58,16 +61,17 @@ namespace TheGame.Game_Screens
                     case "Exit Game":
                         previousScreen.Dispose();
                         Dispose();
-                        (new MainMenuScreen("main_screen_fix_me_why_does_it_fail?")).LoadContent();
+                        (new MainMenuScreen("main")).LoadContent();
                         break;
                 }
+            }
+            else if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                Dispose();
             }
 
             base.HandleInput();
         }
-
-
-
 
     }
 }

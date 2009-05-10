@@ -107,3 +107,4 @@ D:\Work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\TheGame.e
 D:\Work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\obj\x86\Debug\TheGame.pdb
 D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\healthbar.xnb
 D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\hud.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TerrainTest\TheGame\bin\x86\Debug\Content\blank.xnb

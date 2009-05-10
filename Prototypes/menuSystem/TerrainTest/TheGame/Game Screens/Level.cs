@@ -132,7 +132,7 @@ namespace TheGame
                 hud.Healthbar.IncreaseDecreaseValue(value);
             }
 
-            if (gamepadDevice.WasButtonPressed(Buttons.Start))
+            if (gamepadDevice.WasButtonPressed(Buttons.Start) || keyboardDevice.WasKeyPressed(Keys.Escape))
             {
                 new PauseScreen("pause", this, PlayerIndex.One);
             }
