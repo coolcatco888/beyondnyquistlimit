@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace ContentTestLibrary
 {
-    public class Player
+    public class PlayerInfo : ActorInfo
     {
         #region Current Statistics
 
