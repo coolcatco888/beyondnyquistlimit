@@ -39,6 +39,7 @@ namespace TheGame
             : base(parent)
         {
             current = Keyboard.GetState();
+            Initialize();
             Update(null);
         }
 

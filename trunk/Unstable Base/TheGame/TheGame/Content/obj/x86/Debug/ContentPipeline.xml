@@ -53,17 +53,17 @@
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb</Output>
-      <Time>2009-05-07T22:33:11.683-07:00</Time>
+      <Time>2009-05-09T22:33:37.578125-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
