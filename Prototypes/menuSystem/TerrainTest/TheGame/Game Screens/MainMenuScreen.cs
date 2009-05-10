@@ -158,7 +158,7 @@ namespace TheGame.Game_Screens
                 switch (menu.GetCurrentText())
                 {
                     case "Start Game":
-                        GameEngine.GameScreens.Remove(this);
+                        Dispose();
                         new Level("test", "Terrain\\terrain");
                         break;
                     case "Exit Game":

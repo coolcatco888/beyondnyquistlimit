@@ -24,20 +24,23 @@ namespace TheGame.Components.Display
 
         public int StartIndex
         {
+            set { startIndex = value; }
             get { return startIndex; }
         }
 
         public int EndIndex
         {
+            set { endIndex = value; }
             get { return endIndex; }
         }
 
         public int CurrentIndex
         {
+            set { currentIndex = value; }
             get { return currentIndex; }
         }
 
-        private MenuPanel2D(GameScreen parent, Vector2 position)
+        public MenuPanel2D(GameScreen parent, Vector2 position)
             : base(parent, position)
         {
         }
