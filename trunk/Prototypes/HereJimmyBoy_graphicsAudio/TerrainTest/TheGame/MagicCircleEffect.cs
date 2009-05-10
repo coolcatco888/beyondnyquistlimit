@@ -1,8 +1,19 @@
 ﻿
 #region Using Statements
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Net;
+using Microsoft.Xna.Framework.Storage;
+using Library;
 
 #endregion  // Using Statements
 
@@ -18,6 +29,9 @@ namespace TheGame
         private float scale;
         private Point sheetIndex;
         private float timer = 0.0f;
+        private PointSpriteSystem pss;
+        private double angle;
+        private Random rand = new Random();
 
         #endregion  // Fields
 
@@ -30,6 +44,8 @@ namespace TheGame
             this.scale = scaleIncrement;
             this.rotationSpeed = rotationSpeed;
             this.sheetIndex = sheetIndex;
+
+            pss = new PointSpriteSystem(parent);
         }
 
         public MagicCircleEffect(GameScreen parent, SpriteInfo spriteInfo, float scaleIncrement, float rotationSpeed, int sheetColumn, int sheetRow)
@@ -40,6 +56,8 @@ namespace TheGame
             this.rotationSpeed = rotationSpeed;
             this.sheetIndex.X = sheetColumn;
             this.sheetIndex.Y = sheetRow;
+
+            pss = new PointSpriteSystem(parent);
 
             vertices[0].TextureCoordinate = new Vector2(
                 sheetIndex.X * spriteInfo.SpriteUnit.X,
@@ -67,6 +85,10 @@ namespace TheGame
         {
             timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
+            angle = rand.Next() * MathHelper.Pi * 2;
+
+            pss.AddParticle(Vector3.Add(this.position, new Vector3((float)Math.Cos(angle), -1.0f, (float)Math.Sin(angle))), new Vector3(0.0f, 1.0f,0.0f));
+
             while (timer > 0)
             {
                 vertices[0].Position.X = 1 * scale;
@@ -84,13 +106,13 @@ namespace TheGame
 
                 rotationAngle += rotationSpeed;
 
-                if (scale > 0 && scale < 2)
+                if (scale > 0 && scale < 5)
                 {
                     scale += scaleIncrement;
                 }
                 else
                 {
-                    scaleIncrement = 2;
+                    scaleIncrement = 5;
                 }
 
                 timer -= 40;
