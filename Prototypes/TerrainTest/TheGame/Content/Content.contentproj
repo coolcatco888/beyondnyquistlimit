@@ -116,6 +116,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Terrain\skymap.bmp">
+      <Name>skymap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>SkyGardenProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="Skybox\NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
