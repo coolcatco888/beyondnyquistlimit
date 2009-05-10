@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using TheGame.Components.Display;
+using TheGame.Game_Screens;
 #endregion
 
 namespace TheGame
@@ -129,6 +130,11 @@ namespace TheGame
                 int value = random.Next(300);
                 new HitTextComponent2D(this, TransformPositionToScreenCoordinates(actor.Position), value, Color.Green, font);
                 hud.Healthbar.IncreaseDecreaseValue(value);
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                new PauseScreen("pause", this, PlayerIndex.One);
             }
         }
 
