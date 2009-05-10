@@ -49,8 +49,6 @@ namespace TheGame
         {
             this.parent = parent;
             this.enabled = true;
-
-            Initialize(parent);
         }
 
         #endregion
@@ -58,9 +56,8 @@ namespace TheGame
         // Section has the 3 main methods that should be overridden
         #region Methods
 
-        public virtual void Initialize(GameScreen parent)
+        public virtual void Initialize()
         {
-            this.parent = parent;
             parent.Components.Add(this);
             initialized = true;
         }

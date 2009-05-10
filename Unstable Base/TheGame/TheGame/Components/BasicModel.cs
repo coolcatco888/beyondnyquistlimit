@@ -109,6 +109,8 @@ namespace TheGame
 
             this.Parent = parent;
             this.model = model;
+
+            Initialize();
         }
 
         public override void Update(GameTime gameTime)

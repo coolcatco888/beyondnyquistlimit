@@ -89,14 +89,14 @@ namespace TheGame
         public Camera(GameScreen parent)
             : base(parent)
         {
-            Initialize(parent);
+            Initialize();
         }
 
         #endregion
 
         #region Component Members
 
-        public override void Initialize(GameScreen parent)
+        public override void Initialize()
         {
             position = Vector3.Zero;
             rotation = Quaternion.Identity;
@@ -104,7 +104,7 @@ namespace TheGame
 
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GameEngine.Graphics.Viewport.AspectRatio, 1.0f, 10000.0f);
             
-            base.Initialize(parent);
+            base.Initialize();
         }
 
         public override void Update(GameTime gameTime)

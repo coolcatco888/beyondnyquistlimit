@@ -15,23 +15,23 @@ namespace TheGame
 {
     class PointSpriteSystem : Component, IDrawableComponent
     {
-        public PointSpriteSystem(GameScreen parent)
+        public PointSpriteSystem(GameScreen parent, PointSpriteSystemSettings settings)
             : base(parent)
         {
-            //maxParticels = 1000;
-            //particleDuration = 1.0f;
+            this.settings = settings;
+            Initialize();
         }
 
         #region Component Members
 
-        public override void Initialize(GameScreen parent)
+        public override void Initialize()
         {
-            maxParticels = 1000;
-            particleDuration = 1.0f;
+            //maxParticels = 1000;
+            //particleDuration = 1.0f;
 
             visible = true;
 
-            particles = new ParticleVertex[maxParticels];
+            particles = new ParticleVertex[settings.MaxPointCount];
 
             texture2D = GameEngine.Content.Load<Texture2D>("ParticleA");
             
@@ -45,7 +45,7 @@ namespace TheGame
 
             effect = e.Clone(GameEngine.Graphics);
 
-            effect.CurrentTechnique = effect.Techniques["Technique1"];
+            effect.CurrentTechnique = effect.Techniques[settings.Technique];
 
             EffectParameterCollection parameters = effect.Parameters;
 
@@ -56,15 +56,15 @@ namespace TheGame
             effectViewportHeightParameter = parameters["ViewportHeight"];
             effectTimeParameter = parameters["CurrentTime"];
 
-            parameters["ParticleSize"].SetValue(0.2f);
-            parameters["Duration"].SetValue(particleDuration);
-            parameters["SpriteTexture"].SetValue(texture2D);
+            parameters["ParticleSize"].SetValue(settings.PointSpriteSize);
+            parameters["Duration"].SetValue(settings.ParticleDuration);
+            parameters["SpriteTexture"].SetValue(settings.SpriteTexture);
 
             vertexDeclaration = new VertexDeclaration(GameEngine.Graphics, ParticleVertex.VertexElements);
 
-            dynamicVertexBuffer = new DynamicVertexBuffer(GameEngine.Graphics, ParticleVertex.SizeInBytes * maxParticels, BufferUsage.Points);
+            dynamicVertexBuffer = new DynamicVertexBuffer(GameEngine.Graphics, ParticleVertex.SizeInBytes * settings.MaxPointCount, BufferUsage.Points);
 
-            base.Initialize(parent);
+            base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
@@ -215,40 +215,21 @@ namespace TheGame
             if (nextFreeParticle == firstRetiredParticle)
                 return;
 
-            // Adjust the input velocity based on how much
-            // this particle system wants to be affected by it.
-            //velocity *= settings.EmitterVelocitySensitivity;
-
-            // Add in some random amount of horizontal velocity.
-            //float horizontalVelocity = MathHelper.Lerp(settings.MinHorizontalVelocity,
-            //                                           settings.MaxHorizontalVelocity,
-            //                                           (float)random.NextDouble());
-
-            //double horizontalAngle = random.NextDouble() * MathHelper.TwoPi;
-
-            //velocity.X += horizontalVelocity * (float)Math.Cos(horizontalAngle);
-            //velocity.Z += horizontalVelocity * (float)Math.Sin(horizontalAngle);
-
-            // Add in some random amount of vertical velocity.
-            //velocity.Y += MathHelper.Lerp(settings.MinVerticalVelocity,
-            //                              settings.MaxVerticalVelocity,
-            //                              (float)random.NextDouble());
-
-            // Choose four random control values. These will be used by the vertex
-            // shader to give each particle a different size, rotation, and color.
-            //Color randomValues = new Color((byte)random.Next(255),
-            //                               (byte)random.Next(255),
-            //                               (byte)random.Next(255),
-            //                               (byte)random.Next(255));
-
             // Fill in the particle vertex structure.
             particles[firstFreeParticle].Position = position;
             particles[firstFreeParticle].Velocity = velocity;
-            particles[firstFreeParticle].Color = Color.Aqua;
+            particles[firstFreeParticle].Color = settings.Color;
             particles[firstFreeParticle].Time = currentTime;
 
             firstFreeParticle = nextFreeParticle;
         }
+
+        public PointSpriteSystemSettings Setting
+        {
+            get { return settings; }
+            set { settings = value; }
+        }
+        PointSpriteSystemSettings settings;
 
         Effect effect;
 
@@ -257,9 +238,6 @@ namespace TheGame
         EffectParameter effectProjectionParameter;
         EffectParameter effectViewportHeightParameter;
         EffectParameter effectTimeParameter;
-
-        float particleDuration;
-        int maxParticels;
 
         ParticleVertex[] particles;
 
@@ -292,7 +270,7 @@ namespace TheGame
                 // Is this particle old enough to retire?
                 float particleAge = currentTime - particles[firstActiveParticle].Time;
 
-                if (particleAge < particleDuration)
+                if (particleAge < settings.ParticleDuration)
                     break;
 
                 // Remember the time at which we retired this particle.

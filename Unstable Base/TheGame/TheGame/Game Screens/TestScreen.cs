@@ -17,7 +17,7 @@ namespace TheGame
     {
         PointSpriteSystem pss;
         double time;
-        double angle;
+        
 
         Random rand = new Random();
 
@@ -36,17 +36,30 @@ namespace TheGame
             temp.Scale = 1.0f;
             temp.Position = new Vector3(0.0f, -2.2f, -4.5f);
 
-            pss = new PointSpriteSystem(this);
+            PointSpriteSystemSettings psss = new PointSpriteSystemSettings();
+            psss.Color = Color.Green;
+            psss.MaxPointCount = 5000;
+            psss.ParticleDuration = 1.0f;
+            psss.PointSpriteSize = 0.2f;
+            psss.Position = Vector3.Zero;
+            psss.SpriteTexture = GameEngine.Content.Load<Texture2D>("ParticleA");
+            psss.Technique = "Spherical";
+
+            pss = new PointSpriteSystem(this, psss);
         }
 
         public override void Update(GameTime gameTime)
         {
             time += gameTime.ElapsedGameTime.TotalSeconds;
 
-                angle = rand.Next() * MathHelper.Pi * 2;
-
-                pss.AddParticle(new Vector3((float)Math.Cos(angle), 0.0f , (float)Math.Sin(angle)), Vector3.Up);
+            //for (int i = 0; i < gameTime.ElapsedGameTime.Milliseconds; i++ )
+            //{
                 time = 0;
+                double theta = rand.NextDouble() * MathHelper.Pi * 2;
+                double phi = rand.NextDouble() * MathHelper.Pi * 2;
+                pss.AddParticle(new Vector3(1.0f, (float)theta, (float)phi), new Vector3(-1.0f, 0.0f, 0.0f));
+                
+            //}
             
 
             base.Update(gameTime);
