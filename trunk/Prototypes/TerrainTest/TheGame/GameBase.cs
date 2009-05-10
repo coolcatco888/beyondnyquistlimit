@@ -52,7 +52,7 @@ namespace TheGame
             GameEngine.Services.AddService(typeof(KeyboardDevice), keyboardDevice);
 
             new SkyboxScreen("t");
-            new Level("test", "Terrain\\terrain");
+            new Level("test", "Terrain\\skymap");
 
             base.Initialize();
         }

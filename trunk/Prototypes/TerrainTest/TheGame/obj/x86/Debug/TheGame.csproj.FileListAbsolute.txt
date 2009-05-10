@@ -50,3 +50,5 @@ C:\Users\Kaigan\Desktop\Project\Prototypes\TerrainTest\TheGame\obj\x86\Debug\Res
 C:\Users\Kaigan\Desktop\Project\Prototypes\TerrainTest\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Kaigan\Desktop\Project\Prototypes\TerrainTest\TheGame\obj\x86\Debug\TheGame.exe
 C:\Users\Kaigan\Desktop\Project\Prototypes\TerrainTest\TheGame\obj\x86\Debug\TheGame.pdb
+D:\work\wtfjim\Prototypes\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb
+D:\work\wtfjim\Prototypes\TerrainTest\TheGame\bin\x86\Debug\Content\Terrain\rocks_0.xnb

@@ -98,9 +98,9 @@ namespace TheGame
 
         public override void Initialize(GameScreen parent)
         {
-            position = new Vector3(0.0f, 1.0f, 0.0f);
+            position = new Vector3(0.0f, 10.0f, 10.0f);
             rotation = Quaternion.Identity;
-            lookAt = -Vector3.UnitZ;
+            lookAt = new Vector3(0.0f, 0.0f, -1.0f);
 
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GameEngine.Graphics.Viewport.AspectRatio, 1.0f, 10000.0f);
             
