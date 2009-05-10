@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame
 {
-    class SpriteSequence
+    public class SpriteSequence
     {
 #region Fields
 

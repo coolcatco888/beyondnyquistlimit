@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using Library;
 #endregion
 
 namespace TheGame
@@ -55,8 +56,13 @@ namespace TheGame
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
 
-            Actor actor = new Actor(this, new SpriteInfo(GameEngine.Content.Load<Texture2D>("Sprite Sheet Knight"), 64, 128, 1));
-            actor.Position = new Vector3(0.0f, 0.0f, -30.0f);
+            SpriteInfo spriteInfo = GameEngine.Content.Load<SpriteInfo>(@"ActorTest");
+
+            //Actor actor = new Actor(this, spriteInfo);
+            //actor.Position = new Vector3(0.0f, 0.0f, -30.0f);
+
+            Player player1 = new Player(this, spriteInfo);
+            player1.Position = new Vector3(0.0f, 0.0f, -30.0f);
 
             AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
             audioManager.Play3DCue("music", (Camera)GameEngine.Services.GetService(typeof(Camera)));

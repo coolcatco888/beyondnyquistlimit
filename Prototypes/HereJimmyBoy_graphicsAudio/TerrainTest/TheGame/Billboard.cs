@@ -3,12 +3,13 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Library;
 
 #endregion  // Using Statements
 
 namespace TheGame
 {
-    class Billboard : Component, IDrawableComponent
+    public class Billboard : Component, IDrawableComponent
     {
         #region Fields
 
@@ -127,7 +128,7 @@ namespace TheGame
 
         public override void Dispose()
         {
-            spriteInfo.Dispose();
+            //spriteInfo.Dispose();
 
             base.Dispose();
         }
