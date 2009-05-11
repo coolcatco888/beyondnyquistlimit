@@ -21,9 +21,11 @@ namespace TheGame.Components.Display
 
         private bool damaged = false;
 
-        private float currentFade = 0.1f;
+        private float currentFade = 0.0f;
 
-        private const float maxFade = 2.0f;
+        private const float maxFade = 1.0f;
+
+        private const byte maxColorVal = 255;
 
         /// <summary>
         /// Keeps track of the max value of the gauge and displays it accordingly
@@ -83,22 +85,34 @@ namespace TheGame.Components.Display
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            //TODO: Add Damage Color Flash
-            if (damageColor != null && damaged)
+
+            float originalColorRatio = originalColorRatio = maxFade - currentFade;
+            if (damageColor != null && damaged && currentFade < 1.0f)
             {
-                if (currentFade < maxFade)
-                {
-                    float originalColorRatio;
-                    if(currentFade < 10)
-                    {
-                        currentFade += 0.1f;
-                        originalColorRatio = maxFade - currentFade;
-                        //tint = new Color(                        
-                    }
-                    
-                }
+                currentFade += 0.10000f;
+                tint = CreateFadedColor(originalColorRatio);
+            }
+            else if (damageColor != null && !damaged
+                && currentFade <= 1.001f && currentFade > 0.0f)
+            {
+                currentFade -= 0.10000f;
+                tint = CreateFadedColor(originalColorRatio);
+            }
+            else
+            {
+                damaged = false;
             }
         }
-        
+
+        private Color CreateFadedColor(float originalColorRatio)
+        {
+            float r = (((float)originalColor.R / (float)maxColorVal) * originalColorRatio) +
+                (((float)damageColor.R / (float)maxColorVal) * currentFade);
+            float g = (((float)originalColor.G / (float)maxColorVal) * originalColorRatio) +
+                (((float)damageColor.G / (float)maxColorVal) * currentFade);
+            float b = (((float)originalColor.B / (float)maxColorVal) * originalColorRatio) +
+                (((float)damageColor.B / (float)maxColorVal) * currentFade);
+            return new Color(r, g, b, 1.0f);
+        }
     }
 }

@@ -93,6 +93,12 @@ namespace TheGame.Components.Display
             spriteBatch.Draw(image, position, null, tint, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
             spriteBatch.End();
         }
+
+        public override void Dispose()
+        {
+            this.image.Dispose();
+            base.Dispose();
+        }
     }
 }
 

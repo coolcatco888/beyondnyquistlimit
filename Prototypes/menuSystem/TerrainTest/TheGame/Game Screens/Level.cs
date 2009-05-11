@@ -152,7 +152,7 @@ namespace TheGame
         {
             CharacterStatusDisplayParams hudParams = new CharacterStatusDisplayParams();
             hudParams.BarImage = GameEngine.Content.Load<Texture2D>("healthbar");
-            hudParams.DamageBarColor = Color.Orange;
+            hudParams.DamageBarColor = Color.White;
             hudParams.FontColor = Color.White;
             hudParams.FontScale = 0.4f;
             hudParams.HealthBarColor = Color.Red;

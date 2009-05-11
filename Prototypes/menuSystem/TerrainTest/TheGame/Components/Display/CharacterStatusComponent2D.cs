@@ -48,7 +48,7 @@ namespace TheGame.Components.Display
 
             //Add Bars
             this.healthBar = new ValueBarComponent2D(parent, param.Position + param.HealthBarPos, param.BarImage, param.HealthBarColor, param.HealthBarMaxValue, param.DamageBarColor);
-            this.manaBar = new ValueBarComponent2D(parent, param.Position + param.ManaBarPos, param.BarImage, param.ManaBarColor, param.ManaBarMaxValue, param.DamageBarColor);
+            this.manaBar = new ValueBarComponent2D(parent, param.Position + param.ManaBarPos, param.BarImage, param.ManaBarColor, param.ManaBarMaxValue, param.ManaBarColor);
 
             //Add Hud
             this.hud = new ImageComponent2D(parent, param.Position, param.HudImage);
