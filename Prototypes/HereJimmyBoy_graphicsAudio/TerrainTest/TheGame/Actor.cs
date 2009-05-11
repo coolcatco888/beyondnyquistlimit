@@ -22,8 +22,6 @@ namespace TheGame
         protected Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
         protected SpriteSequence currentSequence;
         protected Vector3 velocity = Vector3.Zero;
-        protected float xDirection = 0.0f;
-        protected float zDirection = 0.0f;
 
 #endregion  // Fields
 
