@@ -42,10 +42,8 @@ namespace TheGame
         private void UpdateController()
         {
             GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
-            zDirection = gamepadDevice.LeftStickPosition.Y;
-            xDirection = gamepadDevice.LeftStickPosition.X;
 
-            Vector3 newVelocity = new Vector3(xDirection, 0.0f, zDirection);
+            Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
 
             if (newVelocity != Vector3.Zero)
             {
@@ -67,34 +65,34 @@ namespace TheGame
                 state = ActorState.Walking;
             }
 
-            if (zDirection == 0 && xDirection == 0)
+            if (velocity.Z == 0 && velocity.X == 0)
             {
                 idle();
             }
 
-            if (zDirection > 0)
+            if (velocity.Z > 0)
             {
-                if (xDirection == 0)
+                if (velocity.X == 0)
                     orientation = Orientation.North;
-                if (xDirection > 0)
+                if (velocity.X > 0)
                     orientation = Orientation.Northeast;
-                if (xDirection < 0)
+                if (velocity.X < 0)
                     orientation = Orientation.Northwest;
             }
-            else if (zDirection < 0)
+            else if (velocity.Z < 0)
             {
-                if (xDirection == 0)
+                if (velocity.X == 0)
                     orientation = Orientation.South;
-                if (xDirection > 0)
+                if (velocity.X > 0)
                     orientation = Orientation.Southeast;
-                if (xDirection < 0)
+                if (velocity.X < 0)
                     orientation = Orientation.Southwest;
             }
-            else if (xDirection > 0)
+            else if (velocity.X > 0)
             {
                 orientation = Orientation.East;
             }
-            else if (xDirection < 0)
+            else if (velocity.X < 0)
             {
                 orientation = Orientation.West;
             }
@@ -102,35 +100,43 @@ namespace TheGame
             switch (previousOrientation)
             {
                 case Orientation.North:
-                    if ((orientation == Orientation.Northeast || orientation == Orientation.Northwest) && (xDirection > -0.3f && xDirection < 0.3f))
+                    if ((orientation == Orientation.Northeast && velocity.X < 0.1f) ||  
+                        (orientation == Orientation.Northwest && velocity.X > -0.1f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.Northeast:
-                    if ((orientation == Orientation.East || orientation == Orientation.North) && (xDirection > 0.2f || zDirection > 0.2f))
+                    if ((orientation == Orientation.East && velocity.X < 0.9f) ||
+                        (orientation == Orientation.North && velocity.Z < 0.9f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.East:
-                    if ((orientation == Orientation.Southeast || orientation == Orientation.Northeast) && (zDirection > -0.3f && zDirection < 0.3f))
+                    if ((orientation == Orientation.Southeast && velocity.Z > -0.1f) ||
+                        (orientation == Orientation.Northeast && velocity.Z < 0.1f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.Southeast:
-                    if ((orientation == Orientation.South || orientation == Orientation.East) && (xDirection < 0.8f || zDirection < -0.8f))
+                    if ((orientation == Orientation.South && velocity.Z > -0.9f) ||
+                        (orientation == Orientation.East && velocity.X < 0.9f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.South:
-                    if ((orientation == Orientation.Southeast || orientation == Orientation.Southwest) && (xDirection > -0.3f && xDirection < 0.3f))
+                    if ((orientation == Orientation.Southeast && velocity.X < 0.1f) ||
+                        (orientation == Orientation.Southwest && velocity.X > -0.1f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.Southwest:
-                    if ((orientation == Orientation.West || orientation == Orientation.South) && (xDirection < -0.2f || zDirection > -0.8f))
+                    if ((orientation == Orientation.West && velocity.X > -0.9f) ||
+                        (orientation == Orientation.South && velocity.Z > -0.9f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.West:
-                    if ((orientation == Orientation.Southwest || orientation == Orientation.Northwest) && (zDirection > -0.3f && zDirection < 0.3f))
+                    if ((orientation == Orientation.Southwest && velocity.Z > -0.1f) ||
+                        (orientation == Orientation.Northwest && velocity.Z < 0.1f))
                         orientation = previousOrientation;
                     break;
                 case Orientation.Northwest:
-                    if ((orientation == Orientation.North || orientation == Orientation.West) && (xDirection > -0.2f || zDirection < 0.8f))
+                    if ((orientation == Orientation.North && velocity.Z < 0.9f) ||
+                        (orientation == Orientation.West && velocity.X > -0.9f))
                         orientation = previousOrientation;
                     break;
             }
