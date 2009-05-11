@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using TheGame.Game_Screens;
 
 namespace TheGame
 {
@@ -54,8 +55,9 @@ namespace TheGame
             GameEngine.BaseScreen.AlwaysUpdate = true;
 
             //new TestScreen("test");
-            new SkyboxScreen("sky");
-            new Level("level", "Terrain\\terrain");
+            //new SkyboxScreen("sky");
+            //new Level("level", "Terrain\\terrain");
+            new MainMenuScreen("main");
 
             base.Initialize();
         }

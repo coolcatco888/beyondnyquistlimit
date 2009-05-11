@@ -46,6 +46,8 @@ namespace TheGame.Components.Display
         {
             this.position = position;
 
+            //TODO: All components must call Initialize()
+
             //Add Bars
             this.healthBar = new ValueBarComponent2D(parent, param.Position + param.HealthBarPos, param.BarImage, param.HealthBarColor, param.HealthBarMaxValue, param.DamageBarColor);
             this.manaBar = new ValueBarComponent2D(parent, param.Position + param.ManaBarPos, param.BarImage, param.ManaBarColor, param.ManaBarMaxValue, param.ManaBarColor);

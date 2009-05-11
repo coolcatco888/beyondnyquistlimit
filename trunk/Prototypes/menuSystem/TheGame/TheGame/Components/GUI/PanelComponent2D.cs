@@ -19,6 +19,15 @@ namespace TheGame.Components.Display
     {
         protected PanelComponents panelItems;
 
+        public override void Initialize()
+        {
+            foreach (DisplayComponent2D component in panelItems)
+            {
+                component.Initialize();
+            }
+            base.Initialize();
+        }
+
         public PanelComponents PanelItems
         {
             set { panelItems = value; }
