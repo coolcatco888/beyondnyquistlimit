@@ -225,6 +225,18 @@ namespace TheGame
             indices.SetData<short>(ib);
         }
 
+        public override void Dispose()
+        {
+            foreach (Texture2D texture in textures)
+            {
+                texture.Dispose();
+            }
+            effect.Dispose();
+            vertices.Dispose();
+            indices.Dispose();
+            vertexDecl.Dispose();
+            base.Dispose();
+        }
 
     }
 }
