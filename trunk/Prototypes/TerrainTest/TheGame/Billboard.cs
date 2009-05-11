@@ -62,10 +62,10 @@ namespace TheGame
             vertices = new VertexPositionTexture[4];
 
             // Assign position.
-            vertices[0].Position = new Vector3(1, 1, 0);
-            vertices[1].Position = new Vector3(-1, 1, 0);
-            vertices[2].Position = new Vector3(-1, -1, 0);
-            vertices[3].Position = new Vector3(1, -1, 0);
+            vertices[0].Position = new Vector3(1, 2, 0);
+            vertices[1].Position = new Vector3(-1, 2, 0);
+            vertices[2].Position = new Vector3(-1, 0, 0);
+            vertices[3].Position = new Vector3(1, 0, 0);
 
             // Assign texture coordinates to vertices.
             vertices[0].TextureCoordinate = new Vector2(0, 0);

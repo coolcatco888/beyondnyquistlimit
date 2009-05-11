@@ -151,7 +151,7 @@ namespace TheGame
                     {
                         case Orientation.North:
                             position.Z -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f || heightInfo.IsOnHeightMap(position) == false)
+                            if (heightInfo.GetHeight(position) != 0.0f || heightInfo.IsOnHeightMap(position) == false)
                             {
                                 position = oldPosition;
                             }
@@ -159,12 +159,12 @@ namespace TheGame
 
                         case Orientation.Northeast:
                             position.Z -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
                             position.X += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -172,7 +172,7 @@ namespace TheGame
 
                         case Orientation.East:
                             position.X += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -180,12 +180,12 @@ namespace TheGame
 
                         case Orientation.Southeast:
                             position.Z += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
                             position.X += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -193,7 +193,7 @@ namespace TheGame
 
                         case Orientation.South:
                             position.Z += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -201,12 +201,12 @@ namespace TheGame
 
                         case Orientation.Southwest:
                             position.Z += currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
                             position.X -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -214,7 +214,7 @@ namespace TheGame
 
                         case Orientation.West:
                             position.X -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
@@ -222,12 +222,12 @@ namespace TheGame
 
                         case Orientation.Northwest:
                             position.Z -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }
                             position.X -= currentSequence.Speed;
-                            if (heightInfo.GetHeight(position) != -1.0f)
+                            if (heightInfo.GetHeight(position) != 0.0f)
                             {
                                 position = oldPosition;
                             }

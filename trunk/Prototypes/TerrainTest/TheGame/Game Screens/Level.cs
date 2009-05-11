@@ -1,4 +1,12 @@
-﻿#region Using Statements
+﻿#region File Description
+/// <summary>
+/// The Level game screen
+/// 
+/// <author>Alex Fontaine</summary>
+/// </summary>
+#endregion
+
+#region Using Statements
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,34 +27,35 @@ namespace TheGame
     class Level : GameScreen
     {
         #region Fields
+
+        /// <summary>
+        /// The height information of the terrain model. Used for height map collision.
+        /// </summary>
+        private HeightMapInfo terrainHeightMap;
         public HeightMapInfo TerrainHeightMap
         {
-            get
-            {
-                return terrainHeightMap;
-            }
-            set
-            {
-                terrainHeightMap = value;
-            }
+            get { return terrainHeightMap; }
+            set { terrainHeightMap = value; }
         }
-        private HeightMapInfo terrainHeightMap;
 
+        /// <summary>
+        /// The current terrain of the level
+        /// </summary>
+        private Terrain levelMap;
         public Terrain LevelMap
         {
-            get
-            {
-                return levelMap;
-            }
-            set
-            {
-                levelMap = value;
-            }
+            get { return levelMap; }
+            set { levelMap = value; }
         }
-        private Terrain levelMap;
-
+        
         #endregion
 
+        /// <summary>
+        /// A level game screen. Holds the components needed for the game.
+        /// The terrain, the height information, any players and monster collections, etc
+        /// </summary>
+        /// <param name="name">Name of the GameScreen</param>
+        /// <param name="terrainFileName">The filename of the terrain bitmap</param>
         public Level(string name, string terrainFileName)
             : base(name)
         {

@@ -16,24 +16,25 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    class Terrain : Component, IDrawableComponent, I3DComponent
+    public class Terrain : Component, IDrawableComponent, I3DComponent
     {
         #region Fields
 
         // Terrain model built from a bitmap
         Model terrain;
-        //HeightInfo heightInfo;
+
+        // The filename of the terrain bitmap
         String fileName;
 
+        /// <summary>
+        /// The height information associated with this terrain map
+        /// </summary>
+        private HeightMapInfo heightMapInfo;
         public HeightMapInfo HeightMapInfo
         {
-            get
-            {
-                return heightMapInfo;
-            }
+            get { return heightMapInfo; }
         }
-        HeightMapInfo heightMapInfo;
-
+        
         #endregion
 
         #region IDrawableComponent Members
@@ -69,62 +70,39 @@ namespace TheGame
             }
         }
 
+        // Whether this screen is visible or not
+        private bool visible;
         public bool Visible
         {
-            get
-            {
-                return visible;
-            }
-            set
-            {
-                visible = value;
-            }
+            get { return visible; }
+            set { visible = value; }
         }
-        bool visible;
-
+        
         #endregion
 
         #region I3DComponent Members
 
-        public Microsoft.Xna.Framework.Vector3 Position
+        private Vector3 terrainPosition;
+        public Vector3 Position
         {
-            get
-            {
-                return terrainPosition;
-            }
-            set
-            {
-                terrainPosition = value;
-            }
+            get { return terrainPosition; }
+            set { terrainPosition = value; }
         }
-        Vector3 terrainPosition;
 
-        public Microsoft.Xna.Framework.Quaternion Rotation
+        private Quaternion terrainRotation;
+        public Quaternion Rotation
         {
-            get
-            {
-                return terrainRotation;
-            }
-            set
-            {
-                terrainRotation = value;
-            }
+            get { return terrainRotation; }
+            set { terrainRotation = value; }
         }
-        Quaternion terrainRotation;
 
+        private float terrainScale;
         public float Scale
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return terrainScale; }
+            set { terrainScale = value; }
         }
-        float terrainScale;
-
+        
         #endregion
 
         public Terrain(GameScreen parent, String fileName)
@@ -149,17 +127,9 @@ namespace TheGame
             base.Initialize(parent);
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Dispose()
         {
-            KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-
-            if (keyboardDevice != null && keyboardDevice.IsKeyDown(Keys.R))
-            {
-                Quaternion rot = Quaternion.CreateFromYawPitchRoll(0.001f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f);
-                terrainRotation *= rot;
-            }
-
-            base.Update(gameTime);
+            base.Dispose();
         }
     }
 }

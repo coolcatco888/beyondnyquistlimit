@@ -1,4 +1,12 @@
-﻿#region Using Statements
+﻿#region File Description
+/// <summary>
+/// Processor used to turn a bitmap heightmap into a 3D terrain model
+/// 
+/// <author>Alex Fontaine</author>
+/// </summary>
+#endregion
+
+#region Using Statements
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content.Pipeline;
@@ -16,10 +24,31 @@ namespace TheGamePipeline
     [ContentProcessor]
     public class TerrainProcessor : ContentProcessor<Texture2DContent, ModelContent>
     {
-        const float terrainScale = 1.0f;
-        const float terrainBumpiness = 10;
-        const float texCoordScale = 0.05f;
-        const string terrainTexture = "MountainGrass.png";
+        /// <summary>
+        /// The scale of the terrain.  Determines the size of the terrain field.  Represents
+        /// the distance from one vertex to another. E.g. a value of 10 means 10 units from one vertex
+        /// to the next
+        /// </summary>
+        private const float terrainScale = 1.0f;
+
+        /// <summary>
+        /// The bumpiness factor. Represents how high the terrain will go.  Actuall pixel values will
+        /// fall between (0 - black and 1 - white) where black will be the "ground" level.  To determine the height
+        /// multiply by the bumpiness factor.  E.g. a value of 10 means the actual range is 0 - 10 for heights
+        /// </summary>
+        private const float terrainBumpiness = 10;
+
+        /// <summary>
+        /// The texture coordinate scale.  Used when drawing the material for the model. Determines the size of the
+        /// texture to use.
+        /// </summary>
+        private const float texCoordScale = 0.05f;
+
+        /// <summary>
+        /// The default texture for the terrain.  To overwrite the texture may need to physically add it in
+        /// the draw method of the model. More testing needed for this.
+        /// </summary>
+        private const string terrainTexture = "MountainGrass.png";
 
 
         /// <summary>
@@ -46,14 +75,14 @@ namespace TheGamePipeline
                     position.X = (x - heightfield.Width / 2) * terrainScale;
                     position.Z = (y - heightfield.Height / 2) * terrainScale;
 
-                    if(heightfield.GetPixel(x, y) == 0)
-                    {
-                        position.Y = -1.0f;
-                    }
-                    else
-                    {
-                        position.Y = ((heightfield.GetPixel(x, y)) * terrainBumpiness);
-                    }
+                    //if(heightfield.GetPixel(x, y) == 0)
+                    //{
+                    //    position.Y = 0.0f;
+                    //}
+                    //else
+                    //{
+                    position.Y = ((heightfield.GetPixel(x, y)) * terrainBumpiness);
+                    //}
                     
 
                     builder.CreatePosition(position);

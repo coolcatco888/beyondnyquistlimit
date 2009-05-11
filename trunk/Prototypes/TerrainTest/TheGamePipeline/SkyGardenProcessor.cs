@@ -1,3 +1,12 @@
+#region File Description
+/// <summary>
+/// Processor for creating a Sky Garden Terrain Model from a Bitmap.  Not complete yet,
+/// needs to be tested and perfected.
+/// 
+/// <author>Alex Fontaine</author>
+/// </summary>
+#endregion
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
