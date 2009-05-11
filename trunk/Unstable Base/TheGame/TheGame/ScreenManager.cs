@@ -33,6 +33,7 @@ namespace TheGame
 
         List<GameScreen> updateList;
         List<GameScreen> drawList;
+        
 
         public override void Initialize()
         {
@@ -129,11 +130,13 @@ namespace TheGame
 
                     break;
                 }
-
+            
             // Draw the remaining screens
             foreach (GameScreen screen in drawList)
                 if (screen.Initialized)
                     screen.Draw();
+
+
 
             drawList.Clear();
 

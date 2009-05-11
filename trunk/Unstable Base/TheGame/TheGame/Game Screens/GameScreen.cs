@@ -148,21 +148,95 @@ namespace TheGame
         {
             // Temporary list
             List<IDrawableComponent> drawing = new List<IDrawableComponent>();
+            List<IDrawableComponent> drawList3D = new List<IDrawableComponent>();
+            List<IDrawableComponent> drawListBillboard = new List<IDrawableComponent>();
+            List<IDrawableComponent> drawListEffects = new List<IDrawableComponent>();
+            List<IDrawableComponent> drawList2D = new List<IDrawableComponent>();
 
-            //TODO: Change this so it's good
+
             foreach (Component component in Components)
             {
                 if (component is IDrawableComponent)
                 {
-                    drawing.Add((IDrawableComponent)component);
+                    if (component is I2DComponent)
+                    {
+                        drawList2D.Add((IDrawableComponent)component);
+                    }
+                    else if (component is IPointSpriteSystem)
+                    {
+                        drawListEffects.Add((IDrawableComponent)component);
+                    }
+                    else if (component is IBillboard)
+                    {
+                        drawListBillboard.Add((IDrawableComponent)component);
+                    }
+                    else if (component is I3DComponent)
+                    {
+                        drawList3D.Add((IDrawableComponent)component);
+                    }
+                    else
+                    {
+                        drawList3D.Add((IDrawableComponent)component);
+                    }
                 }
             }
 
-            foreach (IDrawableComponent drawable in drawing)
+            //Seting up common 3D render states
+            GameEngine.Graphics.RenderState.DepthBufferEnable = true;
+            GameEngine.Graphics.RenderState.DepthBufferWriteEnable = true;
+            GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
+            GameEngine.Graphics.RenderState.AlphaTestEnable = false;
+            GameEngine.Graphics.SamplerStates[0].AddressU = TextureAddressMode.Wrap;
+            GameEngine.Graphics.SamplerStates[0].AddressV = TextureAddressMode.Wrap;
+
+            foreach (IDrawableComponent drawable in drawList3D)
             {
                 if(drawable.Visible)
                     drawable.Draw(GameEngine.GameTime);
             }
+
+            //setting common render states for billboards
+            GameEngine.Graphics.RenderState.AlphaTestEnable = true;
+            GameEngine.Graphics.RenderState.AlphaFunction = CompareFunction.GreaterEqual;
+            GameEngine.Graphics.RenderState.ReferenceAlpha = 200;
+
+            foreach (IDrawableComponent drawable in drawListBillboard)
+            {
+                if (drawable.Visible)
+                    drawable.Draw(GameEngine.GameTime);
+            }
+
+
+            //setting for sprite batch effects
+            GameEngine.Graphics.RenderState.PointSpriteEnable = true;
+            GameEngine.Graphics.RenderState.PointSizeMax = 256;
+
+            GameEngine.Graphics.RenderState.AlphaBlendEnable = true;
+            GameEngine.Graphics.RenderState.AlphaBlendOperation = BlendFunction.Add;
+            GameEngine.Graphics.RenderState.SourceBlend = Blend.SourceAlpha;
+            GameEngine.Graphics.RenderState.DestinationBlend = Blend.One;
+
+            GameEngine.Graphics.RenderState.DepthBufferEnable = true;
+            GameEngine.Graphics.RenderState.DepthBufferWriteEnable = false;
+
+            foreach (IDrawableComponent drawable in drawListEffects)
+            {
+                if (drawable.Visible)
+                    drawable.Draw(GameEngine.GameTime);
+            }
+
+            GameEngine.Graphics.RenderState.PointSpriteEnable = false;
+            GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
+            GameEngine.Graphics.RenderState.DepthBufferWriteEnable = true;
+
+            //SpriteBatch handles the device render states
+
+            foreach (IDrawableComponent drawable in drawList2D)
+            {
+                if (drawable.Visible)
+                    drawable.Draw(GameEngine.GameTime);
+            }
+
         }
 
         public virtual void Dispose()

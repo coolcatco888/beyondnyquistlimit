@@ -37,13 +37,13 @@ namespace TheGame
             temp.Position = new Vector3(0.0f, -2.2f, -4.5f);
 
             PointSpriteSystemSettings psss = new PointSpriteSystemSettings();
-            psss.Color = Color.Green;
+            psss.Color = Color.OrangeRed;
             psss.MaxPointCount = 5000;
             psss.ParticleDuration = 1.0f;
             psss.PointSpriteSize = 0.2f;
             psss.Position = Vector3.Zero;
             psss.SpriteTexture = GameEngine.Content.Load<Texture2D>("ParticleA");
-            psss.Technique = "Spherical";
+            psss.Technique = "Cylindrical";
 
             pss = new PointSpriteSystem(this, psss);
         }
@@ -52,14 +52,17 @@ namespace TheGame
         {
             time += gameTime.ElapsedGameTime.TotalSeconds;
 
-            //for (int i = 0; i < gameTime.ElapsedGameTime.Milliseconds; i++ )
-            //{
-                time = 0;
+            for (int i = 0; i < gameTime.ElapsedGameTime.Milliseconds; i++ )
+            {
+                //time = 0;
                 double theta = rand.NextDouble() * MathHelper.Pi * 2;
-                double phi = rand.NextDouble() * MathHelper.Pi * 2;
-                pss.AddParticle(new Vector3(1.0f, (float)theta, (float)phi), new Vector3(-1.0f, 0.0f, 0.0f));
+                double phi = rand.NextDouble();// *MathHelper.Pi * 2;
+                //pss.AddParticle(new Vector3(1.0f, (float)theta, (float)phi), new Vector3(-1.0f, 2.7f, 2.7f));
+
+
+                pss.AddParticle(new Vector3(0.2f * (float)phi, (float)theta, 0.0f), new Vector3(0.6f, 4.0f, 3.0f));
                 
-            //}
+            }
             
 
             base.Update(gameTime);
