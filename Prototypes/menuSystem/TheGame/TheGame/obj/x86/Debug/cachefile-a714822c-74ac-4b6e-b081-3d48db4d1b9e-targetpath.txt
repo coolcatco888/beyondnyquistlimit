@@ -18,6 +18,9 @@ Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+Content\GUI\menubg.xnb
+Content\GUI\menufont.xnb
+Content\GUI\blank.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

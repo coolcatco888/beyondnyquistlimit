@@ -117,6 +117,9 @@
     <Compile Include="Components\Skybox\Skybox.cs" />
     <Compile Include="Components\Terrain\Terrain.cs" />
     <Compile Include="Game Screens\Level.cs" />
+    <Compile Include="Game Screens\MainMenuScreen.cs" />
+    <Compile Include="Game Screens\MenuScreen.cs" />
+    <Compile Include="Game Screens\PauseScreen.cs" />
     <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Game Screens\GameScreen.cs" />
@@ -138,6 +141,9 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Components\GUI\MenuPanels\mainpanel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

@@ -20,6 +20,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using TheGame.Game_Screens;
 #endregion
 
 namespace TheGame
@@ -47,7 +48,10 @@ namespace TheGame
             get { return levelMap; }
             set { levelMap = value; }
         }
-        
+
+        protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+        protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
+
         #endregion
 
         /// <summary>
@@ -68,6 +72,15 @@ namespace TheGame
 
             MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
             magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                new PauseScreen("pause", this, PlayerIndex.One);
+            }
+            base.Update(gameTime);
         }
 
     }
