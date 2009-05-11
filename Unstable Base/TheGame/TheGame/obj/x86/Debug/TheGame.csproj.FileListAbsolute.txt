@@ -14,3 +14,24 @@ D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
 D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb
 D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Library.dll
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Library.pdb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\ActorTest.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Asplosions.xgs
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Wave Bank.xwb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Sound Bank.xsb

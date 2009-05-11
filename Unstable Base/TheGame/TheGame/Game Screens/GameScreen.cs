@@ -195,6 +195,9 @@ namespace TheGame
                     drawable.Draw(GameEngine.GameTime);
             }
 
+            // TEMPORARY
+            GameEngine.Graphics.Clear(ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
+
             //setting common render states for billboards
             GameEngine.Graphics.RenderState.AlphaTestEnable = true;
             GameEngine.Graphics.RenderState.AlphaFunction = CompareFunction.GreaterEqual;
