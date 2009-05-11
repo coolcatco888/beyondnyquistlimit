@@ -86,11 +86,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Audio\AudioManager.cs" />
+    <Compile Include="Components\Audio\IAudioEmitter.cs" />
     <Compile Include="Components\BasicModel.cs" />
+    <Compile Include="Components\Billboards\Billboard.cs" />
+    <Compile Include="Components\Billboards\BillboardEffect.cs" />
+    <Compile Include="Components\Billboards\GroundEffect.cs" />
+    <Compile Include="Components\Billboards\MagicCircleEffect.cs" />
+    <Compile Include="Components\Billboards\Orientation.cs" />
+    <Compile Include="Components\Billboards\SpriteSequence.cs" />
     <Compile Include="Components\Cameras\Camera.cs" />
     <Compile Include="Components\Component.cs" />
     <Compile Include="ComponentCollection.cs" />
     <Compile Include="Components\ComponentInterfaces.cs" />
+    <Compile Include="Components\GUI\CharacterStatusComponent2D.cs" />
+    <Compile Include="Components\GUI\DisplayComponent2D.cs" />
+    <Compile Include="Components\GUI\GameWeaponMenuPanel2D.cs" />
+    <Compile Include="Components\GUI\HitTextComponent2D.cs" />
+    <Compile Include="Components\GUI\HUDStatusComponent2D.cs" />
+    <Compile Include="Components\GUI\IGauge.cs" />
+    <Compile Include="Components\GUI\ImageComponent2D.cs" />
+    <Compile Include="Components\GUI\INumeric.cs" />
+    <Compile Include="Components\GUI\LevelTextComponent2D.cs" />
+    <Compile Include="Components\GUI\MenuPanel2D.cs" />
+    <Compile Include="Components\GUI\MenuTextComponent2D.cs" />
+    <Compile Include="Components\GUI\PanelComponent2D.cs" />
+    <Compile Include="Components\GUI\TextComponent2D.cs" />
+    <Compile Include="Components\GUI\ValueBarComponent2D.cs" />
+    <Compile Include="Components\GUI\XMLPanel2DBuilder.cs" />
+    <Compile Include="Components\Skybox\Skybox.cs" />
+    <Compile Include="Components\Terrain\Terrain.cs" />
+    <Compile Include="Game Screens\Level.cs" />
+    <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Game Screens\GameScreen.cs" />
     <Compile Include="GameScreenCollection.cs" />
@@ -98,6 +125,7 @@
     <Compile Include="Components\Input\InputDevice.cs" />
     <Compile Include="Components\Input\InputDeviceEventArgs.cs" />
     <Compile Include="Components\Input\KeyboardDevice.cs" />
+    <Compile Include="HeightMapInfo.cs" />
     <Compile Include="ParticleVertex.cs" />
     <Compile Include="Components\PointSprites\PointSpriteSystem.cs" />
     <Compile Include="Components\PointSprites\PointSpriteSystemSettings.cs" />
@@ -155,6 +183,12 @@
       <ProductName>Microsoft XNA Framework Redistributable 3.0</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{7068DDA9-9145-4F54-8056-5A0F7E678472}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />

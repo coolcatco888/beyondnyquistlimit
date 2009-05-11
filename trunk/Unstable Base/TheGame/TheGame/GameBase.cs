@@ -53,7 +53,9 @@ namespace TheGame
 
             GameEngine.BaseScreen.AlwaysUpdate = true;
 
-            new TestScreen("test");
+            //new TestScreen("test");
+            new SkyboxScreen("sky");
+            new Level("level", "Terrain\\terrain");
 
             base.Initialize();
         }
