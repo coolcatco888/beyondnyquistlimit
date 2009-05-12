@@ -29,7 +29,7 @@ namespace TheGame
                 position = value;
             }
         }
-        Vector3 position;
+        protected Vector3 position;
 
         public Quaternion Rotation
         {
@@ -42,7 +42,7 @@ namespace TheGame
                 rotation = value;
             }
         }
-        Quaternion rotation;
+        protected Quaternion rotation;
 
         public float Scale
         {
@@ -55,7 +55,7 @@ namespace TheGame
                 scale = value;
             }
         }
-        float scale;
+        protected float scale;
 
         #endregion
 
@@ -66,21 +66,26 @@ namespace TheGame
             get { return lookAt; }
             set { lookAt = value; }
         }
-        Vector3 lookAt;
+        protected Vector3 lookAt;
+
+        Vector3 Direction
+        {
+            get { return Vector3.Normalize(LookAt - position); }
+        }
 
         public Matrix View
         {
             get { return view; }
             set { view = value; }
         }
-        Matrix view;
+        protected Matrix view;
 
         public Matrix Projection
         {
             get { return projection; }
             set { projection = value; }
         }
-        Matrix projection;
+        protected Matrix projection;
 
         #endregion
 
@@ -103,14 +108,14 @@ namespace TheGame
             lookAt = -Vector3.UnitZ;
 
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GameEngine.Graphics.Viewport.AspectRatio, 1.0f, 10000.0f);
-            
+
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
-            view = Matrix.CreateLookAt(position, position + lookAt, Vector3.Up);
- 
+            view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
+
             base.Update(gameTime);
         }
 
