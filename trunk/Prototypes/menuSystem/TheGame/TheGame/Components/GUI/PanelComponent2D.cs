@@ -19,7 +19,7 @@ namespace TheGame.Components.Display
     {
         protected PanelComponents panelItems;
 
-        public Rectangle Bounds;
+        public BoundingBox Bounds;
 
         public override void Initialize()
         {
@@ -39,7 +39,8 @@ namespace TheGame.Components.Display
         public PanelComponent2D(GameScreen parent, Vector2 position) : base(parent)
         {
             this.position = position;
-            this.Bounds = new Rectangle((int) this.position.X, (int) this.position.Y, 0, 0);
+            Vector3 position3D = new Vector3(position.X, position.Y, 0.0f);
+            this.Bounds = new BoundingBox(position3D, position3D);
             this.panelItems = new PanelComponents(this);
         }
 
@@ -67,32 +68,32 @@ namespace TheGame.Components.Display
 
         public override float Height
         {
-            get { return (float) Bounds.Height; }
+            get { return Bounds.Max.Y - Bounds.Min.Y;  }
         }
 
         public override float Width
         {
-            get { return (float) Bounds.Width; }
+            get { return Bounds.Max.X - Bounds.Min.X; }
         }
 
         public override float Left
         {
-            get { return (float) Bounds.X; }
+            get { return  Bounds.Min.X; }
         }
 
         public override float Right
         {
-            get { return (float)Bounds.X + Width; }
+            get { return  Left + Width; }
         }
 
         public override float Bottom
         {
-            get { return (float)Bounds.Y + Height; }
+            get { return Top + Height; }
         }
 
         public override float Top
         {
-            get { return (float) Bounds.Y; }
+            get { return Bounds.Min.Y; }
         }
     }
 
@@ -117,21 +118,21 @@ namespace TheGame.Components.Display
             item.Position = item.Position + owner.Position;
             if (item.Left < owner.Left)
             {
-                owner.Bounds.X = (int) item.Position.X;
+                owner.Bounds.Min.X =  item.Position.X;
             }
             if (item.Top < owner.Top)
             {
-                owner.Bounds.Y = (int)item.Position.Y;
+                owner.Bounds.Min.Y = item.Position.Y;
             }
 
             if (item.Right > owner.Right)
             {
-                owner.Bounds.Width = (int) (owner.Bounds.Width + (item.Right - owner.Right));
+                owner.Bounds.Max.X = (owner.Right + owner.Width + (item.Right - owner.Right));
             }
 
             if (item.Bottom > owner.Bottom)
             {
-                owner.Bounds.Height = (int)(owner.Bounds.Height + (item.Right - owner.Height));
+                owner.Bounds.Max.Y = (owner.Top + owner.Height + (item.Bottom - owner.Bottom));
             }
 
             base.Add(item);

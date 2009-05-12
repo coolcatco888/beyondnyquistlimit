@@ -51,7 +51,13 @@ namespace TheGame.Game_Screens
 
         protected override void HandleInput()
         {
-            if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.WasButtonPressed(Buttons.A))
+            
+            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                Dispose();
+            }
+
+            else if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.WasButtonPressed(Buttons.A))
             {
                 switch (menu.GetCurrentText())
                 {
@@ -59,15 +65,16 @@ namespace TheGame.Game_Screens
                         Dispose();
                         break;
                     case "Exit Game":
-                        previousScreen.Dispose();
-                        Dispose();
+                        foreach (GameScreen item in GameEngine.GameScreens.ToList())
+                        {
+                            if (item != GameEngine.BaseScreen)
+                            {
+                                item.Dispose();
+                            }
+                        }
                         (new MainMenuScreen("main")).LoadContent();
                         break;
                 }
-            }
-            else if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
-            {
-                Dispose();
             }
 
             base.HandleInput();
