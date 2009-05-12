@@ -27,8 +27,6 @@ namespace TheGame
         Vector3 target;
 
         PointSpriteSystem vortex;
-
-        float particlesPerSecond;
         int timeElpase; 
 
         public override void Initialize()
@@ -38,16 +36,16 @@ namespace TheGame
 
             PointSpriteSystemSettings settings = new PointSpriteSystemSettings();
             settings.Color = Color.OrangeRed;
-            settings.MaxPointCount = 5000;
+            settings.MaxPointCount = 500;
             settings.ParticleDuration = 1.3f;
-            settings.PointSpriteSize = 0.2f;
+            settings.PointSpriteSize = 0.8f;
             settings.Position = target;
             settings.Rotation = Quaternion.Identity;
             settings.Scale = 1.0f;
-            settings.SpriteTexture = GameEngine.Content.Load<Texture2D>("ParticleA");
+            settings.SpriteTexture = GameEngine.Content.Load<Texture2D>("ParticleF");
             settings.Technique = "Cylindrical";
 
-            particlesPerSecond = 2200.0f;
+            particlesPerSecond = 200.0f;
 
             vortex = new PointSpriteSystem(Parent, settings);
             Add(vortex);
@@ -77,7 +75,7 @@ namespace TheGame
                 Position += Vector3.UnitX * 0.01f * gameTime.ElapsedGameTime.Milliseconds;
             }
 
-            //Position = target;
+            Position = target;
 
             timeElpase += gameTime.ElapsedGameTime.Milliseconds;
 
@@ -92,7 +90,7 @@ namespace TheGame
 
                 for (int i = 0; i < particlesToMake; i++)
                 {
-                    vortex.AddParticle(new Vector3(r * (float)random.NextDouble(), theta * (float)random.NextDouble(), 0.0f), new Vector3(0.6f, 4.0f, 3.0f));
+                    vortex.AddParticle(new Vector3(r * (float)random.NextDouble() * scale, theta * (float)random.NextDouble(), 0.0f), new Vector3(0.3f, 2.0f, 3.0f));
                 }
             }
         }

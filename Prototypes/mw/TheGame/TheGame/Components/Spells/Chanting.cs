@@ -68,7 +68,7 @@ namespace TheGame
 
                 for (int i = 0; i < particlesToMake; i++)
                 {
-                    circleEffect.AddParticle(new Vector3(1.0f * scale, theta * (float)random.NextDouble(), 0.0f), new Vector3(0.0f, 0.0f, 1.0f + (float)random.NextDouble()));
+                    circleEffect.AddParticle(new Vector3(1.0f * scale, theta * (float)random.NextDouble(), 0.0f), new Vector3(0.0f, 0.0f, 2.0f + (float)random.NextDouble()));
                 }
             }
         }

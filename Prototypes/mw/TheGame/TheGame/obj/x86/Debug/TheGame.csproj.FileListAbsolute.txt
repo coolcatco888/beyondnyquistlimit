@@ -35,10 +35,6 @@ D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Mag
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Asplosions.xgs
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Wave Bank.xwb
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Sound Bank.xsb
-D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\TheGame.exe
-D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb
@@ -52,6 +48,8 @@ D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleB.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb
@@ -66,4 +64,11 @@ D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\TheGame.
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\TheGame.pdb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Library.dll
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Library.pdb
-D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleC.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleD.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleE.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleF.xnb

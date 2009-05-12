@@ -30,6 +30,9 @@ namespace TheGame
         private float timer = 0.0f;
         private Random rand = new Random();
         private Chanting auraParticles;
+        private Spell currentSpell;
+        private Buttons nextTornadoInput;
+        private Library.SpellInfo chantingInfo;
         private Library.SpellInfo spellInfo;
 
         #endregion  // Fields
@@ -109,6 +112,9 @@ namespace TheGame
 
         public override void Initialize()
         {
+            chantingInfo = new Library.SpellInfo();
+            chantingInfo.Duration = 0.0f;
+
             spellInfo = new Library.SpellInfo();
             spellInfo.Duration = 0.0f;
 
@@ -133,18 +139,86 @@ namespace TheGame
                     if (auraParticles != null)
                     {
                         auraParticles.SpellInfo.Duration = 0.0f;
+                        if (currentSpell != null)
+                        {
+                            currentSpell.SpellInfo.Duration = 0.0f;
+                        }
                     }
                     scale.X += scaleIncrement;
                     scale.Y += scaleIncrement;
                 }
                 else if (scale.X >= 3)
                 {
-                    if (auraParticles == null || spellInfo.Duration == 0.0f)
+                    if (auraParticles == null || chantingInfo.Duration == 0.0f)
                     {
-                        auraParticles = new Chanting(this.Parent, spellInfo, this.position);
+                        auraParticles = new Chanting(this.Parent, chantingInfo, this.position);
                         auraParticles.Scale = 2.2f;
                     }
                     auraParticles.SpellInfo.Duration += 10.0f;
+
+                    if (currentSpell == null)
+                    {
+                        // Begin spell.
+                        if (gamepadDevice.IsButtonDown(Buttons.B) && spellInfo.Duration == 0.0f)
+                        {
+                            currentSpell = new FireTornado(this.Parent, spellInfo, this.position);
+                            currentSpell.SpellInfo.Duration = 3.0f;
+                            nextTornadoInput = Buttons.RightThumbstickUp;
+                        }
+                        else if (gamepadDevice.IsButtonDown(Buttons.A) && spellInfo.Duration == 0.0f)
+                        {
+                            currentSpell = new LeafWhirlwind(this.Parent, spellInfo, this.position);
+                            currentSpell.SpellInfo.Duration = 3.0f;
+                            nextTornadoInput = Buttons.RightThumbstickUp;
+                        }
+                        else if (gamepadDevice.IsButtonDown(Buttons.X) && spellInfo.Duration == 0.0f)
+                        {
+                            currentSpell = new IceVortex(this.Parent, spellInfo, this.position);
+                            currentSpell.SpellInfo.Duration = 3.0f;
+                            nextTornadoInput = Buttons.RightThumbstickUp;
+                        }
+                        else if (gamepadDevice.IsButtonDown(Buttons.Y) && spellInfo.Duration == 0.0f)
+                        {
+                            currentSpell = new Hurricane(this.Parent, spellInfo, this.position);
+                            currentSpell.SpellInfo.Duration = 3.0f;
+                            nextTornadoInput = Buttons.RightThumbstickUp;
+                        }
+                    }
+                    else if (currentSpell != null && gamepadDevice.IsButtonDown(nextTornadoInput))
+                    {
+                        currentSpell.Scale += 1.0f;
+                        currentSpell.ParticlesPerSecond += currentSpell.ParticlesPerSecond * 0.1f;
+                        currentSpell.SpellInfo.Duration += 0.1f;
+
+                        switch (nextTornadoInput)
+                        {
+                            case Buttons.RightThumbstickUp:
+                                nextTornadoInput = Buttons.RightThumbstickRight;
+                                break;
+                            case Buttons.RightThumbstickRight:
+                                nextTornadoInput = Buttons.RightThumbstickDown;
+                                break;
+                            case Buttons.RightThumbstickDown:
+                                nextTornadoInput = Buttons.RightThumbstickLeft;
+                                break;
+                            case Buttons.RightThumbstickLeft:
+                                nextTornadoInput = Buttons.RightThumbstickUp;
+                                break;
+                        }
+                    }
+                    else if (currentSpell != null)
+                    {
+                        if (currentSpell.Scale > 0.6f)
+                        {
+                            currentSpell.Scale -= 0.5f;
+                            currentSpell.ParticlesPerSecond -= currentSpell.ParticlesPerSecond * 0.05f;
+                        }
+                        
+                        if (currentSpell.SpellInfo.Duration <= 0.0f)
+                        {
+                            currentSpell = null;
+                        }
+                    }
                 }
 
                 if (scale.X <= 0)

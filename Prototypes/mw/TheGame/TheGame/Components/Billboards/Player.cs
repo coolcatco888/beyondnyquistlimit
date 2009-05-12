@@ -46,7 +46,7 @@ namespace TheGame
 
         public override void Update(GameTime gameTime)
         {
-            castingAura.Position = new Vector3(position.X, 0.0f, position.Z - 0.5f);
+            castingAura.Position = new Vector3(position.X, 0.0f, position.Z);
 
             UpdateController();
 

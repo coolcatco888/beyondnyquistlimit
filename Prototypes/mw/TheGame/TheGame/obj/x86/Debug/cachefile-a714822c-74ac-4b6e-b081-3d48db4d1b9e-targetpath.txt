@@ -11,6 +11,8 @@ Content\Terrain\skymap.xnb
 Content\Terrain\terrain.xnb
 Content\Sprites\circles.xnb
 Content\Sprites\Sprite Sheet Knight.xnb
+Content\Sprites\WizardSprite.xnb
+Content\ParticleB.xnb
 Content\BasicPoint.xnb
 Content\Skybox\skybox.xnb
 Content\Audio\04 Never Ending Duel.xnb
@@ -18,7 +20,10 @@ Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
-Content\Sprites\WizardSprite.xnb
+Content\ParticleC.xnb
+Content\ParticleD.xnb
+Content\ParticleE.xnb
+Content\ParticleF.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

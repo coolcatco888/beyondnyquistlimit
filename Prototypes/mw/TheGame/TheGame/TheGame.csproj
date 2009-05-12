@@ -118,6 +118,9 @@
     <Compile Include="Components\GUI\XMLPanel2DBuilder.cs" />
     <Compile Include="Components\Skybox\Skybox.cs" />
     <Compile Include="Components\Spells\Chanting.cs" />
+    <Compile Include="Components\Spells\Hurricane.cs" />
+    <Compile Include="Components\Spells\LeafWhirlwind.cs" />
+    <Compile Include="Components\Spells\IceVortex.cs" />
     <Compile Include="Components\Terrain\Terrain.cs" />
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\Spells\FireTornado.cs" />
