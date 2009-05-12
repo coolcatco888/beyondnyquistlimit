@@ -36,6 +36,8 @@ namespace TheGame.Components.Display
 
         private SpriteFont textFont;
 
+        private BoundingBox Bounds;
+
         /// <summary>
         /// Constructs a new Character Display Component.
         /// </summary>
@@ -51,16 +53,20 @@ namespace TheGame.Components.Display
             //Add Bars
             this.healthBar = new ValueBarComponent2D(parent, param.Position + param.HealthBarPos, param.BarImage, param.HealthBarColor, param.HealthBarMaxValue, param.DamageBarColor);
             this.manaBar = new ValueBarComponent2D(parent, param.Position + param.ManaBarPos, param.BarImage, param.ManaBarColor, param.ManaBarMaxValue, param.ManaBarColor);
+            UpdateBounds((DisplayComponent2D) this.healthBar);
+            UpdateBounds((DisplayComponent2D) this.manaBar);
 
             //Add Hud
             this.hud = new ImageComponent2D(parent, param.Position, param.HudImage);
+            UpdateBounds((DisplayComponent2D)this.hud);
 
             //Add Player Face
             this.playerImage = new ImageComponent2D(parent, param.PlayerImageCentrePos - new Vector2(param.PlayerImage.Width * 0.5f, param.PlayerImage.Height * 0.5f), param.PlayerImage);
+            UpdateBounds((DisplayComponent2D)this.playerImage);
 
             //Add level number
             this.level = new LevelTextComponent2D(parent, param.LevelPos, param.Level, param.FontColor, param.TextFont, param.FontScale);
-
+            UpdateBounds((DisplayComponent2D)this.level);
             this.relativeHealthBarPos = param.HealthBarPos + new Vector2(param.BarImage.Width * 0.5f, 0);
             this.relativeManaBarPos = param.ManaBarPos + new Vector2(param.BarImage.Width * 0.5f, 0);
 
@@ -71,12 +77,14 @@ namespace TheGame.Components.Display
                 this.relativeHealthBarPos
                 - new Vector2(param.TextFont.MeasureString(this.healthBar.CurrentValue + "").X * 0.5f, 0),
                 this.healthBar.CurrentValue + "", param.FontColor, this.textFont, param.FontScale);
+            UpdateBounds((DisplayComponent2D)this.healthValue);
 
             this.manaValue = new TextComponent2D(parent,
                 //Set position to the middle of the mana bar
                 this.relativeManaBarPos
                 - new Vector2(param.TextFont.MeasureString(this.manaBar.CurrentValue + "").X * 0.5f, 0),
                 this.manaBar.CurrentValue + "", param.FontColor, this.textFont, param.FontScale);
+            UpdateBounds((DisplayComponent2D)this.manaBar);
 
             this.lastHealthValue = healthBar.CurrentValue;
             this.lastManaValue = manaBar.CurrentValue;
@@ -106,40 +114,61 @@ namespace TheGame.Components.Display
             base.Update(gameTime);
         }
 
-        //TODO: Make extents
         public override Vector2 Center
         {
-            get { throw new NotImplementedException(); }
+            get { return new Vector2(Left + 0.5f * Width, Top + 0.5f * Height); }
         }
 
         public override float Height
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.Y - Bounds.Min.Y; }
         }
 
         public override float Width
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.X - Bounds.Min.X; }
         }
 
         public override float Left
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.X; }
         }
 
         public override float Right
         {
-            get { throw new NotImplementedException(); }
+            get { return Left + Width; }
         }
 
         public override float Bottom
         {
-            get { throw new NotImplementedException(); }
+            get { return Top + Height; }
         }
 
         public override float Top
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.Y; }
+        }
+
+        private void UpdateBounds(DisplayComponent2D item)
+        {
+            if (item.Left < Left)
+            {
+                Bounds.Min.X = item.Position.X;
+            }
+            if (item.Top < Top)
+            {
+                Bounds.Min.Y = item.Position.Y;
+            }
+
+            if (item.Right > Right)
+            {
+                Bounds.Max.X = (Right + Width + (item.Right - Right));
+            }
+
+            if (item.Bottom > Bottom)
+            {
+                Bounds.Max.Y = (Top + Height + (item.Bottom - Bottom));
+            }
         }
     }
 
