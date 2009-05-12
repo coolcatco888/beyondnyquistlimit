@@ -42,7 +42,7 @@ namespace TheGame
         {
             base.Update(gameTime);
 
-            timeSpent += gameTime.ElapsedGameTime.Seconds;
+            timeSpent += gameTime.ElapsedGameTime.Milliseconds * 0.001f;
             
             if (timeSpent > spellInfo.Duration)
             {

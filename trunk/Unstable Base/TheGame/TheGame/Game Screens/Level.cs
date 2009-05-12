@@ -70,9 +70,10 @@ namespace TheGame
             magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
 
             Library.SpellInfo spellInfo = new Library.SpellInfo();
-            spellInfo.Duration = 20.0f;
+            spellInfo.Duration = 10.0f;
 
-            FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f)); 
+            FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f));
+            Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
     }
