@@ -5,5 +5,6 @@ Content\SpriteList.xnb
 Content\Items\LeatherGloves.xnb
 Content\KnightSprite.xnb
 Content\Map1.xnb
+Content\Levels.xnb
 Content\crate.xnb
 Content\spritesheet_knight_movement.xnb

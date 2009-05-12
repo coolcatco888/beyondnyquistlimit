@@ -29,6 +29,7 @@ namespace ContentTest
 
         Armor leatherGloves;
         Equipment[] inventory;
+        LevelStruct levels;
 
         SpriteInfo knightspritemove;
 
@@ -59,11 +60,15 @@ namespace ContentTest
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            string file = "Items\\LeatherGloves";
+
+            levels = Content.Load<LevelStruct>(@"Levels");
             font = Content.Load<SpriteFont>(@"Arial");
-            leatherGloves = Content.Load<Armor>(@"Items\\LeatherGloves");
+            leatherGloves = Content.Load<Armor>(file);
             inventory[0] = leatherGloves;
             sprites = Content.Load<List<Sprite>>(@"SpriteList");
             knightspritemove = Content.Load<SpriteInfo>(@"KnightSprite");
+            
             // TODO: use this.Content to load your game content here
         }
 

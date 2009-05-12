@@ -7,7 +7,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Arial.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Arial.xnb</Output>
       <Time>2009-05-06T11:59:25.296875-07:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\FirstXmlContent.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\FirstXmlContent.xnb</Output>
       <Time>2009-05-06T12:00:00-07:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\CrateSprite.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\CrateSprite.xnb</Output>
       <Time>2009-05-06T12:10:12-07:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\SpriteList.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\SpriteList.xnb</Output>
       <Time>2009-05-06T12:12:12.625-07:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Items\LeatherGloves.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Items\LeatherGloves.xnb</Output>
       <Time>2009-05-06T15:35:05.65625-07:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\KnightSprite.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\KnightSprite.xnb</Output>
       <Time>2009-05-06T20:16:21.828125-07:00</Time>
     </Item>
     <Item>
@@ -61,8 +61,17 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Map1.xnb</Output>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Map1.xnb</Output>
       <Time>2009-05-09T19:29:23.0625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Levels.xml</Source>
+      <Name>Levels</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Levels.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>crate.png</Source>
@@ -70,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\crate.xnb</Output>
-      <Time>2009-05-06T12:07:03.625-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\crate.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
     <Item>
       <Source>spritesheet_knight_movement.png</Source>
@@ -79,18 +88,18 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\spritesheet_knight_movement.xnb</Output>
-      <Time>2009-05-06T20:14:48.203125-07:00</Time>
+      <Output>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\spritesheet_knight_movement.xnb</Output>
+      <Time>0001-01-01T00:00:00</Time>
     </Item>
-    <BuildSuccessful>true</BuildSuccessful>
+    <BuildSuccessful>false</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -114,8 +123,8 @@
         <Value>2008-10-10T17:48:50-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>D:\work\wtfjim\Prototypes\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestPipeline.dll</Key>
-        <Value>2009-05-09T19:28:59.734375-07:00</Value>
+        <Key>D:\Work\wtfjim\Prototypes\ContentTest\ContentTestPipeline\bin\x86\Debug\ContentTestPipeline.dll</Key>
+        <Value>2009-05-11T17:40:09.90625-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>

@@ -40,13 +40,13 @@ namespace ContentTestPipeline
             output.Write(value.BaseHealth);
             output.Write(value.BaseMana);
             output.Write(value.BaseDamage);
-            output.Write(value.BaseSpeed);
+            output.Write(value.BaseDefense);
 
             // Write character class level up info
             output.Write(value.GainHealth);
             output.Write(value.GainMana);
             output.Write(value.GainDamage);
-            output.Write(value.GainSpeed);
+            output.Write(value.GainDefense);
         }
 
         public override string GetRuntimeReader(TargetPlatform targetPlatform)
