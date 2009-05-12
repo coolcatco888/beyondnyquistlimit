@@ -62,11 +62,12 @@ namespace ContentTest
             spriteBatch = new SpriteBatch(GraphicsDevice);
             string file = "Items\\LeatherGloves";
 
-            levels = Content.Load<LevelStruct>(@"Levels");
+            //levels = Content.Load<LevelStruct>(@"Levels");
             font = Content.Load<SpriteFont>(@"Arial");
             leatherGloves = Content.Load<Armor>(file);
             inventory[0] = leatherGloves;
             sprites = Content.Load<List<Sprite>>(@"SpriteList");
+            sprite = Content.Load<Sprite>(@"CrateSprite");
             knightspritemove = Content.Load<SpriteInfo>(@"KnightSprite");
             
             // TODO: use this.Content to load your game content here
@@ -128,6 +129,7 @@ namespace ContentTest
             }
             foreach (Sprite s in sprites)
                 s.Draw(spriteBatch);
+            sprite.Draw(spriteBatch);
 
             spriteBatch.End();
             base.Draw(gameTime);
