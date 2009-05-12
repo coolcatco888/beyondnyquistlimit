@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    class PointSpriteSystem : Component, IDrawableComponent
+    class PointSpriteSystem : Component, IDrawableComponent, IPointSpriteSystem , I3DComponent
     {
         public PointSpriteSystem(GameScreen parent, PointSpriteSystemSettings settings)
             : base(parent)
@@ -125,7 +125,7 @@ namespace TheGame
                 
                 Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-                effectWorldParameter.SetValue(Matrix.Identity);
+                effectWorldParameter.SetValue(Matrix.CreateScale(Setting.Scale) * Matrix.CreateFromQuaternion(Setting.Rotation) * Matrix.CreateTranslation(Setting.Position));
                 effectProjectionParameter.SetValue(camera.Projection);
                 effectViewParameter.SetValue(camera.View);
 
@@ -347,6 +347,55 @@ namespace TheGame
 
             // Move the particles we just uploaded from the new to the active queue.
             firstNewParticle = firstFreeParticle;
+        }
+
+        #endregion
+
+        #region IPointSpriteSystem Members
+
+        public int MaxParticleCount
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+        #region I3DComponent Members
+
+        public Vector3 Position
+        {
+            get
+            {
+                return settings.Position;
+            }
+            set
+            {
+                settings.Position = value;
+            }
+        }
+
+        public Quaternion Rotation
+        {
+            get
+            {
+                return settings.Rotation;
+            }
+            set
+            {
+                settings.Rotation = value;
+            }
+        }
+
+        public float Scale
+        {
+            get
+            {
+                return settings.Scale;
+            }
+            set
+            {
+                settings.Scale = value;
+            }
         }
 
         #endregion

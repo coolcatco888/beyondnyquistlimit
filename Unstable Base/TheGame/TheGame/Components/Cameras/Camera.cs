@@ -68,6 +68,11 @@ namespace TheGame
         }
         Vector3 lookAt;
 
+        Vector3 Direction
+        {
+            get { return Vector3.Normalize(LookAt - position); }
+        }
+
         public Matrix View
         {
             get { return view; }
@@ -109,7 +114,7 @@ namespace TheGame
 
         public override void Update(GameTime gameTime)
         {
-            view = Matrix.CreateLookAt(position, position + lookAt, Vector3.Up);
+            view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
  
             base.Update(gameTime);
         }

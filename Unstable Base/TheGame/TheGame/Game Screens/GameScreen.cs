@@ -95,7 +95,6 @@ namespace TheGame
 
         public GameScreen(string name)
         {
-            //this.owner = owner;
             this.name = name;
             this.visible = true;
             this.enabled = true;
@@ -104,7 +103,6 @@ namespace TheGame
 
             if(GameEngine.Initialized)
                 GameEngine.GameScreens.Add(this);
-            //owner.GameScreens.Add(this);
 
             if (!initialized)
                 Initialize();
@@ -147,7 +145,7 @@ namespace TheGame
         public virtual void Draw()
         {
             // Temporary list
-            List<IDrawableComponent> drawing = new List<IDrawableComponent>();
+            List<Component> drawing = new List<Component>();
             List<IDrawableComponent> drawList3D = new List<IDrawableComponent>();
             List<IDrawableComponent> drawListBillboard = new List<IDrawableComponent>();
             List<IDrawableComponent> drawListEffects = new List<IDrawableComponent>();
@@ -158,26 +156,36 @@ namespace TheGame
             {
                 if (component is IDrawableComponent)
                 {
-                    if (component is I2DComponent)
-                    {
-                        drawList2D.Add((IDrawableComponent)component);
-                    }
-                    else if (component is IPointSpriteSystem)
-                    {
-                        drawListEffects.Add((IDrawableComponent)component);
-                    }
-                    else if (component is IBillboard)
-                    {
-                        drawListBillboard.Add((IDrawableComponent)component);
-                    }
-                    else if (component is I3DComponent)
-                    {
-                        drawList3D.Add((IDrawableComponent)component);
-                    }
-                    else
-                    {
-                        drawList3D.Add((IDrawableComponent)component);
-                    }
+                    drawing.Add(component);
+                }
+            }
+
+            Component drawList;
+
+            while (drawing.Count > 0)
+            {
+                drawList = drawing.First();
+                drawing.Remove(drawList);
+
+                if (drawList is I2DComponent)
+                {
+                    drawList2D.Add((IDrawableComponent)drawList);
+                }
+                else if (drawList is IPointSpriteSystem)
+                {
+                    drawListEffects.Add((IDrawableComponent)drawList);
+                }
+                else if (drawList is IBillboard)
+                {
+                    drawListBillboard.Add((IDrawableComponent)drawList);
+                }
+                else if (drawList is I3DComponent)
+                {
+                    drawList3D.Add((IDrawableComponent)drawList);
+                }
+                else
+                {
+                    drawList3D.Add((IDrawableComponent)drawList);
                 }
             }
 

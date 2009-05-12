@@ -58,7 +58,7 @@ namespace TheGame
                 sheetIndex.X * spriteInfo.SpriteUnit.X,
                 sheetIndex.Y * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
 
-            this.Initialize();
+            //this.Initialize();
         }
 
         public MagicCircleEffect(GameScreen parent, SpriteInfo spriteInfo, float scaleIncrement, float rotationSpeed, int sheetColumn, int sheetRow)
@@ -86,12 +86,7 @@ namespace TheGame
                 sheetIndex.X * spriteInfo.SpriteUnit.X,
                 sheetIndex.Y * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
 
-            this.Initialize();
-        }
-
-        public override void Initialize()
-        {
-            base.Initialize();
+            //this.Initialize();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)

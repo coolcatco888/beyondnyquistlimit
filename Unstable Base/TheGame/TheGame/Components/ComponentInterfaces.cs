@@ -120,24 +120,6 @@ namespace TheGame
 
     public interface IPointSpriteSystem
     {
-        Vector3 Position
-        {
-            get;
-            set;
-        }
-
-        Quaternion Rotation
-        {
-            get;
-            set;
-        }
-
-        float Scale
-        {
-            get;
-            set;
-        }
-
         int MaxParticleCount
         {
             get;

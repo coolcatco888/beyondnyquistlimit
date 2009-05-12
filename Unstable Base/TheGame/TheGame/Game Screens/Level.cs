@@ -68,6 +68,11 @@ namespace TheGame
 
             MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
             magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
+
+            Library.SpellInfo spellInfo = new Library.SpellInfo();
+            spellInfo.Duration = 20.0f;
+
+            FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
     }
