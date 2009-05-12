@@ -116,9 +116,16 @@ namespace TheGame.Components.Display
         public new void Add(DisplayComponent2D item)
         {
             item.Position = item.Position + owner.Position;
+            UpdateBounds(item);
+
+            base.Add(item);
+        }
+
+        private void UpdateBounds(DisplayComponent2D item)
+        {
             if (item.Left < owner.Left)
             {
-                owner.Bounds.Min.X =  item.Position.X;
+                owner.Bounds.Min.X = item.Position.X;
             }
             if (item.Top < owner.Top)
             {
@@ -134,8 +141,6 @@ namespace TheGame.Components.Display
             {
                 owner.Bounds.Max.Y = (owner.Top + owner.Height + (item.Bottom - owner.Bottom));
             }
-
-            base.Add(item);
         }
     }
 

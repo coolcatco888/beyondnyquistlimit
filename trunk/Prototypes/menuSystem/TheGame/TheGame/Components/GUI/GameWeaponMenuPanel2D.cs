@@ -23,6 +23,8 @@ namespace TheGame.Components.Display
         private int selected = 0;
 
         private bool killMe = false, deployed = false;
+
+        private BoundingBox Bounds;
         
         /// <summary>
         /// Creates a circular weapon/item menu selection.  Each item is displayed in a circular fashion.
@@ -34,6 +36,8 @@ namespace TheGame.Components.Display
             : base(parent)
         {
             this.position = position;
+            Vector3 position3D = new Vector3(position.X, position.Y, 0.0f);
+            this.Bounds = new BoundingBox(position3D, position3D);
         }
 
         public void UpdateItemPositions()
@@ -65,6 +69,7 @@ namespace TheGame.Components.Display
                 ranges.Add(new Vector2(range1, range2));
                 itemDirection = Vector2.Transform(itemDirection, rotation);
                 component.Position = this.position + itemDirection;
+                UpdateBounds(component);
                 if (ranges.Count - 1 != selected)
                 {
                     component.Tint = new Color(component.Tint, unSelectedTint);
@@ -209,38 +214,59 @@ namespace TheGame.Components.Display
 
         public override Vector2 Center
         {
-            //TODO: Make bounding extents of all object in panel
-            get { throw new NotImplementedException(); }
+            get { return new Vector2(Left + 0.5f * Width, Top + 0.5f * Height); }
         }
 
         public override float Height
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.Y - Bounds.Min.Y; }
         }
 
         public override float Width
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.X - Bounds.Min.X; }
         }
 
         public override float Left
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.X; }
         }
 
         public override float Right
         {
-            get { throw new NotImplementedException(); }
+            get { return Left + Width; }
         }
 
         public override float Bottom
         {
-            get { throw new NotImplementedException(); }
+            get { return Top + Height; }
         }
 
         public override float Top
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.Y; }
+        }
+
+        private void UpdateBounds(DisplayComponent2D item)
+        {
+            if (item.Left < Left)
+            {
+                Bounds.Min.X = item.Position.X;
+            }
+            if (item.Top < Top)
+            {
+                Bounds.Min.Y = item.Position.Y;
+            }
+
+            if (item.Right > Right)
+            {
+                Bounds.Max.X = (Right + Width + (item.Right - Right));
+            }
+
+            if (item.Bottom > Bottom)
+            {
+                Bounds.Max.Y = (Top + Height + (item.Bottom - Bottom));
+            }
         }
     }
 }
