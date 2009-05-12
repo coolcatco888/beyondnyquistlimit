@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="Characters\ActorInfo.cs" />
     <Compile Include="Characters\CharacterClassInfo.cs" />
+    <Compile Include="LevelStruct.cs" />
     <Compile Include="MonsterInfo.cs" />
     <Compile Include="Terrain\HeightMapInfo.cs" />
     <Compile Include="Items\Armor.cs" />

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework.Content;
 
 namespace ContentTestLibrary
 {
-    public class PlayerInfo : ActorInfo
+    public class PlayerInfo
     {
         #region Current Statistics
 
@@ -34,12 +33,53 @@ namespace ContentTestLibrary
             set { currentDamage = value; }
         }
 
-        [ContentSerializerIgnore]
-        private CharacterClassInfo currentClass;
-        [ContentSerializerIgnore]
-        public CharacterClassInfo CurrentClass
+        private int currentDefense;
+        public int CurrentDefense
         {
-            get { return currentClass; }
+            get { return currentDefense; }
+            set { currentDefense = value; }
+        }
+        #endregion
+
+        #region Max Statistics
+
+        private int maxHealth;
+        public int MaxHealth
+        {
+            get { return maxHealth; }
+            set { maxHealth = value; }
+        }
+
+        private int maxMana;
+        public int MaxMana
+        {
+            get { return maxMana; }
+            set { maxMana = value; }
+        }
+
+        #endregion
+
+        #region Level Related
+
+        private int level;
+        public int Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+
+        private int experience;
+        public int Experience
+        {
+            get { return experience; }
+            set { experience = value; }
+        }
+
+        private int experienceToNextLevel;
+        public int ExperienceToNextLevel
+        {
+            get { return experienceToNextLevel; }
+            set { experienceToNextLevel = value; }
         }
 
         #endregion

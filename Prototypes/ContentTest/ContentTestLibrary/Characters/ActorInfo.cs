@@ -61,16 +61,6 @@ namespace ContentTestLibrary
             set { damage = value; }
         }
 
-        // Current speed: calculated based on base value, modifier, and level
-        [ContentSerializerIgnore]
-        private int speed;
-        [ContentSerializerIgnore]
-        public int Speed
-        {
-            get { return speed; }
-            set { speed = value; }
-        }
-
         #endregion
 
         #region Sprite Sheet(s)

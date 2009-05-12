@@ -110,11 +110,11 @@ namespace ContentTestLibrary
         }
 
         // The base speed of the class before modifiers and levels
-        private int baseSpeed;
-        public int BaseSpeed
+        private int baseDefense;
+        public int BaseDefense
         {
-            get { return baseSpeed; }
-            set { baseSpeed = value; }
+            get { return baseDefense; }
+            set { baseDefense = value; }
         }
 
         #endregion
@@ -146,11 +146,11 @@ namespace ContentTestLibrary
         }
 
         // The base amount of speed gain at a level up
-        private int gainSpeed;
-        public int GainSpeed
+        private int gainDefense;
+        public int GainDefense
         {
-            get { return gainSpeed; }
-            set { gainSpeed = value; }
+            get { return gainDefense; }
+            set { gainDefense = value; }
         }
 
         #endregion
@@ -186,13 +186,13 @@ namespace ContentTestLibrary
                 classInfo.baseHealth = input.ReadInt32();
                 classInfo.baseMana = input.ReadInt32();
                 classInfo.baseDamage = input.ReadInt32();
-                classInfo.baseSpeed = input.ReadInt32();
+                classInfo.baseDefense = input.ReadInt32();
 
                 // Read in Level Up Info
                 classInfo.gainHealth = input.ReadInt32();
                 classInfo.gainMana = input.ReadInt32();
                 classInfo.gainDamage = input.ReadInt32();
-                classInfo.gainSpeed = input.ReadInt32();
+                classInfo.gainDefense = input.ReadInt32();
 
                 return classInfo;
             }

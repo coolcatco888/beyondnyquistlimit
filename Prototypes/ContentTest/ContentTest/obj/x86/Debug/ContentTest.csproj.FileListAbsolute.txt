@@ -31,3 +31,4 @@ D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\Microsoft.Xna.Fr
 D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\ContentTest.exe
 D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\obj\x86\Debug\ContentTest.pdb
 D:\work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Map1.xnb
+D:\Work\wtfjim\Prototypes\ContentTest\ContentTest\bin\x86\Debug\Content\Levels.xnb
