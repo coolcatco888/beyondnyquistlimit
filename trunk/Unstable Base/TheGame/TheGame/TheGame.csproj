@@ -116,6 +116,8 @@
     <Compile Include="Components\GUI\XMLPanel2DBuilder.cs" />
     <Compile Include="Components\Skybox\Skybox.cs" />
     <Compile Include="Components\Terrain\Terrain.cs" />
+    <Compile Include="Components\Container3D.cs" />
+    <Compile Include="Components\Spells\FireTornado.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Components\TestComponent.cs" />
     <Compile Include="Game Screens\TestScreen.cs" />
+    <Compile Include="Components\Spells\Spell.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
