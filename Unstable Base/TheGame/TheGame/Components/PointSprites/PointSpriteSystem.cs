@@ -26,8 +26,6 @@ namespace TheGame
 
         public override void Initialize()
         {
-            //maxParticels = 1000;
-            //particleDuration = 1.0f;
 
             visible = true;
 

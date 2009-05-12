@@ -86,6 +86,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Spells\Chanting.cs" />
     <Compile Include="Components\Audio\AudioManager.cs" />
     <Compile Include="Components\Audio\IAudioEmitter.cs" />
     <Compile Include="Components\BasicModel.cs" />

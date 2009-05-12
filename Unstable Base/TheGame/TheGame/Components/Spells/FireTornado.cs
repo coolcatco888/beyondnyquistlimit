@@ -47,7 +47,7 @@ namespace TheGame
             settings.SpriteTexture = GameEngine.Content.Load<Texture2D>("ParticleA");
             settings.Technique = "Cylindrical";
 
-            particlesPerSecond = 1200.0f;
+            particlesPerSecond = 2200.0f;
 
             vortex = new PointSpriteSystem(Parent, settings);
             Add(vortex);
@@ -58,9 +58,26 @@ namespace TheGame
         {
             base.Update(gameTime);
 
-            
+            KeyboardDevice kbd = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
-            Position = target;
+            if (kbd.IsKeyDown(Keys.Up))
+            {
+                Position += -Vector3.UnitZ * 0.01f * gameTime.ElapsedGameTime.Milliseconds;
+            }
+            if (kbd.IsKeyDown(Keys.Left))
+            {
+                Position += -Vector3.UnitX * 0.01f * gameTime.ElapsedGameTime.Milliseconds;
+            }
+            if (kbd.IsKeyDown(Keys.Down))
+            {
+                Position += Vector3.UnitZ * 0.01f * gameTime.ElapsedGameTime.Milliseconds;
+            }
+            if (kbd.IsKeyDown(Keys.Right))
+            {
+                Position += Vector3.UnitX * 0.01f * gameTime.ElapsedGameTime.Milliseconds;
+            }
+
+            //Position = target;
 
             timeElpase += gameTime.ElapsedGameTime.Milliseconds;
 
