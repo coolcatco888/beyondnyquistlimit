@@ -50,5 +50,11 @@ namespace TheGame
             }
         }
 
+        protected float particlesPerSecond;
+        public float ParticlesPerSecond
+        {
+            get { return particlesPerSecond; }
+            set { particlesPerSecond = value; }
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace TheGame
             GameEngine.BaseScreen = new GameScreen("base");
 
             Camera camera = new Camera(GameEngine.BaseScreen);
-            camera.Position = new Vector3(0.0f, 1.0f, 5.0f);
+            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
             camera.LookAt = new Vector3(0, 0, 0);
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
