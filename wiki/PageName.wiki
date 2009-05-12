@@ -9,6 +9,7 @@ Use these links to do more advanced stuff with SVN. These links show you how to 
  * Using SVN with Visual Studio - http://www.west-wind.com/presentations/subversion/
  * Basic SVN commandline commands (very useful) - http://svnbook.red-bean.com/en/1.1/ch03s05.html
  * Branching & Merging - http://research.mosuma.com/faq/howto/svn_branch_merge
+ * TortoiseSVN with Visual Studio - http://www.codeproject.com/KB/dotnet/SourceControl_VSNET.aspx
 
 = Game Dev Links =
 One important link here is the Game State Management sample, which is what our game code base is modeled after.  The Zacharus Engine provides very good extensible design practices for creating games.
@@ -23,4 +24,4 @@ One important link here is the Game State Management sample, which is what our g
  * Loading our XBOX game to the XBOX - http://msdn.microsoft.com/en-us/library/bb975643(XNAGameStudio.20).aspx
 
 = Tools =
-XBOX 360 Driver for Lab Computers - http://www.microsoft.com/hardware/download/DownloadResult.aspx?category=Gaming&type=Controller&name=pk_xbox_cont&os=XP_SP1&lang=en
+* XBOX 360 Driver for Lab Computers - http://www.microsoft.com/hardware/download/DownloadResult.aspx?category=Gaming&type=Controller&name=pk_xbox_cont&os=XP_SP1&lang=en
