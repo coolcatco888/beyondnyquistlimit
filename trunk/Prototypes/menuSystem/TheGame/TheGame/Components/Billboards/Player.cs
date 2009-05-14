@@ -152,8 +152,8 @@ namespace TheGame
 
             // Update 360 degree velocity
             Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
-            newVelocity = Vector3.One;
-            newVelocity.Y = 0.0f;
+            //newVelocity = Vector3.One;
+            //newVelocity.Y = 0.0f;
             if (newVelocity != Vector3.Zero)
             {
                 velocity = Vector3.Normalize(newVelocity);
