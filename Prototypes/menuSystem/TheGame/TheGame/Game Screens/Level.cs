@@ -20,7 +20,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
-using TheGame.Game_Screens;
+using TheGame.Components.Cameras;
 #endregion
 
 namespace TheGame
@@ -48,12 +48,16 @@ namespace TheGame
             get { return levelMap; }
             set { levelMap = value; }
         }
-
-        protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-        protected GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
-
+        
         #endregion
 
+        protected List<Monster> monsters = new List<Monster>();
+        public List<Monster> Monsters
+        {
+            get { return monsters; }
+        }
+
+        List<Actor> actors = new List<Actor>();
         /// <summary>
         /// A level game screen. Holds the components needed for the game.
         /// The terrain, the height information, any players and monster collections, etc
@@ -70,17 +74,37 @@ namespace TheGame
 
             Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
 
-            MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
-            magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
+            //CastingAura magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
+            //magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
+
+            //Library.SpellInfo spellInfo = new Library.SpellInfo();
+            //spellInfo.Duration = 10.0f;
+
+            spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"CrateXml");
+            Monster crate = new Monster(this, spriteInfo.SpriteSheet, 20);
+            crate.Position = new Vector3(0.0f, 0.0f, -10.0f);
+            monsters.Add(crate);
+            //crate = new Monster(this, texture, 10);
+            //crate.Position = new Vector3(10.0f, 0.0f, -5.0f);
+            //monsters.Add(crate);
+            //crate = new Monster(this, texture, 10);
+            //crate.Position = new Vector3(-10.0f, 0.0f, 5.0f);
+            //monsters.Add(crate);
+
+            Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
+            Player playerOne = new Player(this, playerSpriteInfo, PlayerIndex.One);
+            actors.Add(playerOne);
+
+            //FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f));
+            //Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
-            {
-                new PauseScreen("pause", this, PlayerIndex.One);
-            }
             base.Update(gameTime);
+            ActionCamera camera = (ActionCamera) GameEngine.Services.GetService(typeof(Camera));
+            camera.UpdateCameraPosition(actors);
+            
         }
 
     }

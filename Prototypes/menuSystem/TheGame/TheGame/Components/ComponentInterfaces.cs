@@ -74,17 +74,17 @@ namespace TheGame
         {
             get;
         }
-        
+
         float Right
         {
             get;
         }
-        
+
         float Bottom
         {
             get;
         }
-        
+
         float Top
         {
             get;
@@ -105,7 +105,7 @@ namespace TheGame
             set;
         }
 
-        float Scale
+        Vector2 Scale
         {
             get;
             set;
@@ -120,24 +120,6 @@ namespace TheGame
 
     public interface IPointSpriteSystem
     {
-        Vector3 Position
-        {
-            get;
-            set;
-        }
-
-        Quaternion Rotation
-        {
-            get;
-            set;
-        }
-
-        float Scale
-        {
-            get;
-            set;
-        }
-
         int MaxParticleCount
         {
             get;

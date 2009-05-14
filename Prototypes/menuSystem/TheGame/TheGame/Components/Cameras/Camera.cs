@@ -68,7 +68,7 @@ namespace TheGame
         }
         protected Vector3 lookAt;
 
-        Vector3 Direction
+        public Vector3 Direction
         {
             get { return Vector3.Normalize(LookAt - position); }
         }
