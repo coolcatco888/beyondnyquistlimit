@@ -75,3 +75,43 @@ D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_bo
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\CrateXml.xnb
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Arial.xnb
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.exe
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Components\GUI\MenuPanels\mainpanel.xml
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\menubg.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\blank.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\crate.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\ActorTest.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\CrateXml.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\menufont.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Arial.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Audio\Asplosions.xgs
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Audio\Wave Bank.xwb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Audio\Sound Bank.xsb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\TheGame.exe
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\TheGame.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Library.dll
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Library.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.pdb

@@ -10,3 +10,9 @@ D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\ResolveAssemb
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Library.dll
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Library.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\x86\Debug\Library.dll
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\x86\Debug\Library.pdb
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Library.dll
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\x86\Debug\Library.pdb

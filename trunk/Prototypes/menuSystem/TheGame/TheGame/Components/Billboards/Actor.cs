@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using TheGame.Components.Cameras;
 using Library;
 
 #endregion
@@ -59,7 +60,7 @@ namespace TheGame
         }
 
 #endregion  // Constructors
-
+        
         public override void Initialize()
         {
             base.Initialize();
@@ -127,12 +128,20 @@ namespace TheGame
             HeightMapInfo heightInfo = ((Level)Parent).TerrainHeightMap;
             Vector3 oldPosition;
 
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+
             // Get number of times the sprite frame has been incremented.
             int updates = currentSequence.UpdateCount;
 
             while (updates-- > 0)
             {
                 oldPosition = this.Position;
+                Vector3 relCameraDirection = camera.Position - camera.LookAt;
+
+                float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
+
+                velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
+
                 position.X += velocity.X * currentSequence.Velocity;
                 position.Z -= velocity.Z * currentSequence.Velocity;
 

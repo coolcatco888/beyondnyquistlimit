@@ -53,7 +53,7 @@ namespace TheGame
             boundingBox = new BoundingBox(min, max);
             if (currentHealth <= 0)
             {
-                List<Monster> ms = ((Level)Parent).Monsters;
+                BillboardList ms = ((Level)Parent).Monsters;
                 ms.Remove(this);
                 this.Dispose();
             }

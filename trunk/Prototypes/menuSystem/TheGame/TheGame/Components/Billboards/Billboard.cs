@@ -20,6 +20,12 @@ namespace TheGame
 
         protected BasicEffect basicEffect;
 
+        protected bool isDisposed = false;
+        public bool IsDisposed
+        {
+            get { return isDisposed; }
+        }
+
         #endregion  // Fields
 
         public Billboard(GameScreen parent, Texture2D texture2D)
@@ -60,6 +66,8 @@ namespace TheGame
             basicEffect.Dispose();
 
             base.Dispose();
+
+            isDisposed = true;
         }
 
         #region IDrawableComponent Members

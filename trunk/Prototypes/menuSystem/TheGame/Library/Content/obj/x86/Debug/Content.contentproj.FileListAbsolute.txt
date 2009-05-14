@@ -1,2 +1,3 @@
 D:\Work\JimsCode\Unstable Base\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
