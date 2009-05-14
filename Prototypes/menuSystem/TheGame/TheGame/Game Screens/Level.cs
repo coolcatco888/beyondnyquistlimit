@@ -57,7 +57,7 @@ namespace TheGame
             get { return monsters; }
         }
 
-        List<Actor> actors = new List<Actor>();
+        List<Billboard> actors = new List<Billboard>();
         /// <summary>
         /// A level game screen. Holds the components needed for the game.
         /// The terrain, the height information, any players and monster collections, etc
@@ -94,6 +94,7 @@ namespace TheGame
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
             Player playerOne = new Player(this, playerSpriteInfo, PlayerIndex.One);
             actors.Add(playerOne);
+            actors.Add(crate);
 
             //FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f));
             //Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
@@ -103,6 +104,7 @@ namespace TheGame
         {
             base.Update(gameTime);
             ActionCamera camera = (ActionCamera) GameEngine.Services.GetService(typeof(Camera));
+            //Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
             camera.UpdateCameraPosition(actors);
             
         }
