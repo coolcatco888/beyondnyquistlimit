@@ -51,13 +51,18 @@ namespace TheGame
         
         #endregion
 
-        protected List<Monster> monsters = new List<Monster>();
-        public List<Monster> Monsters
+        protected BillboardList monsters = new BillboardList();
+        public BillboardList Monsters
         {
             get { return monsters; }
         }
 
-        List<Billboard> actors = new List<Billboard>();
+        protected BillboardList players = new BillboardList();
+        public BillboardList Players
+        {
+            get { return players; }
+        }
+
         /// <summary>
         /// A level game screen. Holds the components needed for the game.
         /// The terrain, the height information, any players and monster collections, etc
@@ -68,6 +73,8 @@ namespace TheGame
             : base(name)
         {
             //new TestComponent(this);
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+            camera.ActorsToFollow = players;
 
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
@@ -93,21 +100,21 @@ namespace TheGame
 
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
             Player playerOne = new Player(this, playerSpriteInfo, PlayerIndex.One);
-            actors.Add(playerOne);
-            actors.Add(crate);
+            players.Add(playerOne);
+            players.Add(crate);
 
             //FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f));
             //Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-            ActionCamera camera = (ActionCamera) GameEngine.Services.GetService(typeof(Camera));
-            //Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-            camera.UpdateCameraPosition(actors);
+        //public override void Update(GameTime gameTime)
+        //{
+        //    base.Update(gameTime);
+        //    ActionCamera camera = (ActionCamera) GameEngine.Services.GetService(typeof(Camera));
+        //    //Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+        //    camera.UpdateCameraPosition(players);
             
-        }
+        //}
 
     }
 }

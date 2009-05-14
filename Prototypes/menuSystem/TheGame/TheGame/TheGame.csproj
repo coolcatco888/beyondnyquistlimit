@@ -92,6 +92,7 @@
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\Billboard.cs" />
     <Compile Include="Components\Billboards\BillboardEffect.cs" />
+    <Compile Include="Components\Billboards\BillboardList.cs" />
     <Compile Include="Components\Billboards\CastingAura.cs" />
     <Compile Include="Components\Billboards\GroundEffect.cs" />
     <Compile Include="Components\Billboards\Monster.cs" />
