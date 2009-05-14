@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    class PointSpriteSystem : Component, IDrawableComponent
+    class PointSpriteSystem : Component, IDrawableComponent, IPointSpriteSystem, I3DComponent
     {
         public PointSpriteSystem(GameScreen parent, PointSpriteSystemSettings settings)
             : base(parent)
@@ -26,15 +26,13 @@ namespace TheGame
 
         public override void Initialize()
         {
-            //maxParticels = 1000;
-            //particleDuration = 1.0f;
 
             visible = true;
 
             particles = new ParticleVertex[settings.MaxPointCount];
 
             texture2D = GameEngine.Content.Load<Texture2D>("ParticleA");
-            
+
             Effect e = GameEngine.Content.Load<Effect>("BasicPoint");
 
             // If we have several particle systems, the content manager will return
@@ -50,7 +48,7 @@ namespace TheGame
             EffectParameterCollection parameters = effect.Parameters;
 
             // Look up shortcuts for parameters that change every frame.
-            effectWorldParameter = parameters["World"]; 
+            effectWorldParameter = parameters["World"];
             effectViewParameter = parameters["View"];
             effectProjectionParameter = parameters["Projection"];
             effectViewportHeightParameter = parameters["ViewportHeight"];
@@ -122,10 +120,10 @@ namespace TheGame
                 // Set an effect parameter describing the viewport size. This is needed
                 // to convert particle sizes into screen space point sprite sizes.
                 effectViewportHeightParameter.SetValue(device.Viewport.Height);
-                
+
                 Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-                effectWorldParameter.SetValue(Matrix.Identity);
+                effectWorldParameter.SetValue(Matrix.CreateScale(Setting.Scale) * Matrix.CreateFromQuaternion(Setting.Rotation) * Matrix.CreateTranslation(Setting.Position));
                 effectProjectionParameter.SetValue(camera.Projection);
                 effectViewParameter.SetValue(camera.View);
 
@@ -347,6 +345,55 @@ namespace TheGame
 
             // Move the particles we just uploaded from the new to the active queue.
             firstNewParticle = firstFreeParticle;
+        }
+
+        #endregion
+
+        #region IPointSpriteSystem Members
+
+        public int MaxParticleCount
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        #endregion
+
+        #region I3DComponent Members
+
+        public Vector3 Position
+        {
+            get
+            {
+                return settings.Position;
+            }
+            set
+            {
+                settings.Position = value;
+            }
+        }
+
+        public Quaternion Rotation
+        {
+            get
+            {
+                return settings.Rotation;
+            }
+            set
+            {
+                settings.Rotation = value;
+            }
+        }
+
+        public float Scale
+        {
+            get
+            {
+                return settings.Scale;
+            }
+            set
+            {
+                settings.Scale = value;
+            }
         }
 
         #endregion

@@ -4,6 +4,6 @@
     <Width>64</Width>
     <Height>128</Height>
     <PadSize>1</PadSize>
-    <SpriteSheetFile>Sprite Sheet Knight</SpriteSheetFile>
+    <SpriteSheetFile>Sprites\\WizardSprite</SpriteSheetFile>
   </Asset>
 </XnaContent>

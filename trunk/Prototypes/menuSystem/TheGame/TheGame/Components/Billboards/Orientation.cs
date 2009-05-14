@@ -11,12 +11,12 @@ namespace TheGame
     public enum Orientation
     {
         South,
-        Southwest,
-        West,
-        Northwest,
         North,
-        Northeast,
+        West,
+        Southwest,
+        Northwest,
         East,
         Southeast,
+        Northeast
     }
 }

@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using TheGame.Game_Screens;
+using TheGame.Components.Cameras;
 
 namespace TheGame
 {
@@ -42,8 +43,9 @@ namespace TheGame
 
             GameEngine.BaseScreen = new GameScreen("base");
 
-            Camera camera = new Camera(GameEngine.BaseScreen);
-            camera.Position = new Vector3(0.0f, 1.0f, 5.0f);
+            Camera camera = new ActionCamera(GameEngine.BaseScreen);
+            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
+            camera.LookAt = new Vector3(0, 0, 0);
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
             GamepadDevice gamepadDevice = new GamepadDevice(GameEngine.BaseScreen, PlayerIndex.One);
@@ -56,7 +58,7 @@ namespace TheGame
 
             //new TestScreen("test");
             //new SkyboxScreen("sky");
-            //new Level("level", "Terrain\\terrain");
+            //Level l = new Level("level", "Terrain\\terrain");
             new MainMenuScreen("main");
 
             base.Initialize();

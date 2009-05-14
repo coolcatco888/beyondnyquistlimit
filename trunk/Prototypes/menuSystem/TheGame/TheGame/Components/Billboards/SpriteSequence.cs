@@ -13,7 +13,7 @@ namespace TheGame
 {
     public class SpriteSequence
     {
-#region Fields
+        #region Fields
 
         private string title;
         private Orientation orientation;
@@ -31,12 +31,14 @@ namespace TheGame
         private int frameTotal = 0;
         private int frameIndex = 0;
 
+        private Point scale;
+
         private int bufferFrames;
         private int bufferTotal;
 
         #endregion  // Fields
 
-#region Accessors
+        #region Accessors
 
         public string Title
         {
@@ -78,9 +80,14 @@ namespace TheGame
             get { return isComplete; }
         }
 
-#endregion  // Accessors
+        public Point Scale
+        {
+            get { return scale; }
+        }
 
-#region Constructors
+        #endregion  // Accessors
+
+        #region Constructors
 
         public SpriteSequence(string title, Orientation orientation, bool isLoop, float velocity, int bufferFrames)
         {
@@ -91,6 +98,25 @@ namespace TheGame
 
             this.bufferTotal = bufferFrames;
             this.bufferFrames = bufferFrames;
+
+            this.scale = new Point(1, 1);
+
+            this.Initialize();
+        }
+
+        public SpriteSequence(string title, Orientation orientation, bool isLoop, float velocity, int bufferFrames, int xScale, int yScale)
+        {
+            this.title = title;
+            this.orientation = orientation;
+            this.isLoop = isLoop;
+            this.velocity = velocity;
+
+            this.bufferTotal = bufferFrames;
+            this.bufferFrames = bufferFrames;
+
+            this.scale = new Point(xScale, yScale);
+
+            this.Initialize();
         }
 
         public SpriteSequence(bool isLoop, int bufferFrames)
@@ -98,11 +124,30 @@ namespace TheGame
             this.isLoop = isLoop;
             this.bufferTotal = bufferFrames;
             this.bufferFrames = bufferFrames;
+
+            this.scale = new Point(1, 1);
+
+            this.Initialize();
         }
 
-#endregion  // Constructors
+        public SpriteSequence(bool isLoop, int bufferFrames, int xScale, int yScale)
+        {
+            this.isLoop = isLoop;
+            this.bufferTotal = bufferFrames;
+            this.bufferFrames = bufferFrames;
 
-#region Update
+            this.scale = new Point(xScale, yScale);
+
+            this.Initialize();
+        }
+
+        #endregion  // Constructors
+
+        public void Initialize()
+        {
+        }
+
+        #region Update
 
         public void Update(GameTime gameTime)
         {
@@ -146,14 +191,25 @@ namespace TheGame
             }
         }
 
-#endregion  // Update
+        #endregion  // Update
 
-#region Frame Methods
+        public void Reset()
+        {
+            frameIndex = 0;
+            currentFrame = frame[frameIndex];
+            isComplete = false;
+        }
+
+        #region Frame Methods
 
         public void AddFrame(Point frameLocation)
         {
             frame.Add(frameLocation);
             frameTotal++;
+            if (currentFrame != frame[0])
+            {
+                currentFrame = frame[0];
+            }
         }
 
         public void AddFrame(int x, int y)
@@ -165,7 +221,8 @@ namespace TheGame
         {
             while (start <= end)
             {
-                this.AddFrame(start++, row);
+                this.AddFrame(start, row);
+                start += scale.X;
             }
         }
 
@@ -173,7 +230,8 @@ namespace TheGame
         {
             while (start <= end)
             {
-                this.AddFrame(column, start++);
+                this.AddFrame(column, start);
+                start += scale.Y;
             }
         }
 
@@ -186,6 +244,7 @@ namespace TheGame
             frameIndex = 0;
         }
 
- #endregion // Add Frame Methods
+
+        #endregion // Add Frame Methods
     }
 }

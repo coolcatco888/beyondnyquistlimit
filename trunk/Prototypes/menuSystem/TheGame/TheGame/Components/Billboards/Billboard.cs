@@ -9,7 +9,7 @@ using Library;
 
 namespace TheGame
 {
-    public class Billboard : Component, IDrawableComponent, IBillboard
+    public class Billboard : Component, IDrawableComponent, IBillboard, ICollidable
     {
         #region Fields
 
@@ -29,7 +29,7 @@ namespace TheGame
 
             this.texture2D = texture2D;
 
-            scale = 1.0f;
+            scale = new Vector2(1.0f, 1.0f);
             rotation = 0.0f;
             position = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -57,6 +57,7 @@ namespace TheGame
         public override void Dispose()
         {
             texture2D.Dispose();
+            basicEffect.Dispose();
 
             base.Dispose();
         }
@@ -69,7 +70,7 @@ namespace TheGame
 
             // Assign world, view, & projection matricies to basicEffect.
             // TODO: implement rotation
-            basicEffect.World = Matrix.CreateWorld(position, -camera.LookAt, Vector3.Up) * Matrix.CreateScale(scale);
+            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateWorld(position, -camera.Direction, Vector3.Up);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 
@@ -143,8 +144,8 @@ namespace TheGame
         /// <summary>
         /// Scale of the billboard.
         /// </summary>
-        protected float scale;
-        public float Scale
+        protected Vector2 scale;
+        public Vector2 Scale
         {
             get
             {
@@ -153,6 +154,34 @@ namespace TheGame
             set
             {
                 scale = value;
+            }
+        }
+
+        #endregion
+
+        #region ICollidable Members
+
+        protected BoundingBox boundingBox;
+        public virtual BoundingBox BoundingBox
+        {
+            get { return boundingBox; }
+        }
+
+        public virtual bool IsHit(BoundingBox otherBounds)
+        {
+            return boundingBox.Intersects(otherBounds);
+        }
+
+        protected bool collidable;
+        public bool Collidable
+        {
+            get
+            {
+                return collidable;
+            }
+            set
+            {
+                collidable = value;
             }
         }
 
