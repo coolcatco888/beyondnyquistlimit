@@ -16,24 +16,32 @@ namespace TheGame
 {
     public class Spell : Container3D
     {
-        public Spell(GameScreen parent, SpellInfo spellInfo)
+
+        public float Age
+        {
+            get { return duration - timeRemaining; }
+        }
+        public float Duration
+        {
+            get { return duration; }
+        }
+        public float TimeRemaining
+        {
+            get { return timeRemaining; }
+            set { timeRemaining = value; }
+        }
+        protected float duration;
+        protected float timeRemaining;
+
+        public Spell(GameScreen parent, float duration)
             : base(parent)
         {
-            this.spellInfo = spellInfo;
+            this.duration = duration;         
         }
-
-        public SpellInfo SpellInfo
-        {
-            get { return spellInfo; }
-            set { spellInfo = value; }
-        }
-        SpellInfo spellInfo;
-
-        protected float timeSpent;
 
         public override void Initialize()
         {
-            timeSpent = 0.0f;
+            this.timeRemaining = duration;
 
             base.Initialize();
         }
@@ -42,9 +50,9 @@ namespace TheGame
         {
             base.Update(gameTime);
 
-            timeSpent += gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+            timeRemaining -= gameTime.ElapsedGameTime.Milliseconds * 0.001f;
             
-            if (timeSpent > spellInfo.Duration)
+            if (TimeRemaining <= 0)
             {
                 this.Dispose();
             }

@@ -13,6 +13,7 @@ Content\Sprites\circles.xnb
 Content\Sprites\Sprite Sheet Knight.xnb
 Content\BasicPoint.xnb
 Content\Skybox\skybox.xnb
+Content\BezierPoint.xnb
 Content\Audio\04 Never Ending Duel.xnb
 Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb

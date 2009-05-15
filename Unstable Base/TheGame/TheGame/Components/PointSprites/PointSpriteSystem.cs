@@ -19,8 +19,9 @@ namespace TheGame
             : base(parent)
         {
             this.settings = settings;
-            Initialize();
         }
+
+        
 
         #region Component Members
 
@@ -29,11 +30,31 @@ namespace TheGame
 
             visible = true;
 
-            particles = new ParticleVertex[settings.MaxPointCount];
+            particles = new ParticleVertex[settings.MaxParticles];
 
-            texture2D = GameEngine.Content.Load<Texture2D>("ParticleA");
-            
-            Effect e = GameEngine.Content.Load<Effect>("BasicPoint");
+            SetEffect();
+
+            EffectParameterCollection parameters = effect.Parameters;
+
+            // Look up shortcuts for parameters that change every frame.
+            effectWorldParameter = parameters["World"];
+            effectViewParameter = parameters["View"];
+            effectProjectionParameter = parameters["Projection"];
+            effectViewportHeightParameter = parameters["ViewportHeight"];
+            effectTimeParameter = parameters["CurrentTime"];
+
+            parameters["SpriteTexture"].SetValue(settings.Texture);
+
+            vertexDeclaration = new VertexDeclaration(GameEngine.Graphics, ParticleVertex.VertexElements);
+
+            dynamicVertexBuffer = new DynamicVertexBuffer(GameEngine.Graphics, ParticleVertex.SizeInBytes * settings.MaxParticles, BufferUsage.Points);
+
+            base.Initialize();
+        }
+
+        protected virtual void SetEffect()
+        {
+            Effect e = GameEngine.Content.Load<Effect>(settings.effectName);
 
             // If we have several particle systems, the content manager will return
             // a single shared effect instance to them all. But we want to preconfigure
@@ -44,25 +65,6 @@ namespace TheGame
             effect = e.Clone(GameEngine.Graphics);
 
             effect.CurrentTechnique = effect.Techniques[settings.Technique];
-
-            EffectParameterCollection parameters = effect.Parameters;
-
-            // Look up shortcuts for parameters that change every frame.
-            effectWorldParameter = parameters["World"]; 
-            effectViewParameter = parameters["View"];
-            effectProjectionParameter = parameters["Projection"];
-            effectViewportHeightParameter = parameters["ViewportHeight"];
-            effectTimeParameter = parameters["CurrentTime"];
-
-            parameters["ParticleSize"].SetValue(settings.PointSpriteSize);
-            parameters["Duration"].SetValue(settings.ParticleDuration);
-            parameters["SpriteTexture"].SetValue(settings.SpriteTexture);
-
-            vertexDeclaration = new VertexDeclaration(GameEngine.Graphics, ParticleVertex.VertexElements);
-
-            dynamicVertexBuffer = new DynamicVertexBuffer(GameEngine.Graphics, ParticleVertex.SizeInBytes * settings.MaxPointCount, BufferUsage.Points);
-
-            base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
@@ -106,16 +108,16 @@ namespace TheGame
             if (firstActiveParticle != firstFreeParticle)
             {
                 //SetParticleRenderStates(device.RenderState);
-                device.RenderState.PointSpriteEnable = true;
-                device.RenderState.PointSizeMax = 256;
+                //device.RenderState.PointSpriteEnable = true;
+                //device.RenderState.PointSizeMax = 256;
 
-                device.RenderState.AlphaBlendEnable = true;
-                device.RenderState.AlphaBlendOperation = BlendFunction.Add;
-                device.RenderState.SourceBlend = Blend.SourceAlpha;
-                device.RenderState.DestinationBlend = Blend.One;
+                //device.RenderState.AlphaBlendEnable = true;
+                //device.RenderState.AlphaBlendOperation = BlendFunction.Add;
+                //device.RenderState.SourceBlend = Blend.SourceAlpha;
+                //device.RenderState.DestinationBlend = Blend.One;
 
-                device.RenderState.DepthBufferEnable = true;
-                device.RenderState.DepthBufferWriteEnable = false;
+                //device.RenderState.DepthBufferEnable = true;
+                //device.RenderState.DepthBufferWriteEnable = false;
 
                 // Set an effect parameter describing the viewport size. This is needed
                 // to convert particle sizes into screen space point sprite sizes.
@@ -123,7 +125,7 @@ namespace TheGame
                 
                 Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-                effectWorldParameter.SetValue(Matrix.CreateScale(Setting.Scale) * Matrix.CreateFromQuaternion(Setting.Rotation) * Matrix.CreateTranslation(Setting.Position));
+                effectWorldParameter.SetValue(Matrix.CreateFromQuaternion(Setting.BaseRotation) * Matrix.CreateTranslation(Setting.BasePosition));
                 effectProjectionParameter.SetValue(camera.Projection);
                 effectViewParameter.SetValue(camera.View);
 
@@ -175,9 +177,9 @@ namespace TheGame
 
                 // Reset a couple of the more unusual renderstates that we changed,
                 // so as not to mess up any other subsequent drawing.
-                device.RenderState.PointSpriteEnable = false;
-                device.RenderState.AlphaBlendEnable = false;
-                device.RenderState.DepthBufferWriteEnable = true;
+                //device.RenderState.PointSpriteEnable = false;
+                //device.RenderState.AlphaBlendEnable = false;
+                //device.RenderState.DepthBufferWriteEnable = true;
             }
 
             drawCounter++;
@@ -201,7 +203,7 @@ namespace TheGame
         /// <summary>
         /// Adds a new particle to the system.
         /// </summary>
-        public void AddParticle(Vector3 position, Vector3 velocity)
+        public void AddParticle(Vector3 position, Vector3 velocity, float size, float duration, float spin, float? data)
         {
             // Figure out where in the circular queue to allocate the new particle.
             int nextFreeParticle = firstFreeParticle + 1;
@@ -214,11 +216,17 @@ namespace TheGame
                 return;
 
             // Fill in the particle vertex structure.
-            particles[firstFreeParticle].Position = position;
-            particles[firstFreeParticle].Velocity = velocity;
+            particles[firstFreeParticle].Position = position * settings.Scale + settings.Position;
+            particles[firstFreeParticle].Velocity = velocity * settings.Scale;
             particles[firstFreeParticle].Color = settings.Color;
-            particles[firstFreeParticle].Time = currentTime;
+            particles[firstFreeParticle].Size = size;
+            particles[firstFreeParticle].Time.X = currentTime;
+            particles[firstFreeParticle].Time.Y = duration;
+            particles[firstFreeParticle].Rotation = spin;
 
+            if(data.HasValue)
+                particles[firstFreeParticle].Data = data.Value;
+            
             firstFreeParticle = nextFreeParticle;
         }
 
@@ -227,9 +235,9 @@ namespace TheGame
             get { return settings; }
             set { settings = value; }
         }
-        PointSpriteSystemSettings settings;
+        protected PointSpriteSystemSettings settings;
 
-        Effect effect;
+        protected Effect effect;
 
         EffectParameter effectWorldParameter;
         EffectParameter effectViewParameter;
@@ -251,8 +259,6 @@ namespace TheGame
 
         int drawCounter;
 
-        Texture2D texture2D;
-
         #region Helper Methods
 
         /// <summary>
@@ -266,13 +272,13 @@ namespace TheGame
             while (firstActiveParticle != firstNewParticle)
             {
                 // Is this particle old enough to retire?
-                float particleAge = currentTime - particles[firstActiveParticle].Time;
+                float particleAge = currentTime - particles[firstActiveParticle].Time.X;
 
-                if (particleAge < settings.ParticleDuration)
+                if (particleAge < particles[firstActiveParticle].Time.Y)
                     break;
 
                 // Remember the time at which we retired this particle.
-                particles[firstActiveParticle].Time = drawCounter;
+                particles[firstActiveParticle].Time.X = drawCounter;
 
                 // Move the particle from the active to the retired queue.
                 firstActiveParticle++;
@@ -293,7 +299,7 @@ namespace TheGame
             {
                 // Has this particle been unused long enough that
                 // the GPU is sure to be finished with it?
-                int age = drawCounter - (int)particles[firstRetiredParticle].Time;
+                int age = drawCounter - (int)particles[firstRetiredParticle].Time.X;
 
                 // The GPU is never supposed to get more than 2 frames behind the CPU.
                 // We add 1 to that, just to be safe in case of buggy drivers that
@@ -353,7 +359,7 @@ namespace TheGame
 
         public int MaxParticleCount
         {
-            get { throw new NotImplementedException(); }
+            get { return settings.MaxParticles; }
         }
 
         #endregion
@@ -364,11 +370,11 @@ namespace TheGame
         {
             get
             {
-                return settings.Position;
+                return settings.BasePosition;
             }
             set
             {
-                settings.Position = value;
+                settings.BasePosition = value;
             }
         }
 
@@ -376,11 +382,11 @@ namespace TheGame
         {
             get
             {
-                return settings.Rotation;
+                return settings.BaseRotation;
             }
             set
             {
-                settings.Rotation = value;
+                settings.BaseRotation = value;
             }
         }
 

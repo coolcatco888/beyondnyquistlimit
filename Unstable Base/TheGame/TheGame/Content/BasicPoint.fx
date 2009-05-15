@@ -5,11 +5,9 @@ uniform extern float4x4 Projection;
 uniform extern float	ViewportHeight;
 
 uniform extern texture	SpriteTexture;
-uniform extern float	ParticleSize;
 
 // The current time, in seconds.
 uniform extern float CurrentTime;
-uniform extern float Duration;
 
 sampler Sampler = sampler_state
 {
@@ -21,34 +19,66 @@ struct VertexShaderInput
     float4 Position	: POSITION0;
     float3 Velocity	: NORMAL0;
     float4 Color	: COLOR0;
-    float  Birth	: TEXCOORD0;
+    float  Size		: PSIZE;
+    float2 Time		: TEXCOORD0;
+    float2 Data		: TEXCOORD1;
 };
 
 struct VertexShaderOutput
 {
     float4 Position : POSITION0;
     float4 Color	: COLOR0;
+    float4 Rotation : COLOR1;
     float Size		: PSIZE;
 };
 
 struct PixelShaderInput
 {
+	float4 Color		: COLOR0;
+	float4 Rotation : COLOR1;
+
 	#ifdef XBOX
         float2 TexCoord : SPRITETEXCOORD;
     #else
         float2 TexCoord : TEXCOORD0;
     #endif
     
-    float4 Color		: COLOR0;
+    
 };
+
+// Vertex shader helper for computing the rotation of a particle.
+float4 ComputeParticleRotation(float speed, float age)
+{    
+    
+    float rotation = speed * age;
+
+    // Compute a 2x2 rotation matrix.
+    float c = cos(rotation);
+    float s = sin(rotation);
+    
+    float4 rotationMatrix = float4(c, -s, s, c);
+    
+    // Normally we would output this matrix using a texture coordinate interpolator,
+    // but texture coordinates are generated directly by the hardware when drawing
+    // point sprites. So we have to use a color interpolator instead. Only trouble
+    // is, color interpolators are clamped to the range 0 to 1. Our rotation values
+    // range from -1 to 1, so we have to scale them to avoid unwanted clamping.
+    
+    rotationMatrix *= 0.5;
+    rotationMatrix += 0.5;
+    
+    return rotationMatrix;
+}
 
 VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output;
     
-    float age = CurrentTime - input.Birth;
-    float normalizedAge = saturate(age / Duration);
+    float age = CurrentTime - input.Time.x;
+    float normalizedAge = saturate(age / input.Time.y);
     
+    output.Rotation = ComputeParticleRotation(input.Data.x, age);
+
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
     
@@ -56,10 +86,9 @@ VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
 
     float4 worldPosition = mul(input.Position, World);
     float4 viewPosition = mul(worldPosition, View);
-    
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = ParticleSize * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
@@ -69,8 +98,10 @@ VertexShaderOutput CylindricalVertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output;
     
-    float age = CurrentTime - input.Birth;
-    float normalizedAge = saturate(age / Duration);
+    float age = CurrentTime - input.Time.x;
+    float normalizedAge = saturate(age / input.Time.y);
+    
+    output.Rotation = ComputeParticleRotation(input.Data.x, age);
     
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
@@ -87,7 +118,7 @@ VertexShaderOutput CylindricalVertexShaderFunction(VertexShaderInput input)
     
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = ParticleSize * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
@@ -97,8 +128,10 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output;
     
-    float age = CurrentTime - input.Birth;
-    float normalizedAge = saturate(age / Duration);
+    float age = CurrentTime - input.Time.x;
+    float normalizedAge = saturate(age / input.Time.y);
+    
+    output.Rotation = ComputeParticleRotation(input.Data.x, age);
     
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
@@ -114,18 +147,36 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
     
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = ParticleSize * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
 
 float4 PixelShaderFunction(PixelShaderInput input) : COLOR0
 {
-    float2 texCoord;
+    float2 textureCoordinate = input.TexCoord;
 
-    texCoord = input.TexCoord.xy;
+    // We want to rotate around the middle of the particle, not the origin,
+    // so we offset the texture coordinate accordingly.
+    //textureCoordinate -= 0.5;
+    
+    // Apply the rotation matrix, after rescaling it back from the packed
+    // color interpolator format into a full -1 to 1 range.
+    //float4 rotation = input.Rotation * 2 - 1;
+    
+    //textureCoordinate = mul(textureCoordinate, float2x2(rotation));
+    
+    // Point sprites are squares. So are textures. When we rotate one square
+    // inside another square, the corners of the texture will go past the
+    // edge of the point sprite and get clipped. To avoid this, we scale
+    // our texture coordinates to make sure the entire square can be rotated
+    // inside the point sprite without any clipping.
+    //textureCoordinate *= sqrt(2);
+    
+    // Undo the offset used to control the rotation origin.
+    //textureCoordinate += 0.5;
 
-    return tex2D(Sampler, texCoord) * input.Color * 2;
+    return tex2D(Sampler, textureCoordinate) * input.Color * 2;
 }
 
 technique Cartesian

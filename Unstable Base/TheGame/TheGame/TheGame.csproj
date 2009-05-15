@@ -86,7 +86,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Components\Spells\Chanting.cs" />
     <Compile Include="Components\Audio\AudioManager.cs" />
     <Compile Include="Components\Audio\IAudioEmitter.cs" />
     <Compile Include="Components\BasicModel.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="GameBase.cs" />
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Components\TestComponent.cs" />
-    <Compile Include="Game Screens\TestScreen.cs" />
     <Compile Include="Components\Spells\Spell.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

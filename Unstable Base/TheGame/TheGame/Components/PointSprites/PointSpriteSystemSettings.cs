@@ -15,16 +15,16 @@ namespace TheGame
 {
     public class PointSpriteSystemSettings
     {
+        public string effectName = "BasicPoint";
         public string Technique = "Cartesian";
-        public int MaxPointCount = 2000;
-        public Texture2D SpriteTexture = null; 
+        public int MaxParticles = 2000;     
+
+        public Vector3 BasePosition = Vector3.Zero;
+        public Quaternion BaseRotation = Quaternion.Identity;
 
         public Vector3 Position = Vector3.Zero;
-        public Quaternion Rotation = Quaternion.Identity;
         public float Scale = 1.0f;
-
         public Color Color = Color.White;
-        public float PointSpriteSize = 0.5f;
-        public float ParticleDuration = 1.0f;
+        public Texture2D Texture = null;
     }
 }

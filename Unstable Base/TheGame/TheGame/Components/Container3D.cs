@@ -18,7 +18,6 @@ namespace TheGame
         public Container3D(GameScreen parent)
             : base(parent)
         {
-            this.Initialize();
         }
 
         public List<I3DComponent> Component3DList
