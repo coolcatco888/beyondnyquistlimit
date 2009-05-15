@@ -70,8 +70,11 @@ namespace TheGame
             //MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
             //magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
 
-            FireTornado ft = new FireTornado(this, Vector3.UnitZ, 15.0f);
-            ft.Initialize();
+            //FireTornado ft = new FireTornado(this, Vector3.UnitZ, 15.0f);
+            //ft.Initialize();
+
+            ChainBeam cb = new ChainBeam(this, 50.0f);
+            cb.Initialize();
 
         }
 

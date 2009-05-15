@@ -86,6 +86,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Spells\ChainBeam.cs" />
+    <Compile Include="Components\PointSprites\CubicBezierSystem.cs" />
     <Compile Include="Components\Audio\AudioManager.cs" />
     <Compile Include="Components\Audio\IAudioEmitter.cs" />
     <Compile Include="Components\BasicModel.cs" />
@@ -137,6 +139,7 @@
     <Compile Include="ScreenManager.cs" />
     <Compile Include="Components\TestComponent.cs" />
     <Compile Include="Components\Spells\Spell.cs" />
+    <Compile Include="Components\Cameras\TestCamera.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
