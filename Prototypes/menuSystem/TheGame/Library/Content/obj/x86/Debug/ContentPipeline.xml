@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\Library\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

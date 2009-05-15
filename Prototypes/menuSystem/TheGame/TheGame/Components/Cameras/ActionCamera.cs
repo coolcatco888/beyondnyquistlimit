@@ -8,7 +8,7 @@ namespace TheGame.Components.Cameras
 {
     class ActionCamera : Camera
     {
-        private float minDistance = 5;
+        private float minDistance = 4.5f;
 
         private BillboardList actorsToFollow;
 
@@ -60,7 +60,7 @@ namespace TheGame.Components.Cameras
                     {
                         continue;
                     }
-                    float currentDist = (actor.Position - lookAt).Length();
+                    float currentDist = (actor.Position - lookAt).Length() * 0.40f;
                     if (currentDist > distOfFurthestActorFromLookAt)
                     {
                         distOfFurthestActorFromLookAt = currentDist;
