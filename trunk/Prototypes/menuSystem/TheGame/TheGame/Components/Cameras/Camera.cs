@@ -109,14 +109,17 @@ namespace TheGame
 
             projection = Matrix.CreatePerspectiveFieldOfView(MathHelper.PiOver4, GameEngine.Graphics.Viewport.AspectRatio, 1.0f, 10000.0f);
 
-            base.Initialize();
+            //base.Initialize();
+
+            this.Initialized = true;
         }
 
         public override void Update(GameTime gameTime)
         {
-            view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
 
             base.Update(gameTime);
+
+            view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
         }
 
         #endregion

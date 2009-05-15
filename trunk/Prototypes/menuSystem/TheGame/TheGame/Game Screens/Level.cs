@@ -107,6 +107,13 @@ namespace TheGame
             //Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
+        public override void Draw()
+        {
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+            camera.Update(GameEngine.GameTime);
+            base.Draw();
+        }
+
         //public override void Update(GameTime gameTime)
         //{
         //    base.Update(gameTime);
