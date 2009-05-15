@@ -325,7 +325,7 @@ namespace TheGame
             // Add running sequences.
             foreach (Orientation orientation in Enum.GetValues(typeof(Orientation)))
             {
-                sequence = new SpriteSequence("Running", orientation, true, 0.5f, 1);
+                sequence = new SpriteSequence("Running", orientation, true, 2.5f, 1);
                 sequence.AddRow(y++, x, x + 7);
 
                 sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);

@@ -26,7 +26,7 @@ namespace TheGame.Components.Cameras
 
         public override void Update(GameTime gameTime)
         {
-            base.Update(gameTime);
+            
 
             float sumX = 0, sumY = 0, sumZ = 0;
             float count = 0;
@@ -80,6 +80,8 @@ namespace TheGame.Components.Cameras
 
                 //Set new position
                 position = lookAt + newDirection;
+
+                base.Update(gameTime);
  
             }
 
