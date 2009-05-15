@@ -102,13 +102,13 @@ namespace TheGame
         public Terrain(GameScreen parent, String fileName)
             : base(parent)
         {
-            visible = true;
             this.fileName = fileName;
-            this.Initialize();
         }
 
         public override void Initialize()
         {
+            visible = true;
+
             terrain = GameEngine.Content.Load<Model>(fileName);
             heightMapInfo = terrain.Tag as HeightMapInfo;
             if (heightMapInfo == null)

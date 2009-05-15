@@ -63,17 +63,16 @@ namespace TheGame
 
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
+            levelMap.Initialize();
 
-            Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
+            //Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
 
-            MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
-            magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
+            //MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
+            //magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
 
-            Library.SpellInfo spellInfo = new Library.SpellInfo();
-            spellInfo.Duration = 10.0f;
+            FireTornado ft = new FireTornado(this, Vector3.UnitZ, 15.0f);
+            ft.Initialize();
 
-            FireTornado fireTornado = new FireTornado(this, spellInfo, new Vector3(0, 0, -1.0f));
-            Chanting ms = new Chanting(this, spellInfo, new Vector3(0, 0, -1.0f)); 
         }
 
     }

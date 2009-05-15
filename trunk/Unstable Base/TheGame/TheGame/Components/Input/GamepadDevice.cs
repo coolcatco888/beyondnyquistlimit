@@ -70,7 +70,6 @@ namespace TheGame
         {
             this.PlayerIndex = PlayerIndex;
             current = GamePad.GetState(PlayerIndex);
-            Initialize();
             Update(null);
         }
 

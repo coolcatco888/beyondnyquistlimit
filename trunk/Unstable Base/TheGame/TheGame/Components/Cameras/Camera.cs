@@ -94,7 +94,6 @@ namespace TheGame
         public Camera(GameScreen parent)
             : base(parent)
         {
-            Initialize();
         }
 
         #endregion

@@ -7,13 +7,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
       <Time>2009-05-01T20:56:37.203125-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-11T15:08:06.875-07:00</Value>
+        <Value>2009-05-14T20:37:37.875-07:00</Value>
       </Dependency>
-      <Request>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
+      <Request>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>ParticleA.dds</Source>
@@ -21,7 +21,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb</Output>
       <Time>2009-05-07T21:12:27.52675-07:00</Time>
     </Item>
     <Item>
@@ -30,7 +30,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
       <Time>2009-05-10T19:53:00.125-07:00</Time>
     </Item>
     <Item>
@@ -39,7 +39,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
       <Time>2009-05-10T19:53:00.125-07:00</Time>
     </Item>
     <Item>
@@ -48,7 +48,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
       <Time>2009-05-10T19:53:00.125-07:00</Time>
     </Item>
     <Item>
@@ -57,7 +57,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
       <Time>2009-05-10T19:53:00.125-07:00</Time>
     </Item>
     <Item>
@@ -66,7 +66,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
       <Time>2009-05-10T19:53:00.125-07:00</Time>
     </Item>
     <Item>
@@ -75,7 +75,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
       <Time>2009-05-10T19:53:17.96875-07:00</Time>
     </Item>
     <Item>
@@ -84,7 +84,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
       <Time>2009-05-10T19:53:17.984375-07:00</Time>
     </Item>
     <Item>
@@ -93,7 +93,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb</Output>
       <Time>2009-05-10T19:53:17.96875-07:00</Time>
     </Item>
     <Item>
@@ -102,9 +102,9 @@
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
       <Time>2009-05-10T19:53:17.96875-07:00</Time>
-      <Request>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
+      <Request>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
     </Item>
     <Item>
       <Source>Sprites\circles.png</Source>
@@ -112,7 +112,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb</Output>
       <Time>2009-05-10T20:02:44.0625-07:00</Time>
     </Item>
     <Item>
@@ -121,7 +121,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb</Output>
       <Time>2009-05-10T20:02:44.0625-07:00</Time>
     </Item>
     <Item>
@@ -130,8 +130,8 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb</Output>
-      <Time>2009-05-09T22:33:37.578125-07:00</Time>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb</Output>
+      <Time>2009-05-14T20:53:46.140625-07:00</Time>
     </Item>
     <Item>
       <Source>Skybox\skybox.fx</Source>
@@ -139,8 +139,17 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
       <Time>2009-05-10T19:53:00.140625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BezierPoint.fx</Source>
+      <Name>BezierPoint</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BezierPoint.xnb</Output>
+      <Time>2009-05-11T21:56:01.59375-07:00</Time>
     </Item>
     <Item>
       <Source>Audio\04 Never Ending Duel.wav</Source>
@@ -148,7 +157,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb</Output>
       <Time>2009-05-10T20:01:31.859375-07:00</Time>
     </Item>
     <Item>
@@ -157,7 +166,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\ActorTest.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\ActorTest.xnb</Output>
       <Time>2009-05-10T20:02:44.046875-07:00</Time>
     </Item>
     <Item>
@@ -166,7 +175,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb</Output>
       <Time>2009-05-10T20:42:12.296875-07:00</Time>
     </Item>
     <Item>
@@ -188,7 +197,7 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
       <Time>2009-05-01T20:56:37.21875-07:00</Time>
     </Item>
     <Item>
@@ -203,7 +212,7 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-10T19:53:17.96875-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -211,14 +220,14 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>D:\work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
+        <Key>D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
         <Value>2009-05-11T15:08:05.0625-07:00</Value>
       </Assembly>
       <Assembly>

@@ -102,15 +102,19 @@ namespace TheGame
         public BasicModel(GameScreen parent, Model model)
             : base(parent)
         {
+
+            this.Parent = parent;
+            this.model = model;
+        }
+
+        public override void Initialize()
+        {
             visible = true;
             position = Vector3.Zero;
             rotation = Quaternion.Identity;
             scale = 1.0f;
 
-            this.Parent = parent;
-            this.model = model;
-
-            Initialize();
+            base.Initialize();
         }
 
         public override void Update(GameTime gameTime)

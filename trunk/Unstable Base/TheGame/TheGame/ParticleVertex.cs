@@ -21,15 +21,24 @@ namespace TheGame
         // Stores the starting position of the particle.
         public Vector3 Position;
 
-        // Stores the starting velocity of the particle.
+        // Stores the constant velocity of the particle.
         public Vector3 Velocity;
 
-        // color of the base particles
+        // color added to the particle
         public Color Color;
 
-        // The time (in seconds) at which this particle was created.
-        public float Time;
+        //Size of the partical
+        public float Size;
 
+        // x: The time (in seconds) at which this particle was created.
+        // y: The lifespan in seconds of the particle
+        public Vector2 Time;
+
+        //Spin rotation of the particle
+        public float Rotation;
+
+        //Misc data such as random values
+        public float Data;
 
         // Describe the layout of this vertex structure.
         public static readonly VertexElement[] VertexElements =
@@ -48,11 +57,19 @@ namespace TheGame
 
             new VertexElement(0, 28, VertexElementFormat.Single,
                                      VertexElementMethod.Default,
+                                     VertexElementUsage.PointSize, 0),
+
+            new VertexElement(0, 32, VertexElementFormat.Vector2,
+                                     VertexElementMethod.Default,
                                      VertexElementUsage.TextureCoordinate, 0),
+
+            new VertexElement(0, 40, VertexElementFormat.Vector2,
+                                     VertexElementMethod.Default,
+                                     VertexElementUsage.TextureCoordinate, 1)  
         };
 
 
         // Describe the size of this vertex structure.
-        public const int SizeInBytes = 32;
+        public const int SizeInBytes = 48;
     }
 }

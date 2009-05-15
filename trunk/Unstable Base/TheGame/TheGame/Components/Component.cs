@@ -48,7 +48,6 @@ namespace TheGame
         public Component(GameScreen parent)
         {
             this.parent = parent;
-            this.enabled = true;
         }
 
         #endregion
@@ -58,8 +57,9 @@ namespace TheGame
 
         public virtual void Initialize()
         {
-            parent.Components.Add(this);
+            this.enabled = true;
             initialized = true;
+            parent.Components.Add(this);
         }
 
         public virtual void Update(GameTime gameTime) { }
