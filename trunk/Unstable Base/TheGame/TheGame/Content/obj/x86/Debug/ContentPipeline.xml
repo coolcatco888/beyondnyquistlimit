@@ -143,15 +143,6 @@
       <Time>2009-05-10T19:53:00.140625-07:00</Time>
     </Item>
     <Item>
-      <Source>BezierPoint.fx</Source>
-      <Name>BezierPoint</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BezierPoint.xnb</Output>
-      <Time>2009-05-11T21:56:01.59375-07:00</Time>
-    </Item>
-    <Item>
       <Source>Audio\04 Never Ending Duel.wav</Source>
       <Name>Audio\04 Never Ending Duel</Name>
       <Importer>WavImporter</Importer>
@@ -214,6 +205,15 @@
       <Options>None</Options>
       <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-10T19:53:17.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Bezier.fx</Source>
+      <Name>Bezier</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Bezier.xnb</Output>
+      <Time>2009-05-15T13:59:26.4046245-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

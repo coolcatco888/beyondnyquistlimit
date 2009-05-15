@@ -154,8 +154,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BezierPoint.fx">
-      <Name>BezierPoint</Name>
+    <Compile Include="Bezier.fx">
+      <Name>Bezier</Name>
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
     </Compile>

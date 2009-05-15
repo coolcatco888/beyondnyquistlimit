@@ -35,4 +35,4 @@ D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Mag
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Asplosions.xgs
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Wave Bank.xwb
 D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Audio\Sound Bank.xsb
-D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\BezierPoint.xnb
+D:\Work\JimsCode\Unstable Base\TheGame\TheGame\bin\x86\Debug\Content\Bezier.xnb

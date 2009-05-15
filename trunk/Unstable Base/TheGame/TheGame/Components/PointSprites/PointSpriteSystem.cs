@@ -34,6 +34,8 @@ namespace TheGame
 
             SetEffect();
 
+            effect.CurrentTechnique = effect.Techniques[settings.Technique];
+
             EffectParameterCollection parameters = effect.Parameters;
 
             // Look up shortcuts for parameters that change every frame.
@@ -63,8 +65,7 @@ namespace TheGame
             // from stomping over the parameter settings of another.
 
             effect = e.Clone(GameEngine.Graphics);
-
-            effect.CurrentTechnique = effect.Techniques[settings.Technique];
+            
         }
 
         public override void Update(GameTime gameTime)
