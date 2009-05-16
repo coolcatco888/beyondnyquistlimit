@@ -19,6 +19,8 @@ namespace TheGame.Components.Display
 
         protected Vector2 scale;
 
+        protected float rotation = 0.0f;
+
         public Texture2D Image
         {
             set { image = value; }
@@ -35,6 +37,12 @@ namespace TheGame.Components.Display
         {
             set { scale = value; }
             get { return scale; }
+        }
+
+        public float Rotation
+        {
+            set { rotation = value; }
+            get { return rotation; }
         }
 
         /// <summary>
@@ -90,7 +98,7 @@ namespace TheGame.Components.Display
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(image, position, null, tint, 0.0f, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(image, position, null, tint, rotation, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
             spriteBatch.End();
         }
 
