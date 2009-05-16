@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.Xna.Framework.Content;
 
 namespace ContentTestLibrary
 {
@@ -38,6 +39,15 @@ namespace ContentTestLibrary
         {
             get { return currentDefense; }
             set { currentDefense = value; }
+        }
+
+        [ContentSerializerIgnore]
+        private int attackGauge;
+        [ContentSerializerIgnore]
+        public int AttackGauge
+        {
+            get { return attackGauge; }
+            set { attackGauge = value; }
         }
         #endregion
 
