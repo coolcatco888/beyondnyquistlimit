@@ -72,3 +72,5 @@ D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleD.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleE.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\ParticleF.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\cloud.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CloudInfo.xnb

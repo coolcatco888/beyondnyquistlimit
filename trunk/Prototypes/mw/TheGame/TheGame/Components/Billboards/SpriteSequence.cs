@@ -65,6 +65,11 @@ namespace TheGame
             get { return updateCount; }
         }
 
+        public Point CurrentFrame
+        {
+            get { return currentFrame; }
+        }
+
         public int CurrentFrameColumn
         {
             get { return currentFrame.X; }

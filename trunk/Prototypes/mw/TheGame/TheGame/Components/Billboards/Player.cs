@@ -16,6 +16,10 @@ namespace TheGame
         protected CastingAura castingAura;
         protected SpriteInfo castingSpriteInfo;
 
+        // TEMPORARY
+        SpriteInfo waveInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo");
+        BillboardWave wave;
+
         #endregion  // Fields
 
         public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex)
@@ -41,12 +45,21 @@ namespace TheGame
             castingAura.Visible = false;
             castingAura.InvertScaleIncrement();
 
+            // TEMPORARY
+
             base.Initialize();
         }
 
         public override void Update(GameTime gameTime)
         {
             castingAura.Position = new Vector3(position.X, 0.0f, position.Z);
+
+            // TEMPORARY
+            if (currentSequence.Title == "Attacking" && (currentSequence.CurrentFrame.X == 4 || currentSequence.CurrentFrame.X == 16) && (wave == null || wave.IsComplete))
+            {
+                wave = new BillboardWave(this.Parent, waveInfo, position, Vector3.Normalize(velocity) * 2, 200, 10, 0, 0, 7, 1);
+                wave.Initialize();
+            }
 
             UpdateController();
 
@@ -56,10 +69,11 @@ namespace TheGame
         private void UpdateController()
         {
             GamepadDevice gamepadDevice = (GamepadDevice)GameEngine.Services.GetService(typeof(GamepadDevice));
+            KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
             // Update 360 degree velocity
             Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
-            if (newVelocity != Vector3.Zero)
+            if (newVelocity != Vector3.Zero && currentSequence.Title != "Attacking")
             {
                 velocity = Vector3.Normalize(newVelocity);
             }
@@ -81,7 +95,7 @@ namespace TheGame
                     castingAura.Position = new Vector3(position.X, 0.0f, position.Z - 1.0f);
                 }
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || keyboardDevice.WasKeyPressed(Keys.Space))
             {
                 state = ActorState.Attacking;
             }
@@ -226,7 +240,7 @@ namespace TheGame
             // Add running sequences.
             foreach (Orientation orientation in Enum.GetValues(typeof(Orientation)))
             {
-                sequence = new SpriteSequence("Running", orientation, true, 0.5f, 1);
+                sequence = new SpriteSequence("Running", orientation, true, 2.0f, 1);
                 sequence.AddRow(y++, x, x + 7);
 
                 sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
@@ -238,32 +252,32 @@ namespace TheGame
             }
 
             // Battle idle
-            sequence = new SpriteSequence("Attacking", Orientation.Southwest, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(5, 0, 6);
+            sequence = new SpriteSequence("Attacking", Orientation.Southwest, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(7, 0, 10);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
-            sequence = new SpriteSequence("Attacking", Orientation.South, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(5, 0, 6);
+            sequence = new SpriteSequence("Attacking", Orientation.South, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(7, 0, 10);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
-            sequence = new SpriteSequence("Attacking", Orientation.West, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(5, 0, 6);
-            sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
-
-            sequence = new SpriteSequence("Attacking", Orientation.Southeast, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(5, 8, 14);
-            sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
-            sequence = new SpriteSequence("Attacking", Orientation.East, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(5, 8, 14);
+            sequence = new SpriteSequence("Attacking", Orientation.West, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(7, 0, 10);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
 
-            sequence = new SpriteSequence("Attacking", Orientation.Northwest, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(6, 0, 6);
+            sequence = new SpriteSequence("Attacking", Orientation.Southeast, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(7, 12, 22);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
-            sequence = new SpriteSequence("Attacking", Orientation.North, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(6, 0, 6);
+            sequence = new SpriteSequence("Attacking", Orientation.East, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(7, 12, 22);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
 
-            sequence = new SpriteSequence("Attacking", Orientation.Northeast, false, 0.0f, 6, 2, 1);
-            sequence.AddRow(6, 8, 14);
+            sequence = new SpriteSequence("Attacking", Orientation.Northwest, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(8, 0, 10);
+            sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
+            sequence = new SpriteSequence("Attacking", Orientation.North, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(8, 0, 10);
+            sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
+
+            sequence = new SpriteSequence("Attacking", Orientation.Northeast, false, 0.0f, 3, 2, 1);
+            sequence.AddRow(8, 12, 22);
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
             //sequence = new SpriteSequence("Attacking", Orientation.Southwest, true, 0.0f, 3);
             //sequence.AddRow(3, 0, 5);
