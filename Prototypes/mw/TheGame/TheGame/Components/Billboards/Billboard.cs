@@ -22,6 +22,15 @@ namespace TheGame
 
         #endregion  // Fields
 
+        #region Accessors
+
+        public VertexPositionTexture[] Vertices
+        {
+            get { return vertices; }
+        }
+
+        #endregion  // Accessors
+
         public Billboard(GameScreen parent, Texture2D texture2D)
             : base(parent)
         {
@@ -60,6 +69,27 @@ namespace TheGame
             basicEffect.Dispose();
 
             base.Dispose();
+        }
+
+        public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
+        {
+            scale.X = spriteSequence.Scale.X;
+
+            vertices[0].TextureCoordinate = new Vector2(
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+
+            vertices[1].TextureCoordinate = new Vector2(
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * spriteSequence.Scale.X,
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+
+            vertices[2].TextureCoordinate = new Vector2(
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * spriteSequence.Scale.X,
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
+
+            vertices[3].TextureCoordinate = new Vector2(
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
         }
 
         #region IDrawableComponent Members

@@ -86,8 +86,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Components\Billboards\BillboardList.cs" />
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\CastingAura.cs" />
+    <Compile Include="Components\Billboards\BillboardWave.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Audio\AudioManager.cs" />
     <Compile Include="Components\Audio\IAudioEmitter.cs" />

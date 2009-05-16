@@ -94,30 +94,9 @@ namespace TheGame
 
             UpdatePosition();
 
-            UpdateVertices();
+            UpdateVertices(currentSequence, spriteInfo);
 
  	        base.Update(gameTime);
-        }
-
-        protected void UpdateVertices()
-        {
-            scale.X = currentSequence.Scale.X;
-
-            vertices[0].TextureCoordinate = new Vector2(
-                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
-
-            vertices[1].TextureCoordinate = new Vector2(
-                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * currentSequence.Scale.X,
-                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
-
-            vertices[2].TextureCoordinate = new Vector2(
-                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * currentSequence.Scale.X,
-                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * currentSequence.Scale.Y);
-
-            vertices[3].TextureCoordinate = new Vector2(
-                currentSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                currentSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * currentSequence.Scale.Y);
         }
 
         private void UpdatePosition()
