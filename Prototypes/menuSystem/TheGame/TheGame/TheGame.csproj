@@ -106,6 +106,7 @@
     <Compile Include="Components\ComponentInterfaces.cs" />
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\GUI\CharacterStatusComponent2D.cs" />
+    <Compile Include="Components\GUI\CircularGauge.cs" />
     <Compile Include="Components\GUI\DisplayComponent2D.cs" />
     <Compile Include="Components\GUI\GameWeaponMenuPanel2D.cs" />
     <Compile Include="Components\GUI\HitTextComponent2D.cs" />
