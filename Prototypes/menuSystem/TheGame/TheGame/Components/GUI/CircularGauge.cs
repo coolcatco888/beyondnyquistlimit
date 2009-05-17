@@ -17,6 +17,8 @@ namespace TheGame.Components.GUI
 
         private List<float> ranges = new List<float>();
 
+        private BoundingBox Bounds;
+
         /// <summary>
         /// Circular gauges might not be a whole circle
         /// 
@@ -65,6 +67,8 @@ namespace TheGame.Components.GUI
             this.fullColor = fullColor;
             this.emptyColor = emptyColor;
             this.gaugeImage = gaugeImage;
+            Vector3 position3D = new Vector3(position.X, position.Y, 0.0f);
+            this.Bounds = new BoundingBox(position3D, position3D);
             SetupGauge();
         }
 
@@ -86,6 +90,7 @@ namespace TheGame.Components.GUI
                 currentSquare.IsOriginCenter = true;
                 gaugeSquares.Add(currentSquare);
                 ranges.Add(angle + halfInc);
+                UpdateBounds(currentSquare);
             }
 
             //Color Items
@@ -126,37 +131,59 @@ namespace TheGame.Components.GUI
 
         public override Vector2 Center
         {
-            get { throw new NotImplementedException(); }
+            get { return new Vector2(Left + 0.5f * Width, Top + 0.5f * Height); }
         }
 
         public override float Height
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.Y - Bounds.Min.Y; }
         }
 
         public override float Width
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Max.X - Bounds.Min.X; }
         }
 
         public override float Left
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.X; }
         }
 
         public override float Right
         {
-            get { throw new NotImplementedException(); }
+            get { return Left + Width; }
         }
 
         public override float Bottom
         {
-            get { throw new NotImplementedException(); }
+            get { return Top + Height; }
         }
 
         public override float Top
         {
-            get { throw new NotImplementedException(); }
+            get { return Bounds.Min.Y; }
+        }
+
+        private void UpdateBounds(DisplayComponent2D item)
+        {
+            if (item.Left < Left)
+            {
+                Bounds.Min.X = item.Position.X;
+            }
+            if (item.Top < Top)
+            {
+                Bounds.Min.Y = item.Position.Y;
+            }
+
+            if (item.Right > Right)
+            {
+                Bounds.Max.X = (Right + Width + (item.Right - Right));
+            }
+
+            if (item.Bottom > Bottom)
+            {
+                Bounds.Max.Y = (Top + Height + (item.Bottom - Bottom));
+            }
         }
     }
 }
