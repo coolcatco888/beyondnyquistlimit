@@ -116,3 +116,6 @@ D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\
 D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Library.pdb
 D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\circGauge.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\healthbar.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\hud.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\itemsm.xnb

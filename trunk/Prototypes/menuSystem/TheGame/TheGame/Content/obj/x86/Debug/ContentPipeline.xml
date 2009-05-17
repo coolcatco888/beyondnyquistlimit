@@ -287,6 +287,33 @@
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-11T12:07:17.140625-07:00</Time>
     </Item>
+    <Item>
+      <Source>GUI\healthbar.PNG</Source>
+      <Name>GUI\healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\healthbar.xnb</Output>
+      <Time>2009-05-16T18:45:34.296875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\hud.PNG</Source>
+      <Name>GUI\hud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\hud.xnb</Output>
+      <Time>2009-05-16T18:45:34.296875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\itemsm.PNG</Source>
+      <Name>GUI\itemsm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\itemsm.xnb</Output>
+      <Time>2009-05-16T18:45:34.296875-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

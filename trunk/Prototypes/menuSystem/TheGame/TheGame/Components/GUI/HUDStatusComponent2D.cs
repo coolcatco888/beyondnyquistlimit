@@ -22,6 +22,11 @@ namespace TheGame.Components.Display
         /// </summary>
         protected IGauge manaBar;
 
+        /// <summary>
+        /// Stores the attack power
+        /// </summary>
+        protected IGauge attackGauge;
+
 
         /// <summary>
         /// Stores the level component for the character
@@ -42,6 +47,14 @@ namespace TheGame.Components.Display
         public IGauge ManaBar
         {
             get { return manaBar; }
+        }
+
+        /// <summary>
+        /// Stores the attack power
+        /// </summary>
+        public IGauge AttackGauge
+        {
+            get { return attackGauge; }
         }
 
         /// <summary>

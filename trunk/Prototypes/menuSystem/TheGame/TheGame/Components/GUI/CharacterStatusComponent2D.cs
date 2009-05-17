@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TheGame.Components.GUI;
 
 namespace TheGame.Components.Display
 {
@@ -38,6 +39,19 @@ namespace TheGame.Components.Display
 
         private BoundingBox Bounds;
 
+        public override void Initialize()
+        {
+            ((DisplayComponent2D)attackGauge).Initialize();
+            ((DisplayComponent2D)healthBar).Initialize();
+            ((DisplayComponent2D)manaBar).Initialize();
+            hud.Initialize();
+            playerImage.Initialize();
+            healthValue.Initialize();
+            manaValue.Initialize();
+            ((DisplayComponent2D)level).Initialize();
+            base.Initialize();
+        }
+
         /// <summary>
         /// Constructs a new Character Display Component.
         /// </summary>
@@ -47,8 +61,6 @@ namespace TheGame.Components.Display
             : base(parent)
         {
             this.position = position;
-
-            //TODO: All components must call Initialize()
 
             //Add Bars
             this.healthBar = new ValueBarComponent2D(parent, param.Position + param.HealthBarPos, param.BarImage, param.HealthBarColor, param.HealthBarMaxValue, param.DamageBarColor);
@@ -61,11 +73,11 @@ namespace TheGame.Components.Display
             UpdateBounds((DisplayComponent2D)this.hud);
 
             //Add Player Face
-            this.playerImage = new ImageComponent2D(parent, param.PlayerImageCentrePos - new Vector2(param.PlayerImage.Width * 0.5f, param.PlayerImage.Height * 0.5f), param.PlayerImage);
+            this.playerImage = new ImageComponent2D(parent, param.Position + param.PlayerImageCentrePos - new Vector2(param.PlayerImage.Width * 0.5f, param.PlayerImage.Height * 0.5f), param.PlayerImage);
             UpdateBounds((DisplayComponent2D)this.playerImage);
 
             //Add level number
-            this.level = new LevelTextComponent2D(parent, param.LevelPos, param.Level, param.FontColor, param.TextFont, param.FontScale);
+            this.level = new LevelTextComponent2D(parent, param.Position + param.LevelPos, param.Level, param.FontColor, param.TextFont, param.FontScale);
             UpdateBounds((DisplayComponent2D)this.level);
             this.relativeHealthBarPos = param.HealthBarPos + new Vector2(param.BarImage.Width * 0.5f, 0);
             this.relativeManaBarPos = param.ManaBarPos + new Vector2(param.BarImage.Width * 0.5f, 0);
@@ -74,6 +86,7 @@ namespace TheGame.Components.Display
             this.textFont = param.TextFont;
             this.healthValue = new TextComponent2D(parent, 
                 //Set position to the middle of the health bar
+                param.Position + 
                 this.relativeHealthBarPos
                 - new Vector2(param.TextFont.MeasureString(this.healthBar.CurrentValue + "").X * 0.5f, 0),
                 this.healthBar.CurrentValue + "", param.FontColor, this.textFont, param.FontScale);
@@ -81,10 +94,14 @@ namespace TheGame.Components.Display
 
             this.manaValue = new TextComponent2D(parent,
                 //Set position to the middle of the mana bar
+                param.Position + 
                 this.relativeManaBarPos
                 - new Vector2(param.TextFont.MeasureString(this.manaBar.CurrentValue + "").X * 0.5f, 0),
                 this.manaBar.CurrentValue + "", param.FontColor, this.textFont, param.FontScale);
             UpdateBounds((DisplayComponent2D)this.manaBar);
+
+            this.attackGauge = new CircularGauge(parent, param.Position + param.attackPosition, param.attackGaugeImage, param.attackMaxValue, param.attackCurrentValue, 
+                param.attackGaugeRadius, param.attackGaugeStartAngle, param.attackGaugeEndAngle, param.attackGaugeFullColor, param.attackGaugeEmptyColor);
 
             this.lastHealthValue = healthBar.CurrentValue;
             this.lastManaValue = manaBar.CurrentValue;
@@ -269,6 +286,52 @@ namespace TheGame.Components.Display
         /// Size of font
         /// </summary>
         public float FontScale = 1.0f;
+
+        /// <summary>
+        /// Attack Gauge center position for circular attack gauge
+        /// </summary>
+        public Vector2 attackPosition = Vector2.Zero;
+
+        /// <summary>
+        /// Attack Gauge slot piece image 
+        /// </summary>
+        public Texture2D attackGaugeImage = null;
+
+        /// <summary>
+        /// Attack gauge maximum value
+        /// </summary>
+        public int attackMaxValue = 1;
+
+        /// <summary>
+        /// Current value our of the attack gauge
+        /// </summary>
+        public int attackCurrentValue = 1;
+
+        /// <summary>
+        /// Current radius of the circular attack gauge
+        /// </summary>
+        public float attackGaugeRadius = 30.0f;
+
+        /// <summary>
+        /// Starting angle of the circular attack gauge
+        /// </summary>
+        public float attackGaugeStartAngle = MathHelper.PiOver4;
+
+        /// <summary>
+        /// Ending angle of the attack gauge
+        /// </summary>
+        public float attackGaugeEndAngle = MathHelper.Pi * 2.0f - MathHelper.PiOver4;
+
+        /// <summary>
+        /// Color of gauge pieces when full
+        /// </summary>
+        public Color attackGaugeFullColor = Color.Red;
+
+        /// <summary>
+        /// Color of gauge pieces when empty
+        /// </summary>
+        public Color attackGaugeEmptyColor = Color.Black;
+
     }
 
     
