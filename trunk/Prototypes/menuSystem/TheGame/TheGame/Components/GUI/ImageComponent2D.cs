@@ -21,6 +21,16 @@ namespace TheGame.Components.Display
 
         protected float rotation = 0.0f;
 
+        protected bool isOriginCenter = false;
+
+        protected Vector2 relativeCenter;
+
+        public bool IsOriginCenter
+        {
+            set { isOriginCenter = value; }
+            get { return isOriginCenter; }
+        }
+
         public Texture2D Image
         {
             set { image = value; }
@@ -93,12 +103,13 @@ namespace TheGame.Components.Display
             this.image = image;
             this.tint = tint;
             this.scale = scale;
+            this.relativeCenter = new Vector2(image.Width * 0.5f, image.Height * 0.5f);
         }
 
         public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(image, position, null, tint, rotation, Vector2.Zero, scale, SpriteEffects.None, 0.0f);
+            spriteBatch.Draw(image, position, null, tint, rotation, isOriginCenter? relativeCenter : Vector2.Zero, scale, SpriteEffects.None, 0.0f);
             spriteBatch.End();
         }
 

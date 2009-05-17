@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TheGame.Components.GUI;
 
 namespace TheGame.Game_Screens
 {
@@ -23,10 +24,13 @@ namespace TheGame.Game_Screens
         {
             //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, GameEngine.Content, "Components\\GUI\\MenuPanels\\mainpanel.xml");
-
+            Texture2D gauge = GameEngine.Content.Load<Texture2D>("GUI\\circGauge");
+            
             //Make it into functional menu
             menu = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 3);
             menu.Initialize();
+            (new CircularGauge(this, new Vector2(200, 200), gauge, 100, 55, 30.0f, MathHelper.PiOver4, MathHelper.Pi * 2.0f - MathHelper.PiOver4, Color.Red, Color.Black)).Initialize();
+
         }
 
         /// <summary>
