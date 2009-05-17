@@ -90,7 +90,7 @@ namespace TheGame
                     rand2 = (float)GameEngine.Random.NextDouble();
                     rand3 = (float)GameEngine.Random.NextDouble();
 
-                    vortex.AddParticle(new Vector3(r * rand1, theta * rand2, 0.2f), new Vector3(0.6f, 3.3f, 2.1f), 0.1f * rand3 + 0.1f, rand1 + rand2, 0.0f, null);
+                    vortex.AddParticle(new Vector3(r * rand1, theta * rand2, 0.2f), new Vector3(0.6f, 3.3f, 2.1f), 0.1f * rand3 + 0.1f, rand1 + rand2, null, null);
                 }
             }
         }

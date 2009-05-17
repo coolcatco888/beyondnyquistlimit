@@ -28,14 +28,12 @@ struct VertexShaderOutput
 {
     float4 Position : POSITION0;
     float4 Color	: COLOR0;
-    float4 Rotation : COLOR1;
     float Size		: PSIZE;
 };
 
 struct PixelShaderInput
 {
 	float4 Color		: COLOR0;
-	float4 Rotation : COLOR1;
 
 	#ifdef XBOX
         float2 TexCoord : SPRITETEXCOORD;
@@ -76,8 +74,6 @@ VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
     
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
-    
-    output.Rotation = ComputeParticleRotation(input.Data.x, age);
 
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
@@ -100,8 +96,6 @@ VertexShaderOutput CylindricalVertexShaderFunction(VertexShaderInput input)
     
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
-    
-    output.Rotation = ComputeParticleRotation(input.Data.x, age);
     
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
@@ -131,8 +125,6 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
     
-    output.Rotation = ComputeParticleRotation(input.Data.x, age);
-    
     output.Color = input.Color;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
     
@@ -155,27 +147,6 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
 float4 PixelShaderFunction(PixelShaderInput input) : COLOR0
 {
     float2 textureCoordinate = input.TexCoord;
-
-    // We want to rotate around the middle of the particle, not the origin,
-    // so we offset the texture coordinate accordingly.
-    //textureCoordinate -= 0.5;
-    
-    // Apply the rotation matrix, after rescaling it back from the packed
-    // color interpolator format into a full -1 to 1 range.
-    //float4 rotation = input.Rotation * 2 - 1;
-    
-    //textureCoordinate = mul(textureCoordinate, float2x2(rotation));
-    
-    // Point sprites are squares. So are textures. When we rotate one square
-    // inside another square, the corners of the texture will go past the
-    // edge of the point sprite and get clipped. To avoid this, we scale
-    // our texture coordinates to make sure the entire square can be rotated
-    // inside the point sprite without any clipping.
-    //textureCoordinate *= sqrt(2);
-    
-    // Undo the offset used to control the rotation origin.
-    //textureCoordinate += 0.5;
-
     return tex2D(Sampler, textureCoordinate) * input.Color * 2;
 }
 

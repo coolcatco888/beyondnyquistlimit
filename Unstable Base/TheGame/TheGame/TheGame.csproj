@@ -120,6 +120,7 @@
     <Compile Include="Components\Terrain\Terrain.cs" />
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\Spells\FireTornado.cs" />
+    <Compile Include="ControlHub.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
