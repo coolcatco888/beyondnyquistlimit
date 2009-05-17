@@ -82,7 +82,7 @@ namespace TheGame
                         rand2 = (float)GameEngine.Random.NextDouble();
                         rand3 = (float)GameEngine.Random.NextDouble();
 
-                        beam.AddParticle(new Vector3(0.5f * rand1, theta, 0.0f), new Vector3(0.0f, 20.0f, 0.0f), 0.05f + 0.1f * rand2, 1.1f, 0.0f + rand3 * 0.05f, 1.0f);
+                        beam.AddParticle(new Vector3(0.5f * rand1, theta, 0.0f), new Vector3(0.0f, 20.0f, 0.0f), 0.05f + 0.1f * rand2, 1.1f, new Color(rand1, rand2, rand3), new Vector2(0.0f + rand3 * 0.05f, 1.0f));
 
                     }
 

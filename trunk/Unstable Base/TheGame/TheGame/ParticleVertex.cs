@@ -34,11 +34,8 @@ namespace TheGame
         // y: The lifespan in seconds of the particle
         public Vector2 Time;
 
-        //Spin rotation of the particle
-        public float Rotation;
-
         //Misc data such as random values
-        public float Data;
+        public Vector2 Data;
 
         // Describe the layout of this vertex structure.
         public static readonly VertexElement[] VertexElements =

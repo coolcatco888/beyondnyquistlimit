@@ -15,8 +15,8 @@ namespace TheGame
 {
     class TestCamera : Camera
     {
-        double theta;
-        double phi;
+        Vector2 mousePosition;
+        bool held;
 
         public TestCamera(GameScreen parent)
             : base(parent)
@@ -25,34 +25,72 @@ namespace TheGame
 
         public override void Initialize()
         {
-            theta = 0.0f;
-            phi = 0.0f;
+            mousePosition = Vector2.Zero;
+            held = false;
 
             base.Initialize();
+
+            Position = new Vector3(0.0f, 3.0f, 2.0f);
         }
 
         public override void Update(GameTime gameTime)
         {
             KeyboardDevice kbd = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+            MouseState ms = Mouse.GetState();
 
-            if (kbd.IsKeyDown(Keys.Up))
+            Vector3 movement = Vector3.Zero;
+
+            if (kbd.IsKeyDown(Keys.W))
             {
-                theta += 0.001 * gameTime.ElapsedGameTime.Milliseconds;
+                movement.Z -= 0.01f * gameTime.ElapsedGameTime.Milliseconds;
             }
-            if (kbd.IsKeyDown(Keys.Left))
+            if (kbd.IsKeyDown(Keys.A))
             {
-                phi += 0.001 * gameTime.ElapsedGameTime.Milliseconds;
+                movement.X -= 0.01f * gameTime.ElapsedGameTime.Milliseconds;
             }
-            if (kbd.IsKeyDown(Keys.Down))
+            if (kbd.IsKeyDown(Keys.S))
             {
-                theta -= 0.001 * gameTime.ElapsedGameTime.Milliseconds;
+                movement.Z += 0.01f * gameTime.ElapsedGameTime.Milliseconds;
             }
-            if (kbd.IsKeyDown(Keys.Right))
+            if (kbd.IsKeyDown(Keys.D))
             {
-                phi -= 0.001 * gameTime.ElapsedGameTime.Milliseconds;
+                movement.X += 0.01f * gameTime.ElapsedGameTime.Milliseconds;
             }
 
-            Position = new Vector3((float)(Math.Cos(theta) * Math.Sin(phi) * 5), (float)(Math.Sin(theta) * Math.Sin(phi) * 5), (float)(Math.Cos(theta) * 5));
+            Vector3 dir = -Vector3.UnitZ;
+
+            if (ms.RightButton == ButtonState.Pressed && !held)
+            {
+                held = true;
+                mousePosition = new Vector2(ms.X, ms.Y);
+            }
+            else if (ms.RightButton == ButtonState.Pressed && held)
+            {
+                Vector2 drag = mousePosition - new Vector2(ms.X, ms.Y);
+
+                if (drag != Vector2.Zero)
+                    drag.Normalize();
+
+                drag *= 0.001f * gameTime.ElapsedGameTime.Milliseconds;
+
+                Quaternion rot = Quaternion.CreateFromYawPitchRoll(drag.X, drag.Y, 0.0f);
+
+                Rotation *= rot;
+                
+            }
+            else if(ms.RightButton == ButtonState.Released)
+            {
+                held = false;
+            }
+
+            
+            Matrix rottrans = Matrix.CreateFromQuaternion(Rotation);
+
+            Vector3.TransformNormal(ref movement, ref rottrans, out movement);
+            Vector3.TransformNormal(ref dir, ref rottrans, out dir);
+
+            Position += movement;
+            LookAt = Position + dir;
 
             base.Update(gameTime);
         }

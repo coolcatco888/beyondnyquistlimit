@@ -68,15 +68,12 @@ namespace TheGame
         static Game game;
         static ScreenManager screenManager;
 
-
         public static GameScreen BaseScreen
         {
             get { return GameEngine.baseScreen; }
             set { GameEngine.baseScreen = value; }
         }
         static GameScreen baseScreen;
-
-        
 
         public static void Initialize(Game g)
         {
@@ -89,6 +86,11 @@ namespace TheGame
             initialized = true;
         }
 
+        public static void EndGame()
+        {
+            Content.Unload();
+            game.Exit();
+        }
 
     }
 }

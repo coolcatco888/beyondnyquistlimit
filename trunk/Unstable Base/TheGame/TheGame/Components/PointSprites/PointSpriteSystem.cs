@@ -204,7 +204,7 @@ namespace TheGame
         /// <summary>
         /// Adds a new particle to the system.
         /// </summary>
-        public void AddParticle(Vector3 position, Vector3 velocity, float size, float duration, float spin, float? data)
+        public void AddParticle(Vector3 position, Vector3 velocity, float size, float duration, Color? color, Vector2? data)
         {
             // Figure out where in the circular queue to allocate the new particle.
             int nextFreeParticle = firstFreeParticle + 1;
@@ -219,11 +219,14 @@ namespace TheGame
             // Fill in the particle vertex structure.
             particles[firstFreeParticle].Position = position * settings.Scale + settings.Position;
             particles[firstFreeParticle].Velocity = velocity * settings.Scale;
-            particles[firstFreeParticle].Color = settings.Color;
             particles[firstFreeParticle].Size = size;
             particles[firstFreeParticle].Time.X = currentTime;
             particles[firstFreeParticle].Time.Y = duration;
-            particles[firstFreeParticle].Rotation = spin;
+
+            if (color.HasValue)
+                particles[firstFreeParticle].Color = color.Value;
+            else
+                particles[firstFreeParticle].Color = settings.Color;
 
             if(data.HasValue)
                 particles[firstFreeParticle].Data = data.Value;

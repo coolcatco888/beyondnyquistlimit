@@ -13,12 +13,12 @@ Content\Sprites\circles.xnb
 Content\Sprites\Sprite Sheet Knight.xnb
 Content\BasicPoint.xnb
 Content\Skybox\skybox.xnb
+Content\Bezier.xnb
 Content\Audio\04 Never Ending Duel.xnb
 Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
-Content\Bezier.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
