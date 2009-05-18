@@ -22,6 +22,14 @@ Content\Sprites\MagicCircle.xnb
 Content\Sprites\CloudInfo.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+Content\GUI\blank.xnb
+Content\GUI\circGauge.xnb
+Content\GUI\healthbar.xnb
+Content\GUI\hud.xnb
+Content\GUI\itemsm.xnb
+Content\GUI\menubg.xnb
+Content\GUI\menufont.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb
+Components\GUI\MenuPanels\mainpanel.xml

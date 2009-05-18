@@ -10,6 +10,8 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using TheGame.Game_Screens;
+using TheGame.Components.Cameras;
 
 namespace TheGame
 {
@@ -40,8 +42,10 @@ namespace TheGame
             
 
             GameEngine.BaseScreen = new GameScreen("base");
-
-            Camera camera = new TestCamera(GameEngine.BaseScreen);
+            //TestCamera camera = new TestCamera(GameEngine.BaseScreen);
+            Camera camera = new ActionCamera(GameEngine.BaseScreen);
+            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
+            camera.LookAt = new Vector3(0, 0, 0);
             camera.Initialize();
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
@@ -59,8 +63,9 @@ namespace TheGame
             GameEngine.BaseScreen.AlwaysUpdate = true;
 
             //new TestScreen("test");
-            new SkyboxScreen("sky");
-            Level l = new Level("level", "Terrain\\terrain");
+            //new SkyboxScreen("sky");
+            //Level l = new Level("level", "Terrain\\terrain");
+            new MainMenuScreen("main");
 
             base.Initialize();
         }

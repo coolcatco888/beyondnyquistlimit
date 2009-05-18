@@ -29,7 +29,8 @@ namespace TheGame
                 position = value;
             }
         }
-        Vector3 position;
+        
+        protected Vector3 position;
 
         public Quaternion Rotation
         {
@@ -66,7 +67,8 @@ namespace TheGame
             get { return lookAt; }
             set { lookAt = value; }
         }
-        Vector3 lookAt;
+
+        protected Vector3 lookAt;
 
         public Vector3 Direction
         {

@@ -89,6 +89,12 @@
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\BillboardList.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
+    <Compile Include="Components\Cameras\ActionCamera.cs" />
+    <Compile Include="Components\GUI\CircularGauge.cs" />
+    <Compile Include="Components\Input\Direction.cs" />
+    <Compile Include="Components\Input\InputManager.cs" />
+    <Compile Include="Components\Input\Move.cs" />
+    <Compile Include="Components\Input\MoveList.cs" />
     <Compile Include="Components\Spells\BillboardWave.cs" />
     <Compile Include="Components\Spells\CastingAura.cs" />
     <Compile Include="Components\Spells\ChainBeam.cs" />
@@ -130,6 +136,9 @@
     <Compile Include="Components\Spells\FireTornado.cs" />
     <Compile Include="ControlHub.cs" />
     <Compile Include="Game Screens\Level.cs" />
+    <Compile Include="Game Screens\MainMenuScreen.cs" />
+    <Compile Include="Game Screens\MenuScreen.cs" />
+    <Compile Include="Game Screens\PauseScreen.cs" />
     <Compile Include="Game Screens\SkyboxScreen.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Game Screens\GameScreen.cs" />
@@ -152,6 +161,9 @@
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Components\GUI\MenuPanels\mainpanel.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>

@@ -20,6 +20,9 @@ namespace TheGame
 
         protected BasicEffect basicEffect;
 
+        protected bool isDisposed = false;
+        
+
         #endregion  // Fields
 
         #region Accessors
@@ -27,6 +30,11 @@ namespace TheGame
         public VertexPositionTexture[] Vertices
         {
             get { return vertices; }
+        }
+
+        public bool IsDisposed
+        {
+            get { return isDisposed; }
         }
 
         #endregion  // Accessors
@@ -69,6 +77,8 @@ namespace TheGame
             basicEffect.Dispose();
 
             base.Dispose();
+
+            isDisposed = true;
         }
 
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
