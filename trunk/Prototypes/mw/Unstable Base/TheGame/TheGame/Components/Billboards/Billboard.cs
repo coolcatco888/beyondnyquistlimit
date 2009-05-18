@@ -73,8 +73,6 @@ namespace TheGame
 
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
         {
-            scale.X = spriteSequence.Scale.X;
-
             vertices[0].TextureCoordinate = new Vector2(
                 spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);

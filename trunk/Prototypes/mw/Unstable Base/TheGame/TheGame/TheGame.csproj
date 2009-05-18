@@ -89,6 +89,7 @@
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\BillboardList.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
+    <Compile Include="Components\PointSprites\PointSpriteSystemInverted.cs" />
     <Compile Include="Components\Spells\BillboardWave.cs" />
     <Compile Include="Components\Spells\CastingAura.cs" />
     <Compile Include="Components\Spells\ChainBeam.cs" />
@@ -122,6 +123,8 @@
     <Compile Include="Components\GUI\ValueBarComponent2D.cs" />
     <Compile Include="Components\GUI\XMLPanel2DBuilder.cs" />
     <Compile Include="Components\Skybox\Skybox.cs" />
+    <Compile Include="Components\Spells\CircularVoid.cs" />
+    <Compile Include="Components\Spells\BillboardCauldron.cs" />
     <Compile Include="Components\Spells\Hurricane.cs" />
     <Compile Include="Components\Spells\IceVortex.cs" />
     <Compile Include="Components\Spells\LeafWhirlwind.cs" />

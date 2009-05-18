@@ -21,6 +21,7 @@ namespace TheGame
         private bool isLoop;
         private int updateCount;
 
+        private bool isPaused = false;
         private bool isComplete = false;
 
         private float timer = 0.0f;
@@ -78,6 +79,12 @@ namespace TheGame
         public int CurrentFrameRow
         {
             get { return currentFrame.Y; }
+        }
+
+        public bool IsPaused
+        {
+            get { return isPaused; }
+            set { isPaused = value; }
         }
 
         public bool IsComplete
@@ -156,43 +163,46 @@ namespace TheGame
 
         public void Update(GameTime gameTime)
         {
-            updateCount = 0;
-            timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
-
-            while (timer > 0)
+            if (!isPaused)
             {
-                if (bufferFrames == 0)
+                updateCount = 0;
+                timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                while (timer > 0)
                 {
-                    // Reset to first frame if sequence loops.
-                    if (isLoop && frameIndex == frameTotal - 1)
+                    if (bufferFrames == 0)
                     {
-                        frameIndex = 0;
-                    }
-                    // Remain on last frame if sequence does not loop.
-                    else if (!isLoop && frameIndex == frameTotal - 1)
-                    {
-                        isComplete = true;
+                        // Reset to first frame if sequence loops.
+                        if (isLoop && frameIndex == frameTotal - 1)
+                        {
+                            frameIndex = 0;
+                        }
+                        // Remain on last frame if sequence does not loop.
+                        else if (!isLoop && frameIndex == frameTotal - 1)
+                        {
+                            isComplete = true;
+                        }
+                        else
+                        {
+                            frameIndex++;
+                        }
+
+                        // Reassign current frame.
+                        currentFrame = frame[frameIndex];
+
+                        bufferFrames = bufferTotal;
                     }
                     else
                     {
-                        frameIndex++;
+                        bufferFrames--;
                     }
 
-                    // Reassign current frame.
-                    currentFrame = frame[frameIndex];
+                    // Increment updates.
+                    updateCount++;
 
-                    bufferFrames = bufferTotal;
+                    // Decrement timer.
+                    timer -= interval;
                 }
-                else
-                {
-                    bufferFrames--;
-                }
-
-                // Increment updates.
-                updateCount++;
-
-                // Decrement timer.
-                timer -= interval;
             }
         }
 
