@@ -53,6 +53,8 @@ namespace TheGame
         {
             get { return playerList; }
         }
+
+        private CircularVoid circularVoid;
         
         #endregion
 
@@ -74,7 +76,19 @@ namespace TheGame
             playerList = new BillboardList();
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
             playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One));
+            playerList[0].Position = new Vector3(playerList[0].Position.X, playerList[0].Position.Y, -30.0f);
             
+            Library.SpellInfo voidInfo = new Library.SpellInfo();
+            voidInfo.Caster = PlayerIndex.One;
+            voidInfo.Duration = 10.0f;
+
+            //Library.SpriteInfo cauldronInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo");
+            //BillboardCauldron billboardCauldron = new BillboardCauldron(this, cauldronInfo, new Vector3(0.0f, 0.0f, -20.0f),
+            //    1.0f, 1, 0.5f, 1, 0, 8, 2);
+            //billboardCauldron.Initialize();
+
+            circularVoid = new CircularVoid(this, voidInfo, (Player)playerList[0]);
+            circularVoid.Initialize();
 
             //Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
 

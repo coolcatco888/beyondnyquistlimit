@@ -21,8 +21,6 @@ namespace TheGame
             this.settings = settings;
         }
 
-        
-
         #region Component Members
 
         public override void Initialize()
@@ -88,7 +86,7 @@ namespace TheGame
 
         #region IDrawableComponent Members
 
-        public void Draw(GameTime gameTime)
+        public virtual void Draw(GameTime gameTime)
         {
             GraphicsDevice device = GameEngine.Graphics;
 

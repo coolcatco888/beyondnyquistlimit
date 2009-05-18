@@ -98,7 +98,7 @@ namespace TheGame
             public int Compare(IBillboard x, IBillboard y)
             {
                 float xDistance = Vector3.Distance(comparePoint, x.Position);
-                float yDistance = Vector3.Distance(comparePoint, x.Position);
+                float yDistance = Vector3.Distance(comparePoint, y.Position);
                 
                 return xDistance.CompareTo(yDistance);
             }

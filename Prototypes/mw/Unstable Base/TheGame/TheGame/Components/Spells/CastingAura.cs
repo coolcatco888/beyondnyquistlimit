@@ -29,15 +29,11 @@ namespace TheGame
         private Point sheetIndex;
         private float timer = 0.0f;
         private Random rand = new Random();
-        private Spell currentSpell;
-        private Buttons nextTornadoInput;
 
         private GroundEffect groundEffect;
         private SpriteInfo groundEffectInfo;
 
         PointSpriteSystem circleEffect;
-        float particlesPerSecond;
-        int timeElpase; 
 
         #endregion  // Fields
 
@@ -183,8 +179,6 @@ namespace TheGame
                 {
 
                     int particlesToMake = (int)(particlesPerSecond * 0.01f);
-
-                    float theta = (float)MathHelper.Pi * 2.0f;
 
                     for (int i = 0; i < particlesToMake; i++)
                     {
