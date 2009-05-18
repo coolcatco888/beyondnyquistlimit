@@ -12,6 +12,8 @@ namespace TheGame.Components.Cameras
 
         private BillboardList actorsToFollow;
 
+        private const float distancePerUpdate = 0.0025f, zoomConstant = 0.4f;
+
         /// <summary>
         /// Closest Distance the camera can be to the actors
         /// </summary>
@@ -77,6 +79,7 @@ namespace TheGame.Components.Cameras
 
         public override void Update(GameTime gameTime)
         {
+
             float sumX = 0, sumY = 0, sumZ = 0, count = 0;
 
             float distOfFurthestActorFromLookAt = minDistance;
@@ -98,14 +101,21 @@ namespace TheGame.Components.Cameras
                 //Change the lookAtPosition to be the average position of all of the actors
                 if (count > 0)
                 {
-                    lookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
+                    Vector3 newLookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
+                    newLookAt -= lookAt;
+                    float length = newLookAt.Length();
+                    float velocity = length * distancePerUpdate;
+                    newLookAt.Normalize();
+                    newLookAt *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+                    lookAt += newLookAt;
                 }
                 distOfFurthestActorFromLookAt = CalculateCameraZoomDistance(distOfFurthestActorFromLookAt);
-                ChangeCameraPosition(distOfFurthestActorFromLookAt);
+                ChangeCameraPosition(distOfFurthestActorFromLookAt, gameTime);
 
                 base.Update(gameTime);
- 
+
             }
+
 
         }
 
@@ -116,7 +126,7 @@ namespace TheGame.Components.Cameras
                 if (actor.IsDisposed)
                     continue;
 
-                float currentDist = (actor.Position - lookAt).Length() * 0.40f;
+                float currentDist = (actor.Position - lookAt).Length() * zoomConstant;
                 if (currentDist > distOfFurthestActorFromLookAt)
                 {
                     distOfFurthestActorFromLookAt = currentDist;
@@ -125,7 +135,7 @@ namespace TheGame.Components.Cameras
             return distOfFurthestActorFromLookAt;
         }
 
-        private void ChangeCameraPosition(float distOfFurthestActorFromLookAt)
+        private void ChangeCameraPosition(float distOfFurthestActorFromLookAt, GameTime gameTime)
         {
             //Move the camera farther
             Vector3 newDirection = position - lookAt;
@@ -137,7 +147,15 @@ namespace TheGame.Components.Cameras
             newDirection.Y = newDirection.Y > minHeight ? newDirection.Y < maxHeight ? newDirection.Y : maxHeight : minHeight;
 
             //Set new position
-            position = lookAt + newDirection;
+            Vector3 newPosition = lookAt + newDirection;
+
+            newPosition -= position;
+            float length = newPosition.Length();
+            float velocity = length * distancePerUpdate;
+            newPosition.Normalize();
+            newPosition *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+            position += newPosition;
+
 
             //Push camera a bit to the side if the player is directly under the camera
             if (Math.Floor(position.X) == Math.Floor(lookAt.X) && Math.Floor(position.Z) == Math.Floor(lookAt.Z))
