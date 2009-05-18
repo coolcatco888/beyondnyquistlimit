@@ -20,6 +20,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
+using TheGame.Components.Cameras;
 #endregion
 
 namespace TheGame
@@ -66,7 +67,6 @@ namespace TheGame
             : base(name)
         {
             //new TestComponent(this);
-
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
             levelMap.Initialize();
@@ -86,6 +86,10 @@ namespace TheGame
 
             ChainBeam cb = new ChainBeam(this, 50.0f);
             cb.Initialize();
+
+            //After Adding the players set the playerlist onto the camera
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+            camera.ActorsToFollow = playerList;
 
         }
 
