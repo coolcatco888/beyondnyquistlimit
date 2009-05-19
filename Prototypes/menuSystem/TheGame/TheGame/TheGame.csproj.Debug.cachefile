@@ -12,13 +12,14 @@ Content\Terrain\terrain.xnb
 Content\Sprites\circles.xnb
 Content\Sprites\Sprite Sheet Knight.xnb
 Content\Sprites\cloud.xnb
-Content\Sprites\WizardSprite.xnb
 Content\GUI\blank.xnb
 Content\GUI\circGauge.xnb
 Content\GUI\healthbar.xnb
 Content\GUI\hud.xnb
 Content\GUI\itemsm.xnb
 Content\GUI\menubg.xnb
+Content\PoringSprite.xnb
+Content\Sprites\WizardSprite.xnb
 Content\BasicPoint.xnb
 Content\Skybox\skybox.xnb
 Content\Bezier.xnb
@@ -26,15 +27,14 @@ Content\Audio\04 Never Ending Duel.xnb
 Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb
 Content\Sprites\CloudInfo.xnb
-Content\GUI\menufont.xnb
-Content\ig_box_tex_0.xnb
-Content\Terrain\MountainGrass_0.xnb
-Content\PoringSprite.xnb
 Content\PlayerBoundingShapes.xnb
 Content\PlayerSpriteSequences.xnb
 Content\PoringSpriteSequences.xnb
 Content\PoringXml.xnb
 Content\WizardClassInfo.xnb
+Content\GUI\menufont.xnb
+Content\ig_box_tex_0.xnb
+Content\Terrain\MountainGrass_0.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

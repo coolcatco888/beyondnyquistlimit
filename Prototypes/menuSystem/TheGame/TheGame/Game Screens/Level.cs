@@ -21,6 +21,8 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using TheGame.Components.Cameras;
+using TheGame.Components.GUI;
+using TheGame.Game_Screens;
 #endregion
 
 namespace TheGame
@@ -72,6 +74,7 @@ namespace TheGame
         public Level(string name, string terrainFileName)
             : base(name)
         {
+             
             //new TestComponent(this);
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
@@ -86,6 +89,26 @@ namespace TheGame
             Monster poring = new Monster(this, monsterSpriteInfo);
             poring.Position = new Vector3(-4.0f, 0.0f, -10.0f);
             monsterList.Add(poring);
+            monsterList.Add(new Monster(this, monsterSpriteInfo)
+            {
+                Position = new Vector3(-4.0f, 0.0f, -12.0f)
+            });
+            monsterList.Add(new Monster(this, monsterSpriteInfo)
+            {
+                Position = new Vector3(-6.0f, 0.0f, -12.0f)
+            });
+            monsterList.Add(new Monster(this, monsterSpriteInfo)
+            {
+                Position = new Vector3(-5.0f, 0.0f, -5.0f)
+            });
+            monsterList.Add(new Monster(this, monsterSpriteInfo)
+            {
+                Position = new Vector3(-2.0f, 0.0f, -6.0f)
+            });
+            monsterList.Add(new Monster(this, monsterSpriteInfo)
+            {
+                Position = new Vector3(-1.0f, 0.0f, -1.0f)
+            });
             //Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
 
             //MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
@@ -100,8 +123,31 @@ namespace TheGame
             //After Adding the players set the playerlist onto the camera
             ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
             camera.ActorsToFollow = playerList;
+            camera.Initialize();
+
+            (new FrameRateCounterText2D(this, Vector2.Zero, Color.White, GameEngine.Content.Load<SpriteFont>("GUI\\menufont"), 1.0f)).Initialize(); 
 
         }
+
+        public override void Update(GameTime gameTime)
+        {
+            HandleInput(gameTime);
+            base.Update(gameTime);
+
+        }
+
+        private void HandleInput(GameTime gameTime)
+        {
+            KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+            InputHub inputHub = (InputHub)GameEngine.Services.GetService(typeof(InputHub));
+            GamepadDevice gamepadDevice = inputHub[inputHub.MasterInput];
+
+            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                new PauseScreen("pause", this, inputHub.MasterInput);
+            }
+        }
+
 
     }
 }

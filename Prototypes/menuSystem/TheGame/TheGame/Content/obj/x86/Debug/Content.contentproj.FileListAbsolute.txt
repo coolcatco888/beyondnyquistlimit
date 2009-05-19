@@ -5,3 +5,5 @@ D:\work\mW\09project\jimwtf\Prototypes\mw\Unstable Base\TheGame\TheGame\Content\
 D:\work\mW\09project\jimwtf\Prototypes\mw\Unstable Base\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
 D:\work\jimwtf\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml

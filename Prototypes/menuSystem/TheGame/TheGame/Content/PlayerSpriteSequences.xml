@@ -127,7 +127,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>South</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -142,7 +142,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>North</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -157,7 +157,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>West</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -172,7 +172,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>Southwest</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -187,7 +187,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>Northwest</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -202,7 +202,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>East</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -217,7 +217,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>Southeast</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>
@@ -232,7 +232,7 @@
       <StateKey>Walking</StateKey>
       <OrientationKey>Northeast</OrientationKey>
       <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.05</SequenceVelocity>
+      <SequenceVelocity>0.25</SequenceVelocity>
       <NumBuffers>2</NumBuffers>
       <ScaleX>0</ScaleX>
       <ScaleY>0</ScaleY>

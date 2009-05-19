@@ -96,6 +96,7 @@
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Cameras\ActionCamera.cs" />
     <Compile Include="Components\GUI\CircularGauge.cs" />
+    <Compile Include="Components\GUI\FrameRateCounterText2D.cs" />
     <Compile Include="Components\Input\Direction.cs" />
     <Compile Include="Components\Input\InputManager.cs" />
     <Compile Include="Components\Input\Move.cs" />
