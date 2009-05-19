@@ -141,6 +141,7 @@
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\Spells\FireTornado.cs" />
     <Compile Include="ControlHub.cs" />
+    <Compile Include="Game Screens\HUDScreen.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\MainMenuScreen.cs" />
     <Compile Include="Game Screens\MenuScreen.cs" />

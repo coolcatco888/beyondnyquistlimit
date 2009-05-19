@@ -122,7 +122,9 @@ namespace TheGame
 
             //After Adding the players set the playerlist onto the camera
             ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
-            camera.ActorsToFollow = playerList;
+            camera.ActorsToFollow = new BillboardList();
+            camera.ActorsToFollow.AddRange(playerList);
+            //camera.ActorsToFollow.AddRange(monsterList);
             camera.Initialize();
 
             (new FrameRateCounterText2D(this, Vector2.Zero, Color.White, GameEngine.Content.Load<SpriteFont>("GUI\\menufont"), 1.0f)).Initialize(); 
