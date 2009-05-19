@@ -15,27 +15,27 @@ namespace TheGame
     {
         #region Fields
 
-        private string title;
-        private Orientation orientation;
-        private float velocity;
-        private bool isLoop;
-        private int updateCount;
+        protected string title;
+        protected Orientation orientation;
+        protected float velocity;
+        protected bool isLoop;
+        protected int updateCount;
 
-        private bool isPaused = false;
-        private bool isComplete = false;
+        protected bool isPaused = false;
+        protected bool isComplete = false;
 
-        private float timer = 0.0f;
-        private float interval = 1000.0f / 25.0f;
+        protected float timer = 0.0f;
+        protected float interval = 1000.0f / 25.0f;
 
-        private List<Point> frame = new List<Point>();
-        private Point currentFrame;
-        private int frameTotal = 0;
-        private int frameIndex = 0;
+        protected List<Point> frame = new List<Point>();
+        protected Point currentFrame;
+        protected int frameTotal = 0;
+        protected int frameIndex = 0;
 
-        private Point scale;
+        protected Point scale;
 
-        private int bufferFrames;
-        private int bufferTotal;
+        protected int bufferFrames;
+        protected int bufferTotal;
 
         #endregion  // Fields
 
@@ -87,7 +87,7 @@ namespace TheGame
             set { isPaused = value; }
         }
 
-        public bool IsComplete
+        public virtual bool IsComplete
         {
             get { return isComplete; }
         }
@@ -95,6 +95,31 @@ namespace TheGame
         public Point Scale
         {
             get { return scale; }
+        }
+
+        public List<Point> FrameList
+        {
+            get { return frame; }
+        }
+
+        public int FrameTotal
+        {
+            get { return frameTotal; }
+        }
+
+        public int FrameIndex
+        {
+            get { return frameIndex; }
+        }
+
+        public int BufferFrames
+        {
+            get { return bufferFrames; }
+        }
+
+        public int BufferTotal
+        {
+            get { return bufferTotal; }
         }
 
         #endregion  // Accessors
@@ -112,8 +137,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(1, 1);
-
-            this.Initialize();
         }
 
         public SpriteSequence(string title, Orientation orientation, bool isLoop, float velocity, int bufferFrames, int xScale, int yScale)
@@ -127,8 +150,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(xScale, yScale);
-
-            this.Initialize();
         }
 
         public SpriteSequence(bool isLoop, int bufferFrames)
@@ -138,8 +159,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(1, 1);
-
-            this.Initialize();
         }
 
         public SpriteSequence(bool isLoop, int bufferFrames, int xScale, int yScale)
@@ -149,19 +168,17 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(xScale, yScale);
-
-            this.Initialize();
         }
 
         #endregion  // Constructors
 
-        public void Initialize()
+        public virtual void Initialize()
         {
         }
 
         #region Update
 
-        public void Update(GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             if (!isPaused)
             {
@@ -234,19 +251,45 @@ namespace TheGame
 
         public void AddRow(int row, int start, int end)
         {
-            while (start <= end)
+            if (start <= end)
             {
-                this.AddFrame(start, row);
-                start += scale.X;
+                while (start <= end)
+                {
+                    this.AddFrame(start, row);
+                    
+                    start += scale.X;
+                }
+            }
+            else
+            {
+                while (start >= end)
+                {
+                    this.AddFrame(start, row);
+
+                    start -= scale.X;
+                }
             }
         }
 
         public void AddColumn(int column, int start, int end)
         {
-            while (start <= end)
+            if (start <= end)
             {
-                this.AddFrame(column, start);
-                start += scale.Y;
+                while (start <= end)
+                {
+                    this.AddFrame(column, start);
+                    
+                    start += scale.Y;
+                }
+            }
+            else
+            {
+                while (start >= end)
+                {
+                    this.AddFrame(column, start);
+
+                    start -= scale.Y;
+                }
             }
         }
 
