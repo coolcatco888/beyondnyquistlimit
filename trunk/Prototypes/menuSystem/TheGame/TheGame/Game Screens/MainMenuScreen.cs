@@ -79,7 +79,7 @@ namespace TheGame.Game_Screens
         public MainMenuScreen(string name)
             : base(name)
         {
-
+            
         }
 
         /// <summary>
@@ -107,6 +107,7 @@ namespace TheGame.Game_Screens
                         new Level("level", "Terrain\\terrain");
                         break;
                     case "Exit Game":
+                        GameEngine.EndGame();
                         break;
                 }
             }

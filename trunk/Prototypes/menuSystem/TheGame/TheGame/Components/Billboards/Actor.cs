@@ -108,6 +108,8 @@ namespace TheGame
         {
             base.Initialize();
         }
+
+        private const float STEPS_PER_UPDATE = 0.043f;
         #endregion // Initialization
 
         #region Dispose
@@ -129,7 +131,7 @@ namespace TheGame
             UpdateSpriteSequence(gameTime);
             // Update position of the sprite. Checks the terrain height and any Monsters/Billboard bounding boxes
             // To determine if it can go to that position.
-            UpdatePosition();
+            UpdatePosition(gameTime);
 
             // Update the bounding if this object is not dying or dead
             if (state != ActorState.Dying && state != ActorState.Dead)
@@ -159,7 +161,7 @@ namespace TheGame
             base.Update(gameTime);
         }
 
-        private void UpdatePosition()
+        private void UpdatePosition(GameTime gameTime)
         {
             // Obtain height map and store position before moving.
             HeightMapInfo heightInfo = ((Level)Parent).TerrainHeightMap;
@@ -174,14 +176,17 @@ namespace TheGame
             {
                 oldPosition = this.Position;
 
-                Vector3 relCameraDirection = camera.Position - camera.LookAt;
+                //TODO-FIXME: Temp fix very bad!  This should only change the origin of the player but not monsters. 
+                //This should be put inside Player!!!
+                if (this is Player)
+                {
+                    Vector3 relCameraDirection = camera.Position - camera.LookAt;
+                    float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
+                    velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
+                }
 
-                float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
-
-                velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
-
-                position.X += velocity.X * currentSequence.Velocity;
-                position.Z -= velocity.Z * currentSequence.Velocity;
+                position.X += velocity.X * currentSequence.Velocity * STEPS_PER_UPDATE * gameTime.ElapsedGameTime.Milliseconds;
+                position.Z -= velocity.Z * currentSequence.Velocity * STEPS_PER_UPDATE * gameTime.ElapsedGameTime.Milliseconds;
 
                 if (heightInfo.IsOnHeightMap(position) == false)
                 {
