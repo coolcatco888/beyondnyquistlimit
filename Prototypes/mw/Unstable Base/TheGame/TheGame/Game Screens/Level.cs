@@ -55,6 +55,7 @@ namespace TheGame
         }
 
         private CircularVoid circularVoid;
+        private FlameTrail flameTrail;
         
         #endregion
 
@@ -73,19 +74,23 @@ namespace TheGame
             terrainHeightMap = levelMap.HeightMapInfo;
             levelMap.Initialize();
 
-            //playerList = new BillboardList();
-            //Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
-            //playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One));
-            //playerList[0].Position = new Vector3(playerList[0].Position.X, playerList[0].Position.Y, -30.0f);
 
-            //Library.SpellInfo voidInfo = new Library.SpellInfo();
-            //voidInfo.Caster = PlayerIndex.One;
-            //voidInfo.Duration = 10.0f;
+            // PLAYER
 
-            //Library.SpriteInfo cauldronInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo");
-            //BillboardCauldron billboardCauldron = new BillboardCauldron(this, cauldronInfo, new Vector3(0.0f, 0.0f, -20.0f),
-            //    1.0f, 1, 0.5f, 1, 0, 8, 2);
-            //billboardCauldron.Initialize();
+            playerList = new BillboardList();
+            Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
+            playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One));
+            playerList[0].Position = new Vector3(playerList[0].Position.X, playerList[0].Position.Y, -30.0f);
+
+            // END PLAYER
+
+
+            Library.SpellInfo voidInfo = new Library.SpellInfo();
+            voidInfo.Caster = PlayerIndex.One;
+            voidInfo.Duration = 10.0f;
+
+            flameTrail = new FlameTrail(this, voidInfo, (Player)playerList[0]);
+            flameTrail.Initialize();
 
             //circularVoid = new CircularVoid(this, voidInfo, (Player)playerList[0]);
             //circularVoid.Initialize();
@@ -98,25 +103,31 @@ namespace TheGame
             //FireTornado ft = new FireTornado(this, Vector3.UnitZ, 15.0f);
             //ft.Initialize();
 
-            // TEMPORARY FIRE
-            MultipleSequence fireSequence = new MultipleSequence(false, 1);
-            SpriteSequence baseSequence1 = new SpriteSequence(false, 1);
-            baseSequence1.AddRow(2, 0, 4);
 
-            SpriteSequence baseSequence2 = new SpriteSequence(true, 1);
-            baseSequence2.AddRow(2, 5, 8);
 
-            SpriteSequence baseSequence3 = new SpriteSequence(false, 1);
-            baseSequence3.AddRow(2, 4, 0);
+            //// TEMPORARY FIRE
+            //MultipleSequence fireSequence = new MultipleSequence(false, 1);
+            //SpriteSequence baseSequence1 = new SpriteSequence(false, 1);
+            //baseSequence1.AddRow(2, 0, 4);
 
-            fireSequence.AddSequence(baseSequence1);
-            fireSequence.AddSequence(baseSequence2);
-            fireSequence.AddSequence(baseSequence3);
+            //SpriteSequence baseSequence2 = new SpriteSequence(true, 1);
+            //baseSequence2.AddRow(2, 5, 8);
 
-            fireSequence.Initialize();
+            //SpriteSequence baseSequence3 = new SpriteSequence(false, 1);
+            //baseSequence3.AddRow(2, 4, 0);
 
-            BillboardEffect fire = new BillboardEffect(this, GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo"), fireSequence, new Vector3(0, 1.0f, -10.0f));
-            fire.Initialize();
+            //fireSequence.AddSequence(baseSequence1);
+            //fireSequence.AddSequence(baseSequence2);
+            //fireSequence.AddSequence(baseSequence3);
+
+            //fireSequence.Initialize();
+
+            //BillboardEffect fire = new BillboardEffect(this, GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo"), fireSequence, new Vector3(0, 1.0f, -10.0f));
+            //fire.Initialize();
+
+            //// END TEMPORARY FIRE
+
+
 
             //ChainBeam cb = new ChainBeam(this, 50.0f);
             //cb.Initialize();
