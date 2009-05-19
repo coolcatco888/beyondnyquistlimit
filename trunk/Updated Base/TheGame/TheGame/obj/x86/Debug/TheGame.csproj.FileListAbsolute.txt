@@ -114,3 +114,9 @@ D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\GUI\hud.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\GUI\itemsm.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\GUI\menubg.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\GUI\menufont.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSprite.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerBoundingShapes.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringXml.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb

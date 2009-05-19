@@ -54,6 +54,12 @@ namespace TheGame
         {
             get { return playerList; }
         }
+
+        private BillboardList monsterList;
+        public BillboardList MonsterList
+        {
+            get { return monsterList; }
+        }
         
         #endregion
 
@@ -73,9 +79,13 @@ namespace TheGame
 
             playerList = new BillboardList();
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
-            playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One));
-            
+            playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One, "Wizard"));
 
+            monsterList = new BillboardList();
+            Library.SpriteInfo monsterSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringXml");
+            Monster poring = new Monster(this, monsterSpriteInfo);
+            poring.Position = new Vector3(-4.0f, 0.0f, -10.0f);
+            monsterList.Add(poring);
             //Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
 
             //MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));

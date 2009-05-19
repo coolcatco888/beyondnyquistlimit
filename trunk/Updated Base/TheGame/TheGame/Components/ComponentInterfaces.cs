@@ -137,12 +137,12 @@ namespace TheGame
 
     public interface ICollidable
     {
-        BoundingBox BoundingBox
+        PrimitiveShape PrimitiveShape
         {
             get;
         }
 
-        bool IsHit(BoundingBox otherBounds);
+        bool IsHit(PrimitiveShape otherShape);
 
         bool Collidable
         {
