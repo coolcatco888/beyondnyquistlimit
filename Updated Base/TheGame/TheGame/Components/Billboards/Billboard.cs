@@ -9,21 +9,40 @@ using Library;
 
 namespace TheGame
 {
-    public class Billboard : Component, IDrawableComponent, IBillboard
+    public class Billboard : Component, IDrawableComponent, IBillboard, ICollidable
     {
-        #region Fields
+        #region Drawing Billboard Fields
 
+        // Vertex Declaration for Billboard texture drawing
         protected VertexDeclaration vertexDeclaration = new VertexDeclaration(
                 GameEngine.Graphics, VertexPositionTexture.VertexElements);
 
+        // Vertices that hold a position and texture coordinates
         protected VertexPositionTexture[] vertices;
 
+        // Used to draw the billboard texture/image
         protected BasicEffect basicEffect;
 
+        // TESTING PURPOSES ONLY - will remove later
+        // Used to draw the bounding shape used in collision detection
+        protected PrimitiveBatch primitiveBatch;
+        // End Testing
+
         protected bool isDisposed = false;
-        
 
         #endregion  // Fields
+
+        #region Object Type
+
+        // What type this billboard is.  Used by AI
+        protected ObjectType type;
+        public ObjectType Type
+        {
+            get { return type; }
+            set { type = value; }
+        }
+
+        #endregion // Object Type
 
         #region Accessors
 
@@ -39,6 +58,8 @@ namespace TheGame
 
         #endregion  // Accessors
 
+        #region Constructor
+
         public Billboard(GameScreen parent, Texture2D texture2D)
             : base(parent)
         {
@@ -46,9 +67,15 @@ namespace TheGame
 
             this.texture2D = texture2D;
 
+            // Default values for scale, rotation and position
             scale = new Vector2(1.0f, 1.0f);
             rotation = 0.0f;
             position = new Vector3(0.0f, 0.0f, 0.0f);
+
+            // TESTING PURPOSE ONLY - will remove later
+            // Draws the bounding shapes
+            primitiveBatch = new PrimitiveBatch(GameEngine.Graphics);
+            // End Testing
 
             // Setup basic effect.
             basicEffect = new BasicEffect(GameEngine.Graphics, null);
@@ -71,8 +98,13 @@ namespace TheGame
             vertices[3].TextureCoordinate = new Vector2(0, 1);
         }
 
+        #endregion
+
+        #region Component Overriden Members
+
         public override void Dispose()
         {
+            primitiveBatch.Dispose();
             texture2D.Dispose();
             basicEffect.Dispose();
 
@@ -80,6 +112,10 @@ namespace TheGame
 
             isDisposed = true;
         }
+
+        #endregion // Component Overriden Members
+
+        #region Update Method - Update Vertices
 
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
         {
@@ -101,6 +137,8 @@ namespace TheGame
                 spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
         }
+
+        #endregion Update Method
 
         #region IDrawableComponent Members
 
@@ -198,5 +236,38 @@ namespace TheGame
         }
 
         #endregion
+
+        #region ICollidable Members
+
+        /// <summary>
+        /// Whether the billboard is collidable or not
+        /// </summary>
+        protected bool collidable;
+        public bool Collidable
+        {
+            get { return collidable; }
+            set { collidable = value; }
+        }
+
+        /// <summary>
+        /// The billboards bounding shape used in collision detection
+        /// </summary>
+        protected PrimitiveShape primitiveShape;
+        public virtual PrimitiveShape PrimitiveShape
+        {
+            get { return primitiveShape; }
+        }
+
+        /// <summary>
+        /// Determines if there is a hit between objects using their bounding shapes
+        /// </summary>
+        /// <param name="otherShape">The other objects bounding shape</param>
+        /// <returns>True if a hit, false otherwise</returns>
+        public virtual bool IsHit(PrimitiveShape otherShape)
+        {
+            return PrimitiveShape.TestCollision(primitiveShape, otherShape);
+        }
+
+        #endregion // ICollidable Members
     }
 }

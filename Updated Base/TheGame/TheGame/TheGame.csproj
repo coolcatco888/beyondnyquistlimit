@@ -86,8 +86,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\Behavior.cs" />
+    <Compile Include="AI\Behaviors.cs" />
+    <Compile Include="AI\WanderBehavior.cs" />
+    <Compile Include="BoundingRectangle.cs" />
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\BillboardList.cs" />
+    <Compile Include="Components\Billboards\Monster.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Cameras\ActionCamera.cs" />
     <Compile Include="Components\GUI\CircularGauge.cs" />
@@ -148,9 +153,12 @@
     <Compile Include="Components\Input\InputDeviceEventArgs.cs" />
     <Compile Include="Components\Input\KeyboardDevice.cs" />
     <Compile Include="HeightMapInfo.cs" />
+    <Compile Include="Components\Billboards\ObjectType.cs" />
     <Compile Include="ParticleVertex.cs" />
     <Compile Include="Components\PointSprites\PointSpriteSystem.cs" />
     <Compile Include="Components\PointSprites\PointSpriteSystemSettings.cs" />
+    <Compile Include="PrimitiveBatch.cs" />
+    <Compile Include="PrimitiveShape.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="GameBase.cs" />
