@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TheGame
 {
-    public class SpriteSequence
+    public class SpriteSequence : ICloneable
     {
         #region Fields
 
@@ -126,6 +126,8 @@ namespace TheGame
 
         #region Constructors
 
+        public SpriteSequence() { }
+
         public SpriteSequence(string title, Orientation orientation, bool isLoop, float velocity, int bufferFrames)
         {
             this.title = title;
@@ -225,7 +227,7 @@ namespace TheGame
 
         #endregion  // Update
 
-        public void Reset()
+        public virtual void Reset()
         {
             frameIndex = 0;
             currentFrame = frame[frameIndex];
@@ -304,5 +306,22 @@ namespace TheGame
 
 
         #endregion // Add Frame Methods
+
+        #region ICloneable Members
+
+        public object Clone()
+        {
+            SpriteSequence clone = new SpriteSequence(title, orientation, isLoop, velocity, bufferFrames, scale.X, scale.Y);
+            clone.isPaused = this.isPaused;
+            clone.isComplete = this.isComplete;
+            clone.frame = this.frame;
+            clone.currentFrame = this.currentFrame;
+            clone.frameTotal = this.frameTotal;
+            clone.frameIndex = this.frameIndex;
+
+            return clone;
+        }
+
+        #endregion
     }
 }
