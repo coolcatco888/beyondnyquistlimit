@@ -88,6 +88,7 @@
   <ItemGroup>
     <Compile Include="Components\Billboards\Actor.cs" />
     <Compile Include="Components\Billboards\BillboardList.cs" />
+    <Compile Include="Components\Billboards\MultipleSequence.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\PointSprites\PointSpriteSystemInverted.cs" />
     <Compile Include="Components\Spells\BillboardWave.cs" />

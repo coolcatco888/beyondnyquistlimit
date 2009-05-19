@@ -38,8 +38,20 @@ namespace TheGame
 
             audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
             this.position = position;
+        }
 
-            this.Initialize();
+        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo, SpriteSequence sequence, Vector3 position)
+            : base(parent, spriteInfo.SpriteSheet)
+        {
+            vertices[0].Position = new Vector3(1, 1, 0);
+            vertices[1].Position = new Vector3(-1, 1, 0);
+            vertices[2].Position = new Vector3(-1, -1, 0);
+            vertices[3].Position = new Vector3(1, -1, 0);
+
+            this.spriteInfo = spriteInfo;
+            spriteSequence = sequence;
+
+            this.position = position;
         }
 
         #endregion  // Constructors
@@ -57,7 +69,7 @@ namespace TheGame
 
             if (spriteSequence.CurrentFrameColumn == 0)
             {
-                audioManager.Play3DCue("asplosion", this);
+                // audioManager.Play3DCue("asplosion", this);
             }
             
             base.Update(gameTime);
