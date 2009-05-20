@@ -38,20 +38,7 @@ namespace TheGame
         {
             // TODO: Add your initialization logic here
             GameEngine.Initialize(this);
-
-            
-
             GameEngine.BaseScreen = new GameScreen("base");
-            //TestCamera camera = new TestCamera(GameEngine.BaseScreen);
-            Camera camera = new ActionCamera(GameEngine.BaseScreen);
-            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
-            camera.LookAt = new Vector3(0, 0, 0);
-            camera.Initialize();
-            GameEngine.Services.AddService(typeof(Camera), (object)(camera));
-
-            //GamepadDevice gamepadDevice = new GamepadDevice(GameEngine.BaseScreen, PlayerIndex.One);
-            //gamepadDevice.Initialize();
-            //GameEngine.Services.AddService(typeof(GamepadDevice), gamepadDevice);
 
             InputHub inputHub = new InputHub();
             GameEngine.Services.AddService(typeof(InputHub), inputHub);
@@ -62,9 +49,6 @@ namespace TheGame
 
             GameEngine.BaseScreen.AlwaysUpdate = true;
 
-            //new TestScreen("test");
-            //new SkyboxScreen("sky");
-            //Level l = new Level("level", "Terrain\\terrain");
             new MainMenuScreen("main");
 
             base.Initialize();

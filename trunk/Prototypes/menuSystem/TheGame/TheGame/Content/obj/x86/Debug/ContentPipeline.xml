@@ -248,7 +248,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\ActorTest.xnb</Output>
-      <Time>2009-05-18T19:09:01.140625-07:00</Time>
+      <Time>2009-05-19T18:15:30.71875-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\MagicCircle.xml</Source>
@@ -284,7 +284,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb</Output>
-      <Time>2009-05-18T20:04:27.296875-07:00</Time>
+      <Time>2009-05-19T19:10:29.375-07:00</Time>
     </Item>
     <Item>
       <Source>PoringSpriteSequences.xml</Source>
@@ -293,7 +293,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb</Output>
-      <Time>2009-05-18T19:09:00.828125-07:00</Time>
+      <Time>2009-05-19T17:17:27.890625-07:00</Time>
     </Item>
     <Item>
       <Source>PoringXml.xml</Source>

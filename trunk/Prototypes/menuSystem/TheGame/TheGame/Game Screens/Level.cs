@@ -74,8 +74,6 @@ namespace TheGame
         public Level(string name, string terrainFileName)
             : base(name)
         {
-             
-            //new TestComponent(this);
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
             levelMap.Initialize();
@@ -109,23 +107,13 @@ namespace TheGame
             {
                 Position = new Vector3(-1.0f, 0.0f, -1.0f)
             });
-            //Library.SpriteInfo spriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\MagicCircle");
-
-            //MagicCircleEffect magicCircleEffect = new MagicCircleEffect(this, spriteInfo, 0.01f, 0.01f, new Point(0, 0));
-            //magicCircleEffect.Position = new Vector3(0.0f, 0.0f, -1.0f);
-
-            //FireTornado ft = new FireTornado(this, Vector3.UnitZ, 15.0f);
-            //ft.Initialize();
 
             ChainBeam cb = new ChainBeam(this, 50.0f);
             cb.Initialize();
 
-            //After Adding the players set the playerlist onto the camera
             ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
             camera.ActorsToFollow = new BillboardList();
             camera.ActorsToFollow.AddRange(playerList);
-            //camera.ActorsToFollow.AddRange(monsterList);
-            camera.Initialize();
 
             (new FrameRateCounterText2D(this, Vector2.Zero, Color.White, GameEngine.Content.Load<SpriteFont>("GUI\\menufont"), 1.0f)).Initialize(); 
 
@@ -135,7 +123,6 @@ namespace TheGame
         {
             HandleInput(gameTime);
             base.Update(gameTime);
-
         }
 
         private void HandleInput(GameTime gameTime)
