@@ -14,12 +14,10 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    class BasicModel : Component, IDrawableComponent, I3DComponent
+    class BasicModel : Component3D
     {
 
-        #region IDrawableComponent Members
-
-        public void Draw(Microsoft.Xna.Framework.GameTime gameTime)
+        public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
@@ -39,64 +37,6 @@ namespace TheGame
             }
         }
 
-        public bool Visible
-        {
-            get
-            {
-                return visible;
-            }
-            set
-            {
-                visible = value;
-            }
-        }
-        bool visible;
-
-        #endregion
-
-        #region I3DComponent Members
-
-        public Microsoft.Xna.Framework.Vector3 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                position = value;
-            }
-        }
-        Vector3 position;
-
-        public Microsoft.Xna.Framework.Quaternion Rotation
-        {
-            get
-            {
-                return rotation;
-            }
-            set
-            {
-                rotation = value;
-            }
-        }
-        Quaternion rotation;
-
-        public float Scale
-        {
-            get
-            {
-                return scale;
-            }
-            set
-            {
-                scale = value;
-            }
-        }
-        float scale;
-
-        #endregion
-
         Model model;
 
         public BasicModel(GameScreen parent, Model model)
@@ -105,16 +45,6 @@ namespace TheGame
 
             this.Parent = parent;
             this.model = model;
-        }
-
-        public override void Initialize()
-        {
-            visible = true;
-            position = Vector3.Zero;
-            rotation = Quaternion.Identity;
-            scale = 1.0f;
-
-            base.Initialize();
         }
 
         public override void Update(GameTime gameTime)

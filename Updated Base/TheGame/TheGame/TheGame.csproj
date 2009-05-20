@@ -90,8 +90,10 @@
     <Compile Include="AI\Behaviors.cs" />
     <Compile Include="AI\WanderBehavior.cs" />
     <Compile Include="BoundingRectangle.cs" />
+    <Compile Include="Components\Abstract Base\CollidableComponent.cs" />
+    <Compile Include="Components\Abstract Base\Component3D.cs" />
     <Compile Include="Components\Billboards\Actor.cs" />
-    <Compile Include="Components\Billboards\BillboardList.cs" />
+    <Compile Include="Components\Billboards\Component3DList.cs" />
     <Compile Include="Components\Billboards\Monster.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Cameras\ActionCamera.cs" />
@@ -114,9 +116,9 @@
     <Compile Include="Components\Billboards\Orientation.cs" />
     <Compile Include="Components\Billboards\SpriteSequence.cs" />
     <Compile Include="Components\Cameras\Camera.cs" />
-    <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\Abstract Base\Component.cs" />
     <Compile Include="ComponentCollection.cs" />
-    <Compile Include="Components\ComponentInterfaces.cs" />
+    <Compile Include="Components\Abstract Base\ComponentInterfaces.cs" />
     <Compile Include="Components\GUI\CharacterStatusComponent2D.cs" />
     <Compile Include="Components\GUI\DisplayComponent2D.cs" />
     <Compile Include="Components\GUI\GameWeaponMenuPanel2D.cs" />
@@ -140,6 +142,7 @@
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\Spells\FireTornado.cs" />
     <Compile Include="ControlHub.cs" />
+    <Compile Include="Components\Abstract Base\DrawableComponent.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\MainMenuScreen.cs" />
     <Compile Include="Game Screens\MenuScreen.cs" />

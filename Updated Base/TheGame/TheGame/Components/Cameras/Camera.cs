@@ -45,7 +45,7 @@ namespace TheGame
         }
         Quaternion rotation;
 
-        public float Scale
+        Vector3 Scale
         {
             get
             {
@@ -56,7 +56,37 @@ namespace TheGame
                 scale = value;
             }
         }
-        float scale;
+        Vector3 scale;
+
+        public virtual void Translate(Vector3 translation)
+        {
+            position += translation;
+        }
+
+        public void Translate(float x, float y, float z)
+        {
+            Translate(new Vector3(x, y, z));
+        }
+
+        public void Rotate(Vector3 rotation)
+        {
+            Rotate(rotation.X, rotation.Y, rotation.Z);
+        }
+
+        public virtual void Rotate(float yaw, float pitch, float roll)
+        {
+            rotation *= Quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
+        }
+
+        public virtual void ApplyScale(Vector3 scale)
+        {
+            scale = Vector3.Multiply(this.scale, scale);
+        }
+
+        public void ApplyScale(float x, float y, float z)
+        {
+            ApplyScale(new Vector3(x, y, x));
+        }
 
         #endregion
 
@@ -113,9 +143,10 @@ namespace TheGame
             base.Initialize();
         }
 
-        public void SetView()
+        public override void Update(GameTime gameTime)
         {
             view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
+            base.Update(gameTime);
         }
 
         #endregion

@@ -13,55 +13,40 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    public class Container3D : Component, IMoveable
+    public class Container3D : Component3D
     {
         public Container3D(GameScreen parent)
             : base(parent)
         {
         }
 
-        public List<IMoveable> MoveableList
+        public List<Component3D> ComponentList
         {
-            get { return moveableList; }
-            set { moveableList = value; }
+            get { return componentList; }
+            set { componentList = value; }
         }
-        protected List<IMoveable> moveableList;
-
-        #region IMoveable Members
-
-        public Microsoft.Xna.Framework.Vector3 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                foreach(IMoveable moveable in moveableList)
-                {
-                    moveable.Position += value - position;
-                }
-                position = value;
-            }
-        }
-        protected Vector3 position;
-
-        #endregion
+        protected List<Component3D> componentList;
 
         #region Component Members
 
         public override void Initialize()
         {
-            moveableList = new List<IMoveable>();
-            position = Vector3.Zero;
-
+            componentList = new List<Component3D>();
             base.Initialize();
         }
 
-        public void Add(IMoveable moveable)
+        public override void Translate(Vector3 translation)
         {
-            moveable.Position += position;
-            moveableList.Add(moveable);
+            foreach (Component3D component in componentList)
+                component.Translate(translation);
+
+            base.Translate(translation);
+        }
+
+        public void Add(Component3D component)
+        {
+            component.Translate(position);
+            componentList.Add(component);
         }
 
         #endregion

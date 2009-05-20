@@ -57,7 +57,7 @@ namespace TheGame
         #region Constructor
 
         public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex, string className)
-            : base(parent, spriteInfo)
+            : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, new Vector3(1.0f, 2.0f, 1.0f))
         {
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
@@ -73,11 +73,6 @@ namespace TheGame
 
         public override void Initialize()
         {
-            scale.X = 1.0f;
-            scale.Y = 2.0f;
-
-            position.Y = 2.0f;
-
             type = ObjectType.Player;
 
             spellInfo = new SpellInfo();
@@ -388,25 +383,25 @@ namespace TheGame
             {
                 if (info.StateKey == "Idle")
                 {
-                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf[info.StateKey + info.OrientationKey].ShapeColor = Color.Aqua;
 
-                    boundingShapesSelf["Walking" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Walking" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Walking" + info.OrientationKey].ShapeColor = Color.Magenta;
 
-                    boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Running" + info.OrientationKey].ShapeColor = Color.Ivory;
 
-                    boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Casting" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {
-                    primitiveShape = new PrimitiveShape(position, scale, info.Verts);
+                    primitiveShape = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                 }
                 else
                 {
-                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf[info.StateKey + info.OrientationKey].ShapeColor = Color.Black;
                 }
             }

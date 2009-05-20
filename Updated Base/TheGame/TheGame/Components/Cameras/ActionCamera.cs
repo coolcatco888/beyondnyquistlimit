@@ -8,11 +8,11 @@ namespace TheGame.Components.Cameras
 {
     class ActionCamera : Camera
     {
-        private float minDistance = 4.5f, minHeight = 10.0f, maxHeight = 12.0f;
+        private float minDistance, minHeight, maxHeight;
 
-        private BillboardList actorsToFollow;
+        private Component3DList actorsToFollow;
 
-        private const float distancePerUpdate = 0.0025f, zoomConstant = 0.4f;
+        private float distancePerUpdate, zoomConstant;
 
         /// <summary>
         /// Closest Distance the camera can be to the actors
@@ -45,36 +45,31 @@ namespace TheGame.Components.Cameras
         /// <summary>
         /// A group of actors the camera needs to capture
         /// </summary>
-        public BillboardList ActorsToFollow
+        public Component3DList ActorsToFollow
         {
             get { return actorsToFollow; }
             set { actorsToFollow = value; }
         }
 
-        /// <summary>
-        /// Creates an action camera with standard settings
-        /// </summary>
-        /// <param name="parent">Screen the camera is contained in</param>
-        public ActionCamera(GameScreen parent)
-            : base(parent)
-        {
-        }
-
-        /// <summary>
-        /// Creates an action camera with variable minimum follow distance, minimum height, maximum height, and actors to follow
-        /// </summary>
-        /// <param name="parent"></param>
-        /// <param name="minDistance"></param>
-        /// <param name="minHeight"></param>
-        /// <param name="maxHeight"></param>
-        /// <param name="actorsToFollow"></param>
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, BillboardList actorsToFollow)
+        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, float distancePerUpdate, float zoomConstant, Component3DList actorsToFollow)
             : base(parent)
         {
             this.minDistance = minDistance;
             this.minHeight = minHeight;
             this.maxHeight = maxHeight;
+            this.distancePerUpdate = distancePerUpdate;
+            this.zoomConstant = zoomConstant;
             this.actorsToFollow = actorsToFollow;
+        }
+
+        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, Component3DList actorsToFollow)
+            : this(parent, minDistance, minHeight, maxHeight, 0.0025f, 0.4f, actorsToFollow)
+        {
+        }
+
+        public ActionCamera(GameScreen parent, Component3DList actorsToFollow)
+            : this(parent, 4.5f, 10.0f, 12.0f, 0.0025f, 0.4f, actorsToFollow)
+        {
         }
 
         public override void Update(GameTime gameTime)

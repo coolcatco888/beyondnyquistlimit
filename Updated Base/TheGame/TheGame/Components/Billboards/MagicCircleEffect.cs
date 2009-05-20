@@ -20,7 +20,7 @@ using Library;
 
 namespace TheGame
 {
-    class MagicCircleEffect : GroundEffect
+    public class MagicCircleEffect : GroundEffect
     {
         #region Fields
 
@@ -59,7 +59,6 @@ namespace TheGame
                 sheetIndex.X * spriteInfo.SpriteUnit.X,
                 sheetIndex.Y * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
 
-            //this.Initialize();
         }
 
         public MagicCircleEffect(GameScreen parent, SpriteInfo spriteInfo, float scaleIncrement, float rotationSpeed, int sheetColumn, int sheetRow)
@@ -88,7 +87,6 @@ namespace TheGame
                 sheetIndex.X * spriteInfo.SpriteUnit.X,
                 sheetIndex.Y * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y);
 
-            //this.Initialize();
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
@@ -97,7 +95,7 @@ namespace TheGame
 
             while (timer > 0)
             {
-                rotation += rotationSpeed;
+                rotation += Quaternion.CreateFromYawPitchRoll(0.0f, 0.0f, rotationSpeed);
 
                 if (scale.X > 0 && scale.X < 1)
                 {
