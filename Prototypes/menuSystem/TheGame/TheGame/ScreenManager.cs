@@ -111,7 +111,7 @@ namespace TheGame
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-            camera.SetView();
+            //camera.SetView();
 
             // Clear the back buffer
             GraphicsDevice.Clear(Color.CornflowerBlue);

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using TheGame.Components.GUI;
+using TheGame.Components.Cameras;
 
 namespace TheGame.Game_Screens
 {
@@ -103,14 +104,37 @@ namespace TheGame.Game_Screens
                 {
                     case "Start Game":
                         Dispose();
-                        new SkyboxScreen("sky");
-                        new Level("level", "Terrain\\terrain");
+                        StartLevel();
+
                         break;
                     case "Exit Game":
                         GameEngine.EndGame();
                         break;
                 }
             }
+        }
+
+        private static void StartLevel()
+        {
+            //Create instance of camera
+            GameScreen cameraScreen = new GameScreen("camera");
+            ActionCamera camera = new ActionCamera(cameraScreen);
+            //Note: Camera should be contained in a screen updated after level
+            GameEngine.Services.AddService(typeof(Camera), (object)(camera));
+            int indexOfCameraScreen = GameEngine.GameScreens.IndexOf(cameraScreen);
+            
+            //Create Levels
+            new SkyboxScreen("sky");
+            new Level("level", "Terrain\\terrain");
+
+            //Reorder the CameraScreen so that it updates after the LevelScreen
+            GameEngine.GameScreens.RemoveAt(indexOfCameraScreen);
+            GameEngine.GameScreens.Add(cameraScreen);
+
+            //Initialize camera with new position
+            camera.Initialize();
+            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
+            camera.LookAt = new Vector3(0, 0, 0);
         }
 
         /// <summary>
