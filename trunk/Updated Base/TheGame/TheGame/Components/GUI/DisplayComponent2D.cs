@@ -10,19 +10,12 @@ namespace TheGame.Components.Display
     /// <summary>
     /// Base class for all menu, HUD and other 2D screen displayable components.
     /// </summary>
-    abstract class DisplayComponent2D : Component, I2DComponent, IDrawableComponent
+    abstract class DisplayComponent2D : DrawableComponent, I2DComponent, IDrawableComponent
     {
-        protected bool visible;
 
         protected SpriteBatch spriteBatch;
 
         protected Vector2 position;
-
-        public bool Visible
-        {
-            set { visible = value; }
-            get { return visible; }
-        }
 
         public Vector2 Position
         {
@@ -43,7 +36,6 @@ namespace TheGame.Components.Display
         protected DisplayComponent2D(GameScreen parent)
             : base(parent)
         {
-            visible = true;
             spriteBatch = GameEngine.SpriteBatch;
         }
 
@@ -57,6 +49,11 @@ namespace TheGame.Components.Display
 
         #region I2DComponent Members
 
+        public abstract Vector2 Scale
+        {
+            get;
+            set;
+        }
 
         public abstract Vector2 Center
         {

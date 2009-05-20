@@ -33,12 +33,16 @@ namespace TheGame
         {
             get { return this.spellInfo; }
         }
+
+        //TODO: get this the hell outta here
         public float ParticlesPerSecond
         {
             get { return particlesPerSecond; }
             set { this.particlesPerSecond = value; }
         }
         protected float particlesPerSecond;
+
+
         protected SpellInfo spellInfo;
         protected float timeRemaining;
 

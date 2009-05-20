@@ -34,14 +34,12 @@ namespace TheGame
         #region Constructor
 
         public Monster(GameScreen parent, SpriteInfo spriteInfo)
-            : base(parent, spriteInfo)
+            : base(parent, spriteInfo, Vector3.UnitY)
         {
             behaviors = new Dictionary<ObjectType, Behaviors>();
             type = ObjectType.Monster;
             maxHealth = 20;
             currentHealth = maxHealth;
-
-            this.Initialize();
         }
 
         #endregion // Constructor
@@ -50,21 +48,12 @@ namespace TheGame
 
         public override void Initialize()
         {
-            // Texture coordinate scales
-            scale.X = 1.0f;
-            scale.Y = 1.0f;
-
-            // Position of the center of the texture coordinates
-            position.Y = 1.0f;
-
             // Initalize AI behaviors
             InitializeBehaviours();
 
             InitializeSpriteSequences();
 
             InitializeBoundingShapes();
-
-            
 
             base.Initialize();
         }

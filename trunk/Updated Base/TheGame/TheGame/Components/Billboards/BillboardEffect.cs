@@ -24,22 +24,35 @@ namespace TheGame
 
         #region Constructors
 
-        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo, Vector3 position)
+        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, Vector3 rotation, Vector3 scale)
             : base(parent, spriteInfo.SpriteSheet)
         {
-            vertices[0].Position = new Vector3(1, 1, 0);
-            vertices[1].Position = new Vector3(-1, 1, 0);
-            vertices[2].Position = new Vector3(-1, -1, 0);
-            vertices[3].Position = new Vector3(1, -1, 0);
+            //this is done in billboard is it not?
+            //vertices[0].Position = new Vector3(1, 1, 0);
+            //vertices[1].Position = new Vector3(-1, 1, 0);
+            //vertices[2].Position = new Vector3(-1, -1, 0);
+            //vertices[3].Position = new Vector3(1, -1, 0);
 
             this.spriteInfo = spriteInfo;
             spriteSequence = new SpriteSequence(true, 0);
             spriteSequence.AddRow(0, 0, (int)(this.spriteInfo.SpriteSheet.Width / this.spriteInfo.Width) - 1);
 
             audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
-            this.position = position;
+        }
 
-            this.Initialize();
+        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, Vector3 rotation)
+            : this(parent, spriteInfo, position, rotation, Vector3.One)
+        {
+        }
+
+        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo, Vector3 position)
+            : this(parent, spriteInfo, position, Vector3.Zero, Vector3.One)
+        {
+        }
+
+        public BillboardEffect(GameScreen parent, SpriteInfo spriteInfo)
+            : this(parent, spriteInfo, Vector3.Zero, Vector3.Zero, Vector3.One)
+        {
         }
 
         #endregion  // Constructors

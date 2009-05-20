@@ -49,14 +49,14 @@ namespace TheGame
             set { levelMap = value; }
         }
 
-        private BillboardList playerList;
-        public BillboardList PlayerList
+        private Component3DList playerList;
+        public Component3DList PlayerList
         {
             get { return playerList; }
         }
 
-        private BillboardList monsterList;
-        public BillboardList MonsterList
+        private Component3DList monsterList;
+        public Component3DList MonsterList
         {
             get { return monsterList; }
         }
@@ -72,16 +72,15 @@ namespace TheGame
         public Level(string name, string terrainFileName)
             : base(name)
         {
-            //new TestComponent(this);
             levelMap = new Terrain(this, terrainFileName);
             terrainHeightMap = levelMap.HeightMapInfo;
             levelMap.Initialize();
 
-            playerList = new BillboardList();
+            playerList = new Component3DList();
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
             playerList.Add(new Player(this, playerSpriteInfo, PlayerIndex.One, "Wizard"));
 
-            monsterList = new BillboardList();
+            monsterList = new Component3DList();
             Library.SpriteInfo monsterSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringXml");
             Monster poring = new Monster(this, monsterSpriteInfo);
             poring.Position = new Vector3(-4.0f, 0.0f, -10.0f);

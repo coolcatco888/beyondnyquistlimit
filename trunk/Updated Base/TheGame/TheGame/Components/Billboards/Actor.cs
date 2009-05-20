@@ -90,19 +90,28 @@ namespace TheGame
 
         #endregion  // Accessors
 
-        #region Constructors
+        #region Initialization
 
-        public Actor(GameScreen parent, SpriteInfo spriteInfo)
-            : base(parent, spriteInfo.SpriteSheet)
+        public Actor(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, Vector3 rotation, Vector3 scale)
+            : base(parent, spriteInfo.SpriteSheet, position, rotation, scale)
         {
             this.spriteInfo = spriteInfo;
-
-            //this.Initialize();
         }
 
-        #endregion  // Constructors
+        public Actor(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, Vector3 rotation)
+            : this(parent, spriteInfo, position, rotation, Vector3.One)
+        {
+        }
 
-        #region Initialization
+        public Actor(GameScreen parent, SpriteInfo spriteInfo, Vector3 position)
+            : this(parent, spriteInfo, position, Vector3.Zero, Vector3.One)
+        {
+        }
+
+        public Actor(GameScreen parent, SpriteInfo spriteInfo)
+            : this(parent, spriteInfo, Vector3.Zero, Vector3.Zero, Vector3.One)
+        {
+        }
 
         public override void Initialize()
         {
@@ -140,17 +149,20 @@ namespace TheGame
             // Updates the sprite sequence vertices so that it can grab the next sprite in the animation
             UpdateVertices(currentSequence, spriteInfo);
 
+
+            //TODO: why isnt this in monster and player respectivly?
+            //Note the is statement making your type enum useless (sorry)
             if (state == ActorState.Dead)
             {
-                if (this.Type == ObjectType.Monster)
+                if (this is Monster)
                 {
-                    BillboardList monsters = ((Level)Parent).MonsterList;
+                    Component3DList monsters = ((Level)Parent).MonsterList;
                     monsters.Remove((Monster)this);
                     this.Dispose();
                 }
-                else
+                else if (this is Player)
                 {
-                    BillboardList players = ((Level)Parent).PlayerList;
+                    Component3DList players = ((Level)Parent).PlayerList;
                     players.Remove((Player)this);
                     this.Dispose();
                 }

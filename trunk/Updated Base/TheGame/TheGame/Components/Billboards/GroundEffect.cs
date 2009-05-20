@@ -9,7 +9,7 @@ using Library;
 
 namespace TheGame
 {
-    public class GroundEffect : Billboard, IMoveable
+    public class GroundEffect : Billboard
     {
         #region Fields
 
@@ -32,7 +32,7 @@ namespace TheGame
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
             // Assign world, view, & projection matricies to basicEffect.
-            basicEffect.World = Matrix.CreateScale(scale.X) * Matrix.CreateRotationX(MathHelper.PiOver2) * Matrix.CreateRotationY(rotation) * Matrix.CreateTranslation(position);
+            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateRotationX(MathHelper.PiOver2) * Matrix.CreateFromQuaternion(rotation) * Matrix.CreateTranslation(position);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 

@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    public class PointSpriteSystem : Component, IDrawableComponent, IPointSpriteSystem , I3DComponent, IMoveable
+    public class PointSpriteSystem : Component3D, IPointSpriteSystem
     {
         public PointSpriteSystem(GameScreen parent, PointSpriteSystemSettings settings)
             : base(parent)

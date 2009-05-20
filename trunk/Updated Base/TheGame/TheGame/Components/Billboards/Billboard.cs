@@ -9,7 +9,7 @@ using Library;
 
 namespace TheGame
 {
-    public class Billboard : Component, IDrawableComponent, IBillboard, ICollidable
+    public class Billboard : CollidableComponent, IBillboard
     {
         #region Drawing Billboard Fields
 
@@ -58,19 +58,12 @@ namespace TheGame
 
         #endregion  // Accessors
 
-        #region Constructor
+        #region Initilization
 
-        public Billboard(GameScreen parent, Texture2D texture2D)
-            : base(parent)
+        public Billboard(GameScreen parent, Texture2D texture2D, Vector3 position, Vector3 rotation, Vector3 scale)
+            : base(parent, position, rotation, scale)
         {
-            visible = true;
-
             this.texture2D = texture2D;
-
-            // Default values for scale, rotation and position
-            scale = new Vector2(1.0f, 1.0f);
-            rotation = 0.0f;
-            position = new Vector3(0.0f, 0.0f, 0.0f);
 
             // TESTING PURPOSE ONLY - will remove later
             // Draws the bounding shapes
@@ -96,6 +89,21 @@ namespace TheGame
             vertices[1].TextureCoordinate = new Vector2(1, 0);
             vertices[2].TextureCoordinate = new Vector2(1, 1);
             vertices[3].TextureCoordinate = new Vector2(0, 1);
+        }
+
+        public Billboard(GameScreen parent, Texture2D texture2D, Vector3 position, Vector3 rotation)
+            : this(parent, texture2D, position, rotation, Vector3.One)
+        {
+        }
+
+        public Billboard(GameScreen parent, Texture2D texture2D, Vector3 position)
+            : this(parent, texture2D, position, Vector3.Zero, Vector3.One)
+        {
+        }
+
+        public Billboard(GameScreen parent, Texture2D texture2D)
+            : this(parent, texture2D, Vector3.Zero, Vector3.Zero, Vector3.One)
+        {
         }
 
         #endregion
@@ -148,7 +156,7 @@ namespace TheGame
 
             // Assign world, view, & projection matricies to basicEffect.
             // TODO: implement rotation
-            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateWorld(position, -camera.Direction, Vector3.Up);
+            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 
@@ -163,32 +171,9 @@ namespace TheGame
             basicEffect.End();
         }
 
-        protected bool visible;
-        public bool Visible
-        {
-            get { return visible; }
-            set { visible = value; }
-        }
-
         #endregion
 
         #region IBillboard Members
-
-        /// <summary>
-        /// Rotation of the billboard.
-        /// </summary>
-        protected float rotation;
-        public float Rotation
-        {
-            get
-            {
-                return rotation;
-            }
-            set
-            {
-                rotation = value;
-            }
-        }
 
         protected Texture2D texture2D;
         public Texture2D Texture2D
@@ -203,71 +188,6 @@ namespace TheGame
             }
         }
 
-        /// <summary>
-        /// Current position of this billboard on the world map.
-        /// </summary>
-        protected Vector3 position;
-        public Vector3 Position
-        {
-            get
-            {
-                return position;
-            }
-            set
-            {
-                position = value;
-            }
-        }
-
-        /// <summary>
-        /// Scale of the billboard.
-        /// </summary>
-        protected Vector2 scale;
-        public Vector2 Scale
-        {
-            get
-            {
-                return scale;
-            }
-            set
-            {
-                scale = value;
-            }
-        }
-
         #endregion
-
-        #region ICollidable Members
-
-        /// <summary>
-        /// Whether the billboard is collidable or not
-        /// </summary>
-        protected bool collidable;
-        public bool Collidable
-        {
-            get { return collidable; }
-            set { collidable = value; }
-        }
-
-        /// <summary>
-        /// The billboards bounding shape used in collision detection
-        /// </summary>
-        protected PrimitiveShape primitiveShape;
-        public virtual PrimitiveShape PrimitiveShape
-        {
-            get { return primitiveShape; }
-        }
-
-        /// <summary>
-        /// Determines if there is a hit between objects using their bounding shapes
-        /// </summary>
-        /// <param name="otherShape">The other objects bounding shape</param>
-        /// <returns>True if a hit, false otherwise</returns>
-        public virtual bool IsHit(PrimitiveShape otherShape)
-        {
-            return PrimitiveShape.TestCollision(primitiveShape, otherShape);
-        }
-
-        #endregion // ICollidable Members
     }
 }
