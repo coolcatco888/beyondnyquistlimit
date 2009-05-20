@@ -19,3 +19,10 @@ D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\x8
 D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.dll
 D:\work\mW\09project\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.pdb
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.pdb
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\bin\x86\Debug\Library.dll
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\bin\x86\Debug\Library.pdb
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.dll
+D:\work\jimwtf\Prototypes\menuSystem\Old\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.pdb

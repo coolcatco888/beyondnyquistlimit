@@ -178,12 +178,12 @@ namespace TheGame
 
                 //TODO-FIXME: Temp fix very bad!  This should only change the origin of the player but not monsters. 
                 //This should be put inside Player!!!
-                if (this is Player)
-                {
-                    Vector3 relCameraDirection = camera.Position - camera.LookAt;
-                    float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
-                    velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
-                }
+                //if (this is Player)
+                //{
+                //    Vector3 relCameraDirection = camera.Position - camera.LookAt;
+                //    float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
+                //    velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
+                //}
 
                 position.X += velocity.X * currentSequence.Velocity * STEPS_PER_UPDATE * gameTime.ElapsedGameTime.Milliseconds;
                 position.Z -= velocity.Z * currentSequence.Velocity * STEPS_PER_UPDATE * gameTime.ElapsedGameTime.Milliseconds;

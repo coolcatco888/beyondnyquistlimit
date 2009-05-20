@@ -36,9 +36,11 @@ namespace TheGame
         /// </summary>
         protected override void Initialize()
         {
+           
             // TODO: Add your initialization logic here
             GameEngine.Initialize(this);
-
+            this.IsFixedTimeStep = false;
+ 
             
 
             GameEngine.BaseScreen = new GameScreen("base");
