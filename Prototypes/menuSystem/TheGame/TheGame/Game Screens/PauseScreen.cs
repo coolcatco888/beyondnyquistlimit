@@ -31,6 +31,7 @@ namespace TheGame.Game_Screens
             menu.PanelItems.Add(new MenuTextComponent2D(this, new Vector2(10, 2), "Continue Game", Color.White, font, Color.Yellow, true));
             menu.PanelItems.Add(new MenuTextComponent2D(this, new Vector2(10, 42), "Exit Game", Color.White, font, Color.Yellow, false));
             menu.Initialize();
+            base.LoadContent();
         }
 
         public PauseScreen(string name, GameScreen previousScreen, PlayerIndex sender)

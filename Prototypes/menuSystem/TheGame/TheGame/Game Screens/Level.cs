@@ -112,7 +112,6 @@ namespace TheGame
             cb.Initialize();
 
             ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
-            camera.ActorsToFollow = new BillboardList();
             camera.ActorsToFollow.AddRange(playerList);
 
             (new FrameRateCounterText2D(this, Vector2.Zero, Color.White, GameEngine.Content.Load<SpriteFont>("GUI\\menufont"), 1.0f)).Initialize(); 

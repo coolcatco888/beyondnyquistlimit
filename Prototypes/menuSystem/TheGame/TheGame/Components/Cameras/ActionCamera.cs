@@ -8,7 +8,7 @@ namespace TheGame.Components.Cameras
 {
     class ActionCamera : Camera
     {
-        private float minDistance = 4.5f, minHeight = 10.0f, maxHeight = 12.0f;
+        private float minDistance, minHeight, maxHeight;
 
         private BillboardList actorsToFollow;
 
@@ -56,7 +56,7 @@ namespace TheGame.Components.Cameras
         /// </summary>
         /// <param name="parent">Screen the camera is contained in</param>
         public ActionCamera(GameScreen parent)
-            : base(parent)
+            : this(parent, 4.5f, 10.0f, 12.0f, new BillboardList())
         {
         }
 
