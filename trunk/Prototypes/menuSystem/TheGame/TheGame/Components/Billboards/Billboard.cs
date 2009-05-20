@@ -3,6 +3,7 @@
 
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 using Library;
 
 #endregion  // Using Statements
@@ -115,6 +116,8 @@ namespace TheGame
 
         #endregion // Component Overriden Members
 
+        private List<Vector3> positions = new List<Vector3>();
+
         #region Update Method - Update Vertices
 
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
@@ -151,6 +154,13 @@ namespace TheGame
             basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateWorld(position, -camera.Direction, Vector3.Up);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
+
+            if (this is Player)
+            {
+                int thing = 0;
+                //positions.Add(position);
+
+            }
 
             // Draw billboard.
             basicEffect.Begin();

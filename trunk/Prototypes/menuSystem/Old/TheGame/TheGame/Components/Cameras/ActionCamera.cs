@@ -101,13 +101,13 @@ namespace TheGame.Components.Cameras
                 //Change the lookAtPosition to be the average position of all of the actors
                 if (count > 0)
                 {
-                    Vector3 newLookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
-                    newLookAt -= lookAt;
-                    float length = newLookAt.Length();
-                    float velocity = length * distancePerUpdate;
-                    newLookAt.Normalize();
-                    newLookAt *= velocity * gameTime.ElapsedGameTime.Milliseconds;
-                    lookAt += newLookAt;
+                    lookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
+                    //newLookAt -= lookAt;
+                    //float length = newLookAt.Length();
+                    //float velocity = length * distancePerUpdate;
+                    //newLookAt.Normalize();
+                    //newLookAt *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+                    //lookAt += newLookAt;
                 }
                 distOfFurthestActorFromLookAt = CalculateCameraZoomDistance(distOfFurthestActorFromLookAt);
                 ChangeCameraPosition(distOfFurthestActorFromLookAt, gameTime);
@@ -147,14 +147,14 @@ namespace TheGame.Components.Cameras
             newDirection.Y = newDirection.Y > minHeight ? newDirection.Y < maxHeight ? newDirection.Y : maxHeight : minHeight;
 
             //Set new position
-            Vector3 newPosition = lookAt + newDirection;
+            position = lookAt + newDirection;
 
-            newPosition -= position;
-            float length = newPosition.Length();
-            float velocity = length * distancePerUpdate;
-            newPosition.Normalize();
-            newPosition *= velocity * gameTime.ElapsedGameTime.Milliseconds;
-            position += newPosition;
+            //newPosition -= position;
+            //float length = newPosition.Length();
+            //float velocity = length * distancePerUpdate;
+            //newPosition.Normalize();
+            //newPosition *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+            //position += newPosition;
 
 
             //Push camera a bit to the side if the player is directly under the camera

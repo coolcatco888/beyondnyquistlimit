@@ -45,6 +45,8 @@ namespace TheGame
             set { hasAttacked = value; }
         }
 
+
+
         #endregion
 
         #region TEMPORARY - Testing Fields
