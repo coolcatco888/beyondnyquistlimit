@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TheGame.Components.Display;
 using TheGame.Components.GUI;
 using TheGame.Components.Cameras;
 
@@ -33,6 +34,7 @@ namespace TheGame.Game_Screens
             menu.Initialize();
 
             //CreateCharacterStatusHUD();//Uncomment this to see the HUD
+            base.LoadContent();
         }
 
         /// <summary>
@@ -80,7 +82,7 @@ namespace TheGame.Game_Screens
         public MainMenuScreen(string name)
             : base(name)
         {
-            
+
         }
 
         /// <summary>
@@ -118,7 +120,12 @@ namespace TheGame.Game_Screens
         {
             //Create instance of camera
             GameScreen cameraScreen = new GameScreen("camera");
-            ActionCamera camera = new ActionCamera(cameraScreen);
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+            if (camera != null)
+            {
+                GameEngine.Services.RemoveService(typeof(Camera));
+            }
+            camera = new ActionCamera(cameraScreen);
             //Note: Camera should be contained in a screen updated after level
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
             int indexOfCameraScreen = GameEngine.GameScreens.IndexOf(cameraScreen);

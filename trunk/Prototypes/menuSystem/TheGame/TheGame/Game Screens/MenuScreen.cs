@@ -23,6 +23,18 @@ namespace TheGame.Game_Screens
         protected InputHub inputHub = (InputHub)GameEngine.Services.GetService(typeof(InputHub));
         protected GamepadDevice gamepadDevice;
 
+        public override void  LoadContent()
+        {
+            foreach (DisplayComponent2D component in menu.PanelItems)
+            {
+                if (component is MenuTextComponent2D)
+                {
+                    ((MenuTextComponent2D)component).Scale = 2.5f;
+                }
+            }
+            base.LoadContent();
+        }
+
         /// <summary>
         /// Creates a new MenuScreen
         /// </summary>

@@ -50,10 +50,13 @@ namespace TheGame.Components.Display
 
         public override void Draw(GameTime gameTime)
         {
-            Color drawColor = selected ? selectedColor : color;
-            spriteBatch.Begin();
-            spriteBatch.DrawString(font, text, position, drawColor);
-            spriteBatch.End();
+            Color originalColor = color;
+            color = selected ? selectedColor : originalColor;
+            //spriteBatch.Begin();
+            //spriteBatch.DrawString(font, text, position, drawColor);
+            //spriteBatch.End();
+            base.Draw(gameTime);
+            color = originalColor;
         }
 
         public static MenuTextComponent2D CreateMenuTextComponent2D(TextComponent2D text, Color selectedColor, bool selected)
