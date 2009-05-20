@@ -209,8 +209,7 @@ namespace TheGame
             foreach (IDrawableComponent drawable in drawListBillboard)
             {
                 //setting common render states for billboards
-                GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
-                //GameEngine.Graphics.RenderState.AlphaTestEnable = true;
+                GameEngine.Graphics.RenderState.AlphaTestEnable = true;
                 GameEngine.Graphics.RenderState.AlphaFunction = CompareFunction.GreaterEqual;
                 GameEngine.Graphics.RenderState.ReferenceAlpha = 200;
 

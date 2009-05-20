@@ -118,12 +118,6 @@ namespace TheGame
             view = Matrix.CreateLookAt(position, lookAt, Vector3.Up);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-            SetView();
-        }
-
         #endregion
     }
 }
