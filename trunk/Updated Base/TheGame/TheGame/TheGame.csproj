@@ -90,6 +90,7 @@
     <Compile Include="AI\Behaviors.cs" />
     <Compile Include="AI\WanderBehavior.cs" />
     <Compile Include="BoundingRectangle.cs" />
+    <Compile Include="Game Screens\CameraScreen.cs" />
     <Compile Include="Components\Abstract Base\CollidableComponent.cs" />
     <Compile Include="Components\Abstract Base\Component3D.cs" />
     <Compile Include="Components\Billboards\Actor.cs" />
@@ -135,12 +136,8 @@
     <Compile Include="Components\GUI\ValueBarComponent2D.cs" />
     <Compile Include="Components\GUI\XMLPanel2DBuilder.cs" />
     <Compile Include="Components\Skybox\Skybox.cs" />
-    <Compile Include="Components\Spells\Hurricane.cs" />
-    <Compile Include="Components\Spells\IceVortex.cs" />
-    <Compile Include="Components\Spells\LeafWhirlwind.cs" />
     <Compile Include="Components\Terrain\Terrain.cs" />
-    <Compile Include="Components\Container3D.cs" />
-    <Compile Include="Components\Spells\FireTornado.cs" />
+    <Compile Include="Components\Spells\Container3D.cs" />
     <Compile Include="ControlHub.cs" />
     <Compile Include="Components\Abstract Base\DrawableComponent.cs" />
     <Compile Include="Game Screens\Level.cs" />
@@ -166,7 +163,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="GameBase.cs" />
     <Compile Include="ScreenManager.cs" />
-    <Compile Include="Components\TestComponent.cs" />
     <Compile Include="Components\Spells\Spell.cs" />
     <Compile Include="Components\Cameras\TestCamera.cs" />
     <Compile Include="Utility.cs" />

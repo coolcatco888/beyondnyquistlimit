@@ -58,11 +58,11 @@ namespace TheGame
     public interface I2DComponent
     {
         
-        Vector2 Scale
-        {
-            get;
-            set;
-        }
+        //Vector2 Scale
+        //{
+        //    get;
+        //    set;
+        //}
 
         //This is the top left corner;
         Vector2 Position

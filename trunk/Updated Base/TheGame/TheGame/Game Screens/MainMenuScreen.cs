@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using TheGame.Components.GUI;
+using TheGame.Components.Cameras;
 
 namespace TheGame.Game_Screens
 {
@@ -103,8 +104,19 @@ namespace TheGame.Game_Screens
                 {
                     case "Start Game":
                         Dispose();
-                        new SkyboxScreen("sky");
-                        new Level("level", "Terrain\\terrain");
+
+                        GameScreen skybox = new SkyboxScreen("sky");
+                        Level level =  new Level("level", "Terrain\\terrain");
+                        GameScreen cameraScreen = new GameScreen("camera");
+
+                        Camera camera = new ActionCamera(cameraScreen, level.PlayerList);
+                        camera.Initialize();
+                        GameEngine.Services.AddService(typeof(Camera), (object)(camera));
+
+                        cameraScreen.Initialize();
+                        skybox.Initialize();
+                        level.Initialize();
+
                         break;
                     case "Exit Game":
                         break;

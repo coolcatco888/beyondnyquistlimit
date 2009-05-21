@@ -43,17 +43,11 @@ namespace TheGame.Components.Display
         {
         }
 
-        public virtual void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
         }
 
         #region I2DComponent Members
-
-        public abstract Vector2 Scale
-        {
-            get;
-            set;
-        }
 
         public abstract Vector2 Center
         {

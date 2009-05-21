@@ -44,30 +44,6 @@ struct PixelShaderInput
     
 };
 
-// Vertex shader helper for computing the rotation of a particle.
-float4 ComputeParticleRotation(float speed, float age)
-{    
-    
-    float rotation = speed * age;
-
-    // Compute a 2x2 rotation matrix.
-    float c = cos(rotation);
-    float s = sin(rotation);
-    
-    float4 rotationMatrix = float4(c, -s, s, c);
-    
-    // Normally we would output this matrix using a texture coordinate interpolator,
-    // but texture coordinates are generated directly by the hardware when drawing
-    // point sprites. So we have to use a color interpolator instead. Only trouble
-    // is, color interpolators are clamped to the range 0 to 1. Our rotation values
-    // range from -1 to 1, so we have to scale them to avoid unwanted clamping.
-    
-    rotationMatrix *= 0.5;
-    rotationMatrix += 0.5;
-    
-    return rotationMatrix;
-}
-
 VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
 {
     VertexShaderOutput output;
@@ -75,7 +51,7 @@ VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
 
-    output.Color = input.Color;
+    output.Color = input.Color * input.Data.y;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
     
     input.Position += float4(input.Velocity * age, 0);
@@ -84,7 +60,7 @@ VertexShaderOutput CartesianVertexShaderFunction(VertexShaderInput input)
     float4 viewPosition = mul(worldPosition, View);
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = lerp(input.Size, input.Data.x, normalizedAge) * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
@@ -97,7 +73,7 @@ VertexShaderOutput CylindricalVertexShaderFunction(VertexShaderInput input)
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
     
-    output.Color = input.Color;
+    output.Color = input.Color * input.Data.y;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
     
     float4 pos = input.Position + float4(input.Velocity * age, 0);
@@ -112,7 +88,7 @@ VertexShaderOutput CylindricalVertexShaderFunction(VertexShaderInput input)
     
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = lerp(input.Size, input.Data.x, normalizedAge) * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
@@ -125,7 +101,7 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
     float age = CurrentTime - input.Time.x;
     float normalizedAge = saturate(age / input.Time.y);
     
-    output.Color = input.Color;
+    output.Color = input.Color * input.Data.y;
     output.Color.a *= normalizedAge * (1 - normalizedAge) * (1 - normalizedAge) * 6.7;
     
     float4 pos = input.Position + float4(input.Velocity * age, 0);
@@ -139,7 +115,7 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
     
     output.Position = mul(viewPosition, Projection);
     
-    output.Size = input.Size * Projection._m11 / output.Position.w * ViewportHeight / 2;
+    output.Size = lerp(input.Size, input.Data.x, normalizedAge) * Projection._m11 / output.Position.w * ViewportHeight / 2;
 
     return output;
 }
@@ -147,7 +123,7 @@ VertexShaderOutput SphericalVertexShaderFunction(VertexShaderInput input)
 float4 PixelShaderFunction(PixelShaderInput input) : COLOR0
 {
     float2 textureCoordinate = input.TexCoord;
-    return tex2D(Sampler, textureCoordinate) * input.Color * 2;
+    return tex2D(Sampler, textureCoordinate) * input.Color;
 }
 
 technique Cartesian

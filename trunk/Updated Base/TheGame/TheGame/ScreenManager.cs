@@ -109,9 +109,6 @@ namespace TheGame
         // ComponentType to render
         public override void Draw(GameTime gameTime)
         {
-            Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-
-            camera.SetView();
 
             // Clear the back buffer
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -139,8 +136,6 @@ namespace TheGame
             foreach (GameScreen screen in drawList)
                 if (screen.Initialized)
                     screen.Draw();
-
-
 
             drawList.Clear();
 

@@ -19,11 +19,16 @@ namespace TheGame
     {
         public SkyboxScreen(string name)
             : base(name)
+        {  
+        }
+
+        public override void Initialize()
         {
-            new TestComponent(this);
             Skybox sky;
 
             sky = new Skybox(this, "redsky");
+
+            base.Initialize();
         }
     }
 }

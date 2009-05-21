@@ -16,7 +16,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    public class Terrain : Component, IDrawableComponent, I3DComponent
+    public class Terrain : Component3D
     {
         #region Fields
 
@@ -37,9 +37,7 @@ namespace TheGame
         
         #endregion
 
-        #region IDrawableComponent Members
-
-        public void Draw(Microsoft.Xna.Framework.GameTime gameTime)
+        public override void Draw(Microsoft.Xna.Framework.GameTime gameTime)
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
@@ -63,48 +61,11 @@ namespace TheGame
                 mesh.Draw();
             }
         }
-
-        // Whether this screen is visible or not
-        private bool visible;
-        public bool Visible
-        {
-            get { return visible; }
-            set { visible = value; }
-        }
         
-        #endregion
-
-        #region I3DComponent Members
-
-        private Vector3 terrainPosition;
-        public Vector3 Position
-        {
-            get { return terrainPosition; }
-            set { terrainPosition = value; }
-        }
-
-        private Quaternion terrainRotation;
-        public Quaternion Rotation
-        {
-            get { return terrainRotation; }
-            set { terrainRotation = value; }
-        }
-
-        private float terrainScale;
-        public float Scale
-        {
-            get { return terrainScale; }
-            set { terrainScale = value; }
-        }
-        
-        #endregion
-
         public Terrain(GameScreen parent, String fileName)
             : base(parent)
         {
-            visible = true;
             this.fileName = fileName;
-            this.Initialize();
         }
 
         public override void Initialize()

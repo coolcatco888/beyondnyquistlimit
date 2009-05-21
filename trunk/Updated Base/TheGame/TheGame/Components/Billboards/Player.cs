@@ -64,7 +64,6 @@ namespace TheGame
 
             hasAttacked = false;
             classInfo = GameEngine.Content.Load<Library.CharacterClassInfo>(@classInfoFile);
-            this.Initialize();
         }
 
         #endregion // Constructor

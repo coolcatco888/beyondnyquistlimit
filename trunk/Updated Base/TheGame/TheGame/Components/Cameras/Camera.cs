@@ -45,7 +45,7 @@ namespace TheGame
         }
         Quaternion rotation;
 
-        Vector3 Scale
+        public Vector3 Scale
         {
             get
             {
@@ -56,7 +56,7 @@ namespace TheGame
                 scale = value;
             }
         }
-        Vector3 scale;
+        protected Vector3 scale;
 
         public virtual void Translate(Vector3 translation)
         {
