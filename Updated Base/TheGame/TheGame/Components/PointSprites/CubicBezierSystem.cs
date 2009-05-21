@@ -30,8 +30,6 @@ namespace TheGame
 
         protected override void SetEffect()
         {
-            base.SetEffect();
-
             effect.Parameters["ControlPoint0"].SetValue(controlPoints[0]);
             effect.Parameters["ControlPoint1"].SetValue(controlPoints[1]);
             effect.Parameters["ControlPoint2"].SetValue(controlPoints[2]);

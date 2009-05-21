@@ -36,7 +36,6 @@ namespace TheGame
         private SpriteInfo groundEffectInfo;
 
         PointSpriteSystem circleEffect;
-        float particlesPerSecond;
         int timeElpase; 
 
         #endregion  // Fields
@@ -58,7 +57,7 @@ namespace TheGame
             get { return circleEffect; }
         }
 
-        public bool Visible
+        new public bool Visible
         {
             get { return groundEffect.Visible; }
             set { this.groundEffect.Visible = value;
@@ -116,13 +115,9 @@ namespace TheGame
             this.InvertScaleIncrement();
 
             // Particle System
-            PointSpriteSystemSettings settings = new PointSpriteSystemSettings();
+            PointSpriteSystemSettings settings = new PointSpriteSystemSettings(GameEngine.Content.Load<Texture2D>("ParticleA"));
             settings.Color = Color.LightBlue;
             settings.MaxParticles = 5000;
-            settings.BasePosition = Vector3.Zero;
-            settings.BaseRotation = Quaternion.Identity;
-            settings.Scale = 1.0f;
-            settings.Texture = GameEngine.Content.Load<Texture2D>("ParticleA");
             settings.Technique = "Cylindrical";
 
             particlesPerSecond = 500.0f;
@@ -135,8 +130,8 @@ namespace TheGame
             groundEffect.Initialize();
             circleEffect.Initialize();
 
-            this.Add((IMoveable)groundEffect);
-            this.Add((IMoveable)circleEffect);
+            this.Add(groundEffect);
+            this.Add(circleEffect);
         }
 
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
@@ -173,11 +168,11 @@ namespace TheGame
 
             while (timer > 0)
             {
-                groundEffect.Rotation += rotationSpeed;
+                groundEffect.Rotate(0.0f, 0.0f, rotationSpeed);
 
                 if (groundEffect.Scale.X > 0 && groundEffect.Scale.X < 3)
                 {
-                    groundEffect.Scale = new Vector2(groundEffect.Scale.X + scaleIncrement, groundEffect.Scale.Y + scaleIncrement);
+                    groundEffect.Scale = new Vector3(groundEffect.Scale.X + scaleIncrement, groundEffect.Scale.Y + scaleIncrement, 1.0f);
                 }
                 else if (groundEffect.Scale.X >= 3)
                 {
@@ -191,7 +186,7 @@ namespace TheGame
                         float rand1 = (float)GameEngine.Random.NextDouble();
                         float rand2 = (float)GameEngine.Random.NextDouble();
                         float rand3 = (float)GameEngine.Random.NextDouble();
-                        circleEffect.AddParticle(new Vector3(2.2f, (float)Math.PI * 2.0f * rand1, 0.0f), new Vector3(0.0f, 0.0f, 0.1f + 3.0f * rand2), 0.01f + rand3 * 0.2f, 1.0f, null, null);
+                        //circleEffect.AddParticle(new Vector3(2.2f, (float)Math.PI * 2.0f * rand1, 0.0f), new Vector3(0.0f, 0.0f, 0.1f + 3.0f * rand2), 0.01f + rand3 * 0.2f, 1.0f, null, null);
                     }
                     /*
                     if (currentSpell == null)
@@ -274,7 +269,7 @@ namespace TheGame
         public void InvertScaleIncrement()
         {
             scaleIncrement = -scaleIncrement;
-            groundEffect.Scale = new Vector2(groundEffect.Scale.X + scaleIncrement, groundEffect.Scale.Y + scaleIncrement);
+            groundEffect.Scale = new Vector3(groundEffect.Scale.X + scaleIncrement, groundEffect.Scale.Y + scaleIncrement, 1.0f);
         }
     }
 }

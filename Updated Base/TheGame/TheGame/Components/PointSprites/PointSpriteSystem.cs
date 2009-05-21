@@ -21,20 +21,25 @@ namespace TheGame
             this.settings = settings;
         }
 
-        
-
         #region Component Members
 
         public override void Initialize()
         {
 
-            visible = true;
-
             particles = new ParticleVertex[settings.MaxParticles];
 
-            SetEffect();
+            Effect e = GameEngine.Content.Load<Effect>(settings.EffectName);
+
+            // If we have several particle systems, the content manager will return
+            // a single shared effect instance to them all. But we want to preconfigure
+            // the effect with parameters that are specific to this particular
+            // particle system. By cloning the effect, we prevent one particle system
+            // from stomping over the parameter settings of another.
+            effect = e.Clone(GameEngine.Graphics);
 
             effect.CurrentTechnique = effect.Techniques[settings.Technique];
+
+            SetEffect();
 
             EffectParameterCollection parameters = effect.Parameters;
 
@@ -56,16 +61,6 @@ namespace TheGame
 
         protected virtual void SetEffect()
         {
-            Effect e = GameEngine.Content.Load<Effect>(settings.effectName);
-
-            // If we have several particle systems, the content manager will return
-            // a single shared effect instance to them all. But we want to preconfigure
-            // the effect with parameters that are specific to this particular
-            // particle system. By cloning the effect, we prevent one particle system
-            // from stomping over the parameter settings of another.
-
-            effect = e.Clone(GameEngine.Graphics);
-            
         }
 
         public override void Update(GameTime gameTime)
@@ -88,7 +83,7 @@ namespace TheGame
 
         #region IDrawableComponent Members
 
-        public void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             GraphicsDevice device = GameEngine.Graphics;
 
@@ -108,17 +103,6 @@ namespace TheGame
             // If there are any active particles, draw them now!
             if (firstActiveParticle != firstFreeParticle)
             {
-                //SetParticleRenderStates(device.RenderState);
-                //device.RenderState.PointSpriteEnable = true;
-                //device.RenderState.PointSizeMax = 256;
-
-                //device.RenderState.AlphaBlendEnable = true;
-                //device.RenderState.AlphaBlendOperation = BlendFunction.Add;
-                //device.RenderState.SourceBlend = Blend.SourceAlpha;
-                //device.RenderState.DestinationBlend = Blend.One;
-
-                //device.RenderState.DepthBufferEnable = true;
-                //device.RenderState.DepthBufferWriteEnable = false;
 
                 // Set an effect parameter describing the viewport size. This is needed
                 // to convert particle sizes into screen space point sprite sizes.
@@ -126,7 +110,7 @@ namespace TheGame
                 
                 Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-                effectWorldParameter.SetValue(Matrix.CreateFromQuaternion(Setting.BaseRotation) * Matrix.CreateTranslation(Setting.BasePosition));
+                effectWorldParameter.SetValue(Matrix.CreateFromQuaternion(rotation) * Matrix.CreateTranslation(position));
                 effectProjectionParameter.SetValue(camera.Projection);
                 effectViewParameter.SetValue(camera.View);
 
@@ -175,36 +159,17 @@ namespace TheGame
                 }
 
                 effect.End();
-
-                // Reset a couple of the more unusual renderstates that we changed,
-                // so as not to mess up any other subsequent drawing.
-                //device.RenderState.PointSpriteEnable = false;
-                //device.RenderState.AlphaBlendEnable = false;
-                //device.RenderState.DepthBufferWriteEnable = true;
             }
 
             drawCounter++;
         }
-
-        public bool Visible
-        {
-            get
-            {
-                return visible;
-            }
-            set
-            {
-                visible = value;
-            }
-        }
-        bool visible;
 
         #endregion
 
         /// <summary>
         /// Adds a new particle to the system.
         /// </summary>
-        public void AddParticle(Vector3 position, Vector3 velocity, float size, float duration, Color? color, Vector2? data)
+        public void AddParticle(Vector3 position, Vector3 velocity, float duration, Vector2? size, Color? color, float? intensity)
         {
             // Figure out where in the circular queue to allocate the new particle.
             int nextFreeParticle = firstFreeParticle + 1;
@@ -217,9 +182,8 @@ namespace TheGame
                 return;
 
             // Fill in the particle vertex structure.
-            particles[firstFreeParticle].Position = position * settings.Scale + settings.Position;
-            particles[firstFreeParticle].Velocity = velocity * settings.Scale;
-            particles[firstFreeParticle].Size = size;
+            particles[firstFreeParticle].Position = position;
+            particles[firstFreeParticle].Velocity = velocity;
             particles[firstFreeParticle].Time.X = currentTime;
             particles[firstFreeParticle].Time.Y = duration;
 
@@ -228,13 +192,26 @@ namespace TheGame
             else
                 particles[firstFreeParticle].Color = settings.Color;
 
-            if(data.HasValue)
-                particles[firstFreeParticle].Data = data.Value;
-            
+            if (size.HasValue)
+            {
+                particles[firstFreeParticle].Size = size.Value.X;
+                particles[firstFreeParticle].Data.X = size.Value.Y;
+            }
+            else
+            {
+                particles[firstFreeParticle].Size = settings.InitialSize;
+                particles[firstFreeParticle].Data.X = settings.FinalSize;
+            }
+
+            if (intensity.HasValue)
+                particles[firstFreeParticle].Data.Y = intensity.Value;
+            else
+                particles[firstFreeParticle].Data.Y = settings.Intensity;
+
             firstFreeParticle = nextFreeParticle;
         }
 
-        public PointSpriteSystemSettings Setting
+        public PointSpriteSystemSettings Settings
         {
             get { return settings; }
             set { settings = value; }
@@ -359,53 +336,5 @@ namespace TheGame
 
         #endregion
 
-        #region IPointSpriteSystem Members
-
-        public int MaxParticleCount
-        {
-            get { return settings.MaxParticles; }
-        }
-
-        #endregion
-
-        #region I3DComponent Members
-
-        public Vector3 Position
-        {
-            get
-            {
-                return settings.BasePosition;
-            }
-            set
-            {
-                settings.BasePosition = value;
-            }
-        }
-
-        public Quaternion Rotation
-        {
-            get
-            {
-                return settings.BaseRotation;
-            }
-            set
-            {
-                settings.BaseRotation = value;
-            }
-        }
-
-        public float Scale
-        {
-            get
-            {
-                return settings.Scale;
-            }
-            set
-            {
-                settings.Scale = value;
-            }
-        }
-
-        #endregion
     }
 }

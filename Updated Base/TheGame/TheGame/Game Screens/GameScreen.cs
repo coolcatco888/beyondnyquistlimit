@@ -103,9 +103,6 @@ namespace TheGame
 
             if(GameEngine.Initialized)
                 GameEngine.GameScreens.Add(this);
-
-            if (!initialized)
-                Initialize();
         }
 
         public virtual void Initialize()
@@ -145,22 +142,22 @@ namespace TheGame
         public virtual void Draw()
         {
             // Temporary list
-            List<Component> drawing = new List<Component>();
-            List<IDrawableComponent> drawList3D = new List<IDrawableComponent>();
-            List<IDrawableComponent> drawListBillboard = new List<IDrawableComponent>();
-            List<IDrawableComponent> drawListEffects = new List<IDrawableComponent>();
-            List<IDrawableComponent> drawList2D = new List<IDrawableComponent>();
+            List<DrawableComponent> drawing = new List<DrawableComponent>();
+            List<DrawableComponent> drawList3D = new List<DrawableComponent>();
+            List<DrawableComponent> drawListBillboard = new List<DrawableComponent>();
+            List<DrawableComponent> drawListEffects = new List<DrawableComponent>();
+            List<DrawableComponent> drawList2D = new List<DrawableComponent>();
 
 
             foreach (Component component in Components)
             {
-                if (component is IDrawableComponent)
+                if (component is DrawableComponent)
                 {
-                    drawing.Add(component);
+                    drawing.Add((DrawableComponent)component);
                 }
             }
 
-            Component drawList;
+            DrawableComponent drawList;
 
             while (drawing.Count > 0)
             {
@@ -169,27 +166,23 @@ namespace TheGame
 
                 if (drawList is I2DComponent)
                 {
-                    drawList2D.Add((IDrawableComponent)drawList);
+                    drawList2D.Add(drawList);
                 }
                 else if (drawList is IPointSpriteSystem)
                 {
-                    drawListEffects.Add((IDrawableComponent)drawList);
+                    drawListEffects.Add(drawList);
                 }
                 else if (drawList is IBillboard)
                 {
-                    drawListBillboard.Add((IDrawableComponent)drawList);
-                }
-                else if (drawList is I3DComponent)
-                {
-                    drawList3D.Add((IDrawableComponent)drawList);
+                    drawListBillboard.Add(drawList);
                 }
                 else
                 {
-                    drawList3D.Add((IDrawableComponent)drawList);
+                    drawList3D.Add(drawList);
                 }
             }
 
-            foreach (IDrawableComponent drawable in drawList3D)
+            foreach (DrawableComponent drawable in drawList3D)
             {
                 //Seting up common 3D render states
                 GameEngine.Graphics.RenderState.DepthBufferEnable = true;
@@ -203,10 +196,9 @@ namespace TheGame
                     drawable.Draw(GameEngine.GameTime);
             }
 
-            // TEMPORARY
             GameEngine.Graphics.Clear(ClearOptions.DepthBuffer, Color.Black, 1.0f, 0);
 
-            foreach (IDrawableComponent drawable in drawListBillboard)
+            foreach (DrawableComponent drawable in drawListBillboard)
             {
                 //setting common render states for billboards
                 GameEngine.Graphics.RenderState.AlphaTestEnable = true;
@@ -217,7 +209,7 @@ namespace TheGame
                     drawable.Draw(GameEngine.GameTime);
             }
 
-            foreach (IDrawableComponent drawable in drawListEffects)
+            foreach (DrawableComponent drawable in drawListEffects)
             {
                 //setting for sprite batch effects
                 GameEngine.Graphics.RenderState.PointSpriteEnable = true;
@@ -237,7 +229,7 @@ namespace TheGame
 
             //SpriteBatch handles the device render states
 
-            foreach (IDrawableComponent drawable in drawList2D)
+            foreach (DrawableComponent drawable in drawList2D)
             {
                 GameEngine.Graphics.RenderState.PointSpriteEnable = false;
                 GameEngine.Graphics.RenderState.AlphaBlendEnable = false;

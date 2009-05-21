@@ -150,7 +150,7 @@ namespace TheGame
 
         #region IDrawableComponent Members
 
-        public virtual void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 

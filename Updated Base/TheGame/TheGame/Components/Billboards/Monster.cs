@@ -160,33 +160,33 @@ namespace TheGame
             {
                 if (info.StateKey == "Idle")
                 {
-                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf[info.StateKey + info.OrientationKey].ShapeColor = Color.Aqua;
 
-                    boundingShapesSelf["Walking" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Walking" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Walking" + info.OrientationKey].ShapeColor = Color.Magenta;
 
-                    boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Running" + info.OrientationKey].ShapeColor = Color.Ivory;
 
-                    boundingShapesSelf["Hit" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Hit" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Hit" + info.OrientationKey].ShapeColor = Color.Red;
 
-                    boundingShapesSelf["Dying" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Dying" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Dying" + info.OrientationKey].ShapeColor = Color.Green;
 
-                    boundingShapesSelf["Dead" + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf["Dead" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Dead" + info.OrientationKey].ShapeColor = Color.Black;
 
 
                 }
                 else if (info.StateKey == "Others")
                 {
-                    primitiveShape = new PrimitiveShape(position, scale, info.Verts);
+                    primitiveShape = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                 }
                 else
                 {
-                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, scale, info.Verts);
+                    boundingShapesSelf[info.StateKey + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf[info.StateKey + info.OrientationKey].ShapeColor = Color.Black;
                 }
             }

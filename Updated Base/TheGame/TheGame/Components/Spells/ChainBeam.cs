@@ -18,7 +18,6 @@ namespace TheGame
         Vector3[] controlPoints;
         CubicBezierSystem beam;
 
-        float particlesPerSecond;
         int timeElpase; 
 
         public ChainBeam(GameScreen parent, float duration)
@@ -37,20 +36,16 @@ namespace TheGame
             controlPoints[0] = new Vector3(-3.0f, 0.2f, 0.0f);
             controlPoints[1] = new Vector3(-2.0f, -2.2f, 0.0f);
             controlPoints[2] = new Vector3(2.0f, 2.2f, 0.0f);
-            controlPoints[3] = new Vector3(3.0f, 2.2f, 0.0f); 
+            controlPoints[3] = new Vector3(3.0f, 2.2f, 0.0f);
 
-            PointSpriteSystemSettings settings = new PointSpriteSystemSettings();
-            settings.effectName = "Bezier";
+            PointSpriteSystemSettings settings = new PointSpriteSystemSettings("Bezier", "Bezier", GameEngine.Content.Load<Texture2D>("ParticleA"));
             settings.MaxParticles = 4000;
             settings.Color = Color.OrangeRed;
-            settings.BasePosition = -Vector3.UnitZ;
-            settings.Texture = GameEngine.Content.Load<Texture2D>("ParticleA");
-            settings.Technique = "Bezier";
 
             beam = new CubicBezierSystem(Parent, settings, controlPoints);
             beam.Initialize();
 
-            this.Add((IMoveable)beam);
+            this.Add(beam);
             
             
         }
@@ -82,7 +77,7 @@ namespace TheGame
                         rand2 = (float)GameEngine.Random.NextDouble();
                         rand3 = (float)GameEngine.Random.NextDouble();
 
-                        beam.AddParticle(new Vector3(0.5f * rand1, theta, 0.0f), new Vector3(0.0f, 20.0f, 0.0f), 0.05f + 0.1f * rand2, 1.1f, new Color(rand1, rand2, rand3), new Vector2(0.0f + rand3 * 0.05f, 1.0f));
+                        //beam.AddParticle(new Vector3(0.5f * rand1, theta, 0.0f), new Vector3(0.0f, 20.0f, 0.0f), 0.05f + 0.1f * rand2, 1.1f, new Color(rand1, rand2, rand3), new Vector2(0.0f + rand3 * 0.05f, 1.0f));
 
                     }
 

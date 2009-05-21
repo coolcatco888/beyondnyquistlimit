@@ -15,16 +15,36 @@ namespace TheGame
 {
     public class PointSpriteSystemSettings
     {
-        public string effectName = "BasicPoint";
-        public string Technique = "Cartesian";
-        public int MaxParticles = 2000;     
+        public string EffectName;
+        public string Technique;
+        public int MaxParticles;
+        public Texture2D Texture;
+        public Color Color;
+        public float Intensity;
+        public float InitialSize;
+        public float FinalSize;
 
-        public Vector3 BasePosition = Vector3.Zero;
-        public Quaternion BaseRotation = Quaternion.Identity;
+        public PointSpriteSystemSettings(string effectName, string technique, int maxParticles, Texture2D texture, Color color, float intensity, float initialSize, float finalSize)
+        {
+            EffectName = effectName;
+            Technique = technique;
+            MaxParticles = maxParticles;
+            Texture = texture;
+            Color = color;
+            Intensity = intensity;
+            InitialSize = initialSize;
+            FinalSize = finalSize;
+        }
 
-        public Vector3 Position = Vector3.Zero;
-        public float Scale = 1.0f;
-        public Color Color = Color.White;
-        public Texture2D Texture = null;
+        public PointSpriteSystemSettings(string effectName, string technique, Texture2D texture)
+            : this(effectName, technique, 2000, texture, Color.White, 2.0f, 0.2f, 0.2f)
+        {
+        }
+
+        public PointSpriteSystemSettings(Texture2D texture)
+            : this("BasicPoint", "Cartesian", 2000, texture, Color.White, 2.0f, 0.2f, 0.2f)
+        {
+        }
+        
     }
 }
