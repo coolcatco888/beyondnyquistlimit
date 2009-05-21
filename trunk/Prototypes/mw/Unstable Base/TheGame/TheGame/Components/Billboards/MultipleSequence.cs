@@ -78,7 +78,7 @@ namespace TheGame
             this.SetToSequence(sequenceList[0]);
         }
 
-        public override void Update(GameTime gameTime)
+        public override string Update(GameTime gameTime)
         {
             if (this.isLoop)
             {
@@ -104,7 +104,7 @@ namespace TheGame
                 }
             }
 
- 	        base.Update(gameTime);
+ 	        return base.Update(gameTime);
         }
 
         public void SetToSequence(SpriteSequence sequence)

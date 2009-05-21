@@ -37,6 +37,8 @@ namespace TheGame
         protected int bufferFrames;
         protected int bufferTotal;
 
+        protected Dictionary<int, string> attackFrames = new Dictionary<int,string>();
+
         #endregion  // Fields
 
         #region Accessors
@@ -180,7 +182,7 @@ namespace TheGame
 
         #region Update
 
-        public virtual void Update(GameTime gameTime)
+        public virtual string Update(GameTime gameTime)
         {
             if (!isPaused)
             {
@@ -222,6 +224,15 @@ namespace TheGame
                     // Decrement timer.
                     timer -= interval;
                 }
+            }
+
+            if (attackFrames.ContainsKey(frameIndex))
+            {
+                return attackFrames[frameIndex];
+            }
+            else
+            {
+                return "";
             }
         }
 
@@ -302,6 +313,16 @@ namespace TheGame
                 frame.RemoveAt(--frameTotal);
             }
             frameIndex = 0;
+        }
+
+        public void AddAttack(int frame, string title)
+        {
+            attackFrames.Add(frame, title);
+        }
+
+        public void RemoveAttack(int frame)
+        {
+            attackFrames.Remove(frame);
         }
 
 

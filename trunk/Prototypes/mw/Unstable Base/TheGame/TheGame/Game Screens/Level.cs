@@ -89,8 +89,8 @@ namespace TheGame
             voidInfo.Caster = PlayerIndex.One;
             voidInfo.Duration = 10.0f;
 
-            flameTrail = new FlameTrail(this, voidInfo, (Player)playerList[0]);
-            flameTrail.Initialize();
+            //flameTrail = new FlameTrail(this, voidInfo, (Player)playerList[0]);
+            //flameTrail.Initialize();
 
             //circularVoid = new CircularVoid(this, voidInfo, (Player)playerList[0]);
             //circularVoid.Initialize();

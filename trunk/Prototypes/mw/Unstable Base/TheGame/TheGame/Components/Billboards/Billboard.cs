@@ -51,10 +51,10 @@ namespace TheGame
             vertices = new VertexPositionTexture[4];
 
             // Assign position.
-            vertices[0].Position = new Vector3(1, 1, 0);
-            vertices[1].Position = new Vector3(-1, 1, 0);
-            vertices[2].Position = new Vector3(-1, -1, 0);
-            vertices[3].Position = new Vector3(1, -1, 0);
+            vertices[0].Position = new Vector3(-1, 1, 0);
+            vertices[1].Position = new Vector3(1, 1, 0);
+            vertices[2].Position = new Vector3(1, -1, 0);
+            vertices[3].Position = new Vector3(-1, -1, 0);
 
             // Assign texture coordinates to vertices.
             vertices[0].TextureCoordinate = new Vector2(0, 0);
@@ -73,6 +73,8 @@ namespace TheGame
 
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
         {
+            scale.X = spriteSequence.Scale.X;
+
             vertices[0].TextureCoordinate = new Vector2(
                 spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
@@ -90,6 +92,27 @@ namespace TheGame
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
         }
 
+        public void UpdateVertices(Vector2 frameLocation, Vector2 spriteUnit, Vector2 scale)
+        {
+            this.scale.X = scale.X;
+
+            vertices[0].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y);
+
+            vertices[1].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y);
+
+            vertices[2].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+
+            vertices[3].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+        }
+
         #region IDrawableComponent Members
 
         public virtual void Draw(GameTime gameTime)
@@ -98,7 +121,7 @@ namespace TheGame
 
             // Assign world, view, & projection matricies to basicEffect.
             // TODO: implement rotation
-            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateWorld(position, -camera.Direction, Vector3.Up);
+            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateWorld(position, camera.Direction, Vector3.Up);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 

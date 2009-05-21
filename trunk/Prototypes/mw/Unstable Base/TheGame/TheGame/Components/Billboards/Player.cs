@@ -77,7 +77,7 @@ namespace TheGame
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
             // Update 360 degree velocity
-            Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
+            Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, -gamepadDevice.LeftStickPosition.Y);
             if (newVelocity != Vector3.Zero && currentSequence.Title != "Attacking")
             {
                 velocity = Vector3.Normalize(newVelocity);
@@ -255,9 +255,15 @@ namespace TheGame
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
             sequence = new SpriteSequence("Attacking", Orientation.South, false, 0.0f, 3, 2, 1);
             sequence.AddRow(7, 0, 10);
+            //ATTACKTEST
+            sequence.AddAttack(2, "SouthSlash");
+
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
             sequence = new SpriteSequence("Attacking", Orientation.West, false, 0.0f, 3, 2, 1);
             sequence.AddRow(7, 0, 10);
+            // ATTACK TEST
+            sequence.AddAttack(2, "LeftSlash");
+
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
 
             sequence = new SpriteSequence("Attacking", Orientation.Southeast, false, 0.0f, 3, 2, 1);
@@ -335,6 +341,16 @@ namespace TheGame
             sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
 
             currentSequence = sequences["IdleSouth"];
+
+            // ATTACK TEST
+
+            AttackInfo attackInfo = new AttackInfo();
+            attackInfo.Distance = 2.0f;
+            attackInfo.Rotation = new Vector2(0,0);//(MathHelper.PiOver2, MathHelper.PiOver2);
+            attackInfo.TextureCoordinates = new Vector2(0.0f, 11.0f);
+            attackInfo.Scale = new Vector2(1.0f, 1.0f);
+
+            AddAttack("SouthSlash", attackInfo);
         }
     }
 }
