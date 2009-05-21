@@ -21,7 +21,10 @@ namespace TheGame
         protected Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
         protected SpriteSequence currentSequence;
         protected Vector3 velocity = Vector3.Zero;
+        protected Vector3 direction = Vector3.Forward;
         protected SpriteInfo spriteInfo;
+        protected Dictionary<string, AttackInfo> attacks = new Dictionary<string, AttackInfo>();
+        protected string currentAttack = "";
 
 #endregion  // Fields
 
@@ -81,7 +84,7 @@ namespace TheGame
 
             if(currentSequenceTitle.Equals(nextSequenceTitle))
             {
-                currentSequence.Update(gameTime);
+                currentAttack = currentSequence.Update(gameTime);
             }
             else
             {
@@ -217,7 +220,46 @@ namespace TheGame
 
         public override void Draw(GameTime gameTime)
         {
+            if (velocity != Vector3.Zero && state != ActorState.Attacking)
+            {
+                direction = Vector3.Normalize(velocity);
+            }
+
             base.Draw(gameTime);
+
+            if(attacks.ContainsKey(currentAttack))
+            {
+                Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+
+                AttackInfo thisAttack = attacks[currentAttack];
+                Vector3 oldPosition = this.Position;
+
+                this.Position += this.direction * thisAttack.Distance + Vector3.Down;
+
+                UpdateVertices(thisAttack.TextureCoordinates, spriteInfo.SpriteUnit, new Vector2(1.0f, 1.0f));
+
+                // Assign world, view, & projection matricies to basicEffect.
+                // TODO: implement rotation
+                basicEffect.World = Matrix.CreateScale(thisAttack.Scale.X, thisAttack.Scale.Y, 1.0f) * Matrix.CreateRotationX(thisAttack.Rotation.X) * Matrix.CreateRotationY(thisAttack.Rotation.Y) * Matrix.CreateTranslation(position);
+                basicEffect.View = camera.View;
+                basicEffect.Projection = camera.Projection;
+
+                GameEngine.Graphics.RenderState.CullMode = CullMode.None;
+
+                // Draw billboard.
+                basicEffect.Begin();
+                basicEffect.CurrentTechnique.Passes[0].Begin();
+
+                GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
+                GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleFan, vertices, 0, 2);
+
+                basicEffect.CurrentTechnique.Passes[0].End();
+                basicEffect.End();
+
+                GameEngine.Graphics.RenderState.CullMode = CullMode.CullCounterClockwiseFace;
+
+                this.Position = oldPosition;
+            }
         }
 
 #region Methods
@@ -245,6 +287,16 @@ namespace TheGame
             playSequence(state.ToString() + currentSequence.Orientation.ToString());
         }
 
+        protected void AddAttack(string title, AttackInfo attack)
+        {
+            attacks.Add(title, attack);
+        }
+
+        protected void RemoveAttack(string title)
+        {
+            attacks.Remove(title);
+        }
+
 #endregion  // Methods
 
         public enum ActorState
@@ -258,6 +310,37 @@ namespace TheGame
             Hit,
             Dying,
             Dead,
+        }
+
+        public struct AttackInfo
+        {
+            private float distance;
+            public float Distance
+            {
+                get { return distance; }
+                set { distance = value; }
+            }
+
+            private Vector2 rotation;
+            public Vector2 Rotation
+            {
+                get { return rotation; }
+                set { rotation = value; }
+            }
+
+            private Vector2 textureCoordinates;
+            public Vector2 TextureCoordinates
+            {
+                get { return textureCoordinates; }
+                set { textureCoordinates = value; }
+            }
+
+            private Vector2 scale;
+            public Vector2 Scale
+            {
+                get { return scale; }
+                set { scale = value; }
+            }
         }
 
         #region IAudioEmitter Members
