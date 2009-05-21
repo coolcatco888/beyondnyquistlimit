@@ -113,6 +113,7 @@ namespace TheGame
 
             ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
             camera.ActorsToFollow.AddRange(playerList);
+            camera.ActorsToFollow.AddRange(monsterList);
 
             (new FrameRateCounterText2D(this, Vector2.Zero, Color.White, GameEngine.Content.Load<SpriteFont>("GUI\\menufont"), 1.0f)).Initialize(); 
 
