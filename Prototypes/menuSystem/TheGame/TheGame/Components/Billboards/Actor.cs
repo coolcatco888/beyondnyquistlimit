@@ -170,10 +170,10 @@ namespace TheGame
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
             // Get number of times the sprite frame has been incremented.
-            int updates = currentSequence.UpdateCount;
+            //int updates = currentSequence.UpdateCount;
 
-            while (updates-- > 0)
-            {
+            //while (updates-- > 0)
+            //{
                 oldPosition = this.Position;
 
                 //TODO-FIXME: Temp fix very bad!  This should only change the origin of the player but not monsters. 
@@ -191,7 +191,7 @@ namespace TheGame
                 if (heightInfo.IsOnHeightMap(position) == false)
                 {
                     position = oldPosition;
-                    break;
+                    //break;
                 }
 
                 if (orientation == Orientation.North || orientation == Orientation.South ||
@@ -204,7 +204,7 @@ namespace TheGame
                     CheckCardinalDiagonalMovementCollision(heightInfo, oldPosition);
                     CheckCardinalMovementCollision(heightInfo, oldPosition);
                 }
-            }
+            //}
         }
 
         #endregion  // Update

@@ -8,7 +8,7 @@ namespace TheGame.Components.Cameras
 {
     class ActionCamera : Camera
     {
-        private float minDistance, minHeight, maxHeight;
+        private float minDistance, maxDistance, minHeight, maxHeight;
 
         private BillboardList actorsToFollow;
 
@@ -58,7 +58,7 @@ namespace TheGame.Components.Cameras
         /// </summary>
         /// <param name="parent">Screen the camera is contained in</param>
         public ActionCamera(GameScreen parent)
-            : this(parent, 4.5f, 10.0f, 12.0f, new BillboardList())
+            : this(parent, 4.5f, 12.0f, 10.0f, 12.0f, new BillboardList())
         {
         }
 
@@ -70,10 +70,11 @@ namespace TheGame.Components.Cameras
         /// <param name="minHeight"></param>
         /// <param name="maxHeight"></param>
         /// <param name="actorsToFollow"></param>
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, BillboardList actorsToFollow)
+        public ActionCamera(GameScreen parent, float minDistance, float maxDistance, float minHeight, float maxHeight, BillboardList actorsToFollow)
             : base(parent)
         {
             this.minDistance = minDistance;
+            this.maxDistance = maxDistance;
             this.minHeight = minHeight;
             this.maxHeight = maxHeight;
             this.actorsToFollow = actorsToFollow;
@@ -104,13 +105,13 @@ namespace TheGame.Components.Cameras
                 //Change the lookAtPosition to be the average position of all of the actors
                 if (count > 0)
                 {
-                    lookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
-                    //newLookAt -= lookAt;
-                    //float length = newLookAt.Length();
-                    //float velocity = length * distancePerUpdate;
-                    //newLookAt.Normalize();
-                    //newLookAt *= velocity * gameTime.ElapsedGameTime.Milliseconds;
-                    //lookAt += newLookAt;
+                    Vector3 newLookAt = new Vector3(sumX / count, sumY / count, sumZ / count);
+                    newLookAt -= lookAt;
+                    float length = newLookAt.Length();
+                    float velocity = length * distancePerUpdate;
+                    newLookAt.Normalize();
+                    newLookAt *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+                    lookAt += newLookAt;
                 }
                 distOfFurthestActorFromLookAt = CalculateCameraZoomDistance(distOfFurthestActorFromLookAt);
                 ChangeCameraPosition(distOfFurthestActorFromLookAt, gameTime);
@@ -163,19 +164,19 @@ namespace TheGame.Components.Cameras
             newDirection.Normalize();
 
             //Scale direction
-            newDirection = newDirection * distOfFurthestActorFromLookAt;
+            newDirection = newDirection * (distOfFurthestActorFromLookAt < maxDistance? distOfFurthestActorFromLookAt : maxDistance);
             newDirection = newDirection + (newDirection * minDistance);
             newDirection.Y = newDirection.Y > minHeight ? newDirection.Y < maxHeight ? newDirection.Y : maxHeight : minHeight;
 
             //Set new position
-            position = lookAt + newDirection;
+            Vector3 newPosition = lookAt + newDirection;
 
-            //newPosition -= position;
-            //float length = newPosition.Length();
-            //float velocity = length * distancePerUpdate;
-            //newPosition.Normalize();
-            //newPosition *= velocity * gameTime.ElapsedGameTime.Milliseconds;
-            //position += newPosition;
+            newPosition -= position;
+            float length = newPosition.Length();
+            float velocity = length * distancePerUpdate;
+            newPosition.Normalize();
+            newPosition *= velocity * gameTime.ElapsedGameTime.Milliseconds;
+            position += newPosition;
 
 
             //Push camera a bit to the side if the player is directly under the camera
