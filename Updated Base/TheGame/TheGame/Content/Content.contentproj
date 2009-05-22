@@ -212,11 +212,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlayerBoundingShapes.xml">
-      <Name>PlayerBoundingShapes</Name>
-      <Importer>XmlImporter</Importer>
-      <Processor>PassThroughProcessor</Processor>
-    </Compile>
     <Compile Include="PlayerSpriteSequences.xml">
       <Name>PlayerSpriteSequences</Name>
       <Importer>XmlImporter</Importer>
@@ -232,8 +227,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
-    <Compile Include="PoringXml.xml">
-      <Name>PoringXml</Name>
+    <Compile Include="PoringSpriteInfo.xml">
+      <Name>PoringSpriteInfo</Name>
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
     </Compile>
@@ -248,6 +243,27 @@
       <Name>WizardSprite</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PoringBoundingShapes.xml">
+      <Name>PoringBoundingShapes</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PoringInfo.xml">
+      <Name>PoringInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PlayerBoundingShapes.xml">
+      <Name>PlayerBoundingShapes</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v3.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />

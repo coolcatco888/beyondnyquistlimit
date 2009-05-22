@@ -13,7 +13,7 @@ using TheGame.Components.Cameras;
 
 namespace TheGame
 {
-    public class Actor : Billboard, IAudioEmitter
+    public class Actor : Billboard
     {
         #region Actor State Enum
 
@@ -23,8 +23,8 @@ namespace TheGame
             Walking,
             Running,
             Attacking,
+            Chanting,
             Casting,
-            Defending,
             Hit,
             Dying,
             Dead,
@@ -47,12 +47,17 @@ namespace TheGame
         protected SpriteSequence currentSequence;
 
         // The current velocity of the actor (speed and direction)
-        protected Vector3 velocity = Vector3.Zero;
+        protected Vector3 direction = Vector3.Zero;
+        protected float speed = 0.0f;
 
         // Information about the sprite sheet the actor is using
         protected SpriteInfo spriteInfo;
 
         protected Monster target;
+
+        protected ActorInfo actorStats = new ActorInfo();
+
+        //protected Vector3 direction = Vector3.Forward;
 
         #endregion  // Fields
 
@@ -86,6 +91,18 @@ namespace TheGame
         {
             get { return orientation; }
             set { orientation = value; }
+        }
+
+        public float Speed
+        {
+            get { return speed; }
+            set { speed = value; }
+        }
+
+        public Vector3 Direction
+        {
+            get { return direction; }
+            set { direction = value; }
         }
 
         #endregion  // Accessors
@@ -136,42 +153,21 @@ namespace TheGame
         {
             // Obtain title from current state and orientation
             UpdateSpriteSequence(gameTime);
-            // Update position of the sprite. Checks the terrain height and any Monsters/Billboard bounding boxes
-            // To determine if it can go to that position.
-            UpdatePosition();
-
-            // Update the bounding if this object is not dying or dead
-            if (state != ActorState.Dying && state != ActorState.Dead)
-            {
-                UpdateBounding();
-            }
 
             // Updates the sprite sequence vertices so that it can grab the next sprite in the animation
             UpdateVertices(currentSequence, spriteInfo);
 
-
-            //TODO: why isnt this in monster and player respectivly?
-            //Note the is statement making your type enum useless (sorry)
-            if (state == ActorState.Dead)
-            {
-                if (this is Monster)
-                {
-                    Component3DList monsters = ((Level)Parent).MonsterList;
-                    monsters.Remove((Monster)this);
-                    this.Dispose();
-                }
-                else if (this is Player)
-                {
-                    Component3DList players = ((Level)Parent).PlayerList;
-                    players.Remove((Player)this);
-                    this.Dispose();
-                }
-            }
+            // Update the bounding shapes
+            UpdateBounding();
 
             base.Update(gameTime);
         }
 
-        private void UpdatePosition()
+        #endregion  // Update
+
+        #region Update Methods
+
+        protected void UpdatePosition(GameTime gameTime)
         {
             // Obtain height map and store position before moving.
             HeightMapInfo heightInfo = ((Level)Parent).TerrainHeightMap;
@@ -179,44 +175,41 @@ namespace TheGame
 
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
-            // Get number of times the sprite frame has been incremented.
-            int updates = currentSequence.UpdateCount;
-
-            while (updates-- > 0)
+            oldPosition = this.Position;
+            if (this is Player)
             {
-                oldPosition = this.Position;
-
                 Vector3 relCameraDirection = camera.Position - camera.LookAt;
 
                 float angle = ((float)Math.Atan2(-relCameraDirection.X, relCameraDirection.Z));
 
-                velocity = Vector3.Transform(velocity, Matrix.CreateRotationY(angle));
+                direction = Vector3.Transform(direction, Matrix.CreateRotationY(angle));
+            }
 
-                position.X += velocity.X * currentSequence.Velocity;
-                position.Z -= velocity.Z * currentSequence.Velocity;
+            if (direction != Vector3.Zero && state != ActorState.Attacking)
+            {
+                direction = Vector3.Normalize(direction);
+            }
 
-                if (heightInfo.IsOnHeightMap(position) == false)
-                {
-                    position = oldPosition;
-                    break;
-                }
+            position.X += direction.X * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
+            position.Z -= direction.Z * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
 
-                if (orientation == Orientation.North || orientation == Orientation.South ||
-                    orientation == Orientation.East || orientation == Orientation.West)
-                {
-                    CheckCardinalMovementCollision(heightInfo, oldPosition);
-                }
-                else
-                {
-                    CheckCardinalDiagonalMovementCollision(heightInfo, oldPosition);
-                    CheckCardinalMovementCollision(heightInfo, oldPosition);
-                }
+            if (heightInfo.IsOnHeightMap(position) == false)
+            {
+                position = oldPosition;
+                //break;
+            }
+
+            if (orientation == Orientation.North || orientation == Orientation.South ||
+                orientation == Orientation.East || orientation == Orientation.West)
+            {
+                CheckCardinalMovementCollision(heightInfo, oldPosition);
+            }
+            else
+            {
+                CheckCardinalDiagonalMovementCollision(heightInfo, oldPosition);
+                CheckCardinalMovementCollision(heightInfo, oldPosition);
             }
         }
-
-        #endregion  // Update
-
-        #region Update Methods
 
         private void UpdateSpriteSequence(GameTime gameTime)
         {
@@ -252,21 +245,24 @@ namespace TheGame
         /// check for collisions with Monster objects
         /// </summary>
         /// <param name="oldPosition">The position that the object was at previously</param>
-        private void CheckBillboardBoundingBoxes(Vector3 oldPosition)
+        protected virtual void CheckBillboardBoundingBoxes(Vector3 oldPosition)
         {
             boundingShapesSelf[state.ToString() + orientation.ToString()].Update(position);
 
-            if (this.Type == ObjectType.Monster)
+            // Check for collision against each players bounding shape
+            foreach (Player p in ((Level)Parent).PlayerList)
             {
-                foreach (Player p in ((Level)Parent).PlayerList)
+                if (this != p)
                 {
                     if (IsHit(p.primitiveShape))
                     {
                         position = oldPosition;
+                        primitiveShape.ShapeColor = Color.Red;
                     }
                 }
             }
 
+            // Check for collision against each monsters bounding shape
             foreach (Monster m in ((Level)Parent).MonsterList)
             {
                 if (this != m)
@@ -274,6 +270,7 @@ namespace TheGame
                     if (IsHit(m.PrimitiveShape))
                     {
                         position = oldPosition;
+                        primitiveShape.ShapeColor = Color.Red;
                     }
                 }
             }
@@ -367,24 +364,5 @@ namespace TheGame
         }
 
         #endregion // ICollidable Members
-
-        #region IAudioEmitter Members
-
-        public Vector3 Forward
-        {
-            get { return Vector3.Forward; }
-        }
-
-        public Vector3 Up
-        {
-            get { return Vector3.Up; }
-        }
-
-        public Vector3 Velocity
-        {
-            get { return velocity; }
-        }
-
-        #endregion
     }
 }

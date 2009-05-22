@@ -6,10 +6,10 @@
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\JimsCode\Updated Base\TheGame\Library\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\JimsCode\Updated Base\TheGame\Library\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\JimsCode\Updated Base\TheGame\Library\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\JimsCode\Updated Base\TheGame\Library\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\jimwtf\Updated Base\TheGame\Library\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\jimwtf\Updated Base\TheGame\Library\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\jimwtf\Updated Base\TheGame\Library\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\jimwtf\Updated Base\TheGame\Library\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

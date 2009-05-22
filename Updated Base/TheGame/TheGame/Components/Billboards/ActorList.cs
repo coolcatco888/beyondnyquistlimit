@@ -14,16 +14,16 @@ using Library;
 
 namespace TheGame
 {
-    public class Component3DList : List<Component3D>
+    public class ActorList : List<Actor>
     {
-        public Component3D GetNearest(Vector3 comparePosition)
+        public Actor GetNearest(Vector3 comparePosition)
         {
             this.Sort(new ProximityComparer(comparePosition));
 
             return this[0];
         }
 
-        public List<Component3D> GetNearest(int count, Vector3 comparePosition)
+        public List<Actor> GetNearest(int count, Vector3 comparePosition)
         {
             this.Sort(new ProximityComparer(comparePosition));
 
@@ -37,14 +37,14 @@ namespace TheGame
             }
         }
 
-        public List<Component3D> GetAll(Vector3 comparePosition)
+        public List<Actor> GetAll(Vector3 comparePosition)
         {
             this.Sort(new ProximityComparer(comparePosition));
 
             return this;
         }
 
-        public List<Component3D> GetAllWithinRange(Vector3 sourcePosition, float radius)
+        public List<Actor> GetAllWithinRange(Vector3 sourcePosition, float radius)
         {
             this.Sort(new ProximityComparer(sourcePosition));
 
@@ -65,17 +65,17 @@ namespace TheGame
             return this.GetRange(0, index);
         }
 
-        public List<Component3D> GetAllWithinCone(Vector3 sourcePosition, Vector3 direction, float distance, float maxAngle)
+        public List<Actor> GetAllWithinCone(Vector3 sourcePosition, Vector3 direction, float distance, float maxAngle)
         {
             this.Sort(new ProximityComparer(sourcePosition));
 
-            List<Component3D> withinRange = this.GetAllWithinRange(sourcePosition, distance);
+            List<Actor> withinRange = this.GetAllWithinRange(sourcePosition, distance);
 
-            foreach (Billboard component3D in withinRange)
+            foreach (Actor actor in withinRange)
             {
-                if (Vector3.Dot(direction, component3D.Position) >= maxAngle)
+                if (Vector3.Dot(direction, actor.Position) >= maxAngle)
                 {
-                    withinRange.Remove(component3D);
+                    withinRange.Remove(actor);
                 }
             }
 
@@ -84,7 +84,7 @@ namespace TheGame
 
         #region IComparer classes
 
-        protected class ProximityComparer : IComparer<Component3D>
+        protected class ProximityComparer : IComparer<Actor>
         {
             private Vector3 comparePoint;
 
@@ -93,13 +93,13 @@ namespace TheGame
                 this.comparePoint = comparePosition;
             }
 
-            #region IComparer<Component3D> Members
+            #region IComparer<Actor> Members
 
-            public int Compare(Component3D x, Component3D y)
+            public int Compare(Actor x, Actor y)
             {
                 float xDistance = Vector3.Distance(comparePoint, x.Position);
                 float yDistance = Vector3.Distance(comparePoint, y.Position);
-                
+
                 return xDistance.CompareTo(yDistance);
             }
 

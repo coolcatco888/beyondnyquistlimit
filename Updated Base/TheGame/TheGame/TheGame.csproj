@@ -94,7 +94,7 @@
     <Compile Include="Components\Abstract Base\CollidableComponent.cs" />
     <Compile Include="Components\Abstract Base\Component3D.cs" />
     <Compile Include="Components\Billboards\Actor.cs" />
-    <Compile Include="Components\Billboards\Component3DList.cs" />
+    <Compile Include="Components\Billboards\ActorList.cs" />
     <Compile Include="Components\Billboards\Monster.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Cameras\ActionCamera.cs" />
