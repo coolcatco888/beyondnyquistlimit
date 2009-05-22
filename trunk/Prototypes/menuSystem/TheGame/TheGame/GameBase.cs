@@ -50,6 +50,7 @@ namespace TheGame
             GameEngine.BaseScreen.AlwaysUpdate = true;
 
             new MainMenuScreen("main");
+            //new CharacterSelectScreen("charselect");
 
             base.Initialize();
         }

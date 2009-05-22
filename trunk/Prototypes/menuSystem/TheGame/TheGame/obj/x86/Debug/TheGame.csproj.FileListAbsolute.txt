@@ -169,3 +169,7 @@ D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\ResolveAssemb
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.exe
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb
