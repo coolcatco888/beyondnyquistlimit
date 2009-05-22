@@ -95,6 +95,7 @@
     <Compile Include="Components\Billboards\Monster.cs" />
     <Compile Include="Components\Billboards\Player.cs" />
     <Compile Include="Components\Cameras\ActionCamera.cs" />
+    <Compile Include="Components\GUI\BorderedPanel.cs" />
     <Compile Include="Components\GUI\CircularGauge.cs" />
     <Compile Include="Components\GUI\FrameRateCounterText2D.cs" />
     <Compile Include="Components\Input\Direction.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Components\Container3D.cs" />
     <Compile Include="Components\Spells\FireTornado.cs" />
     <Compile Include="ControlHub.cs" />
+    <Compile Include="Game Screens\CharacterSelectScreen.cs" />
     <Compile Include="Game Screens\HUDScreen.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\MainMenuScreen.cs" />
