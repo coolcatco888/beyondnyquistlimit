@@ -14,7 +14,7 @@ namespace TheGame.Components.Cameras
 
         private const float distancePerUpdate = 0.0025f, zoomConstant = 0.4f;
 
-        private float maxAngle = 0.0f;
+        private float initAngle = 0.0f;
 
         /// <summary>
         /// Closest Distance the camera can be to the actors
@@ -130,25 +130,33 @@ namespace TheGame.Components.Cameras
             {
                 if (actor.IsDisposed)
                     continue;
-                //Vector3 lineOfSight = position - lookAt;
-                //lineOfSight.Normalize();
-                //Vector3 line = new Vector3(position.X, 0.0f, position.Z) - lookAt;
-                //line.Normalize();
 
-                //float cameraUpAndDownAngle = (float)Math.Acos(Vector3.Dot(lineOfSight, line));
-
-                //if (cameraUpAndDownAngle > maxAngle)
-                //    maxAngle = cameraUpAndDownAngle;
-
-                //float angleRatio = cameraUpAndDownAngle / maxAngle;
-                ////angleRatio = angleRatio < minAngle ? minAngle : angleRatio;
-
-                //float distanceCameraToLookAt = (position - lookAt).Length();
-                //float distanceFromCamera = (actor.Position - position).Length();
+                float distanceFromCamera = (actor.Position - position).Length();
                 float distanceFromLookAt = (actor.Position - lookAt).Length();
-                //float distanceRatio = distanceCameraToLookAt / distanceFromCamera;
-                //distanceRatio = distanceRatio > 1.0f ? 1.0f : distanceRatio;
+
+                //Here we determine percentage of the distance from look at * the zoomConstant we want to add back
+                float denominator = distanceFromCamera > distanceFromLookAt ? distanceFromCamera : distanceFromLookAt;
+                float additiveRatio = Math.Abs(distanceFromCamera - distanceFromLookAt) / denominator;
+                additiveRatio += 0.5f;
+
+                //Here we determine percentage of the distance from look at * the zoomConstant we want to subtract
+                Vector3 lineOfSight = position - lookAt;
+                lineOfSight.Normalize();
+                Vector3 line = new Vector3(position.X, 0.0f, position.Z) - lookAt;
+                line.Normalize();
+                float cameraUpAndDownAngle = (float)Math.Acos(Vector3.Dot(lineOfSight, line));
+
+                if (initAngle == 0.0f)
+                    initAngle = cameraUpAndDownAngle;
+
+                float subtractionRatio = Math.Abs(initAngle - cameraUpAndDownAngle);
+
+                //Calculate the current distance and the distance we want to subtract
                 float currentDist = distanceFromLookAt * zoomConstant;
+                float subtractValue = currentDist * subtractionRatio;
+                
+                //Subtract part of the distance and add back part of the distance we subtracted
+                currentDist = currentDist - subtractValue + subtractValue * additiveRatio;
                 if (currentDist > distOfFurthestActorFromLookAt)
                 {
                     distOfFurthestActorFromLookAt = currentDist;
