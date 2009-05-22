@@ -11,7 +11,7 @@
       <Time>2009-05-18T19:09:00.3125-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-20T14:20:23.765625-07:00</Value>
+        <Value>2009-05-21T22:51:18.484375-07:00</Value>
       </Dependency>
       <Request>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
@@ -204,6 +204,42 @@
       <Options>None</Options>
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb</Output>
       <Time>2009-05-18T19:09:01.171875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel1.PNG</Source>
+      <Name>GUI\charsel1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb</Output>
+      <Time>2009-05-21T22:38:18.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel2.PNG</Source>
+      <Name>GUI\charsel2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb</Output>
+      <Time>2009-05-21T22:38:18.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel3.PNG</Source>
+      <Name>GUI\charsel3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb</Output>
+      <Time>2009-05-21T22:38:18.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel4.PNG</Source>
+      <Name>GUI\charsel4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb</Output>
+      <Time>2009-05-21T22:38:18.703125-07:00</Time>
     </Item>
     <Item>
       <Source>BasicPoint.fx</Source>

@@ -19,30 +19,62 @@ namespace TheGame.Game_Screens
 
         private SpriteFont font;
 
-        private float fontScale = 5.0f;
+        private float fontScale = 2.0f;
+
+        private CharacterChoice wizardChoice, knightChoice, priestChoice, rangerChoice;
+
+        private List<CharacterChooser> playerChoosers = new List<CharacterChooser>();
+
+        private List<ImageComponent2D> characterSelectors = new List<ImageComponent2D>();
 
         public CharacterSelectScreen(string name)
             : base(name)
         {
+
+            Texture2D gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
+            Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width, 
+                (float)GameEngine.Graphics.Viewport.Height / (float)gradient.Height);
+
+            (new ImageComponent2D(this, Vector2.Zero, gradient, Color.CornflowerBlue, scale)).Initialize();
+
             wizardFace = GameEngine.Content.Load<Texture2D>("GUI\\itemsm");
             knightFace = wizardFace;
             priestFace = wizardFace;
             rangerFace = wizardFace;
 
             font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
+            (new TextComponent2D(this, new Vector2(200, 30), "Choose Your Warrior", Color.White, font)
+                {
+                    Scale = fontScale + 1.0f
+                }).Initialize();
+            (new TextComponent2D(this, new Vector2(250, 500), "Push Start to Play", Color.White, font)
+            {
+                Scale = fontScale
+            }).Initialize();
+            LoadCharacterSelectorImages();
             SetupCharacterChoices();
             SetupCharacterChoosers();
         }
 
+        public void LoadCharacterSelectorImages()
+        {
+            for (int i = 1; i < 5; i++)
+            {
+                ImageComponent2D selector = new ImageComponent2D(this, Vector2.Zero,
+                    GameEngine.Content.Load<Texture2D>("GUI\\charsel" + (5 - i)));
+                characterSelectors.Add(selector);
+            }
+        }
+
         public void SetupCharacterChoices()
         {
-            PanelComponent2D wizard = new PanelComponent2D(this, new Vector2(100, 100));
-            PanelComponent2D knight = new PanelComponent2D(this, new Vector2(100, 300));
-            PanelComponent2D priest = new PanelComponent2D(this, new Vector2(200, 100));
-            PanelComponent2D ranger = new PanelComponent2D(this, new Vector2(200, 300));
+            PanelComponent2D wizard = new PanelComponent2D(this, new Vector2(150, 100));
+            PanelComponent2D knight = new PanelComponent2D(this, new Vector2(450, 100));
+            PanelComponent2D priest = new PanelComponent2D(this, new Vector2(150, 300));
+            PanelComponent2D ranger = new PanelComponent2D(this, new Vector2(450, 300));
 
-            Vector2 position = new Vector2(125, 100);
-            Vector2 fontPosition = new Vector2(125, 200);
+            Vector2 position = new Vector2(75, 50);
+            Vector2 fontPosition = new Vector2(50, 100);
 
             wizard.PanelItems.Add(new ImageComponent2D(this, position, wizardFace));
             wizard.PanelItems.Add(new TextComponent2D(this, fontPosition, "Wizard", Color.White, font)
@@ -68,35 +100,81 @@ namespace TheGame.Game_Screens
                 Scale = fontScale,
             });
 
+            wizard.Initialize();
+            knight.Initialize();
+            priest.Initialize();
+            ranger.Initialize();
 
-            CharacterChoice wizardChoice = new CharacterChoice()
+            wizardChoice = new CharacterChoice()
             {
                 panel = wizard,
                 characterName = "Wizard",
             };
 
-            CharacterChoice knightChoice = new CharacterChoice()
+            knightChoice = new CharacterChoice()
             {
                 panel = knight,
                 characterName = "Knight",
             };
 
-            CharacterChoice pirestChoice = new CharacterChoice()
+            priestChoice = new CharacterChoice()
             {
                 panel = priest,
                 characterName = "Priest",
             };
 
-            CharacterChoice rangerChoice = new CharacterChoice()
+            rangerChoice = new CharacterChoice()
             {
                 panel = ranger,
                 characterName = "Ranger",
             };
+
+            wizardChoice.right = knightChoice;
+            wizardChoice.down = priestChoice;
+
+            knightChoice.left = wizardChoice;
+            knightChoice.down = rangerChoice;
+
+            priestChoice.up = wizardChoice;
+            priestChoice.right = rangerChoice;
+
+            rangerChoice.left = priestChoice;
+            rangerChoice.up = knightChoice;
+
+            choices.Add(wizardChoice);
+            choices.Add(knightChoice);
+            choices.Add(priestChoice);
+            choices.Add(rangerChoice);
+
         }
 
         public void SetupCharacterChoosers()
         {
+           
+            for(int i = 0; i < 4; i++)
+            {
+                if (inputHub[(PlayerIndex)i].IsConnected)
+                {
+                    CharacterChooser chooser = new CharacterChooser();
+                    chooser.gamepad = inputHub[(PlayerIndex)i];
+                    chooser.currentCharacter = choices.ElementAt(i);
+                    ImageComponent2D selector = characterSelectors.ElementAt(characterSelectors.Count - 1 - i);
+                    selector.Position = chooser.currentCharacter.panel.Position;
+                    selector.Initialize();
+                    chooser.selector = selector;
+                    playerChoosers.Add(chooser);
+                }
+                
+            }
+        }
 
+        public override void Update(GameTime gameTime)
+        {
+            foreach (CharacterChooser chooser in playerChoosers)
+            {
+                chooser.HandleInput();
+            }
+            base.Update(gameTime);
         }
 
 
@@ -130,6 +208,8 @@ namespace TheGame.Game_Screens
 
         public CharacterChoice currentCharacter;
 
+        public ImageComponent2D selector;
+
         public bool selected = false;
 
         public void HandleInput()
@@ -156,20 +236,39 @@ namespace TheGame.Game_Screens
                 {
                     currentCharacter = currentCharacter.right;
                 }
-                else if (gamepad.WasButtonPressed(Buttons.A) 
+                else if (gamepad.WasButtonPressed(Buttons.A)
                     && !currentCharacter.selected)
                 {
+                    TintOrUnTintItems(currentCharacter.panel.PanelItems, true);
                     currentCharacter.selected = true;
                     selected = true;
                 }
-                else if (gamepad.WasButtonPressed(Buttons.B) 
+                selector.Position = currentCharacter.panel.Position;
+            }
+            else if (gamepad != null && gamepad.Enabled && currentCharacter != null && gamepad.WasButtonPressed(Buttons.B)
                     && currentCharacter.selected && selected)
-                {
-                    currentCharacter.selected = false;
-                    selected = false;
-                }
+            {
+                TintOrUnTintItems(currentCharacter.panel.PanelItems, false);
+                currentCharacter.selected = false;
+                selected = false;
             }
 
+        }
+
+        private void TintOrUnTintItems(PanelComponents items, bool tint)
+        {
+            float alpha = tint ? 0.5f : 1.0f;
+            foreach (DisplayComponent2D component in items)
+            {
+                if (component is ImageComponent2D)
+                {
+                    ((ImageComponent2D)component).Tint = new Color(((ImageComponent2D)component).Tint, alpha);
+                }
+                else if (component is TextComponent2D)
+                {
+                    ((TextComponent2D)component).Color = new Color(((TextComponent2D)component).Color, alpha);
+                }
+            }
         }
 
     }
