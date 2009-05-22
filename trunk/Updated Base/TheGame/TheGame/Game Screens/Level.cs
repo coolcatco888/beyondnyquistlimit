@@ -49,14 +49,14 @@ namespace TheGame
             set { levelMap = value; }
         }
 
-        private Component3DList playerList;
-        public Component3DList PlayerList
+        private ActorList playerList;
+        public ActorList PlayerList
         {
             get { return playerList; }
         }
 
-        private Component3DList monsterList;
-        public Component3DList MonsterList
+        private ActorList monsterList;
+        public ActorList MonsterList
         {
             get { return monsterList; }
         }
@@ -75,8 +75,8 @@ namespace TheGame
             : base(name)
         {
             this.terrainFileName = terrainFileName;
-            playerList = new Component3DList();
-            monsterList = new Component3DList();
+            playerList = new ActorList();
+            monsterList = new ActorList();
         }
 
         public override void Initialize()
@@ -85,15 +85,15 @@ namespace TheGame
             levelMap.Initialize();
             terrainHeightMap = levelMap.HeightMapInfo;
             
-
-            
-
             Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
-            Player player = new Player(this, playerSpriteInfo, PlayerIndex.One, "Wizard");
+            Player player = new Player(this, playerSpriteInfo, PlayerIndex.One, "Wizard", new Vector3(1.0f, 2.0f, 1.0f));
             player.Initialize();
             playerList.Add(player);
 
-            
+            Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
+            Monster poring = new Monster(this, poringSpriteInfo, new Vector3(4.0f, 0.0f, 0.0f), "Poring");
+            poring.Initialize();
+            monsterList.Add(poring);
 
             base.Initialize();
         }

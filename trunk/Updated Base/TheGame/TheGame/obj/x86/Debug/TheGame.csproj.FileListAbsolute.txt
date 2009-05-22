@@ -118,7 +118,6 @@ D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSprite.x
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerBoundingShapes.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb
-D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringXml.xnb
 D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb
 D:\work\JimsCode\Updated Base\TheGame\TheGame\bin\x86\Debug\Components\GUI\MenuPanels\mainpanel.xml
 D:\work\JimsCode\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb
@@ -169,3 +168,6 @@ D:\work\JimsCode\Updated Base\TheGame\TheGame\obj\x86\Debug\ResolveAssemblyRefer
 D:\work\JimsCode\Updated Base\TheGame\TheGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 D:\work\JimsCode\Updated Base\TheGame\TheGame\obj\x86\Debug\TheGame.exe
 D:\work\JimsCode\Updated Base\TheGame\TheGame\obj\x86\Debug\TheGame.pdb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringBoundingShapes.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteInfo.xnb
+D:\Work\jimwtf\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringInfo.xnb

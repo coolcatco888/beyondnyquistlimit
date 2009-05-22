@@ -10,36 +10,28 @@ namespace TheGame
 {
     public class Monster : Actor
     {
-        protected int maxHealth;
-        public int MaxHealth
+        #region Fields
+
+        protected MonsterInfo monsterStats;
+        public MonsterInfo MonsterStats
         {
-            get { return maxHealth; }
-            set { maxHealth = value; }
+            get { return monsterStats; }
+            set { monsterStats = value; }
         }
 
-        protected int currentHealth;
-        public int CurrentHealth
-        {
-            get { return currentHealth; }
-            set { currentHealth = value; }
-        }
+        public bool hasBeenHit = false;
+        public string monsterName;
 
-        private bool hasBeenHit;
-        public bool HasBeenHit
-        {
-            get { return hasBeenHit; }
-            set { hasBeenHit = value; }
-        }
+        #endregion // Fields
 
         #region Constructor
 
-        public Monster(GameScreen parent, SpriteInfo spriteInfo)
-            : base(parent, spriteInfo, Vector3.UnitY)
+        public Monster(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, string monsterName)
+            : base(parent, spriteInfo, position)
         {
             behaviors = new Dictionary<ObjectType, Behaviors>();
             type = ObjectType.Monster;
-            maxHealth = 20;
-            currentHealth = maxHealth;
+            this.monsterName = monsterName;
         }
 
         #endregion // Constructor
@@ -48,6 +40,8 @@ namespace TheGame
 
         public override void Initialize()
         {
+            InitializeMonsterStats();
+
             // Initalize AI behaviors
             InitializeBehaviours();
 
@@ -65,28 +59,14 @@ namespace TheGame
         public override void Update(Microsoft.Xna.Framework.GameTime gameTime)
         {
             previousState = state;
-            
+
+            UpdatePosition(gameTime);
+
             UpdateAI(gameTime);
-
-            if (currentSequence.Title == "Hit" && currentSequence.IsComplete)
-            {
-                hasBeenHit = false;
-            }
-
-            base.Update(gameTime);
 
             HandleStates();
 
-            if (currentHealth <= 0)
-            {
-                if (state != ActorState.Dying)
-                    state = ActorState.Dying;
-                else
-                {
-                    if (currentSequence.IsComplete == true)
-                        state = ActorState.Dead;
-                }
-            }
+            base.Update(gameTime);
         }
 
         #endregion // Update
@@ -104,6 +84,13 @@ namespace TheGame
 
         #region Initialization Methods
 
+        private void InitializeMonsterStats()
+        {
+            string monsterInfo = monsterName + "Info";
+            monsterStats = GameEngine.Content.Load<MonsterInfo>(@monsterInfo);
+            this.actorStats.PopulateFields(monsterStats);
+        }
+
         private void InitializeBehaviours()
         {
             Behavior wander = new WanderBehavior(Parent, this);
@@ -115,7 +102,9 @@ namespace TheGame
 
         private void InitializeSpriteSequences()
         {
-            List<SpriteSequenceInfo> sequenceInfo = GameEngine.Content.Load<List<SpriteSequenceInfo>>(@"PoringSpriteSequences");
+            string monsterSprites = monsterName + "SpriteSequences";
+
+            List<SpriteSequenceInfo> sequenceInfo = GameEngine.Content.Load<List<SpriteSequenceInfo>>(@monsterSprites);
             SpriteSequence sequence;
 
             foreach (SpriteSequenceInfo info in sequenceInfo)
@@ -124,12 +113,12 @@ namespace TheGame
 
                 if (!info.ChangeScale)
                 {
-                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity, 
+                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
                         info.NumBuffers);
                 }
                 else
                 {
-                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity, 
+                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
                         info.NumBuffers, info.ScaleX, info.ScaleY);
                 }
 
@@ -143,7 +132,7 @@ namespace TheGame
                 }
                 sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
             }
-            
+
             // default starting sequence
             currentSequence = sequences["IdleSouth"];
         }
@@ -154,7 +143,8 @@ namespace TheGame
         /// <param name="x">Y texture coordinate offset</param>
         private void InitializeBoundingShapes()
         {
-            List<BoundingShapeInfo> shapesInfo = GameEngine.Content.Load<List<BoundingShapeInfo>>(@"PlayerBoundingShapes");
+            string monsterBounds = monsterName + "BoundingShapes";
+            List<BoundingShapeInfo> shapesInfo = GameEngine.Content.Load<List<BoundingShapeInfo>>(@monsterBounds);
 
             foreach (BoundingShapeInfo info in shapesInfo)
             {
@@ -194,81 +184,54 @@ namespace TheGame
 
         #endregion // Initialization Methods
 
-        #region Update Methods
-
-        public void UpdateOrientation()
-        {
-            int num = GameEngine.Random.Next(8);
-
-            switch (num)
-            {
-                case 0:
-                    orientation = Orientation.South;
-                    velocity = new Vector3(0.0f, 0.0f, -1.0f);
-                    break;
-                case 1:
-                    orientation = Orientation.Southwest;
-                    velocity = Vector3.Normalize(new Vector3(-1.0f, 0.0f, -1.0f));
-                    break;
-                case 2:
-                    orientation = Orientation.West;
-                    velocity = new Vector3(-1.0f, 0.0f, 0.0f);
-                    break;
-                case 3:
-                    orientation = Orientation.Northwest;
-                    velocity = Vector3.Normalize(new Vector3(-1.0f, 0.0f, 1.0f));
-                    break;
-                case 4:
-                    orientation = Orientation.North;
-                    velocity = new Vector3(0.0f, 0.0f, 1.0f);
-                    break;
-                case 5:
-                    orientation = Orientation.Northeast;
-                    velocity = Vector3.Normalize(new Vector3(1.0f, 0.0f, 1.0f));
-                    break;
-                case 6:
-                    orientation = Orientation.East;
-                    velocity = new Vector3(1.0f, 0.0f, 0.0f);
-                    break;
-                case 7:
-                    orientation = Orientation.Southeast;
-                    velocity = Vector3.Normalize(new Vector3(1.0f, 0.0f, -1.0f));
-                    break;
-            }
-        }
+        #region Input Methods
 
         public void HandleStates()
         {
-            if (state != previousState)
+            switch (state)
             {
-                switch (state)
+                case ActorState.Hit:
+                    HitStateInput();
+                    break;
+                case ActorState.Dead:
+                    DeadStateInput();
+                    break;
+                case ActorState.Dying:
+                    DyingStateInput();
+                    break;
+            }
+        }
+
+        private void DeadStateInput()
+        {
+            foreach (Monster m in ((Level)Parent).MonsterList)
+            {
+                if (this.Equals((Monster)m))
                 {
-                    case ActorState.Hit:
-                        if(hasBeenHit == true)
-                        {
-                            currentSequence = sequences["Hit" + orientation.ToString()];
-                            primitiveShape.ShapeColor = Color.Red;
-                        }
-                        break;
-                    case ActorState.Dead:
-                        foreach (Monster m in ((Level)Parent).MonsterList)
-                        {
-                            if (this.Equals((Monster)m))
-                            {
-                                ((Level)Parent).MonsterList.Remove(this);
-                                this.Dispose();
-                                break;
-                            }
-                        }
-                        break;
-                    case ActorState.Dying:
-                        state = ActorState.Dead;
-                        currentSequence = sequences["Dying" + orientation.ToString()];
-                        
-                        break;
+                    ((Level)Parent).MonsterList.Remove(this);
+                    this.Dispose();
+                    break;
                 }
             }
         }
+
+        private void DyingStateInput()
+        {
+            speed = 0.0f;
+            if (currentSequence.IsComplete)
+                state = ActorState.Dead;
+        }
+
+        private void HitStateInput()
+        {
+            speed = 0.0f;
+            if (currentSequence.IsComplete)
+                state = ActorState.Idle;
+        }
+
+        #endregion // Input methods
+
+        #region Update Methods
 
         public void UpdateAI(GameTime gameTime)
         {
@@ -281,6 +244,20 @@ namespace TheGame
                     {
                         reaction.Reset();
                     }
+                }
+            }
+        }
+
+        protected override void CheckBillboardBoundingBoxes(Vector3 oldPosition)
+        {
+            boundingShapesSelf[state.ToString() + orientation.ToString()].Update(position);
+
+            // Check for collision against each players bounding shape
+            foreach (Player p in ((Level)Parent).PlayerList)
+            {
+                if (IsHit(p.PrimitiveShape))
+                {
+                    position = oldPosition;
                 }
             }
         }
@@ -307,19 +284,24 @@ namespace TheGame
 
         #endregion
 
+        #region Damage Helper Methods
+
         public void ApplyDamage(int value)
         {
-            currentHealth -= value;
+            actorStats.CurrentHealth -= value;
+            if (actorStats.CurrentHealth <= 0)
+                state = ActorState.Dying;
         }
 
         public void GetHit(int damage, Orientation o, float delta)
         {
-            hasBeenHit = true;
-            this.primitiveShape.ShapeColor = Color.Red;
             this.state = ActorState.Hit;
             this.orientation = Utility.GetOppositeOrientation(o);
             this.position = position + Utility.PositionChangeBasedOnOrientation(o, delta);
+            currentSequence = sequences["Hit" + orientation.ToString()];
             this.ApplyDamage(damage);
         }
+
+        #endregion // Damage Helper Methods
     }
 }

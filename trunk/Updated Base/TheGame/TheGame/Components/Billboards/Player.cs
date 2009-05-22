@@ -56,8 +56,8 @@ namespace TheGame
 
         #region Constructor
 
-        public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex, string className)
-            : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, new Vector3(1.0f, 2.0f, 1.0f))
+        public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex, string className, Vector3 scale)
+            : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, scale)
         {
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
@@ -99,26 +99,11 @@ namespace TheGame
         {
             previousState = state;
 
-            // update controller input
+            UpdatePosition(gameTime);
+
             HandleInput(gameTime);
-            DealDamage();
-
-            // TEMPORARY
-            if (currentSequence.Title == "Attacking" && (currentSequence.CurrentFrame.X == 4 || currentSequence.CurrentFrame.X == 16) && (wave == null || wave.IsComplete))
-            {
-                wave = new BillboardWave(this.Parent, waveInfo, position, Vector3.Normalize(velocity) / 10, 50, 12, 0, 0, 7, 1);
-                wave.Initialize();
-            }
-
-            if (castingAura.Visible == true)
-            {
-                castingAura.Position = new Vector3(position.X, 0.0f, position.Z);
-                castingAura.Update(gameTime);
-            }
 
             base.Update(gameTime);
-
-            HandleStates(gameTime);
         }
 
         #endregion
@@ -139,38 +124,84 @@ namespace TheGame
 
         #region Update Methods
 
-        private void DealDamage()
+        public void UpdateOrientation() // Do not touch ... complete
         {
-            if (currentSequence.Title == "Attacking" && ((currentSequence.CurrentFrame.X == 4
-                 || currentSequence.CurrentFrame.X == 12)) && target != null && !hasAttacked)
+            Orientation previousOrientation = orientation;
+            if (direction.Z > 0)
             {
-                target.GetHit(this.classInfo.BaseDamage, orientation, 0.5f);
-                this.hasAttacked = true;
+                if (direction.X == 0)
+                    orientation = Orientation.North;
+                if (direction.X > 0)
+                    orientation = Orientation.Northeast;
+                if (direction.X < 0)
+                    orientation = Orientation.Northwest;
             }
-
-            if (currentSequence.IsComplete)
-                hasAttacked = false;
-        }
-
-        // TESTING PURPOSES ONLY - need to verify/change/fix
-        // Checks for an attack
-        private void CheckForAttack(GameTime gameTime)
-        {
-            Monster t = null;
-
-            foreach (Monster m in ((Level)Parent).MonsterList)
+            else if (direction.Z < 0)
             {
-                if (IsHit(m.PrimitiveShape))
-                {
-                    t = m;
+                if (direction.X == 0)
+                    orientation = Orientation.South;
+                if (direction.X > 0)
+                    orientation = Orientation.Southeast;
+                if (direction.X < 0)
+                    orientation = Orientation.Southwest;
+            }
+            else if (direction.X > 0)
+            {
+                orientation = Orientation.East;
+            }
+            else if (direction.X < 0)
+            {
+                orientation = Orientation.West;
+            }
+            // Buffer orientation transitions.
+            switch (previousOrientation)
+            {
+                case Orientation.North:
+                    if ((orientation == Orientation.Northeast && direction.X < 0.1f) ||
+                        (orientation == Orientation.Northwest && direction.X > -0.1f))
+                        orientation = previousOrientation;
                     break;
-                }
+                case Orientation.Northeast:
+                    if ((orientation == Orientation.East && direction.X < 0.9f) ||
+                        (orientation == Orientation.North && direction.Z < 0.9f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.East:
+                    if ((orientation == Orientation.Southeast && direction.Z > -0.1f) ||
+                        (orientation == Orientation.Northeast && direction.Z < 0.1f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.Southeast:
+                    if ((orientation == Orientation.South && direction.Z > -0.9f) ||
+                        (orientation == Orientation.East && direction.X < 0.9f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.South:
+                    if ((orientation == Orientation.Southeast && direction.X < 0.1f) ||
+                        (orientation == Orientation.Southwest && direction.X > -0.1f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.Southwest:
+                    if ((orientation == Orientation.West && direction.X > -0.9f) ||
+                        (orientation == Orientation.South && direction.Z > -0.9f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.West:
+                    if ((orientation == Orientation.Southwest && direction.Z > -0.1f) ||
+                        (orientation == Orientation.Northwest && direction.Z < 0.1f))
+                        orientation = previousOrientation;
+                    break;
+                case Orientation.Northwest:
+                    if ((orientation == Orientation.North && direction.Z < 0.9f) ||
+                        (orientation == Orientation.West && direction.X > -0.9f))
+                        orientation = previousOrientation;
+                    break;
             }
-
-            target = t;
         }
-        // End Testing
 
+        #endregion // Update Methods
+
+        #region Input Methods
         /// <summary>
         /// Update the controller.  By that we mean update the 
         /// player's orientation based on controller input
@@ -181,150 +212,155 @@ namespace TheGame
             GamepadDevice gamepadDevice = ((InputHub)GameEngine.Services.GetService(typeof(InputHub)))[playerIndex];
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
 
-            // Update 360 degree velocity
-            Vector3 newVelocity = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
-            if (newVelocity != Vector3.Zero)
+            switch (previousState)
             {
-                velocity = Vector3.Normalize(newVelocity);
+                case ActorState.Idle:
+                    IdleStateInput(gamepadDevice);
+                    break;
+                case ActorState.Walking:
+                    WalkingStateInput(gamepadDevice);
+                    break;
+                case ActorState.Running:
+                    RunningStateInput(gamepadDevice);
+                    break;
+                case ActorState.Attacking:
+                    AttackingStateInput(gamepadDevice);
+                    break;
+                case ActorState.Chanting:
+                    ChantingStateInput(gamepadDevice);
+                    break;
+                case ActorState.Dead:
+                    ActorList players = ((Level)Parent).PlayerList;
+                    players.Remove((Player)this);
+                    this.Dispose();
+                    break;
             }
-            else
-            {
-                velocity = newVelocity;
-            }
+        }
 
-            // Update state of player
-            if (gamepadDevice.IsButtonDown(Buttons.RightTrigger) && state != ActorState.Attacking)
+        /// <summary>
+        /// Input state changes while in the chanting actor state
+        /// </summary>
+        private void ChantingStateInput(GamepadDevice gamepadDevice)
+        {
+            speed = 0.0f;
+            if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
                 state = ActorState.Casting;
+            }
+        }
 
-                if (!castingAura.Visible || castingAura.ScaleIncrement < 0)
+        /// <summary>
+        /// Input state changes while in the attacking actor state
+        /// </summary>
+        private void AttackingStateInput(GamepadDevice gamepadDevice)
+        {
+            speed = 0.0f;
+
+            if (currentSequence.CurrentFrame.X == 0)
+            {
+                foreach (Monster m in ((Level)Parent).MonsterList)
                 {
-                    castingAura.Visible = true;
-                    castingAura.InvertScaleIncrement();
-                    castingAura.Position = new Vector3(position.X, 0.0f, position.Z - 1.0f);
+                    if (IsHit(m.PrimitiveShape))
+                    {
+                        target = m;
+                    }
                 }
             }
-            // Attacks and starts the damage timer
-            else if (gamepadDevice.WasButtonPressed(Buttons.B) || keyboardDevice.WasKeyPressed(Keys.Space))
+
+            if (currentSequence.Title == "Attacking" && ((currentSequence.CurrentFrame.X == 4
+                 || currentSequence.CurrentFrame.X == 12)) && target != null && !hasAttacked)
+            {
+                target.GetHit(this.classInfo.BaseDamage, orientation, 0.5f);
+                this.hasAttacked = true;
+            }
+
+            if (currentSequence.IsComplete)
+            {
+                hasAttacked = false;
+                target = null;
+                state = ActorState.Idle;
+            }
+        }
+
+        /// <summary>
+        /// Input state changes while in the running actor state
+        /// </summary>
+        private void RunningStateInput(GamepadDevice gamepadDevice)
+        {
+            direction = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
+            UpdateOrientation();
+            speed = 0.02f;
+
+            if (gamepadDevice.LeftStickPosition == Vector2.Zero)
+            {
+                state = ActorState.Idle;
+            }
+            else if (gamepadDevice.WasButtonPressed(Buttons.B))
             {
                 state = ActorState.Attacking;
             }
-
-            if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
+            else if (gamepadDevice.IsButtonDown(Buttons.RightTrigger))
             {
-                castingAura.InvertScaleIncrement();
+                state = ActorState.Chanting;
+            }
+            else if (gamepadDevice.IsButtonUp(Buttons.A))
+            {
+                state = ActorState.Walking;
+            }
+        }
+
+        /// <summary>
+        /// Input state changes while in the walking actor state
+        /// </summary>
+        private void WalkingStateInput(GamepadDevice gamepadDevice)
+        {
+            direction = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
+            UpdateOrientation();
+            speed = 0.005f;
+
+            if (gamepadDevice.LeftStickPosition == Vector2.Zero)
+            {
                 state = ActorState.Idle;
             }
-
-            // If not attacking or finished attacking.
-            if ((state != ActorState.Attacking && state != ActorState.Casting) || (state == ActorState.Attacking && currentSequence.IsComplete))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B))
             {
-                if (velocity.Z == 0 && velocity.X == 0)
-                {
-                    state = ActorState.Idle;
-                }
-                else if (gamepadDevice.IsButtonDown(Buttons.A))
-                {
+                state = ActorState.Attacking;
+            }
+            else if (gamepadDevice.IsButtonDown(Buttons.RightTrigger))
+            {
+                state = ActorState.Chanting;
+            }
+            else if (gamepadDevice.IsButtonDown(Buttons.A))
+            {
+                state = ActorState.Running;
+            }
+        }
+
+        /// <summary>
+        /// Input state changes while in the Idle actor state
+        /// </summary>
+        private void IdleStateInput(GamepadDevice gamepadDevice)
+        {
+            speed = 0.0f;
+            if (gamepadDevice.LeftStickPosition != Vector2.Zero)
+            {
+                if (gamepadDevice.IsButtonDown(Buttons.A))
+
                     state = ActorState.Running;
-                }
                 else
-                {
                     state = ActorState.Walking;
-                }
-                // Update orientation.
-                UpdateOrientation();
+            }
+            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            {
+                state = ActorState.Attacking;
+            }
+            else if (gamepadDevice.IsButtonDown(Buttons.RightTrigger))
+            {
+                state = ActorState.Chanting;
             }
         }
 
-        private void HandleStates(GameTime gameTime)
-        {
-            if (state != previousState)
-            {
-                switch (state)
-                {
-                    case ActorState.Attacking:
-                        CheckForAttack(gameTime);
-                        break;
-                }
-            }
-        }
-
-        public void UpdateOrientation()
-        {
-            Orientation previousOrientation = orientation;
-            if (velocity.Z > 0)
-            {
-                if (velocity.X == 0)
-                    orientation = Orientation.North;
-                if (velocity.X > 0)
-                    orientation = Orientation.Northeast;
-                if (velocity.X < 0)
-                    orientation = Orientation.Northwest;
-            }
-            else if (velocity.Z < 0)
-            {
-                if (velocity.X == 0)
-                    orientation = Orientation.South;
-                if (velocity.X > 0)
-                    orientation = Orientation.Southeast;
-                if (velocity.X < 0)
-                    orientation = Orientation.Southwest;
-            }
-            else if (velocity.X > 0)
-            {
-                orientation = Orientation.East;
-            }
-            else if (velocity.X < 0)
-            {
-                orientation = Orientation.West;
-            }
-            // Buffer orientation transitions.
-            switch (previousOrientation)
-            {
-                case Orientation.North:
-                    if ((orientation == Orientation.Northeast && velocity.X < 0.1f) ||
-                        (orientation == Orientation.Northwest && velocity.X > -0.1f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.Northeast:
-                    if ((orientation == Orientation.East && velocity.X < 0.9f) ||
-                        (orientation == Orientation.North && velocity.Z < 0.9f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.East:
-                    if ((orientation == Orientation.Southeast && velocity.Z > -0.1f) ||
-                        (orientation == Orientation.Northeast && velocity.Z < 0.1f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.Southeast:
-                    if ((orientation == Orientation.South && velocity.Z > -0.9f) ||
-                        (orientation == Orientation.East && velocity.X < 0.9f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.South:
-                    if ((orientation == Orientation.Southeast && velocity.X < 0.1f) ||
-                        (orientation == Orientation.Southwest && velocity.X > -0.1f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.Southwest:
-                    if ((orientation == Orientation.West && velocity.X > -0.9f) ||
-                        (orientation == Orientation.South && velocity.Z > -0.9f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.West:
-                    if ((orientation == Orientation.Southwest && velocity.Z > -0.1f) ||
-                        (orientation == Orientation.Northwest && velocity.Z < 0.1f))
-                        orientation = previousOrientation;
-                    break;
-                case Orientation.Northwest:
-                    if ((orientation == Orientation.North && velocity.Z < 0.9f) ||
-                        (orientation == Orientation.West && velocity.X > -0.9f))
-                        orientation = previousOrientation;
-                    break;
-            }
-        }
-
-        #endregion // Update Methods
+        #endregion // Input Methods
 
         #region Initialization Methods
 
@@ -391,8 +427,8 @@ namespace TheGame
                     boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Running" + info.OrientationKey].ShapeColor = Color.Ivory;
 
-                    boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
-                    boundingShapesSelf["Casting" + info.OrientationKey].ShapeColor = Color.Gold;
+                    boundingShapesSelf["Chanting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Chanting" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {

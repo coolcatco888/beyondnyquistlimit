@@ -10,7 +10,7 @@ namespace TheGame.Components.Cameras
     {
         private float minDistance, minHeight, maxHeight;
 
-        private Component3DList actorsToFollow;
+        private ActorList actorsToFollow;
 
         private float distancePerUpdate, zoomConstant;
 
@@ -45,13 +45,13 @@ namespace TheGame.Components.Cameras
         /// <summary>
         /// A group of actors the camera needs to capture
         /// </summary>
-        public Component3DList ActorsToFollow
+        public ActorList ActorsToFollow
         {
             get { return actorsToFollow; }
             set { actorsToFollow = value; }
         }
 
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, float distancePerUpdate, float zoomConstant, Component3DList actorsToFollow)
+        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, float distancePerUpdate, float zoomConstant, ActorList actorsToFollow)
             : base(parent)
         {
             this.minDistance = minDistance;
@@ -62,12 +62,12 @@ namespace TheGame.Components.Cameras
             this.actorsToFollow = actorsToFollow;
         }
 
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, Component3DList actorsToFollow)
+        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, ActorList actorsToFollow)
             : this(parent, minDistance, minHeight, maxHeight, 0.0025f, 0.4f, actorsToFollow)
         {
         }
 
-        public ActionCamera(GameScreen parent, Component3DList actorsToFollow)
+        public ActionCamera(GameScreen parent, ActorList actorsToFollow)
             : this(parent, 4.5f, 10.0f, 12.0f, 0.0025f, 0.4f, actorsToFollow)
         {
         }

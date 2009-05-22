@@ -28,9 +28,9 @@ namespace TheGame
             steerVector = Vector3.UnitZ;
         }
 
-        public override void  React(Billboard otherObject, GameTime gameTime)
+        public override void React(Billboard otherObject, GameTime gameTime)
         {
-            //do nothing
+            // do nothing for wander
         }
 
         public override void Update(GameTime gameTime)
@@ -51,11 +51,15 @@ namespace TheGame
             {
                 int num = GameEngine.Random.Next(4);
                 if (num == 0)
+                {
                     monster.State = Actor.ActorState.Idle;
+                    monster.Speed = 0.0f;
+                }
                 else
                 {
                     monster.State = Actor.ActorState.Walking;
-                    monster.UpdateOrientation();
+                    UpdateOrientation();
+                    monster.Speed = 0.005f;
                 }
                 timer = 0.0f;
             }
@@ -69,6 +73,47 @@ namespace TheGame
         public void Release()
         {
             //buy vy
+        }
+
+        public void UpdateOrientation()
+        {
+            int num = GameEngine.Random.Next(8);
+
+            switch (num)
+            {
+                case 0:
+                    monster.Orientation = Orientation.South;
+                    monster.Direction = new Vector3(0.0f, 0.0f, -1.0f);
+                    break;
+                case 1:
+                    monster.Orientation = Orientation.Southwest;
+                    monster.Direction = Vector3.Normalize(new Vector3(-1.0f, 0.0f, -1.0f));
+                    break;
+                case 2:
+                    monster.Orientation = Orientation.West;
+                    monster.Direction = new Vector3(-1.0f, 0.0f, 0.0f);
+                    break;
+                case 3:
+                    monster.Orientation = Orientation.Northwest;
+                    monster.Direction = Vector3.Normalize(new Vector3(-1.0f, 0.0f, 1.0f));
+                    break;
+                case 4:
+                    monster.Orientation = Orientation.North;
+                    monster.Direction = new Vector3(0.0f, 0.0f, 1.0f);
+                    break;
+                case 5:
+                    monster.Orientation = Orientation.Northeast;
+                    monster.Direction = Vector3.Normalize(new Vector3(1.0f, 0.0f, 1.0f));
+                    break;
+                case 6:
+                    monster.Orientation = Orientation.East;
+                    monster.Direction = new Vector3(1.0f, 0.0f, 0.0f);
+                    break;
+                case 7:
+                    monster.Orientation = Orientation.Southeast;
+                    monster.Direction = Vector3.Normalize(new Vector3(1.0f, 0.0f, -1.0f));
+                    break;
+            }
         }
 
         private Vector3 steerVector;
