@@ -284,6 +284,7 @@ namespace TheGame
             speed = 0.0f;
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
+                currentSequence.Reset();
                 state = ActorState.Idle;
             }
         }
@@ -387,35 +388,74 @@ namespace TheGame
         protected void InitializeSpriteSequences()
         {
             List<SpriteSequenceInfo> sequenceInfo = GameEngine.Content.Load<List<SpriteSequenceInfo>>(@"PlayerSpriteSequences");
+            List<MultipleSequenceInfo> multipleInfo = GameEngine.Content.Load<List<MultipleSequenceInfo>>(@"PlayerMultipleSequences");
+
             SpriteSequence sequence;
+            MultipleSequence multipleSequence;
 
             foreach (SpriteSequenceInfo info in sequenceInfo)
             {
                 Orientation o = Utility.GetOrientationFromString(info.OrientationKey);
 
-                if (!info.ChangeScale)
-                {
-                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
-                        info.NumBuffers);
-                }
-                else
-                {
-                    sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
-                        info.NumBuffers, info.ScaleX, info.ScaleY);
-                }
+                sequence = setupSequence(info, o);
 
-                if (!info.IsARowOrColumn)
-                {
-                    sequence.AddFrame(info.IndexX, info.IndexY);
-                }
-                else
-                {
-                    sequence.AddRow(info.RowOrColumn, info.IndexX, info.IndexY);
-                }
                 sequences.Add(sequence.Title + sequence.Orientation.ToString(), sequence);
             }
 
+            foreach (MultipleSequenceInfo info in multipleInfo)
+            {
+                Orientation o = Utility.GetOrientationFromString(info.OrientationKey);
+                List<SpriteSequenceInfo> subsequences = info.Subsequences;
+
+                multipleSequence = new MultipleSequence(info.StateKey, o, false, 1, info.Duration);
+
+                foreach (SpriteSequenceInfo subsequenceInfo in subsequences)
+                {
+                    o = Utility.GetOrientationFromString(subsequenceInfo.OrientationKey);
+
+                    sequence = setupSequence(subsequenceInfo, o);
+                    multipleSequence.AddSequence(sequence);
+                }
+
+                multipleSequence.Initialize();
+
+                o = Utility.GetOrientationFromString(info.OrientationKey);
+
+                sequences.Add(multipleSequence.Title + o, multipleSequence);
+            }
+
             currentSequence = sequences["IdleSouth"];
+        }
+
+        private SpriteSequence setupSequence(SpriteSequenceInfo info, Orientation o)
+        {
+            SpriteSequence sequence;
+            if (!info.ChangeScale)
+            {
+                sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
+                    info.NumBuffers);
+            }
+            else
+            {
+                sequence = new SpriteSequence(info.StateKey, o, info.IsLoop, info.SequenceVelocity,
+                    info.NumBuffers, info.ScaleX, info.ScaleY);
+            }
+
+            if (!info.IsARowOrColumn)
+            {
+                sequence.AddFrame(info.IndexX, info.IndexY);
+            }
+            else
+            {
+                sequence.AddRow(info.RowOrColumn, info.IndexX, info.IndexY);
+            }
+
+            if (info.AttackValue != "")
+            {
+                sequence.AddAttack(info.AttackKey, info.AttackValue);
+            }
+
+            return sequence;
         }
 
         // TESTING PURPOSES ONLY - need to fix/move etc... you know the drill

@@ -11,7 +11,7 @@
       <Time>2009-05-21T13:34:50.703125-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-21T20:05:06.1875-07:00</Value>
+        <Value>2009-05-23T00:14:35.8275-07:00</Value>
       </Dependency>
       <Request>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
@@ -203,7 +203,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb</Output>
-      <Time>2009-05-21T13:34:52.078125-07:00</Time>
+      <Time>2009-05-22T19:45:30.936875-07:00</Time>
     </Item>
     <Item>
       <Source>BasicPoint.fx</Source>
@@ -284,7 +284,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb</Output>
-      <Time>2009-05-21T17:46:49.15625-07:00</Time>
+      <Time>2009-05-22T23:31:09.405625-07:00</Time>
     </Item>
     <Item>
       <Source>PoringSpriteSequences.xml</Source>
@@ -293,7 +293,7 @@
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb</Output>
-      <Time>2009-05-21T13:34:51.328125-07:00</Time>
+      <Time>2009-05-22T22:13:29.17125-07:00</Time>
     </Item>
     <Item>
       <Source>PoringXml.xml</Source>
@@ -312,6 +312,15 @@
       <Options>None</Options>
       <Output>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb</Output>
       <Time>2009-05-21T13:34:52.421875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerMultipleSequences.xml</Source>
+      <Name>PlayerMultipleSequences</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerMultipleSequences.xnb</Output>
+      <Time>2009-05-22T22:14:57.42125-07:00</Time>
     </Item>
     <Item>
       <Source>GUI\menufont.spritefont</Source>
@@ -372,7 +381,7 @@
     <Assemblies>
       <Assembly>
         <Key>D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
-        <Value>2009-05-21T20:05:04.28125-07:00</Value>
+        <Value>2009-05-23T00:14:31.79625-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

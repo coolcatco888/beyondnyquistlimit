@@ -47,7 +47,7 @@ namespace TheGame
         protected SpriteSequence currentSequence;
 
         // The current velocity of the actor (speed and direction)
-        protected Vector3 direction = Vector3.Zero;
+        protected Vector3 direction = new Vector3(0.0f, 0.0f, 1.0f);//Vector3.Zero;
         protected float speed = 0.0f;
 
         // Information about the sprite sheet the actor is using
@@ -57,7 +57,8 @@ namespace TheGame
 
         protected ActorInfo actorStats = new ActorInfo();
 
-        //protected Vector3 direction = Vector3.Forward;
+        protected string currentAttack = "";
+        protected Vector3 attackDirection;
 
         #endregion  // Fields
 
@@ -70,6 +71,9 @@ namespace TheGame
 
         // Dictionary of sprite sequences for the actor to use at different states and orientations
         protected Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
+
+        // Dictionary of slash attacks.
+        protected Dictionary<string, AttackInfo> attacks = new Dictionary<string,AttackInfo>();
 
         #endregion // Dictionaries
 
@@ -127,6 +131,22 @@ namespace TheGame
         public override void Initialize()
         {
             base.Initialize();
+
+            // TEMPORARY ADD ATTACKS
+            AttackInfo info = new AttackInfo();
+            info.Distance = 4.0f;
+            info.Rotation = new Vector2(0.0f, 0.0f);
+            info.Scale = new Vector2(1.0f, 1.0f);
+            info.TextureCoordinates = new Vector2(0, 11);
+
+            attacks.Add("NorthSlash", info);
+            attacks.Add("NortheastSlash", info);
+            attacks.Add("EastSlash", info);
+            attacks.Add("SouthEastSlash", info);
+            attacks.Add("SouthSlash", info);
+            attacks.Add("SouthwestSlash", info);
+            attacks.Add("WestSlash", info);
+            attacks.Add("NorthwestSlash", info);
         }
         #endregion // Initialization
 
@@ -177,6 +197,55 @@ namespace TheGame
         }
 
         #endregion  // Update
+
+        #region Draw
+
+        public override void Draw(GameTime gameTime)
+        {
+            if (state != ActorState.Attacking)
+            {
+                attackDirection = Vector3.Normalize(direction);
+            }
+
+            base.Draw(gameTime);
+
+            if (attacks.ContainsKey(currentAttack))
+            {
+                Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+
+                AttackInfo thisAttack = attacks[currentAttack];
+                Vector3 oldPosition = this.Position;
+
+                this.Position += attackDirection * thisAttack.Distance + Vector3.Down;
+
+                UpdateVertices(thisAttack.TextureCoordinates, spriteInfo.SpriteUnit, new Vector2(1.0f, 1.0f));
+
+                // Assign world, view, & projection matricies to basicEffect.
+                // TODO: implement rotation
+                basicEffect.World =                                                                    
+                basicEffect.World = Matrix.CreateScale(thisAttack.Scale.X, thisAttack.Scale.Y, 1.0f) * Matrix.CreateRotationX(thisAttack.Rotation.X) * Matrix.CreateRotationY(thisAttack.Rotation.Y) * Matrix.CreateTranslation(position);
+                basicEffect.View = camera.View;
+                basicEffect.Projection = camera.Projection;
+
+                GameEngine.Graphics.RenderState.CullMode = CullMode.None;
+
+                // Draw billboard.
+                basicEffect.Begin();
+                basicEffect.CurrentTechnique.Passes[0].Begin();
+
+                GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
+                GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleFan, vertices, 0, 2);
+
+                basicEffect.CurrentTechnique.Passes[0].End();
+                basicEffect.End();
+
+                GameEngine.Graphics.RenderState.CullMode = CullMode.CullCounterClockwiseFace;
+
+                this.Position = oldPosition;
+            }
+        }
+
+        #endregion  // Draw
 
         #region Update Methods
 
@@ -229,14 +298,11 @@ namespace TheGame
 
             if (currentSequenceTitle.Equals(nextSequenceTitle))
             {
-                currentSequence.Update(gameTime);
+                currentAttack = currentSequence.Update(gameTime);
             }
             else
             {
                 currentSequence.Reset();
-                if (nextSequenceTitle == "AttackingSouth")
-                {
-                }
                 playSequence(nextSequenceTitle);
             }
         }
@@ -356,6 +422,16 @@ namespace TheGame
             playSequence(state.ToString() + currentSequence.Orientation.ToString());
         }
 
+        protected void AddAttack(string title, AttackInfo attack)
+        {
+            attacks.Add(title, attack);
+        }
+
+        protected void RemoveAttack(string title)
+        {
+            attacks.Remove(title);
+        }
+
         #endregion  // Sprite Sequencing Methods   // Complete, don't touch
 
         #region ICollidable Members
@@ -371,5 +447,7 @@ namespace TheGame
         }
 
         #endregion // ICollidable Members
+
+
     }
 }

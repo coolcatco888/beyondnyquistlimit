@@ -152,6 +152,27 @@ namespace TheGame
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
         }
 
+        public void UpdateVertices(Vector2 frameLocation, Vector2 spriteUnit, Vector2 scale)
+        {
+            this.scale.X = scale.X;
+
+            vertices[0].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+
+            vertices[1].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y);
+
+            vertices[2].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+
+            vertices[3].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y);
+        }
+
         #endregion Update Method
 
         #region IDrawableComponent Members

@@ -15,6 +15,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -30,6 +32,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -45,6 +49,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -60,6 +66,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -75,6 +83,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -90,6 +100,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -105,6 +117,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -120,6 +134,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <!-- Walking Sprite Sequences -->
@@ -136,6 +152,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -151,6 +169,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -166,6 +186,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -181,6 +203,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -196,6 +220,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -211,6 +237,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -226,6 +254,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -241,6 +271,8 @@
       <IndexX>0</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
     
     <!-- Hit Sprite Sequences -->
@@ -257,6 +289,8 @@
       <IndexX>0</IndexX>
       <IndexY>1</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -272,6 +306,8 @@
       <IndexX>4</IndexX>
       <IndexY>5</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -287,6 +323,8 @@
       <IndexX>0</IndexX>
       <IndexY>1</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -302,6 +340,8 @@
       <IndexX>0</IndexX>
       <IndexY>1</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -317,6 +357,8 @@
       <IndexX>4</IndexX>
       <IndexY>5</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -332,6 +374,8 @@
       <IndexX>2</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -347,6 +391,8 @@
       <IndexX>2</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -362,6 +408,8 @@
       <IndexX>6</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
     
     <!-- Dying Sprite Sequenes -->
@@ -378,6 +426,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -393,6 +443,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -408,6 +460,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -423,6 +477,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -438,6 +494,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -453,6 +511,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -468,6 +528,8 @@
       <IndexX>4</IndexX>
       <IndexY>7</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -483,6 +545,8 @@
       <IndexX>0</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
     
     <!-- Dead Sprite Sequences -->
@@ -499,6 +563,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -514,6 +580,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -529,6 +597,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
     
     <Item>
@@ -544,6 +614,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -559,6 +631,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -574,6 +648,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -589,6 +665,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -604,6 +682,8 @@
       <IndexX>3</IndexX>
       <IndexY>3</IndexY>
       <RowOrColumn>7</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
     
   </Asset>

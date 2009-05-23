@@ -33,9 +33,11 @@ namespace TheGame
 
         #endregion  // Accessors
 
-        public MultipleSequence(SpriteSequence sequence)
+        public MultipleSequence(SpriteSequence sequence, float duration)
             : base(sequence.Title, sequence.Orientation, sequence.IsLoop, sequence.Speed, sequence.BufferFrames)
         {
+            this.sequenceDuration = duration;
+
             this.scale = sequence.Scale;
             this.IsPaused = sequence.IsPaused;
             this.isComplete = sequence.IsComplete;
@@ -45,34 +47,19 @@ namespace TheGame
             this.frameIndex = sequence.FrameIndex;
         }
 
-        public MultipleSequence(bool isLoop, int bufferFrames)
+        public MultipleSequence(string title, Orientation orientation, bool isLoop, int bufferFrames, float duration)
             : base(isLoop, bufferFrames)
         {
+            this.title = title;
+            this.orientation = orientation;
+            this.sequenceDuration = duration;
         }
 
-        public MultipleSequence(bool isLoop, int bufferFrames, int xScale, int yScale)
-            : base(isLoop, bufferFrames, xScale, yScale)
+        public void Initialize()
         {
-        }
-
-        public MultipleSequence(String title, Orientation orientation, bool isLoop, float velocity, int bufferFrames)
-            : base(title, orientation, isLoop, velocity, bufferFrames)
-        {
-        }
-
-        public MultipleSequence(String title, Orientation orientation, bool isLoop, float velocity, int bufferFrames, int xScale, int yScale)
-            : base(title, orientation, isLoop, velocity, bufferFrames, xScale, yScale)
-        {
-        }
-
-        public override void Initialize()
-        {
-            base.Initialize();
-
             allComplete = false;
             sequenceIndex = 0;
 
-            sequenceDuration = 1000.0f;
             sequenceTimer = 0.0f;
 
             this.SetToSequence(sequenceList[0]);
@@ -84,7 +71,7 @@ namespace TheGame
             {
                 sequenceTimer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (sequenceTimer >= sequenceDuration)
+                if (sequenceTimer >= sequenceDuration && sequenceDuration >= 0)
                 {
                     this.isComplete = true;
                     sequenceTimer = 0.0f;
@@ -98,7 +85,7 @@ namespace TheGame
                     sequenceIndex++;
                     this.SetToSequence(sequenceList[sequenceIndex]);
                 }
-                else
+                else if (sequenceDuration >= 0)
                 {
                     allComplete = true;
                 }
@@ -135,10 +122,27 @@ namespace TheGame
 
             this.sequenceIndex = 0;
             this.SetToSequence(sequenceList[0]);
-            this.IsPaused = true;
             this.allComplete = false;
 
             base.Reset();
+        }
+
+        public void StopLooping()
+        {
+            this.sequenceDuration = 0.0f;
+        }
+
+        public void NextSequence()
+        {
+            if (sequenceIndex < sequenceList.Count - 1)
+            {
+                sequenceIndex++;
+                this.SetToSequence(sequenceList[sequenceIndex]);
+            }
+            else if (sequenceDuration >= 0)
+            {
+                allComplete = true;
+            }
         }
 
         #region Frame Methods

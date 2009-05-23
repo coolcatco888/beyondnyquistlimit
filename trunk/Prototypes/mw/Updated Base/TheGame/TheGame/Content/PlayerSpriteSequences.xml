@@ -15,6 +15,8 @@
       <IndexX>0</IndexX>
       <IndexY>5</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -30,6 +32,8 @@
       <IndexX>12</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -45,6 +49,8 @@
       <IndexX>0</IndexX>
       <IndexY>5</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -60,6 +66,8 @@
       <IndexX>0</IndexX>
       <IndexY>5</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -75,6 +83,8 @@
       <IndexX>12</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -90,6 +100,8 @@
       <IndexX>6</IndexX>
       <IndexY>11</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -105,6 +117,8 @@
       <IndexX>6</IndexX>
       <IndexY>11</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -120,6 +134,8 @@
       <IndexX>18</IndexX>
       <IndexY>23</IndexY>
       <RowOrColumn>3</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <!-- Walking Sprite Sequences -->
@@ -136,6 +152,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -151,6 +169,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -166,6 +186,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -181,6 +203,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -196,6 +220,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -211,6 +237,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -226,6 +254,8 @@
       <IndexX>19</IndexX>
       <IndexY>26</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -241,6 +271,8 @@
       <IndexX>19</IndexX>
       <IndexY>26</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <!-- Running Sprite Sequences -->
@@ -257,6 +289,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -272,6 +306,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -287,6 +323,8 @@
       <IndexX>1</IndexX>
       <IndexY>8</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -302,6 +340,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -317,6 +357,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -332,6 +374,8 @@
       <IndexX>10</IndexX>
       <IndexY>17</IndexY>
       <RowOrColumn>2</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -347,6 +391,8 @@
       <IndexX>19</IndexX>
       <IndexY>26</IndexY>
       <RowOrColumn>0</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <Item>
@@ -362,6 +408,8 @@
       <IndexX>19</IndexX>
       <IndexY>26</IndexY>
       <RowOrColumn>1</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
     </Item>
 
     <!-- Attacking Sprite Sequences -->
@@ -378,6 +426,8 @@
       <IndexX>0</IndexX>
       <IndexY>6</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>SouthSlash</AttackValue>
     </Item>
 
     <Item>
@@ -393,6 +443,8 @@
       <IndexX>0</IndexX>
       <IndexY>6</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>NorthSlash</AttackValue>
     </Item>
 
     <Item>
@@ -408,6 +460,8 @@
       <IndexX>0</IndexX>
       <IndexY>6</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>WestSlash</AttackValue>
     </Item>
 
     <Item>
@@ -423,6 +477,8 @@
       <IndexX>0</IndexX>
       <IndexY>6</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>SouthwestSlash</AttackValue>
     </Item>
 
     <Item>
@@ -438,6 +494,8 @@
       <IndexX>0</IndexX>
       <IndexY>6</IndexY>
       <RowOrColumn>6</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>NorthwestSlash</AttackValue>
     </Item>
 
     <Item>
@@ -453,6 +511,8 @@
       <IndexX>8</IndexX>
       <IndexY>14</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>EastSlash</AttackValue>
     </Item>
 
     <Item>
@@ -468,6 +528,8 @@
       <IndexX>8</IndexX>
       <IndexY>14</IndexY>
       <RowOrColumn>5</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>SoutheastSlash</AttackValue>
     </Item>
 
     <Item>
@@ -483,127 +545,8 @@
       <IndexX>8</IndexX>
       <IndexY>14</IndexY>
       <RowOrColumn>6</RowOrColumn>
-    </Item>
-
-    <!-- Chanting Sprite Sequences -->
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>South</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>0</IndexX>
-      <IndexY>4</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>North</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>10</IndexX>
-      <IndexY>14</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>West</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>0</IndexX>
-      <IndexY>4</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>Southwest</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>0</IndexX>
-      <IndexY>4</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>Northwest</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>10</IndexX>
-      <IndexY>14</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>East</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>5</IndexX>
-      <IndexY>9</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>Southeast</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>5</IndexX>
-      <IndexY>9</IndexY>
-      <RowOrColumn>4</RowOrColumn>
-    </Item>
-
-    <Item>
-      <StateKey>Chanting</StateKey>
-      <OrientationKey>Northeast</OrientationKey>
-      <IsLoop>true</IsLoop>
-      <SequenceVelocity>0.0</SequenceVelocity>
-      <NumBuffers>3</NumBuffers>
-      <ScaleX>0</ScaleX>
-      <ScaleY>0</ScaleY>
-      <ChangeScale>false</ChangeScale>
-      <IsARowOrColumn>true</IsARowOrColumn>
-      <IndexX>15</IndexX>
-      <IndexY>19</IndexY>
-      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>2</AttackKey>
+      <AttackValue>NortheastSlash</AttackValue>
     </Item>
   </Asset>
 </XnaContent>
