@@ -7,3 +7,5 @@ D:\work\jimwtf\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssembl
 D:\work\jimwtf\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
+D:\work\jimwtf\Prototypes\menuSystem\TheGame-StuffToAdd\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame-StuffToAdd\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml

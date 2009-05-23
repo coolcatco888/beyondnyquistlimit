@@ -27,16 +27,20 @@ Content\Audio\04 Never Ending Duel.xnb
 Content\Sprites\ActorTest.xnb
 Content\Sprites\MagicCircle.xnb
 Content\Sprites\CloudInfo.xnb
-Content\PlayerBoundingShapes.xnb
 Content\PlayerSpriteSequences.xnb
 Content\PoringSpriteSequences.xnb
+Content\PoringSpriteInfo.xnb
 Content\WizardClassInfo.xnb
+Content\PoringBoundingShapes.xnb
+Content\PoringInfo.xnb
+Content\PlayerBoundingShapes.xnb
 Content\GUI\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
-Content\PoringBoundingShapes.xnb
-Content\PoringSpriteInfo.xnb
-Content\PoringInfo.xnb
+Content\GUI\charsel1.xnb
+Content\GUI\charsel2.xnb
+Content\GUI\charsel3.xnb
+Content\GUI\charsel4.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

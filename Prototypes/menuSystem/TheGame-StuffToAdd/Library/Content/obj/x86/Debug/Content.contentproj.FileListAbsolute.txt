@@ -2,3 +2,4 @@ D:\Work\JimsCode\Unstable Base\TheGame\Library\Content\obj\x86\Debug\ResolveAsse
 D:\work\mW\09project\jimwtf\Prototypes\mw\Unstable Base\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Updated Base\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame-StuffToAdd\Library\Content\obj\x86\Debug\ResolveAssemblyReference.cache

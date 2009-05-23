@@ -54,6 +54,9 @@ namespace TheGame
             //gamepadDevice.Initialize();
             //GameEngine.Services.AddService(typeof(GamepadDevice), gamepadDevice);
 
+            ActionCamera camera = new ActionCamera(GameEngine.BaseScreen);
+            GameEngine.Services.AddService(typeof(Camera), (object)(camera));
+
             InputHub inputHub = new InputHub();
             GameEngine.Services.AddService(typeof(InputHub), inputHub);
 
@@ -66,8 +69,10 @@ namespace TheGame
             //new TestScreen("test");
             //new SkyboxScreen("sky");
             //Level l = new Level("level", "Terrain\\terrain");
-            GameScreen mainMenu =  new MainMenuScreen("main");
+            GameScreen mainMenu = new MainMenuScreen("main");
             mainMenu.Initialize();
+            //GameScreen charselect = new CharacterSelectScreen("charsel");
+            //charselect.Initialize();
 
             base.Initialize();
         }
