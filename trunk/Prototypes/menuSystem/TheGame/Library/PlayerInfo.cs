@@ -51,5 +51,21 @@ namespace Library
             get { return maxAttackGauge; }
             set { maxAttackGauge = value; }
         }
+
+        //TODO: Remove me and make player info be populated from file or xml
+        public PlayerInfo(string className)
+        {
+            this.className = className;
+            classLevel = 1;
+            experience = 0;
+            experienceToNextLevel = 100;
+            maxAttackGauge = 100;
+            currentAttackGauge = 100;
+        }
+
+
+        public PlayerInfo()
+        {
+        }
     }
 }

@@ -79,14 +79,14 @@ namespace Library
 
         public void PopulateFields(PlayerInfo playerStats, CharacterClassInfo charStats)
         {
-            maxHealth = charStats.BaseHealth + (playerStats.ClassLevel * charStats.GainHealth);
+            maxHealth = charStats.BaseHealth + ((playerStats.ClassLevel - 1) * charStats.GainHealth);
             currentHealth = maxHealth;
 
-            maxMana = charStats.BaseMana + (playerStats.ClassLevel * charStats.GainMana);
+            maxMana = charStats.BaseMana + ((playerStats.ClassLevel - 1) * charStats.GainMana);
             currentMana = maxMana;
 
-            currentDamage = charStats.BaseDamage + (playerStats.ClassLevel * charStats.BaseDamage);
-            currentDefense = charStats.BaseDefense + (playerStats.ClassLevel * charStats.GainDefense);
+            currentDamage = charStats.BaseDamage + ((playerStats.ClassLevel - 1) * charStats.BaseDamage);
+            currentDefense = charStats.BaseDefense + ((playerStats.ClassLevel - 1) * charStats.GainDefense);
         }
 
         public void PopulateFields(MonsterInfo monsterStats)

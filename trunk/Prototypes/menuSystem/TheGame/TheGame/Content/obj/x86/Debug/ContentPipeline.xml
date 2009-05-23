@@ -11,7 +11,7 @@
       <Time>2009-05-22T16:21:45.90625-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-22T16:58:08.890625-07:00</Value>
+        <Value>2009-05-22T20:52:05.34375-07:00</Value>
       </Dependency>
       <Request>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
@@ -206,6 +206,87 @@
       <Time>2009-05-22T16:21:39.15625-07:00</Time>
     </Item>
     <Item>
+      <Source>GUI\charsel1.PNG</Source>
+      <Name>GUI\charsel1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb</Output>
+      <Time>2009-05-22T16:18:13.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel2.PNG</Source>
+      <Name>GUI\charsel2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb</Output>
+      <Time>2009-05-22T16:18:13.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel3.PNG</Source>
+      <Name>GUI\charsel3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel4.PNG</Source>
+      <Name>GUI\charsel4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Copy of itemsm.PNG</Source>
+      <Name>GUI\Copy of itemsm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\Copy of itemsm.xnb</Output>
+      <Time>2009-05-22T19:34:34.375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Wizardface.PNG</Source>
+      <Name>GUI\Wizardface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\Wizardface.xnb</Output>
+      <Time>2009-05-22T19:34:46.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Knightface.PNG</Source>
+      <Name>GUI\Knightface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\Knightface.xnb</Output>
+      <Time>2009-05-22T19:34:48.796875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Priestface.PNG</Source>
+      <Name>GUI\Priestface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\Priestface.xnb</Output>
+      <Time>2009-05-22T19:34:54.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Rangerface.PNG</Source>
+      <Name>GUI\Rangerface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\Rangerface.xnb</Output>
+      <Time>2009-05-22T19:34:56.703125-07:00</Time>
+    </Item>
+    <Item>
       <Source>BasicPoint.fx</Source>
       <Name>BasicPoint</Name>
       <Importer>EffectImporter</Importer>
@@ -377,42 +458,6 @@
       <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-22T16:21:44.59375-07:00</Time>
     </Item>
-    <Item>
-      <Source>GUI\charsel1.PNG</Source>
-      <Name>GUI\charsel1</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb</Output>
-      <Time>2009-05-22T16:18:13.953125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\charsel2.PNG</Source>
-      <Name>GUI\charsel2</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb</Output>
-      <Time>2009-05-22T16:18:13.953125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\charsel3.PNG</Source>
-      <Name>GUI\charsel3</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb</Output>
-      <Time>2009-05-22T16:18:13.96875-07:00</Time>
-    </Item>
-    <Item>
-      <Source>GUI\charsel4.PNG</Source>
-      <Name>GUI\charsel4</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb</Output>
-      <Time>2009-05-22T16:18:13.96875-07:00</Time>
-    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
@@ -426,7 +471,7 @@
     <Assemblies>
       <Assembly>
         <Key>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
-        <Value>2009-05-22T16:58:06.8125-07:00</Value>
+        <Value>2009-05-22T20:52:03.640625-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>

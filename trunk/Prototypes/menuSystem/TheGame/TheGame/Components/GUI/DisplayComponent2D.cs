@@ -17,7 +17,7 @@ namespace TheGame.Components.Display
 
         protected Vector2 position;
 
-        public Vector2 Position
+        public virtual Vector2 Position
         {
             set { position = value; }
             get { return position; }
