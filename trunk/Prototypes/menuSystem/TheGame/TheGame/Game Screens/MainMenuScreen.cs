@@ -104,30 +104,22 @@ namespace TheGame.Game_Screens
         /// </summary>
         private void HandleMenuSelection()
         {
-            if (keyboardDevice != null && keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice != null && gamepadDevice.WasButtonPressed(Buttons.A))
+            foreach (GamepadDevice pad in allGamePads)
             {
-                switch (menu.GetCurrentText())
+                if (keyboardDevice != null && keyboardDevice.WasKeyPressed(Keys.Enter) || pad != null && pad.WasButtonPressed(Buttons.A))
                 {
-                    case "Start Game":
-                        Dispose();
-                        GameScreen characterSelectScreen = new CharacterSelectScreen("charselect");
-                        characterSelectScreen.Initialize();
-                        //GameScreen skybox = new SkyboxScreen("sky");
-                        //Level level =  new Level("level", "Terrain\\terrain");
-                        //GameScreen cameraScreen = new GameScreen("camera");
+                    switch (menu.GetCurrentText())
+                    {
+                        case "Start Game":
+                            Dispose();
+                            GameScreen characterSelectScreen = new CharacterSelectScreen("charselect");
+                            characterSelectScreen.Initialize();
 
-                        //Camera camera = new ActionCamera(cameraScreen, level.PlayerList);
-                        //camera.Initialize();
-                        //GameEngine.Services.AddService(typeof(Camera), (object)(camera));
-
-                        //cameraScreen.Initialize();
-                        //skybox.Initialize();
-                        //level.Initialize();
-
-                        break;
-                    case "Exit Game":
-                        GameEngine.EndGame();
-                        break;
+                            break;
+                        case "Exit Game":
+                            GameEngine.EndGame();
+                            break;
+                    }
                 }
             }
         }

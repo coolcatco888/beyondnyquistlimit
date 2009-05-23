@@ -38,7 +38,7 @@ namespace TheGame.Game_Screens
             : base(name)
         {
             this.sender = sender;
-            gamepadDevice = inputHub[sender];
+            masterInput = inputHub[sender];
             Texture2D blank = GameEngine.Content.Load<Texture2D>("GUI\\blank");
 
          
@@ -56,12 +56,12 @@ namespace TheGame.Game_Screens
         protected override void HandleInput()
         {
             
-            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            if (keyboardDevice.WasKeyPressed(Keys.Escape) || masterInput.WasButtonPressed(Buttons.Start))
             {
                 Dispose();
             }
 
-            else if (keyboardDevice.WasKeyPressed(Keys.Enter) || gamepadDevice.WasButtonPressed(Buttons.A))
+            else if (keyboardDevice.WasKeyPressed(Keys.Enter) || masterInput.WasButtonPressed(Buttons.A))
             {
                 switch (menu.GetCurrentText())
                 {

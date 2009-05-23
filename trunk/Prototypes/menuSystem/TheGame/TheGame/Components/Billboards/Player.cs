@@ -32,6 +32,11 @@ namespace TheGame
         // Index used by input to determine what player number/controller is used for this player
         protected PlayerIndex playerIndex;
 
+        public PlayerIndex PlayerIndex
+        {
+            get { return playerIndex; }
+        }
+
         // Flag for the attack damage timer
         protected bool damageTimerActive;
 
