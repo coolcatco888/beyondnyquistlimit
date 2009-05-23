@@ -21,6 +21,8 @@ namespace TheGame.Game_Screens
 
         private float fontScale = 2.0f;
 
+        private bool startGame = false, goBack = false;
+
         private CharacterChoice wizardChoice, knightChoice, priestChoice, rangerChoice;
 
         private List<CharacterChooser> playerChoosers = new List<CharacterChooser>();
@@ -170,9 +172,44 @@ namespace TheGame.Game_Screens
 
         public override void Update(GameTime gameTime)
         {
-            foreach (CharacterChooser chooser in playerChoosers)
+            
+            if(!startGame && !goBack)
             {
-                chooser.HandleInput();
+                foreach (CharacterChooser chooser in playerChoosers)
+                {
+                    chooser.HandleInput();
+                    startGame = chooser.startGame;
+                    goBack = chooser.goBack;
+                    if (startGame || goBack)
+                    {
+                        break;
+                    }
+                }
+
+                if (startGame)
+                {
+                    Dictionary<PlayerIndex, string> chosenCharacters = new Dictionary<PlayerIndex, string>();
+                    foreach (CharacterChooser chooser in playerChoosers)
+                    {
+                        if (chooser.selected)
+                        {
+                            chosenCharacters.Add(chooser.gamepad.PlayerIndex, chooser.currentCharacter.characterName);
+                        }
+                    }
+
+                    GameScreen skybox = new SkyboxScreen("sky");
+                    Level level = new Level("level", "Terrain\\terrain", chosenCharacters);
+                    skybox.Initialize();
+                    level.Initialize();
+                    Dispose();
+                }
+                else if (goBack)
+                {
+                    GameScreen main = new MainMenuScreen("main");
+                    main.Initialize();
+                    main.LoadContent();
+                    Dispose();
+                }
             }
             base.Update(gameTime);
         }
@@ -212,8 +249,17 @@ namespace TheGame.Game_Screens
 
         public bool selected = false;
 
+        public bool startGame = false;
+
+        public bool goBack = false;
+
         public void HandleInput()
         {
+            if (gamepad != null && gamepad.Enabled && gamepad.WasButtonPressed(Buttons.Back))
+            {
+                goBack = true;
+            }
+
             if (gamepad != null && gamepad.Enabled && currentCharacter != null && !selected)
             {
                 if (gamepad.WasButtonPressed(Buttons.LeftThumbstickUp) 
@@ -252,6 +298,12 @@ namespace TheGame.Game_Screens
                 currentCharacter.selected = false;
                 selected = false;
             }
+            else if (gamepad != null && gamepad.Enabled && currentCharacter != null && gamepad.WasButtonPressed(Buttons.Start)
+                    && currentCharacter.selected && selected)
+            {
+                startGame = true;
+            }
+            
 
         }
 

@@ -61,6 +61,8 @@ namespace TheGame
         {
             get { return monsterList; }
         }
+
+        private Dictionary<PlayerIndex, string> activePlayers;
         
         #endregion
 
@@ -72,12 +74,13 @@ namespace TheGame
         /// </summary>
         /// <param name="name">Name of the GameScreen</param>
         /// <param name="terrainFileName">The filename of the terrain bitmap</param>
-        public Level(string name, string terrainFileName)
+        public Level(string name, string terrainFileName, Dictionary<PlayerIndex, string> activePlayers)
             : base(name)
         {
             this.terrainFileName = terrainFileName;
             playerList = new ActorList();
             monsterList = new ActorList();
+            this.activePlayers = activePlayers;
         }
 
         public override void Initialize()
@@ -92,10 +95,14 @@ namespace TheGame
             levelMap.Initialize();
             terrainHeightMap = levelMap.HeightMapInfo;
             
-            Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");
-            Player player = new Player(this, playerSpriteInfo, PlayerIndex.One, "Wizard", new Vector3(1.0f, 2.0f, 1.0f));
-            player.Initialize();
-            playerList.Add(player);
+            //Initialize Players
+            foreach (KeyValuePair<PlayerIndex, string> activePlayer in activePlayers)
+            {
+                Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");//Change This to be @"Sprites\\" + activePlayer.Value
+                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, activePlayer.Value, new Vector3(1.0f, 2.0f, 1.0f));
+                player.Initialize();
+                playerList.Add(player);
+            }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
             Monster poring = new Monster(this, poringSpriteInfo, new Vector3(4.0f, 0.0f, 0.0f), "Poring");
