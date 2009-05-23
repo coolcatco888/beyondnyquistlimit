@@ -110,9 +110,10 @@ namespace TheGame.Game_Screens
                 {
                     case "Start Game":
                         Dispose();
-
-                        GameScreen skybox = new SkyboxScreen("sky");
-                        Level level =  new Level("level", "Terrain\\terrain");
+                        GameScreen characterSelectScreen = new CharacterSelectScreen("charselect");
+                        characterSelectScreen.Initialize();
+                        //GameScreen skybox = new SkyboxScreen("sky");
+                        //Level level =  new Level("level", "Terrain\\terrain");
                         //GameScreen cameraScreen = new GameScreen("camera");
 
                         //Camera camera = new ActionCamera(cameraScreen, level.PlayerList);
@@ -120,11 +121,12 @@ namespace TheGame.Game_Screens
                         //GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
                         //cameraScreen.Initialize();
-                        skybox.Initialize();
-                        level.Initialize();
+                        //skybox.Initialize();
+                        //level.Initialize();
 
                         break;
                     case "Exit Game":
+                        GameEngine.EndGame();
                         break;
                 }
             }
