@@ -21,7 +21,8 @@ namespace TheGame.Game_Screens
         protected MenuPanel2D menu = null;
         protected KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
         protected InputHub inputHub = (InputHub)GameEngine.Services.GetService(typeof(InputHub));
-        protected GamepadDevice gamepadDevice;
+        protected GamepadDevice masterInput = null;
+        protected List<GamepadDevice> allGamePads = new List<GamepadDevice>();
 
         public override void  LoadContent()
         {
@@ -42,7 +43,10 @@ namespace TheGame.Game_Screens
         protected MenuScreen(string name)
             : base(name)
         {
-            gamepadDevice = inputHub[inputHub.MasterInput];
+            for (int i = 0; i < 4; i++)
+            {
+                allGamePads.Add(inputHub[(PlayerIndex)i]);
+            }
         }
 
         /// <summary>
@@ -51,7 +55,6 @@ namespace TheGame.Game_Screens
         /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
-
             HandleInput();
             base.Update(gameTime);
         }
@@ -61,14 +64,20 @@ namespace TheGame.Game_Screens
         /// </summary>
         protected virtual void HandleInput()
         {
-            if (keyboardDevice != null && keyboardDevice.WasKeyPressed(prev) || gamepadDevice != null && gamepadDevice.WasButtonPressed(Buttons.LeftThumbstickUp))
+            foreach (GamepadDevice pad in allGamePads)
             {
-                menu.Previous();
-            }
+                GamepadDevice currentPad = masterInput == null ? pad : masterInput;
+                if (keyboardDevice != null && keyboardDevice.WasKeyPressed(prev) || currentPad != null && currentPad.WasButtonPressed(Buttons.LeftThumbstickUp))
+                {
+                    menu.Previous();
+                    break;
+                }
 
-            if (keyboardDevice != null && keyboardDevice.WasKeyPressed(next) || gamepadDevice != null && gamepadDevice.WasButtonPressed(Buttons.LeftThumbstickDown))
-            {
-                menu.Next();
+                if (keyboardDevice != null && keyboardDevice.WasKeyPressed(next) || currentPad != null && currentPad.WasButtonPressed(Buttons.LeftThumbstickDown))
+                {
+                    menu.Next();
+                    break;
+                }
             }
         }
     }

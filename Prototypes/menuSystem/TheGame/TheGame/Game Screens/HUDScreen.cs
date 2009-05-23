@@ -16,6 +16,16 @@ namespace TheGame.Game_Screens
 
         private Dictionary<Monster, int> monsterCurrentHealth = new Dictionary<Monster, int>();
 
+        private Dictionary<PlayerIndex, ImageComponent2D> offScreenArrows = new Dictionary<PlayerIndex, ImageComponent2D>();
+
+        private readonly Color[] playerArrowColors = 
+        {
+            Color.Green,
+            Color.Red,
+            Color.Blue,
+            Color.Yellow
+        };
+
         public HUDScreen(string name, Level level)
             : base(name)
         {
@@ -23,8 +33,10 @@ namespace TheGame.Game_Screens
             int screenHeight = GameEngine.Graphics.Viewport.Height;
             int screenWidthIncrement = level.PlayerList.Count > 0 ? screenWidth / level.PlayerList.Count : 0;
             int currentOffset = 0;
+            int i = 0;
             foreach (Player player in level.PlayerList)
             {
+                //Setup Player Hud
                 ActorInfo actorStats = player.ActorStats;
                 CharacterClassInfo classInfo = player.ClassInfo;
                 PlayerInfo playerInfo = player.PlayerInfo;
@@ -35,8 +47,19 @@ namespace TheGame.Game_Screens
                 Vector2 newPosition = new Vector2(10.0f + currentOffset, screenHeight - hud.Height);
                 hud.Position = newPosition;
                 hud.Initialize();
-                currentOffset += screenWidthIncrement;
                 playerHuds.Add(player, hud);
+
+                //Setup offscreen arrows
+                Texture2D arrowTex = GameEngine.Content.Load<Texture2D>("GUI\\offarrow");
+                ImageComponent2D arrow = new ImageComponent2D(this, Vector2.Zero, arrowTex, playerArrowColors[(int)player.PlayerIndex]);
+                arrow.Initialize();
+                arrow.Visible = false;
+                arrow.IsOriginCenter = true;
+                offScreenArrows.Add(player.PlayerIndex, arrow);
+
+                //Increment offsets and indicies
+                currentOffset += screenWidthIncrement;
+                i++;
             }
 
             foreach (Monster monster in level.MonsterList)
@@ -56,16 +79,60 @@ namespace TheGame.Game_Screens
                 hud.Value.AttackGauge.CurrentValue = hud.Key.PlayerInfo.CurrentAttackGauge;
                 hud.Value.Healthbar.CurrentValue = hud.Key.ActorStats.CurrentHealth;
                 hud.Value.ManaBar.CurrentValue = hud.Key.ActorStats.CurrentMana;
+
+                DisplayOffScreenArrow(hud.Key, viewport, camera);
             }
 
             foreach (KeyValuePair<Monster, int> monsterHealth in monsterCurrentHealth)
             {
-
-                Vector3 monsterScreenPos = viewport.Project(monsterHealth.Key.Position, camera.Projection, camera.View,
-                    Matrix.CreateScale(new Vector3(monsterHealth.Key.Scale.X, monsterHealth.Key.Scale.Y, 1.0f)) * Matrix.CreateWorld(Vector3.Zero, camera.Position - monsterHealth.Key.Position, Vector3.Up) * Matrix.CreateTranslation(monsterHealth.Key.Position));
-
+                Vector3 monsterScreenPos = viewport.Project(monsterHealth.Key.Position, camera.Projection, camera.View, Matrix.Identity);
             }
 
+        }
+
+        private void DisplayOffScreenArrow(Player player, Viewport viewport, Camera camera)
+        {
+
+            ImageComponent2D arrow = offScreenArrows[player.PlayerIndex];
+            arrow.Visible = false;
+            arrow.Rotation = 0.0f;
+
+            Vector3 screenPos = viewport.Project(player.Position, camera.Projection, camera.View, Matrix.Identity);
+            if (screenPos.X < 0.0f && screenPos.Y > viewport.Height)
+            {
+                arrow.Visible = true;
+                arrow.Rotation = MathHelper.PiOver4;
+                arrow.Position = new Vector2(arrow.Height, viewport.Height - arrow.Height - 90.0f);
+            }
+            else if (screenPos.X > viewport.Width && screenPos.Y > viewport.Height)
+            {
+                arrow.Visible = true;
+                arrow.Rotation = -MathHelper.PiOver4;
+                arrow.Position = new Vector2(viewport.Width - arrow.Height, viewport.Height - arrow.Height - 90.0f);
+            }
+            else if (screenPos.X < 0.0f)
+            {
+                arrow.Visible = true;
+                arrow.Rotation = MathHelper.PiOver2;
+                arrow.Position = new Vector2(arrow.Height, screenPos.Y);
+            }
+            else if (screenPos.X > viewport.Width)
+            {
+                arrow.Visible = true;
+                arrow.Rotation = -MathHelper.PiOver2;
+                arrow.Position = new Vector2(viewport.Width - arrow.Height, screenPos.Y);
+            }
+            else if (screenPos.Y < 0.0f)
+            {
+                arrow.Visible = true;
+                arrow.Rotation = MathHelper.Pi;
+                arrow.Position = new Vector2(screenPos.X, arrow.Height);
+            }
+            else if (screenPos.Y > viewport.Height)
+            {
+                arrow.Visible = true;
+                arrow.Position = new Vector2(screenPos.X, viewport.Height - arrow.Height - 90.0f);
+            }
         }
 
         private static HUDStatusComponent2D CreateCharacterStatusHUD(GameScreen parent, Vector2 position, int currentHealth, int maxHealth, int currentMana, int maxMana, int level, Texture2D playerFace, int currentAttack, int maxAttack)

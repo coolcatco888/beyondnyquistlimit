@@ -101,10 +101,13 @@ namespace TheGame
             {
                 Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");//Change This to be @"Sprites\\" + activePlayer.Value
                 Player player = new Player(this, playerSpriteInfo, activePlayer.Key, "Wizard",//TODO: set this to activePlayer.Value
-                     new Vector3(1.0f + playerPosOffset, 2.0f, 1.0f));
+                     new Vector3(1.0f, 2.0f, 1.0f));
+                Vector3 newPos = player.Position;
+                newPos.X = newPos.X + playerPosOffset;
+                player.Position = newPos;
                 player.Initialize();
                 playerList.Add(player);
-                playerPosOffset += 1.0f;
+                playerPosOffset += 3.0f;
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
@@ -130,13 +133,15 @@ namespace TheGame
         private void HandleInput(GameTime gameTime)
         {
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-            InputHub inputHub = (InputHub)GameEngine.Services.GetService(typeof(InputHub));
-            GamepadDevice gamepadDevice = inputHub[inputHub.MasterInput];
 
-            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            foreach (Player player in playerList)
             {
-                PauseScreen pauseScreen = new PauseScreen("pause", this, inputHub.MasterInput);
-                pauseScreen.Initialize();
+                GamepadDevice gamepadDevice = ((InputHub)GameEngine.Services.GetService(typeof(InputHub)))[player.PlayerIndex];
+                if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+                {
+                    PauseScreen pauseScreen = new PauseScreen("pause", this, player.PlayerIndex);
+                    pauseScreen.Initialize();
+                }
             }
         }
 
