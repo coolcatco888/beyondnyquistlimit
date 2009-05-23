@@ -24,6 +24,11 @@ namespace TheGame.Game_Screens
         /// </summary>
         public override void LoadContent()
         {
+            Texture2D gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
+            Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
+                (float)GameEngine.Graphics.Viewport.Height / (float)gradient.Height);
+            (new ImageComponent2D(this, Vector2.Zero, gradient, Color.CornflowerBlue, scale)).Initialize();
+
             //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, GameEngine.Content, "Components\\GUI\\MenuPanels\\mainpanel.xml");
             Texture2D gauge = GameEngine.Content.Load<Texture2D>("GUI\\circGauge");
@@ -33,6 +38,7 @@ namespace TheGame.Game_Screens
             menu.Initialize();
 
             //CreateCharacterStatusHUD();//Uncomment this to see the HUD
+            base.LoadContent();
         }
 
         /// <summary>
@@ -107,13 +113,13 @@ namespace TheGame.Game_Screens
 
                         GameScreen skybox = new SkyboxScreen("sky");
                         Level level =  new Level("level", "Terrain\\terrain");
-                        GameScreen cameraScreen = new GameScreen("camera");
+                        //GameScreen cameraScreen = new GameScreen("camera");
 
-                        Camera camera = new ActionCamera(cameraScreen, level.PlayerList);
-                        camera.Initialize();
-                        GameEngine.Services.AddService(typeof(Camera), (object)(camera));
+                        //Camera camera = new ActionCamera(cameraScreen, level.PlayerList);
+                        //camera.Initialize();
+                        //GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
-                        cameraScreen.Initialize();
+                        //cameraScreen.Initialize();
                         skybox.Initialize();
                         level.Initialize();
 

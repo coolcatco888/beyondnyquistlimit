@@ -31,21 +31,25 @@ namespace TheGame.Game_Screens
             menu.PanelItems.Add(new MenuTextComponent2D(this, new Vector2(10, 2), "Continue Game", Color.White, font, Color.Yellow, true));
             menu.PanelItems.Add(new MenuTextComponent2D(this, new Vector2(10, 42), "Exit Game", Color.White, font, Color.Yellow, false));
             menu.Initialize();
+            base.LoadContent();
         }
 
         public PauseScreen(string name, GameScreen previousScreen, PlayerIndex sender)
             : base(name)
         {
             this.sender = sender;
+            gamepadDevice = inputHub[sender];
             Texture2D blank = GameEngine.Content.Load<Texture2D>("GUI\\blank");
 
          
             this.fadeScreen = new ImageComponent2D(this, Vector2.Zero, blank, new Color(Color.Black, 100), new Vector2(GameEngine.Graphics.Viewport.Width, GameEngine.Graphics.Viewport.Height));
+            fadeScreen.Initialize();
             this.Components.Add(fadeScreen);
             GameEngine.BaseScreen.AlwaysUpdate = true;
             this.BlocksUpdate = true;
             this.previousScreen = previousScreen;
             CreateMenu();
+            
 
         }
 
@@ -72,7 +76,9 @@ namespace TheGame.Game_Screens
                                 item.Dispose();
                             }
                         }
-                        (new MainMenuScreen("main")).LoadContent();
+                        MainMenuScreen main = new MainMenuScreen("main");
+                        main.LoadContent();
+                        main.Initialize();
                         break;
                 }
             }

@@ -90,6 +90,8 @@
     <Compile Include="AI\Behaviors.cs" />
     <Compile Include="AI\WanderBehavior.cs" />
     <Compile Include="BoundingRectangle.cs" />
+    <Compile Include="Components\GUI\BorderedPanel.cs" />
+    <Compile Include="Components\GUI\FrameRateCounterText2D.cs" />
     <Compile Include="Game Screens\CameraScreen.cs" />
     <Compile Include="Components\Abstract Base\CollidableComponent.cs" />
     <Compile Include="Components\Abstract Base\Component3D.cs" />
@@ -140,6 +142,8 @@
     <Compile Include="Components\Spells\Container3D.cs" />
     <Compile Include="ControlHub.cs" />
     <Compile Include="Components\Abstract Base\DrawableComponent.cs" />
+    <Compile Include="Game Screens\CharacterSelectScreen.cs" />
+    <Compile Include="Game Screens\HUDScreen.cs" />
     <Compile Include="Game Screens\Level.cs" />
     <Compile Include="Game Screens\MainMenuScreen.cs" />
     <Compile Include="Game Screens\MenuScreen.cs" />

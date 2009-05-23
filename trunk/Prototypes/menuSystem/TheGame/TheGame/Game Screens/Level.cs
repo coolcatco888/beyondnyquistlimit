@@ -21,6 +21,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
 using Microsoft.Xna.Framework.Storage;
 using TheGame.Components.Cameras;
+using TheGame.Game_Screens;
 #endregion
 
 namespace TheGame
@@ -81,6 +82,12 @@ namespace TheGame
 
         public override void Initialize()
         {
+            //Initialize Camera
+            ActionCamera camera = (ActionCamera)GameEngine.Services.GetService(typeof(Camera));
+            camera.Initialize();
+            camera.Position = new Vector3(0.0f, 10.0f, 25.0f);
+            camera.LookAt = new Vector3(0, 0, 0);
+
             levelMap = new Terrain(this, terrainFileName);
             levelMap.Initialize();
             terrainHeightMap = levelMap.HeightMapInfo;
@@ -95,7 +102,28 @@ namespace TheGame
             poring.Initialize();
             monsterList.Add(poring);
 
+            camera.ActorsToFollow = playerList;
+
             base.Initialize();
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            HandleInput(gameTime);
+            base.Update(gameTime);
+        }
+
+        private void HandleInput(GameTime gameTime)
+        {
+            KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
+            InputHub inputHub = (InputHub)GameEngine.Services.GetService(typeof(InputHub));
+            GamepadDevice gamepadDevice = inputHub[inputHub.MasterInput];
+
+            if (keyboardDevice.WasKeyPressed(Keys.Escape) || gamepadDevice.WasButtonPressed(Buttons.Start))
+            {
+                PauseScreen pauseScreen = new PauseScreen("pause", this, inputHub.MasterInput);
+                pauseScreen.Initialize();
+            }
         }
 
     }

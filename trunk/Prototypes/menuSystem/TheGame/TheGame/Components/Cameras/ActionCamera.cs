@@ -8,11 +8,13 @@ namespace TheGame.Components.Cameras
 {
     class ActionCamera : Camera
     {
-        private float minDistance, minHeight, maxHeight;
+        private float minDistance, maxDistance, minHeight, maxHeight;
 
         private ActorList actorsToFollow;
 
-        private float distancePerUpdate, zoomConstant;
+        private const float distancePerUpdate = 0.0025f, zoomConstant = 0.4f;
+
+        private float initAngle = 0.0f;
 
         /// <summary>
         /// Closest Distance the camera can be to the actors
@@ -51,25 +53,32 @@ namespace TheGame.Components.Cameras
             set { actorsToFollow = value; }
         }
 
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, float distancePerUpdate, float zoomConstant, ActorList actorsToFollow)
+        /// <summary>
+        /// Creates an action camera with standard settings
+        /// </summary>
+        /// <param name="parent">Screen the camera is contained in</param>
+        public ActionCamera(GameScreen parent)
+            : this(parent, 4.5f, 12.0f, 10.0f, 12.0f, new ActorList())
+        {
+        }
+
+        /// <summary>
+        /// Creates an action camera with variable minimum follow distance, minimum height, maximum height, and actors to follow
+        /// </summary>
+        /// <param name="parent"></param>
+        /// <param name="minDistance"></param>
+        /// <param name="minHeight"></param>
+        /// <param name="maxHeight"></param>
+        /// <param name="actorsToFollow"></param>
+        public ActionCamera(GameScreen parent, float minDistance, float maxDistance, float minHeight, float maxHeight, ActorList actorsToFollow)
             : base(parent)
         {
             this.minDistance = minDistance;
+            this.maxDistance = maxDistance;
             this.minHeight = minHeight;
             this.maxHeight = maxHeight;
-            this.distancePerUpdate = distancePerUpdate;
-            this.zoomConstant = zoomConstant;
             this.actorsToFollow = actorsToFollow;
-        }
-
-        public ActionCamera(GameScreen parent, float minDistance, float minHeight, float maxHeight, ActorList actorsToFollow)
-            : this(parent, minDistance, minHeight, maxHeight, 0.0025f, 0.4f, actorsToFollow)
-        {
-        }
-
-        public ActionCamera(GameScreen parent, ActorList actorsToFollow)
-            : this(parent, 4.5f, 10.0f, 12.0f, 0.0025f, 0.4f, actorsToFollow)
-        {
+           
         }
 
         public override void Update(GameTime gameTime)
@@ -116,12 +125,38 @@ namespace TheGame.Components.Cameras
 
         private float CalculateCameraZoomDistance(float distOfFurthestActorFromLookAt)
         {
+
             foreach (Billboard actor in actorsToFollow)
             {
                 if (actor.IsDisposed)
                     continue;
 
-                float currentDist = (actor.Position - lookAt).Length() * zoomConstant;
+                float distanceFromCamera = (actor.Position - position).Length();
+                float distanceFromLookAt = (actor.Position - lookAt).Length();
+
+                //Here we determine percentage of the distance from look at * the zoomConstant we want to add back
+                float denominator = distanceFromCamera > distanceFromLookAt ? distanceFromCamera : distanceFromLookAt;
+                float additiveRatio = Math.Abs(distanceFromCamera - distanceFromLookAt) / denominator;
+                additiveRatio += 0.5f;
+
+                //Here we determine percentage of the distance from look at * the zoomConstant we want to subtract
+                Vector3 lineOfSight = position - lookAt;
+                lineOfSight.Normalize();
+                Vector3 line = new Vector3(position.X, 0.0f, position.Z) - lookAt;
+                line.Normalize();
+                float cameraUpAndDownAngle = (float)Math.Acos(Vector3.Dot(lineOfSight, line));
+
+                if (initAngle == 0.0f)
+                    initAngle = cameraUpAndDownAngle;
+
+                float subtractionRatio = Math.Abs(initAngle - cameraUpAndDownAngle);
+
+                //Calculate the current distance and the distance we want to subtract
+                float currentDist = distanceFromLookAt * zoomConstant;
+                float subtractValue = currentDist * subtractionRatio;
+                
+                //Subtract part of the distance and add back part of the distance we subtracted
+                currentDist = currentDist - subtractValue + subtractValue * additiveRatio;
                 if (currentDist > distOfFurthestActorFromLookAt)
                 {
                     distOfFurthestActorFromLookAt = currentDist;
@@ -137,7 +172,7 @@ namespace TheGame.Components.Cameras
             newDirection.Normalize();
 
             //Scale direction
-            newDirection = newDirection * distOfFurthestActorFromLookAt;
+            newDirection = newDirection * (distOfFurthestActorFromLookAt < maxDistance? distOfFurthestActorFromLookAt : maxDistance);
             newDirection = newDirection + (newDirection * minDistance);
             newDirection.Y = newDirection.Y > minHeight ? newDirection.Y < maxHeight ? newDirection.Y : maxHeight : minHeight;
 
