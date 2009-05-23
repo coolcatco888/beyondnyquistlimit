@@ -52,6 +52,30 @@ namespace TheGame.Components.Display
             base.Initialize();
         }
 
+        public override Vector2 Position
+        {
+            get
+            {
+                return base.Position;
+            }
+            set
+            {
+                Vector2 oldPosition = base.position;
+                ((ValueBarComponent2D)healthBar).Position = ((ValueBarComponent2D)healthBar).Position - oldPosition + value;
+                ((ValueBarComponent2D)manaBar).Position = ((ValueBarComponent2D)manaBar).Position - oldPosition + value;
+                hud.Position = hud.Position - oldPosition + value;
+                playerImage.Position = playerImage.Position - oldPosition + value;
+                ((DisplayComponent2D)level).Position = ((DisplayComponent2D)level).Position - oldPosition + value;
+                healthValue.Position = healthValue.Position - oldPosition + value;
+                manaValue.Position = manaValue.Position - oldPosition + value;
+                ((DisplayComponent2D)attackGauge).Position = ((DisplayComponent2D)attackGauge).Position - oldPosition + value;
+                ((CircularGauge)attackGauge).SetupGauge();
+
+                base.Position = value;
+            }
+        }
+
+
         /// <summary>
         /// Constructs a new Character Display Component.
         /// </summary>

@@ -18,6 +18,12 @@ namespace TheGame
 
         // Class info for the player
         protected CharacterClassInfo classInfo;
+        protected float gaugeTimer = 0.0f;
+
+        public CharacterClassInfo ClassInfo
+        {
+            get { return classInfo; }
+        }
 
         #endregion  // Fields
 
@@ -45,6 +51,14 @@ namespace TheGame
             set { hasAttacked = value; }
         }
 
+        protected PlayerInfo playerInfo;
+
+        public PlayerInfo PlayerInfo
+        {
+            get { return playerInfo; }
+        }
+
+
         #endregion
 
         #region TEMPORARY - Testing Fields
@@ -62,8 +76,12 @@ namespace TheGame
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
 
+
             hasAttacked = false;
             classInfo = GameEngine.Content.Load<Library.CharacterClassInfo>(@classInfoFile);
+            actorStats = new ActorInfo();
+            playerInfo = new PlayerInfo(className);//TODO: new PlayerInfo() should be loaded from xml
+            actorStats.PopulateFields(playerInfo, classInfo);
         }
 
         #endregion // Constructor
@@ -97,6 +115,12 @@ namespace TheGame
 
         public override void Update(GameTime gameTime)
         {
+            gaugeTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (gaugeTimer >= 200.0f && playerInfo.CurrentAttackGauge < 100)
+            {
+                playerInfo.CurrentAttackGauge += 10;
+                gaugeTimer = 0;
+            }
             previousState = state;
 
             UpdatePosition(gameTime);
@@ -211,7 +235,7 @@ namespace TheGame
         {
             GamepadDevice gamepadDevice = ((InputHub)GameEngine.Services.GetService(typeof(InputHub)))[playerIndex];
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-
+            
             switch (previousState)
             {
                 case ActorState.Idle:
@@ -256,22 +280,24 @@ namespace TheGame
         {
             speed = 0.0f;
 
-            if (currentSequence.CurrentFrame.X == 0)
+            foreach (Monster m in ((Level)Parent).MonsterList)
             {
-                foreach (Monster m in ((Level)Parent).MonsterList)
+                if (IsHit(m.PrimitiveShape))
                 {
-                    if (IsHit(m.PrimitiveShape))
-                    {
-                        target = m;
-                    }
+                    target = m;
                 }
             }
 
             if (currentSequence.Title == "Attacking" && ((currentSequence.CurrentFrame.X == 4
-                 || currentSequence.CurrentFrame.X == 12)) && target != null && !hasAttacked)
+                 || currentSequence.CurrentFrame.X == 12)) && !hasAttacked)
             {
-                target.GetHit(this.classInfo.BaseDamage, orientation, 0.5f);
-                this.hasAttacked = true;
+                if(target != null)
+                {
+                    target.GetHit((int)((float) actorStats.CurrentDamage * (float)playerInfo.CurrentAttackGauge / (float)playerInfo.MaxAttackGauge), 
+                        orientation, 0.5f);
+                    this.hasAttacked = true;
+                }
+                playerInfo.CurrentAttackGauge = 0;
             }
 
             if (currentSequence.IsComplete)

@@ -72,14 +72,19 @@ namespace TheGame.Components.GUI
             SetupGauge();
         }
 
-        private void SetupGauge()
+        public void SetupGauge()
         {
             //Add Items
             Vector2 itemDirection = new Vector2(radius, 0);//This direction will rotate clockwise
             Vector2 cornerToCenter = new Vector2(gaugeImage.Width * 0.5f, gaugeImage.Height * 0.5f);
             itemDirection = Vector2.Transform(itemDirection, Quaternion.CreateFromYawPitchRoll(0, 0, startAngle));
             Quaternion rotation = Quaternion.CreateFromYawPitchRoll(0, 0, incrementAngle);
-
+            foreach (DisplayComponent2D item in gaugeSquares)
+            {
+                item.Dispose();
+            }
+            gaugeSquares.Clear();
+            ranges.Clear();
             for (float angle = startAngle; angle < endAngle; angle += incrementAngle)
             {
                 itemDirection = Vector2.Transform(itemDirection, rotation);//Change direction
@@ -118,6 +123,12 @@ namespace TheGame.Components.GUI
                 }
                 i++;
             }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            UpdateGaugeColors();
+            base.Update(gameTime);
         }
 
 

@@ -94,14 +94,17 @@ namespace TheGame
             levelMap = new Terrain(this, terrainFileName);
             levelMap.Initialize();
             terrainHeightMap = levelMap.HeightMapInfo;
-            
+
             //Initialize Players
+            float playerPosOffset = 0.0f;
             foreach (KeyValuePair<PlayerIndex, string> activePlayer in activePlayers)
             {
                 Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");//Change This to be @"Sprites\\" + activePlayer.Value
-                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, activePlayer.Value, new Vector3(1.0f, 2.0f, 1.0f));
+                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, "Wizard",//TODO: set this to activePlayer.Value
+                     new Vector3(1.0f + playerPosOffset, 2.0f, 1.0f));
                 player.Initialize();
                 playerList.Add(player);
+                playerPosOffset += 1.0f;
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
@@ -110,6 +113,10 @@ namespace TheGame
             monsterList.Add(poring);
 
             camera.ActorsToFollow = playerList;
+
+            //Initialize Hud screen
+            HUDScreen hud = new HUDScreen("hud", this);
+            hud.Initialize();
 
             base.Initialize();
         }

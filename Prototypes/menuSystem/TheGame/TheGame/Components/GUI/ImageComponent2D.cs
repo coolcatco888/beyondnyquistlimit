@@ -115,7 +115,7 @@ namespace TheGame.Components.Display
 
         public override void Dispose()
         {
-            this.image.Dispose();
+            //this.image.Dispose();
             base.Dispose();
         }
 

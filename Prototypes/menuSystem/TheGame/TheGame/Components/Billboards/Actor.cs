@@ -105,6 +105,11 @@ namespace TheGame
             set { direction = value; }
         }
 
+        public ActorInfo ActorStats
+        {
+            get { return actorStats; }
+        }
+            
         #endregion  // Accessors
 
         #region Initialization
