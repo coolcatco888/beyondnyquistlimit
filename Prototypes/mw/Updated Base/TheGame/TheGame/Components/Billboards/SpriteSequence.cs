@@ -36,7 +36,7 @@ namespace TheGame
         protected int bufferFrames;
         protected int bufferTotal;
 
-        protected Dictionary<int, string> attackFrames = new Dictionary<int, string>();
+        protected Dictionary<int, string> attackSlashes = new Dictionary<int, string>();
 
         #endregion  // Fields
 
@@ -133,8 +133,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(1, 1);
-
-            this.Initialize();
         }
 
         public SpriteSequence(string title, Orientation orientation, bool isLoop, float speed, int bufferFrames, int xScale, int yScale)
@@ -148,8 +146,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(xScale, yScale);
-
-            this.Initialize();
         }
 
         public SpriteSequence(bool isLoop, int bufferFrames)
@@ -159,8 +155,6 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(1, 1);
-
-            this.Initialize();
         }
 
         public SpriteSequence(bool isLoop, int bufferFrames, int xScale, int yScale)
@@ -170,15 +164,9 @@ namespace TheGame
             this.bufferFrames = bufferFrames;
 
             this.scale = new Point(xScale, yScale);
-
-            this.Initialize();
         }
 
         #endregion  // Constructors
-
-        public virtual void Initialize()
-        {
-        }
 
         #region Update
 
@@ -222,9 +210,9 @@ namespace TheGame
                 }
             }
 
-            if (attackFrames.ContainsKey(frameIndex))
+            if (attackSlashes.ContainsKey(frameIndex))
             {
-                return attackFrames[frameIndex];
+                return attackSlashes[frameIndex];
             }
             else
             {
@@ -287,12 +275,12 @@ namespace TheGame
 
         public void AddAttack(int frame, string title)
         {
-            attackFrames.Add(frame, title);
+            attackSlashes.Add(frame, title);
         }
 
         public void RemoveAttack(int frame)
         {
-            attackFrames.Remove(frame);
+            attackSlashes.Remove(frame);
         }
 
 

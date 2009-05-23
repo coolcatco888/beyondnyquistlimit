@@ -204,6 +204,7 @@ D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\D
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PoringXml.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb
+D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\PlayerMultipleSequences.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\GUI\menufont.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb
 D:\work\mW\09project\jimwtf\Prototypes\mw\Updated Base\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb

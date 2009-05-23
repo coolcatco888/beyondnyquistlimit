@@ -83,9 +83,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActorInfo.cs" />
+    <Compile Include="AttackInfo.cs" />
     <Compile Include="BoundingShapeInfo.cs" />
     <Compile Include="CharacterClassInfo.cs" />
     <Compile Include="MonsterInfo.cs" />
+    <Compile Include="MultipleSequenceInfo.cs" />
     <Compile Include="PlayerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpellInfo.cs" />

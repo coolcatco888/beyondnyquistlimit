@@ -34,6 +34,8 @@ namespace TheGamePipeline
             output.Write(value.IndexX);
             output.Write(value.IndexY);
             output.Write(value.RowOrColumn);
+            output.Write(value.AttackKey);
+            output.Write(value.AttackValue);
         }
 
         public override string GetRuntimeReader(TargetPlatform targetPlatform)

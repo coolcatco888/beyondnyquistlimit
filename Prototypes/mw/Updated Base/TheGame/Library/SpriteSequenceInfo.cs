@@ -110,6 +110,24 @@ namespace Library
 
         #endregion
 
+        #region Attack Slashes
+
+        private int attackKey;
+        public int AttackKey
+        {
+            get { return attackKey; }
+            set { attackKey = value; }
+        }
+
+        private string attackValue;
+        public string AttackValue
+        {
+            get { return attackValue; }
+            set { attackValue = value; }
+        }
+
+        #endregion  // Attack Slashes
+
         #region Content Reader
 
         public class SpriteSequenceInfoReader : ContentTypeReader<SpriteSequenceInfo>
@@ -136,6 +154,9 @@ namespace Library
                 spriteSequenceInfo.indexX = input.ReadInt32();
                 spriteSequenceInfo.indexY = input.ReadInt32();
                 spriteSequenceInfo.RowOrColumn = input.ReadInt32();
+
+                spriteSequenceInfo.attackKey = input.ReadInt32();
+                spriteSequenceInfo.attackValue = input.ReadString();
 
                 return spriteSequenceInfo;
             }
