@@ -23,19 +23,9 @@
 		<font>GUI\menufont</font>
 	</text2d>
 
-  <text2d>
-    <xpos>10</xpos>
-    <ypos>42</ypos>
-    <text>Options</text>
-    <rcolor>255</rcolor>
-    <gcolor>255</gcolor>
-    <bcolor>255</bcolor>
-    <font>GUI\menufont</font>
-  </text2d>
-
 	<text2d>
 		<xpos>10</xpos>
-		<ypos>82</ypos>
+		<ypos>52</ypos>
 		<text>Exit Game</text>
 		<rcolor>255</rcolor>
 		<gcolor>255</gcolor>
