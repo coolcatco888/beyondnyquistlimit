@@ -106,21 +106,32 @@ namespace TheGame.Game_Screens
         {
             foreach (GamepadDevice pad in allGamePads)
             {
-                if (keyboardDevice != null && keyboardDevice.WasKeyPressed(Keys.Enter) || pad != null && pad.WasButtonPressed(Buttons.A))
+                if (pad != null && pad.WasButtonPressed(Buttons.A))
                 {
-                    switch (menu.GetCurrentText())
-                    {
-                        case "Start Game":
-                            Dispose();
-                            GameScreen characterSelectScreen = new CharacterSelectScreen("charselect");
-                            characterSelectScreen.Initialize();
-
-                            break;
-                        case "Exit Game":
-                            GameEngine.EndGame();
-                            break;
-                    }
+                    string menuText = menu.GetCurrentText();
+                    CheckSelection(menuText);
                 }
+            }
+            if (keyboardDevice != null && keyboardDevice.WasKeyPressed(Keys.Enter))
+            {
+                string menuText = menu.GetCurrentText();
+                CheckSelection(menuText);
+            }
+        }
+
+        private void CheckSelection(string menuText)
+        {
+            switch (menuText)
+            {
+                case "Start Game":
+                    Dispose();
+                    GameScreen characterSelectScreen = new CharacterSelectScreen("charselect");
+                    characterSelectScreen.Initialize();
+
+                    break;
+                case "Exit Game":
+                    GameEngine.EndGame();
+                    break;
             }
         }
 
