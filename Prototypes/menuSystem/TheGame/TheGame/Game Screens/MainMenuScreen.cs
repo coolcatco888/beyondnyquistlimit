@@ -32,20 +32,23 @@ namespace TheGame.Game_Screens
             //Build the menu from XML
             XMLPanel2DBuilder componentBuilder = new XMLPanel2DBuilder(this, GameEngine.Content, "Components\\GUI\\MenuPanels\\mainpanel.xml");
             Texture2D gauge = GameEngine.Content.Load<Texture2D>("GUI\\circGauge");
-            
-            //Make it into functional menu
-            menu = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 1, 2);
-            menu.Initialize();
 
             //Load Border
-            Texture2D bg = GameEngine.Content.Load<Texture2D>("GUI\\blank");
+            Texture2D bg = GameEngine.Content.Load<Texture2D>("GUI\\gray");
             Texture2D border = GameEngine.Content.Load<Texture2D>("GUI\\brdr");
             Texture2D borderBG = GameEngine.Content.Load<Texture2D>("GUI\\brdrbg");
             Texture2D borderCorner = GameEngine.Content.Load<Texture2D>("GUI\\brdrcorner");
             Texture2D borderCornerBG = GameEngine.Content.Load<Texture2D>("GUI\\brdrcornerbg");
 
-            BorderedPanel borderPanel = new BorderedPanel(this, new Vector2(200, 200), border, borderCorner, borderBG, borderCornerBG, bg, new Vector2(100, 100), Color.Black);
+            BorderedPanel borderPanel = new BorderedPanel(this, new Vector2(120, 90), border, borderCorner, borderBG, borderCornerBG, bg, new Vector2(250, 110), new Color(Color.White, 100));
             borderPanel.Initialize();
+
+            //Make it into functional menu
+            menu = MenuPanel2D.CreateMenuPanel2D(componentBuilder.Panel, 0, 1);
+            menu.Initialize();
+
+            
+            
 
             //CreateCharacterStatusHUD();//Uncomment this to see the HUD
             base.LoadContent();
