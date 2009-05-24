@@ -34,12 +34,8 @@ struct VertexShaderOutput
 struct PixelShaderInput
 {
 	float4 Color		: COLOR0;
+    float2 TexCoord		: TEXCOORD0;
 
-	#ifdef XBOX
-        float2 TexCoord : SPRITETEXCOORD;
-    #else
-        float2 TexCoord : TEXCOORD0;
-    #endif
     
     
 };
