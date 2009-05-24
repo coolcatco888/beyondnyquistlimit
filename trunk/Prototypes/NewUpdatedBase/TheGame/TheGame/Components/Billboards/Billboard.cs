@@ -30,7 +30,7 @@ namespace TheGame
         // End Testing
 
         private Color color;
-        protected Color Color
+        public Color Color
         {
             get { return color; }
             set { color = value; }

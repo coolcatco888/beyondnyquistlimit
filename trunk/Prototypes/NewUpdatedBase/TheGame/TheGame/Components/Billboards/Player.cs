@@ -383,13 +383,15 @@ namespace TheGame
                     targetIndex = 0;
             }
 
+            ActorList playerList = ((Level)Parent).PlayerList;
+
             if (gamepadDevice.WasButtonPressed(Buttons.LeftShoulder))
             {
                 crosshair.Visible = true;
-                monsterTarget = (Monster)monsterList[targetIndex];
-                targetIndex--;
-                if (targetIndex == -1)
-                    targetIndex = monsterList.Count - 1;
+                playerTarget = (Player)playerList[targetIndex];
+                targetIndex++;
+                if (targetIndex == playerList.Count)
+                    targetIndex = 0;
             }
 
             speed = 0.0f;
@@ -632,6 +634,9 @@ namespace TheGame
 
                     boundingShapesSelf["Dying" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Dying" + info.OrientationKey].ShapeColor = Color.Gold;
+
+                    boundingShapesSelf["Dead" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Dead" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {
@@ -657,6 +662,7 @@ namespace TheGame
             spellComboLibrary = new Move[]
                 {
                     new Move("Fire Tornado", Buttons.A),
+                    new Move("Healing", Buttons.B),
                     new Move("Activate Spell",  Buttons.A,  Buttons.X,  Buttons.Y,  Buttons.B),
                 };
 
@@ -718,32 +724,55 @@ namespace TheGame
         private void CreateSpell(string spellName)
         {
             SpellInfo spellInfo;
-            switch (spellName)
+            if(classInfo.ClassName.Equals("Wizard"))
             {
-                case "Chain Beam":
-                    //TODO: make this work!!!
-                    //currentSpell = new ChainBeam(this.Parent, 500.0f);
-                    break;
-                case "Fire Tornado":
-                    spellInfo = new SpellInfo();
-                    spellInfo.Duration = 4.0f;
-                    spellInfo.Damage = 3;
-                    spellInfo.TickFrequency = 0.2f;
-                    currentSpell = new FireTornado(this.Parent, spellInfo, this, ((Level)Parent).MonsterList.GetAllWithinRange(this.position, 15.0f));
-                    currentSpell.Initialize();
-                    break;
-                case "Fire Line":
+                switch (spellName)
+                {
+                    case "Chain Beam":
+                        //TODO: make this work!!!
+                        //currentSpell = new ChainBeam(this.Parent, 500.0f);
+                        break;
+                    case "Fire Tornado":
+                            spellInfo = new SpellInfo();
+                            spellInfo.Duration = 4.0f;
+                            spellInfo.Damage = 3;
+                            spellInfo.TickFrequency = 0.2f;
+                            currentSpell = new FireTornado(this.Parent, spellInfo, this, ((Level)Parent).MonsterList.GetAllWithinRange(this.position, 15.0f));
+                            currentSpell.Initialize();
+                        break;
+                    case "Fire Line":
 
-                    break;
-                case "Healing":
+                        break;
+                }
+            }
 
-                    break;
+            else if(classInfo.ClassName.Equals("Priest"))
+            {
+                List<Actor> list = new List<Actor>();
+                
+                if(playerTarget != null)
+                    list.Add(playerTarget);
+
+                switch(spellName)
+                {
+                    case "Healing":
+                        if (classInfo.ClassName.Equals("Priest"))
+                        {
+                            spellInfo = new SpellInfo();
+                            spellInfo.Duration = 1.5f;
+                            spellInfo.Damage = 20;
+                            spellInfo.TickFrequency = 1.0f;
+                            currentSpell = new Healing(this.Parent, spellInfo, this, list);
+                            currentSpell.Initialize();
+                        }
+                        break; 
+                }
             }
         }
 
         #endregion
 
-        public void ApplyDamage(int damage)
+        public override void ApplyDamage(int damage)
         {
             actorStats.CurrentHealth -= damage;
             if (actorStats.CurrentHealth <= 0)

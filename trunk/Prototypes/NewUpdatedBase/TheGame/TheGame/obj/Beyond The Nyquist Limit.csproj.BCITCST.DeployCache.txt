@@ -8,7 +8,7 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\GameThumbnail.png
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Library.dll
 2009-05-24T15:01:53.5625000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\TheGame.exe
-2009-05-24T15:30:18.5156250Z
+2009-05-24T16:23:00.4218750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\BasicPoint.xnb
 2009-05-24T15:02:39.7500000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Bezier.xnb
@@ -26,7 +26,7 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PlayerMultipleSequences.xnb
 2009-05-24T15:02:43.8593750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PlayerSpriteSequences.xnb
-2009-05-24T15:30:18.0781250Z
+2009-05-24T15:59:14.7031250Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringBoundingShapes.xnb
 2009-05-24T15:30:18.0937500Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringInfo.xnb
@@ -55,6 +55,32 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 2009-05-24T15:01:58.5468750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\terrain.xnb
 2009-05-24T15:02:03.8125000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\all-wcprops
+2009-05-24T15:37:33.7500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\entries
+2009-05-24T15:37:33.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\format
+2009-05-24T15:32:37.3437500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\text-base\MountainGrass.xnb.svn-base
+2009-05-24T15:01:57.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\text-base\MountainGrass_0.xnb.svn-base
+2009-05-24T15:02:04.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\text-base\rocks.xnb.svn-base
+2009-05-24T15:01:58.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\text-base\skymap.xnb.svn-base
+2009-05-24T15:01:58.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\text-base\terrain.xnb.svn-base
+2009-05-24T15:02:03.8125000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\prop-base\MountainGrass.xnb.svn-base
+2009-05-24T15:34:41.9687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\prop-base\MountainGrass_0.xnb.svn-base
+2009-05-24T15:34:41.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\prop-base\rocks.xnb.svn-base
+2009-05-24T15:34:41.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\prop-base\skymap.xnb.svn-base
+2009-05-24T15:34:42.0000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\.svn\prop-base\terrain.xnb.svn-base
+2009-05-24T15:34:42.0000000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\circles.xnb
 2009-05-24T15:02:09.5000000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\cloud.xnb
@@ -87,6 +113,76 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 2009-05-24T15:02:21.9062500Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\WizardSpriteInfo.xnb
 2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\all-wcprops
+2009-05-24T15:37:33.5937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\entries
+2009-05-24T15:37:33.5937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\format
+2009-05-24T15:32:36.9218750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\circles.xnb.svn-base
+2009-05-24T15:02:09.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\cloud.xnb.svn-base
+2009-05-24T15:02:12.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\CloudInfo.xnb.svn-base
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\crosshair.xnb.svn-base
+2009-05-24T15:02:38.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\CrosshairInfo.xnb.svn-base
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\explosion.xnb.svn-base
+2009-05-24T15:02:39.6562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\KnightSprite.xnb.svn-base
+2009-05-24T15:02:32.8750000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\KnightSpriteInfo.xnb.svn-base
+2009-05-24T15:02:43.8750000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\MagicCircle.xnb.svn-base
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\PriestSprite.xnb.svn-base
+2009-05-24T15:02:37.9218750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\PriestSpriteInfo.xnb.svn-base
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\RangerSprite.xnb.svn-base
+2009-05-24T15:02:27.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\RangerSpriteInfo.xnb.svn-base
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\Sprite Sheet Knight.xnb.svn-base
+2009-05-24T15:02:10.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\WizardSprite.xnb.svn-base
+2009-05-24T15:02:21.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\text-base\WizardSpriteInfo.xnb.svn-base
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\circles.xnb.svn-base
+2009-05-24T15:34:41.5312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\cloud.xnb.svn-base
+2009-05-24T15:34:41.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\CloudInfo.xnb.svn-base
+2009-05-24T15:34:41.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\crosshair.xnb.svn-base
+2009-05-24T15:34:41.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\CrosshairInfo.xnb.svn-base
+2009-05-24T15:34:41.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\explosion.xnb.svn-base
+2009-05-24T15:34:41.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\KnightSprite.xnb.svn-base
+2009-05-24T15:34:41.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\KnightSpriteInfo.xnb.svn-base
+2009-05-24T15:34:41.4843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\MagicCircle.xnb.svn-base
+2009-05-24T15:34:41.4843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\PriestSprite.xnb.svn-base
+2009-05-24T15:34:41.4843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\PriestSpriteInfo.xnb.svn-base
+2009-05-24T15:34:41.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\RangerSprite.xnb.svn-base
+2009-05-24T15:34:41.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\RangerSpriteInfo.xnb.svn-base
+2009-05-24T15:34:41.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\Sprite Sheet Knight.xnb.svn-base
+2009-05-24T15:34:41.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\WizardSprite.xnb.svn-base
+2009-05-24T15:34:41.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\.svn\prop-base\WizardSpriteInfo.xnb.svn-base
+2009-05-24T15:34:41.5312500Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\skybox.xnb
 2009-05-24T15:02:39.7656250Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskyback.xnb
@@ -99,6 +195,42 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 2009-05-24T15:01:55.7968750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskytop.xnb
 2009-05-24T15:01:55.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\all-wcprops
+2009-05-24T15:37:33.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\entries
+2009-05-24T15:37:33.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\format
+2009-05-24T15:32:36.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\text-base\redskyback.xnb.svn-base
+2009-05-24T15:01:55.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\text-base\redskyfront.xnb.svn-base
+2009-05-24T15:01:55.6250000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\text-base\redskyleft.xnb.svn-base
+2009-05-24T15:01:55.7031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\text-base\redskyright.xnb.svn-base
+2009-05-24T15:01:55.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\text-base\redskytop.xnb.svn-base
+2009-05-24T15:01:55.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\prop-base\redskyback.xnb.svn-base
+2009-05-24T15:34:41.1406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\prop-base\redskyfront.xnb.svn-base
+2009-05-24T15:34:41.1406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\prop-base\redskyleft.xnb.svn-base
+2009-05-24T15:34:41.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\prop-base\redskyright.xnb.svn-base
+2009-05-24T15:34:41.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\.svn\prop-base\redskytop.xnb.svn-base
+2009-05-24T15:34:41.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\.svn\all-wcprops
+2009-05-24T15:37:33.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\.svn\entries
+2009-05-24T15:37:33.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\.svn\format
+2009-05-24T15:32:36.7187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\.svn\text-base\skybox.xnb.svn-base
+2009-05-24T15:02:39.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\.svn\prop-base\skybox.xnb.svn-base
+2009-05-24T15:34:41.1718750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\blank.xnb
 2009-05-24T15:02:12.2031250Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\brdr.xnb
@@ -145,6 +277,104 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 2009-05-24T15:02:22.6093750Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Wizardface.xnb
 2009-05-24T15:02:22.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\all-wcprops
+2009-05-24T15:37:32.6718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\entries
+2009-05-24T15:37:32.6718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\format
+2009-05-24T15:32:35.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\blank.xnb.svn-base
+2009-05-24T15:02:12.2031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\brdr.xnb.svn-base
+2009-05-24T15:02:37.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\brdrbg.xnb.svn-base
+2009-05-24T15:02:38.0156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\brdrcorner.xnb.svn-base
+2009-05-24T15:02:38.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\brdrcornerbg.xnb.svn-base
+2009-05-24T15:02:38.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\charsel1.xnb.svn-base
+2009-05-24T15:02:22.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\charsel2.xnb.svn-base
+2009-05-24T15:02:22.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\charsel3.xnb.svn-base
+2009-05-24T15:02:22.2656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\charsel4.xnb.svn-base
+2009-05-24T15:02:22.4062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\circGauge.xnb.svn-base
+2009-05-24T15:02:12.2343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\Copy of itemsm.xnb.svn-base
+2009-05-24T15:02:22.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\gamebanner.xnb.svn-base
+2009-05-24T15:02:38.7500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\gray.xnb.svn-base
+2009-05-24T15:02:39.6875000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\healthbar.xnb.svn-base
+2009-05-24T15:02:12.2656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\hud.xnb.svn-base
+2009-05-24T15:02:12.3437500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\itemsm.xnb.svn-base
+2009-05-24T15:02:12.4062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\Knightface.xnb.svn-base
+2009-05-24T15:02:22.5312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\menubg.xnb.svn-base
+2009-05-24T15:02:12.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\menufont.xnb.svn-base
+2009-05-24T15:02:43.9687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\offarrow.xnb.svn-base
+2009-05-24T15:02:22.6406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\Priestface.xnb.svn-base
+2009-05-24T15:02:22.5625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\Rangerface.xnb.svn-base
+2009-05-24T15:02:22.6093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\text-base\Wizardface.xnb.svn-base
+2009-05-24T15:02:22.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\blank.xnb.svn-base
+2009-05-24T15:34:40.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\brdr.xnb.svn-base
+2009-05-24T15:34:40.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\brdrbg.xnb.svn-base
+2009-05-24T15:34:40.0937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\brdrcorner.xnb.svn-base
+2009-05-24T15:34:40.0937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\brdrcornerbg.xnb.svn-base
+2009-05-24T15:34:40.1093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\charsel1.xnb.svn-base
+2009-05-24T15:34:40.1093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\charsel2.xnb.svn-base
+2009-05-24T15:34:40.1093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\charsel3.xnb.svn-base
+2009-05-24T15:34:40.1250000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\charsel4.xnb.svn-base
+2009-05-24T15:34:40.1250000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\circGauge.xnb.svn-base
+2009-05-24T15:34:40.1406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\Copy of itemsm.xnb.svn-base
+2009-05-24T15:34:40.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\gamebanner.xnb.svn-base
+2009-05-24T15:34:40.1406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\gray.xnb.svn-base
+2009-05-24T15:34:40.1406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\healthbar.xnb.svn-base
+2009-05-24T15:34:40.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\hud.xnb.svn-base
+2009-05-24T15:34:40.1562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\itemsm.xnb.svn-base
+2009-05-24T15:34:40.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\Knightface.xnb.svn-base
+2009-05-24T15:34:40.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\menubg.xnb.svn-base
+2009-05-24T15:34:40.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\menufont.xnb.svn-base
+2009-05-24T15:34:40.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\offarrow.xnb.svn-base
+2009-05-24T15:34:40.1875000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\Priestface.xnb.svn-base
+2009-05-24T15:34:40.0625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\Rangerface.xnb.svn-base
+2009-05-24T15:34:40.0625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\.svn\prop-base\Wizardface.xnb.svn-base
+2009-05-24T15:34:40.0781250Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\04 Never Ending Duel.xnb
 2009-05-24T15:02:43.7187500Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\Asplosions.xgs
@@ -153,5 +383,147 @@ D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Cont
 2009-05-24T15:02:44.5000000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\Wave Bank.xwb
 2009-05-24T15:02:44.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\all-wcprops
+2009-05-24T15:37:32.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\entries
+2009-05-24T15:37:32.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\format
+2009-05-24T15:32:35.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\text-base\04 Never Ending Duel.xnb.svn-base
+2009-05-24T15:02:43.7187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\text-base\Asplosions.xgs.svn-base
+2009-05-24T15:02:44.0625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\text-base\Sound Bank.xsb.svn-base
+2009-05-24T15:02:44.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\text-base\Wave Bank.xwb.svn-base
+2009-05-24T15:02:44.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\prop-base\04 Never Ending Duel.xnb.svn-base
+2009-05-24T15:34:39.7031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\prop-base\Asplosions.xgs.svn-base
+2009-05-24T15:34:39.7031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\prop-base\Sound Bank.xsb.svn-base
+2009-05-24T15:34:39.7187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\.svn\prop-base\Wave Bank.xwb.svn-base
+2009-05-24T15:34:39.7187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\all-wcprops
+2009-05-24T15:37:33.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\entries
+2009-05-24T15:37:33.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\format
+2009-05-24T15:32:35.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\BasicPoint.xnb.svn-base
+2009-05-24T15:02:39.7500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\Bezier.xnb.svn-base
+2009-05-24T15:02:39.8125000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\ig_box.xnb.svn-base
+2009-05-24T15:01:55.2968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\ig_box_tex_0.xnb.svn-base
+2009-05-24T15:01:55.3906250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\KnightClassInfo.xnb.svn-base
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\ParticleA.xnb.svn-base
+2009-05-24T15:01:55.4218750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PlayerBoundingShapes.xnb.svn-base
+2009-05-24T15:02:43.8281250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PlayerMultipleSequences.xnb.svn-base
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PlayerSpriteSequences.xnb.svn-base
+2009-05-24T15:30:18.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PoringBoundingShapes.xnb.svn-base
+2009-05-24T15:30:18.0937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PoringInfo.xnb.svn-base
+2009-05-24T15:30:18.1093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PoringSprite.xnb.svn-base
+2009-05-24T15:02:16.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PoringSpriteInfo.xnb.svn-base
+2009-05-24T15:02:43.7812500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PoringSpriteSequences.xnb.svn-base
+2009-05-24T15:02:43.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PositionTexture.xnb.svn-base
+2009-05-24T15:14:04.5937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\PriestClassInfo.xnb.svn-base
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\RangerClassInfo.xnb.svn-base
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\text-base\WizardClassInfo.xnb.svn-base
+2009-05-24T15:02:43.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\BasicPoint.xnb.svn-base
+2009-05-24T15:34:39.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\Bezier.xnb.svn-base
+2009-05-24T15:34:39.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\ig_box.xnb.svn-base
+2009-05-24T15:34:42.0156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\ig_box_tex_0.xnb.svn-base
+2009-05-24T15:34:42.0156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\KnightClassInfo.xnb.svn-base
+2009-05-24T15:34:40.1875000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\ParticleA.xnb.svn-base
+2009-05-24T15:34:40.1875000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PlayerBoundingShapes.xnb.svn-base
+2009-05-24T15:34:40.2031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PlayerMultipleSequences.xnb.svn-base
+2009-05-24T15:34:40.2031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PlayerSpriteSequences.xnb.svn-base
+2009-05-24T15:34:40.2187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PoringBoundingShapes.xnb.svn-base
+2009-05-24T15:34:40.2187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PoringInfo.xnb.svn-base
+2009-05-24T15:34:40.2187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PoringSprite.xnb.svn-base
+2009-05-24T15:34:40.2343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PoringSpriteInfo.xnb.svn-base
+2009-05-24T15:34:40.2343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PoringSpriteSequences.xnb.svn-base
+2009-05-24T15:34:40.2500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PositionTexture.xnb.svn-base
+2009-05-24T15:34:40.2500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\PriestClassInfo.xnb.svn-base
+2009-05-24T15:34:40.2500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\RangerClassInfo.xnb.svn-base
+2009-05-24T15:34:40.2656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\.svn\prop-base\WizardClassInfo.xnb.svn-base
+2009-05-24T15:34:42.0000000Z
 D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\mainpanel.xml
 2009-05-24T14:17:47.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\.svn\all-wcprops
+2009-05-24T15:37:31.8906250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\.svn\entries
+2009-05-24T15:37:31.8750000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\.svn\format
+2009-05-24T15:32:35.4843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\.svn\text-base\mainpanel.xml.svn-base
+2009-05-24T14:17:47.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\.svn\all-wcprops
+2009-05-24T15:37:31.8437500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\.svn\entries
+2009-05-24T15:37:31.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\.svn\format
+2009-05-24T15:32:35.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\.svn\all-wcprops
+2009-05-24T15:37:31.8281250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\.svn\entries
+2009-05-24T15:37:31.8437500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\.svn\format
+2009-05-24T15:32:35.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\all-wcprops
+2009-05-24T15:37:33.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\entries
+2009-05-24T15:37:33.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\format
+2009-05-24T15:32:35.4375000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\text-base\Library.dll.svn-base
+2009-05-24T15:01:53.5625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\text-base\Library.pdb.svn-base
+2009-05-24T15:01:53.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\text-base\TheGame.exe.svn-base
+2009-05-24T15:30:18.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\text-base\TheGame.pdb.svn-base
+2009-05-24T15:30:18.4375000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\prop-base\Library.dll.svn-base
+2009-05-24T15:34:42.0312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\prop-base\Library.pdb.svn-base
+2009-05-24T15:34:42.0312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\prop-base\TheGame.exe.svn-base
+2009-05-24T15:34:42.0312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\.svn\prop-base\TheGame.pdb.svn-base
+2009-05-24T15:34:42.0468750Z
