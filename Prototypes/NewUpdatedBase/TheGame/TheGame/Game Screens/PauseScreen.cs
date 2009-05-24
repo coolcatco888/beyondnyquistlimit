@@ -18,6 +18,8 @@ namespace TheGame.Game_Screens
 
         private GameScreen previousScreen;
 
+        private AudioManager audioManager;
+
         private void CreateMenu()
         {
             SpriteFont font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
@@ -49,8 +51,16 @@ namespace TheGame.Game_Screens
             this.BlocksUpdate = true;
             this.previousScreen = previousScreen;
             CreateMenu();
-            
 
+
+        }
+
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+            audioManager.PauseAllCues();
         }
 
         protected override void HandleInput()
@@ -66,9 +76,11 @@ namespace TheGame.Game_Screens
                 switch (menu.GetCurrentText())
                 {
                     case "Continue Game":
+                        audioManager.ResumeAllCues();
                         Dispose();
                         break;
                     case "Exit Game":
+                        audioManager.StopAllCues();
                         foreach (GameScreen item in GameEngine.GameScreens.ToList())
                         {
                             if (item != GameEngine.BaseScreen)

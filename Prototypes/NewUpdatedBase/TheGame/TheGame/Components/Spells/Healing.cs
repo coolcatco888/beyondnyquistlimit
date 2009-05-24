@@ -64,7 +64,7 @@ namespace TheGame
             ringParticlesToMake += ringParticlesPerSecond * (float)gameTime.ElapsedGameTime.TotalSeconds;
             dustParticlesToMake += dustParticlesPerSecond * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            ring.Position = caster.Position - Vector3.UnitY * 1.5f;
+            ring.Position = targets[0].Position - Vector3.UnitY * 1.5f;
 
             while (ringParticlesToMake >= 1.0f)
             {

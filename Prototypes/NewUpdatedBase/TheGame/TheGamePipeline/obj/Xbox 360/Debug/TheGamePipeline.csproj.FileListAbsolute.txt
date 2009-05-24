@@ -1,7 +1,7 @@
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\TheGamePipeline.dll
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\TheGamePipeline.pdb
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\Library.dll
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\Library.pdb
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\TheGamePipeline.dll
-D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\TheGamePipeline.pdb
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\TheGamePipeline.dll
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\TheGamePipeline.pdb
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\Library.dll
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\Xbox 360\Debug\Library.pdb
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\ResolveAssemblyReference.cache
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\TheGamePipeline.dll
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\obj\Xbox 360\Debug\TheGamePipeline.pdb

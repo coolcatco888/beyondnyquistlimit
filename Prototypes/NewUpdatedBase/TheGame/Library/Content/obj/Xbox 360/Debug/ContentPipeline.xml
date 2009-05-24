@@ -6,10 +6,10 @@
       <TargetPlatform>Xbox360</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>true</CompressContent>
-      <RootDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\Content\obj\Xbox 360\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\bin\Xbox 360\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\Content\obj\Xbox 360\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\Library\bin\Xbox 360\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

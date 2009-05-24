@@ -20,6 +20,9 @@ namespace TheGame
         {
             this.Sort(new ProximityComparer(comparePosition));
 
+            if (this.Count == 0)
+                return null;
+
             return this[0];
         }
 

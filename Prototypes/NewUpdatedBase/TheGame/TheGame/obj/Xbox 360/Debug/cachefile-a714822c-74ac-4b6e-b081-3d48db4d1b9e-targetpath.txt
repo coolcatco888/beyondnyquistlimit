@@ -46,6 +46,22 @@ Content\Skybox\skybox.xnb
 Content\Bezier.xnb
 Content\PositionTexture.xnb
 Content\Audio\04 Never Ending Duel.xnb
+Content\Audio\audio\knightStep01.xnb
+Content\Audio\audio\knightStep02.xnb
+Content\Audio\audio\knightStep03.xnb
+Content\Audio\audio\knightStep04.xnb
+Content\Audio\audio\maceSlash01.xnb
+Content\Audio\audio\maceSlash02.xnb
+Content\Audio\audio\music_level.xnb
+Content\Audio\audio\music_menu.xnb
+Content\Audio\audio\rodSlash01.xnb
+Content\Audio\audio\slash01.xnb
+Content\Audio\audio\slash02.xnb
+Content\Audio\audio\slash03.xnb
+Content\Audio\audio\slashRecharge.xnb
+Content\Audio\audio\softStep01.xnb
+Content\Audio\audio\softStep02.xnb
+Content\Audio\audio\softStep03.xnb
 Content\Sprites\WizardSpriteInfo.xnb
 Content\Sprites\MagicCircle.xnb
 Content\Sprites\CloudInfo.xnb

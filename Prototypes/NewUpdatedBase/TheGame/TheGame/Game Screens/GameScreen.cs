@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Storage;
 
 namespace TheGame
 {
-    public class GameScreen
+    public class GameScreen : IAudioEmitter
     {
         #region Properties
 
@@ -247,5 +247,29 @@ namespace TheGame
             GameEngine.GameScreens.Remove(this);
             //owner.GameScreens.Remove(this);
         }
+
+        #region IAudioEmitter Members
+
+        public Vector3 Position
+        {
+            get { return Vector3.Zero; }
+        }
+
+        public Vector3 Forward
+        {
+            get { return Vector3.Forward; }
+        }
+
+        public Vector3 Up
+        {
+            get { return Vector3.Up; }
+        }
+
+        public Vector3 Velocity
+        {
+            get { return Vector3.Zero; }
+        }
+
+        #endregion
     }
 }
