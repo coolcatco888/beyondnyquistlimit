@@ -9,3 +9,5 @@ D:\work\JimsCode\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssem
 D:\work\JimsCode\Updated Base\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
 D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\obj\x86\Debug\Audio\Asplosions.xml

@@ -71,6 +71,7 @@ namespace TheGame
         public Point CurrentFrame
         {
             get { return currentFrame; }
+            set { currentFrame = value; }
         }
 
         public int CurrentFrameColumn

@@ -225,8 +225,14 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 3893242702;
-    Bank Last Revised High = 30006371;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
+    Header Last Modified Low = 0;
+    Header Last Modified High = 0;
+    Bank Last Revised Low = 3852957488;
+    Bank Last Revised High = 30006397;
 
     Wave
     {
@@ -246,17 +252,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 3600949736;
-            Last Modified High = 30002609;
+            Last Modified Low = 4166593312;
+            Last Modified High = 30006303;
         }
     }
 
     Wave
     {
         Name = knightStep01;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\knightStep01.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep01.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -269,17 +275,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 76992702;
-            Last Modified High = 30006371;
+            Last Modified Low = 2452605014;
+            Last Modified High = 30006391;
         }
     }
 
     Wave
     {
         Name = knightStep02;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\knightStep02.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep02.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -292,17 +298,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 176680202;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = knightStep03;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\knightStep03.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep03.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -315,17 +321,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 257148952;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = knightStep04;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\knightStep04.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep04.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -338,17 +344,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 361523952;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = maceSlash01;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\maceSlash01.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\maceSlash01.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -361,17 +367,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 2052741248;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = maceSlash02;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\maceSlash02.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\maceSlash02.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -384,17 +390,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 2190241248;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = rodSlash01;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\rodSlash01.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\rodSlash01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -407,17 +413,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1606334998;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = slash01;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\slash01.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -430,17 +436,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 743209998;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = slash02;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\slash02.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash02.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -453,17 +459,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 839459998;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = slash03;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\slash03.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash03.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -476,17 +482,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 905084998;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = slashRecharge;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\slashRecharge.wav;
-        Build Settings Last Modified Low = 2467148952;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slashRecharge.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -499,17 +505,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 1282897498;
-            Last Modified High = 30006370;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = softStep01;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\softStep01.wav;
-        Build Settings Last Modified Low = 2467305202;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -522,17 +528,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 799180202;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = softStep02;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\softStep02.wav;
-        Build Settings Last Modified Low = 2467305202;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep02.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -545,17 +551,17 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 869180202;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
         }
     }
 
     Wave
     {
         Name = softStep03;
-        File = C:\Documents and Settings\A00702683\Desktop\linkAudio\softStep03.wav;
-        Build Settings Last Modified Low = 2467305202;
-        Build Settings Last Modified High = 30006371;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep03.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
 
         Cache
         {
@@ -568,8 +574,54 @@ Wave Bank
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 960430202;
-            Last Modified High = 30006371;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = music_level;
+        File = audio\music_level.wav;
+        Build Settings Last Modified Low = 3724988738;
+        Build Settings Last Modified High = 30006397;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 19699604;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1032957488;
+            Last Modified High = 30006397;
+        }
+    }
+
+    Wave
+    {
+        Name = music_menu;
+        File = audio\music_menu.wav;
+        Build Settings Last Modified Low = 3724988738;
+        Build Settings Last Modified High = 30006397;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 31575812;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3406987284;
+            Last Modified High = 30006396;
         }
     }
 }
@@ -581,6 +633,8 @@ Sound Bank
     Windows File = Win\Sound Bank.xsb;
     Xbox Bank Path Edited = 0;
     Windows Bank Path Edited = 0;
+    Header Last Modified High = 0;
+    Header Last Modified Low = 0;
 
     Sound
     {
@@ -631,7 +685,7 @@ Sound Bank
     Sound
     {
         Name = knightStep01;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -677,7 +731,7 @@ Sound Bank
     Sound
     {
         Name = knightStep02;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -723,7 +777,7 @@ Sound Bank
     Sound
     {
         Name = knightStep03;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -769,7 +823,7 @@ Sound Bank
     Sound
     {
         Name = knightStep04;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -815,7 +869,7 @@ Sound Bank
     Sound
     {
         Name = softStep01;
-        Volume = -1200;
+        Volume = -250;
         Pitch = 0;
         Priority = 0;
 
@@ -861,7 +915,7 @@ Sound Bank
     Sound
     {
         Name = softStep02;
-        Volume = -1200;
+        Volume = -250;
         Pitch = 0;
         Priority = 0;
 
@@ -907,7 +961,7 @@ Sound Bank
     Sound
     {
         Name = softStep03;
-        Volume = -1200;
+        Volume = -250;
         Pitch = 0;
         Priority = 0;
 
@@ -999,7 +1053,7 @@ Sound Bank
     Sound
     {
         Name = slash03;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -1045,7 +1099,7 @@ Sound Bank
     Sound
     {
         Name = slash01;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -1091,7 +1145,7 @@ Sound Bank
     Sound
     {
         Name = slash02;
-        Volume = -1200;
+        Volume = -2000;
         Pitch = 0;
         Priority = 0;
 
@@ -1265,6 +1319,98 @@ Sound Bank
                     Bank Index = 0;
                     Entry Name = maceSlash02;
                     Entry Index = 6;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = music_menu;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = music_menu;
+                    Entry Index = 16;
+                    Weight = 255;
+                    Weight Min = 0;
+                }
+            }
+        }
+    }
+
+    Sound
+    {
+        Name = music_level;
+        Volume = -1200;
+        Pitch = 0;
+        Priority = 0;
+
+        Category Entry
+        {
+            Name = Default;
+        }
+
+        Track
+        {
+            Volume = 0;
+
+            Play Wave Event
+            {
+                Break Loop = 0;
+                Use Speaker Position = 0;
+                Use Center Speaker = 1;
+                New Speaker Position On Loop = 1;
+                Speaker Position Angle = 0.000000;
+                Speaer Position Arc = 0.000000;
+
+                Event Header
+                {
+                    Timestamp = 0;
+                    Relative = 0;
+                    Random Recurrence = 0;
+                    Random Offset = 0;
+                }
+
+                Wave Entry
+                {
+                    Bank Name = Wave Bank;
+                    Bank Index = 0;
+                    Entry Name = music_level;
+                    Entry Index = 15;
                     Weight = 255;
                     Weight Min = 0;
                 }
@@ -1471,6 +1617,46 @@ Sound Bank
         {
             Name = maceSlash02;
             Index = 14;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = music_menu;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = music_menu;
+            Index = 15;
+            Weight Min = 0;
+            Weight Max = 255;
+        }
+    }
+
+    Cue
+    {
+        Name = music_level;
+
+        Variation
+        {
+            Variation Type = 3;
+            Variation Table Type = 1;
+            New Variation on Loop = 0;
+        }
+
+        Sound Entry
+        {
+            Name = music_level;
+            Index = 16;
             Weight Min = 0;
             Weight Max = 255;
         }
