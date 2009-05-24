@@ -86,8 +86,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AI\AttackBehavior.cs" />
     <Compile Include="AI\Behavior.cs" />
     <Compile Include="AI\Behaviors.cs" />
+    <Compile Include="AI\IdleBehavior.cs" />
+    <Compile Include="AI\SeekBehavior.cs" />
     <Compile Include="AI\WanderBehavior.cs" />
     <Compile Include="BoundingRectangle.cs" />
     <Compile Include="Components\Billboards\MultipleSequence.cs" />
