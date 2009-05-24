@@ -503,6 +503,24 @@
       <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb</Output>
       <Time>2009-05-24T01:21:51.265625-07:00</Time>
     </Item>
+    <Item>
+      <Source>Sprites\crosshair.png</Source>
+      <Name>Sprites\crosshair</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\crosshair.xnb</Output>
+      <Time>2009-05-24T02:41:23.8125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\CrosshairInfo.xml</Source>
+      <Name>Sprites\CrosshairInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb</Output>
+      <Time>2009-05-24T02:42:10.390625-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
