@@ -21,12 +21,20 @@ namespace TheGame
         protected VertexPositionTexture[] vertices;
 
         // Used to draw the billboard texture/image
-        protected BasicEffect basicEffect;
+        //protected BasicEffect basicEffect;
+        protected Effect effect;
 
         // TESTING PURPOSES ONLY - will remove later
         // Used to draw the bounding shape used in collision detection
         protected PrimitiveBatch primitiveBatch;
         // End Testing
+
+        private Color color;
+        protected Color Color
+        {
+            get { return color; }
+            set { color = value; }
+        }
 
         protected bool isDisposed = false;
 
@@ -71,9 +79,15 @@ namespace TheGame
             // End Testing
 
             // Setup basic effect.
-            basicEffect = new BasicEffect(GameEngine.Graphics, null);
-            basicEffect.Texture = this.texture2D;
-            basicEffect.TextureEnabled = true;
+            //basicEffect = new BasicEffect(GameEngine.Graphics, null);
+            //basicEffect.Texture = this.texture2D;
+            //basicEffect.TextureEnabled = true;
+
+            Effect e = GameEngine.Content.Load<Effect>("PositionTexture");
+            effect = e.Clone(GameEngine.Graphics);
+            effect.Parameters["SpriteTexture"].SetValue(this.texture2D);
+
+            color = Color.White;
 
             // Four vertices to represet billboard.
             vertices = new VertexPositionTexture[4];
@@ -114,7 +128,7 @@ namespace TheGame
         {
             primitiveBatch.Dispose();
             texture2D.Dispose();
-            basicEffect.Dispose();
+            effect.Dispose();
 
             base.Dispose();
 
@@ -183,19 +197,20 @@ namespace TheGame
 
             // Assign world, view, & projection matricies to basicEffect.
             // TODO: implement rotation
-            basicEffect.World = Matrix.CreateScale(-scale.X, scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction);
-            basicEffect.View = camera.View;
-            basicEffect.Projection = camera.Projection;
+            effect.Parameters["Color"].SetValue(color.ToVector4());
+            effect.Parameters["World"].SetValue(Matrix.CreateScale(-scale.X, scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction));
+            effect.Parameters["View"].SetValue(camera.View);
+            effect.Parameters["Projection"].SetValue(camera.Projection);
 
             // Draw billboard.
-            basicEffect.Begin();
-            basicEffect.CurrentTechnique.Passes[0].Begin();
+            effect.Begin();
+            effect.CurrentTechnique.Passes[0].Begin();
 
             GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
             GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleStrip, vertices, 0, 2);
 
-            basicEffect.CurrentTechnique.Passes[0].End();
-            basicEffect.End();
+            effect.CurrentTechnique.Passes[0].End();
+            effect.End();
         }
 
         #endregion
@@ -216,5 +231,6 @@ namespace TheGame
         }
 
         #endregion
+
     }
 }

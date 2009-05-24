@@ -548,5 +548,142 @@
       <AttackKey>2</AttackKey>
       <AttackValue>NortheastSlash</AttackValue>
     </Item>
+
+    <!-- Casting Sprite Sequences -->
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>South</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>4</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>North</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>14</IndexX>
+      <IndexY>14</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>West</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>4</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>Southwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>4</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>Northwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>14</IndexX>
+      <IndexY>14</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>East</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>9</IndexX>
+      <IndexY>9</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>Southeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>9</IndexX>
+      <IndexY>9</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Casting</StateKey>
+      <OrientationKey>Northeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>19</IndexX>
+      <IndexY>19</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
   </Asset>
 </XnaContent>

@@ -21,7 +21,7 @@ namespace TheGame
 
         int timeElpase; 
 
-        public ChainBeam(GameScreen parent, Library.SpellInfo spellInfo, Component3D caster, ActorList targets)
+        public ChainBeam(GameScreen parent, Library.SpellInfo spellInfo, Actor caster, ActorList targets)
             : base(parent, spellInfo, caster, targets)
         {
 

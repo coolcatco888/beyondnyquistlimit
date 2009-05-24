@@ -16,7 +16,7 @@ namespace TheGame
         {
             this.type = BehaviorType.Seek;
             this.sightRadius = sightRadius;
-            updateTimeInterval = 50.0f;
+            updateTimeInterval = 500.0f;
             currentTimeInterval = updateTimeInterval;
         }
 
@@ -27,7 +27,7 @@ namespace TheGame
             if (distance < sightRadius)
             {
                 reacted = true;
-                desireLevel = 20;
+                desireLevel = 10;
             }
         }
 

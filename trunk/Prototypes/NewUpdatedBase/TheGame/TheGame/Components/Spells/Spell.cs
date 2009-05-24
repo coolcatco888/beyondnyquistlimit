@@ -39,13 +39,13 @@ namespace TheGame
             get { return this.spellInfo; }
         }
 
-        public Component3D Caster
+        public Actor Caster
         {
             get { return caster; }
             set { caster = value; }
         }
 
-        public ActorList Targets
+        public List<Actor> Targets
         {
             get { return targets; }
             set { targets = value; }
@@ -53,14 +53,14 @@ namespace TheGame
 
         protected SpellInfo spellInfo;
         protected float timeRemaining;
-        protected Component3D caster;
-        protected ActorList targets;
+        protected Actor caster;
+        protected List<Actor> targets;
 
         #endregion
 
         #region Initialization
 
-        public Spell(GameScreen parent, SpellInfo spellInfo, Component3D caster, ActorList targets)
+        public Spell(GameScreen parent, SpellInfo spellInfo, Actor caster, List<Actor> targets)
             : base(parent)
         {
             this.spellInfo = spellInfo;
@@ -77,24 +77,22 @@ namespace TheGame
 
         #endregion
 
-        #region Update
-
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
 
             if (spellInfo.Duration > 0)
             {
-                timeRemaining -= gameTime.ElapsedGameTime.Milliseconds * 0.001f;
+                timeRemaining -= (float)gameTime.ElapsedGameTime.TotalSeconds;
 
                 if (TimeRemaining <= 0)
                 {
+                    caster.State = Actor.ActorState.Idle;
+                    ((Player)caster).NotCasting = true;
+                    ((Player)caster).spellName = "";
                     this.Dispose();
                 }
             }
         }
-
-        #endregion  // Update
-
     }
 }
