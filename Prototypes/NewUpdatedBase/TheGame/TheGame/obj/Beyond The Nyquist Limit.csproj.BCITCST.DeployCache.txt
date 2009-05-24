@@ -1,0 +1,157 @@
+c6f26ba1c43c4a6abd62a1d2ad9cba9b
+0
+BCITCST
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\
+128876509660000000
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\GameThumbnail.png
+2009-05-24T13:18:23.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Library.dll
+2009-05-24T15:01:53.5625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\TheGame.exe
+2009-05-24T15:30:18.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\BasicPoint.xnb
+2009-05-24T15:02:39.7500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Bezier.xnb
+2009-05-24T15:02:39.8125000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\ig_box.xnb
+2009-05-24T15:01:55.2968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\ig_box_tex_0.xnb
+2009-05-24T15:01:55.3906250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\KnightClassInfo.xnb
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\ParticleA.xnb
+2009-05-24T15:01:55.4218750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PlayerBoundingShapes.xnb
+2009-05-24T15:02:43.8281250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PlayerMultipleSequences.xnb
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PlayerSpriteSequences.xnb
+2009-05-24T15:30:18.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringBoundingShapes.xnb
+2009-05-24T15:30:18.0937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringInfo.xnb
+2009-05-24T15:30:18.1093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringSprite.xnb
+2009-05-24T15:02:16.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringSpriteInfo.xnb
+2009-05-24T15:02:43.7812500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PoringSpriteSequences.xnb
+2009-05-24T15:02:43.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PositionTexture.xnb
+2009-05-24T15:14:04.5937500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\PriestClassInfo.xnb
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\RangerClassInfo.xnb
+2009-05-24T15:02:43.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\WizardClassInfo.xnb
+2009-05-24T15:02:43.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\MountainGrass.xnb
+2009-05-24T15:01:57.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\MountainGrass_0.xnb
+2009-05-24T15:02:04.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\rocks.xnb
+2009-05-24T15:01:58.4687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\skymap.xnb
+2009-05-24T15:01:58.5468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Terrain\terrain.xnb
+2009-05-24T15:02:03.8125000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\circles.xnb
+2009-05-24T15:02:09.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\cloud.xnb
+2009-05-24T15:02:12.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\CloudInfo.xnb
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\crosshair.xnb
+2009-05-24T15:02:38.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\CrosshairInfo.xnb
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\explosion.xnb
+2009-05-24T15:02:39.6562500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\KnightSprite.xnb
+2009-05-24T15:02:32.8750000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\KnightSpriteInfo.xnb
+2009-05-24T15:02:43.8750000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\MagicCircle.xnb
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\PriestSprite.xnb
+2009-05-24T15:02:37.9218750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\PriestSpriteInfo.xnb
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\RangerSprite.xnb
+2009-05-24T15:02:27.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\RangerSpriteInfo.xnb
+2009-05-24T15:02:43.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\Sprite Sheet Knight.xnb
+2009-05-24T15:02:10.8593750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\WizardSprite.xnb
+2009-05-24T15:02:21.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Sprites\WizardSpriteInfo.xnb
+2009-05-24T15:02:43.7343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\skybox.xnb
+2009-05-24T15:02:39.7656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskyback.xnb
+2009-05-24T15:01:55.5156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskyfront.xnb
+2009-05-24T15:01:55.6250000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskyleft.xnb
+2009-05-24T15:01:55.7031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskyright.xnb
+2009-05-24T15:01:55.7968750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Skybox\redsky\redskytop.xnb
+2009-05-24T15:01:55.9062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\blank.xnb
+2009-05-24T15:02:12.2031250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\brdr.xnb
+2009-05-24T15:02:37.9843750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\brdrbg.xnb
+2009-05-24T15:02:38.0156250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\brdrcorner.xnb
+2009-05-24T15:02:38.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\brdrcornerbg.xnb
+2009-05-24T15:02:38.0781250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\charsel1.xnb
+2009-05-24T15:02:22.0468750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\charsel2.xnb
+2009-05-24T15:02:22.1718750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\charsel3.xnb
+2009-05-24T15:02:22.2656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\charsel4.xnb
+2009-05-24T15:02:22.4062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\circGauge.xnb
+2009-05-24T15:02:12.2343750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Copy of itemsm.xnb
+2009-05-24T15:02:22.4531250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\gamebanner.xnb
+2009-05-24T15:02:38.7500000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\gray.xnb
+2009-05-24T15:02:39.6875000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\healthbar.xnb
+2009-05-24T15:02:12.2656250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\hud.xnb
+2009-05-24T15:02:12.3437500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\itemsm.xnb
+2009-05-24T15:02:12.4062500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Knightface.xnb
+2009-05-24T15:02:22.5312500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\menubg.xnb
+2009-05-24T15:02:12.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\menufont.xnb
+2009-05-24T15:02:43.9687500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\offarrow.xnb
+2009-05-24T15:02:22.6406250Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Priestface.xnb
+2009-05-24T15:02:22.5625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Rangerface.xnb
+2009-05-24T15:02:22.6093750Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\GUI\Wizardface.xnb
+2009-05-24T15:02:22.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\04 Never Ending Duel.xnb
+2009-05-24T15:02:43.7187500Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\Asplosions.xgs
+2009-05-24T15:02:44.0625000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\Sound Bank.xsb
+2009-05-24T15:02:44.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Content\Audio\Wave Bank.xwb
+2009-05-24T15:02:44.5000000Z
+D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\Xbox 360\Debug\Components\GUI\MenuPanels\mainpanel.xml
+2009-05-24T14:17:47.5468750Z

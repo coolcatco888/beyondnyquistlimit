@@ -118,6 +118,7 @@ namespace TheGame
                 poring.Initialize();
                 monsterList.Add(poring);
             }
+            camera.ActorsToFollow.Clear();
             camera.ActorsToFollow.AddRange(playerList);
 
             //Initialize Hud screen
