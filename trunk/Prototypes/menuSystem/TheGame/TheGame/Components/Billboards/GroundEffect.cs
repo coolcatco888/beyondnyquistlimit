@@ -32,7 +32,7 @@ namespace TheGame
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
             // Assign world, view, & projection matricies to basicEffect.
-            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateRotationX(MathHelper.PiOver2) * Matrix.CreateFromQuaternion(rotation) * Matrix.CreateTranslation(position);
+            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateRotationX(-MathHelper.PiOver2) * Matrix.CreateFromQuaternion(rotation) * Matrix.CreateTranslation(position);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 
@@ -46,7 +46,7 @@ namespace TheGame
             basicEffect.CurrentTechnique.Passes[0].Begin();
 
             GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
-            GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleFan, vertices, 0, 2);
+            GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleStrip, vertices, 0, 2);
 
             basicEffect.CurrentTechnique.Passes[0].End();
             basicEffect.End();

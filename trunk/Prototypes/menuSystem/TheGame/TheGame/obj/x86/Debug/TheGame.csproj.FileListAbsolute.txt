@@ -236,3 +236,5 @@ D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\b
 D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrbg.xnb
 D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcorner.xnb
 D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\crosshair.xnb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb

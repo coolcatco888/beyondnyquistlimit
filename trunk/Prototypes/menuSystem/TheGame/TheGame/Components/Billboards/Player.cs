@@ -45,6 +45,10 @@ namespace TheGame
         protected float damageTimer;
         protected float damageInterval;
         protected SpellInfo spellInfo;
+        protected int targetIndex = 0;
+        protected GroundEffect crosshair;
+
+        private float crosshairRotationIncrement = MathHelper.PiOver4 * 0.25f;
 
         #endregion  // Fields
 
@@ -102,11 +106,17 @@ namespace TheGame
             : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, scale)
         {
             font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
-            
+
+            crosshairRotationIncrement *= (int)playerIndex % 2 == 0 ? 1.0f : -1.0f;
 
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
             SetupComboLibraryAndInputManager();
+
+            SpriteInfo crosshairInfo = GameEngine.Content.Load<SpriteInfo>(@"Sprites\\CrosshairInfo");
+            crosshair = new GroundEffect(this.Parent, crosshairInfo);
+            crosshair.Initialize();
+            parent.Components.Add(crosshair);
 
             hasAttacked = false;
             classInfo = GameEngine.Content.Load<Library.CharacterClassInfo>(@classInfoFile);
@@ -282,7 +292,7 @@ namespace TheGame
                     AttackingStateInput(gamepadDevice);
                     break;
                 case ActorState.Chanting:
-                    ChantingStateInput(gamepadDevice);
+                    ChantingStateInput(gamepadDevice, gameTime);
                     break;
                 case ActorState.Casting:
                     CastingStateInput(gamepadDevice);
@@ -311,15 +321,37 @@ namespace TheGame
         /// <summary>
         /// Input state changes while in the chanting actor state
         /// </summary>
-        private void ChantingStateInput(GamepadDevice gamepadDevice)
+        private void ChantingStateInput(GamepadDevice gamepadDevice, GameTime gameTime)
         {
+            ActorList monsterList = ((Level)Parent).MonsterList;
+
             //DO INPUT SEQUENCE STUFF HERE
             HandleComboMove();
+            if (gamepadDevice.WasButtonPressed(Buttons.RightShoulder))
+            {
+                target = (Monster)monsterList[targetIndex];
+                targetIndex++;
+                if (targetIndex == monsterList.Count)
+                    targetIndex = 0;
+
+                crosshair.Position = this.position;
+                crosshair.Rotate(new Vector3(crosshairRotationIncrement, 0.0f, 0.0f));
+                
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.LeftShoulder))
+            {
+                target = (Monster)monsterList[targetIndex];
+                targetIndex--;
+                if (targetIndex == -1)
+                    targetIndex = monsterList.Count - 1;
+            }
 
             speed = 0.0f;
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
                 state = ActorState.Casting;
+                target = null;
             }
         }
 
