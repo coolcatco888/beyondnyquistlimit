@@ -40,6 +40,8 @@ namespace TheGame
 
         public override void Initialize()
         {
+            position.Y = 1.0f;
+
             InitializeMonsterStats();
 
             // Initalize AI behaviors

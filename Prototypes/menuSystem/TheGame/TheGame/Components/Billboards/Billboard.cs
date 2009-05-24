@@ -79,16 +79,16 @@ namespace TheGame
             vertices = new VertexPositionTexture[4];
 
             // Assign position.
-            vertices[0].Position = new Vector3(1, 1, 0);
+            vertices[0].Position = new Vector3(-1, -1, 0);
             vertices[1].Position = new Vector3(-1, 1, 0);
-            vertices[2].Position = new Vector3(-1, -1, 0);
-            vertices[3].Position = new Vector3(1, -1, 0);
+            vertices[2].Position = new Vector3(1, -1, 0);
+            vertices[3].Position = new Vector3(1, 1, 0);
 
             // Assign texture coordinates to vertices.
-            vertices[0].TextureCoordinate = new Vector2(0, 0);
-            vertices[1].TextureCoordinate = new Vector2(1, 0);
+            vertices[0].TextureCoordinate = new Vector2(0, 1);
+            vertices[1].TextureCoordinate = new Vector2(0, 0);
             vertices[2].TextureCoordinate = new Vector2(1, 1);
-            vertices[3].TextureCoordinate = new Vector2(0, 1);
+            vertices[3].TextureCoordinate = new Vector2(1, 0);
         }
 
         public Billboard(GameScreen parent, Texture2D texture2D, Vector3 position, Vector3 rotation)
@@ -128,13 +128,19 @@ namespace TheGame
         public void UpdateVertices(SpriteSequence spriteSequence, Library.SpriteInfo spriteInfo)
         {
             scale.X = spriteSequence.Scale.X;
+            //scale.Y = spriteSequence.Scale.Y;
+
+            vertices[0].TextureCoordinate = new Vector2(0, 1);
+            vertices[1].TextureCoordinate = new Vector2(0, 0);
+            vertices[2].TextureCoordinate = new Vector2(1, 1);
+            vertices[3].TextureCoordinate = new Vector2(1, 0);
 
             vertices[0].TextureCoordinate = new Vector2(
                 spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
 
             vertices[1].TextureCoordinate = new Vector2(
-                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * spriteSequence.Scale.X,
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
 
             vertices[2].TextureCoordinate = new Vector2(
@@ -142,8 +148,29 @@ namespace TheGame
                 spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
 
             vertices[3].TextureCoordinate = new Vector2(
-                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X,
-                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y + spriteInfo.SpriteUnit.Y * spriteSequence.Scale.Y);
+                spriteSequence.CurrentFrameColumn * spriteInfo.SpriteUnit.X + spriteInfo.SpriteUnit.X * spriteSequence.Scale.X,
+                spriteSequence.CurrentFrameRow * spriteInfo.SpriteUnit.Y);
+        }
+
+        public void UpdateVertices(Vector2 frameLocation, Vector2 spriteUnit, Vector2 scale)
+        {
+            this.scale.X = scale.X;
+
+            vertices[0].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+
+            vertices[1].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X,
+                frameLocation.Y * spriteUnit.Y);
+
+            vertices[2].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y + spriteUnit.Y * scale.Y);
+
+            vertices[3].TextureCoordinate = new Vector2(
+                frameLocation.X * spriteUnit.X + spriteUnit.X * scale.X,
+                frameLocation.Y * spriteUnit.Y);
         }
 
         #endregion Update Method
@@ -156,7 +183,7 @@ namespace TheGame
 
             // Assign world, view, & projection matricies to basicEffect.
             // TODO: implement rotation
-            basicEffect.World = Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction);
+            basicEffect.World = Matrix.CreateScale(-scale.X, scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction);
             basicEffect.View = camera.View;
             basicEffect.Projection = camera.Projection;
 
@@ -165,7 +192,7 @@ namespace TheGame
             basicEffect.CurrentTechnique.Passes[0].Begin();
 
             GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
-            GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleFan, vertices, 0, 2);
+            GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleStrip, vertices, 0, 2);
 
             basicEffect.CurrentTechnique.Passes[0].End();
             basicEffect.End();
