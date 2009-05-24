@@ -55,9 +55,9 @@ namespace TheGame
         /// </summary>
         public override void Initialize()
         {
-            audioEngine = new AudioEngine("Content/Asplosions.xgs");
-            waveBank = new WaveBank(audioEngine, "Content/Wave Bank.xwb");
-            soundBank = new SoundBank(audioEngine, "Content/Sound Bank.xsb");
+            audioEngine = new AudioEngine("Content\\Audio\\Asplosions.xgs");
+            waveBank = new WaveBank(audioEngine, "Content\\Audio\\Wave Bank.xwb");
+            soundBank = new SoundBank(audioEngine, "Content\\Audio\\Sound Bank.xsb");
 
             base.Initialize();
         }
