@@ -60,6 +60,13 @@ namespace TheGame
             get { return playerInfo; }
         }
 
+        protected bool notCasting = true;
+        public bool NotCasting
+        {
+            get { return notCasting; }
+            set { notCasting = value; }
+        }
+
 
         #endregion
 
@@ -68,7 +75,7 @@ namespace TheGame
         SpriteInfo waveInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo");
         BillboardWave wave;
         Spell currentSpell;
-        string spellName = "";
+        public string spellName = "";
 
         #endregion
 
@@ -87,11 +94,10 @@ namespace TheGame
         Move previousMove;
 
         // Time until the currently "active" move dissapears from the screen.
-        readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(1.0);
+        readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(5.0);
 
         SpriteFont font;
         #endregion
-
 
         #region Constructor
 
@@ -295,6 +301,9 @@ namespace TheGame
                 case ActorState.Chanting:
                     ChantingStateInput(gamepadDevice, gameTime);
                     break;
+                case ActorState.Casting:
+                    CastingStateInput(gamepadDevice);
+                    break;
                 case ActorState.Dead:
                     ActorList players = ((Level)Parent).PlayerList;
                     players.Remove((Player)this);
@@ -305,14 +314,21 @@ namespace TheGame
 
         private void CastingStateInput(GamepadDevice gamepadDevice)
         {
-            if (!spellName.Equals(""))
+            if (!spellName.Equals("") && notCasting)
             {
                 CreateSpell(spellName);
+                notCasting = false;
+            }
+            if (spellName.Equals(""))
+            {
+                state = ActorState.Idle;
+                notCasting = true;
             }
             if (currentSequence.IsComplete)
             {
                 state = ActorState.Idle;
                 spellName = "";
+                notCasting = true;
             }
         }
 
@@ -574,6 +590,9 @@ namespace TheGame
 
                     boundingShapesSelf["Chanting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Chanting" + info.OrientationKey].ShapeColor = Color.Gold;
+
+                    boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Casting" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {
@@ -598,7 +617,7 @@ namespace TheGame
             // Construct the master list of moves.
             spellComboLibrary = new Move[]
                 {
-                    new Move("Chain Beam", Buttons.DPadUp, Buttons.A),
+                    new Move("Fire Tornado", Buttons.A),
                     new Move("Activate Spell",  Buttons.A,  Buttons.X,  Buttons.Y,  Buttons.B),
                 };
 
@@ -647,6 +666,7 @@ namespace TheGame
                 }
                 else
                 {
+                    spellName = previousMove.Name;
                     previousMove = newMove;
                 }
 
@@ -658,6 +678,7 @@ namespace TheGame
 
         private void CreateSpell(string spellName)
         {
+            SpellInfo spellInfo;
             switch (spellName)
             {
                 case "Chain Beam":
@@ -665,7 +686,12 @@ namespace TheGame
                     //currentSpell = new ChainBeam(this.Parent, 500.0f);
                     break;
                 case "Fire Tornado":
-
+                    spellInfo = new SpellInfo();
+                    spellInfo.Duration = 4.0f;
+                    spellInfo.Damage = 3;
+                    spellInfo.TickFrequency = 0.2f;
+                    currentSpell = new FireTornado(this.Parent, spellInfo, this, ((Level)Parent).MonsterList.GetAllWithinRange(this.position, 15.0f));
+                    currentSpell.Initialize();
                     break;
                 case "Fire Line":
 

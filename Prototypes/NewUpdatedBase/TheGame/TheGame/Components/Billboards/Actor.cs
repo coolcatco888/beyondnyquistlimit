@@ -27,7 +27,7 @@ namespace TheGame
             Casting,
             Hit,
             Dying,
-            Dead, 
+            Dead,
             Stun,
             Override
         }
@@ -58,12 +58,11 @@ namespace TheGame
         protected Monster monsterTarget;
         protected Player playerTarget;
 
-        protected float height;
-
         protected ActorInfo actorStats = new ActorInfo();
 
-        protected string currentAttack = "";
-        protected Vector3 attackDirection;
+        protected float height;
+
+        //protected Vector3 direction = Vector3.Forward;
 
         #endregion  // Fields
 
@@ -90,9 +89,6 @@ namespace TheGame
 
         // Dictionary of sprite sequences for the actor to use at different states and orientations
         protected Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
-
-        // Dictionary of slash attacks.
-        protected Dictionary<string, AttackInfo> attacks = new Dictionary<string, AttackInfo>();
 
         #endregion // Dictionaries
 
@@ -131,8 +127,9 @@ namespace TheGame
         public ActorInfo ActorStats
         {
             get { return actorStats; }
+            set { actorStats = value; }
         }
-            
+
         #endregion  // Accessors
 
         #region Initialization
@@ -161,47 +158,6 @@ namespace TheGame
         public override void Initialize()
         {
             base.Initialize();
-
-            // TEMPORARY ADD ATTACKS
-            AttackInfo infoSW = new AttackInfo();
-            infoSW.Distance = 1.0f;
-            infoSW.Rotation = new Vector2(0.0f, 0.0f);
-            infoSW.Scale = new Vector2(2.0f, 2.0f);
-            infoSW.UnitScale = new Vector2(2.0f, 1.0f);
-            infoSW.TextureCoordinates = new Vector2(16, 5);
-
-            attacks.Add("SouthSlash", infoSW);
-            attacks.Add("SouthwestSlash", infoSW);
-            attacks.Add("WestSlash", infoSW);
-
-            AttackInfo infoSE = new AttackInfo();
-            infoSE.Distance = 1.0f;
-            infoSE.Rotation = new Vector2(0.0f, 0.0f);
-            infoSE.Scale = new Vector2(2.0f, 2.0f);
-            infoSE.UnitScale = new Vector2(2.0f, 1.0f);
-            infoSE.TextureCoordinates = new Vector2(18, 5);
-
-            attacks.Add("EastSlash", infoSE);
-            attacks.Add("SoutheastSlash", infoSE);
-
-            AttackInfo infoNW = new AttackInfo();
-            infoNW.Distance = 1.0f;
-            infoNW.Rotation = new Vector2(0.0f, 0.0f);
-            infoNW.Scale = new Vector2(2.0f, 2.0f);
-            infoNW.UnitScale = new Vector2(2.0f, 1.0f);
-            infoNW.TextureCoordinates = new Vector2(16, 6);
-
-            attacks.Add("NorthSlash", infoNW);
-            attacks.Add("NorthwestSlash", infoNW);
-
-            AttackInfo infoNE = new AttackInfo();
-            infoNE.Distance = 1.0f;
-            infoNE.Rotation = new Vector2(0.0f, 0.0f);
-            infoNE.Scale = new Vector2(2.0f, 2.0f);
-            infoNE.UnitScale = new Vector2(2.0f, 1.0f);
-            infoNE.TextureCoordinates = new Vector2(18, 6);
-
-            attacks.Add("NortheastSlash", infoNE);
         }
         #endregion // Initialization
 
@@ -225,7 +181,7 @@ namespace TheGame
 
             // Updates the sprite sequence vertices so that it can grab the next sprite in the animation
             UpdateVertices(currentSequence, spriteInfo);
-
+            
             // Update the bounding shapes
             UpdateBounding();
 
@@ -257,11 +213,13 @@ namespace TheGame
             if (direction != Vector3.Zero && state != ActorState.Attacking)
             {
                 direction = Vector3.Normalize(direction);
-                attackDirection = new Vector3(direction.X, direction.Y, -direction.Z);
             }
 
             position.X += direction.X * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
-            position.Z -= direction.Z * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
+            if(this is Player)
+                position.Z -= direction.Z * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
+            if(this is Monster)
+                position.Z += direction.Z * speed * (float)gameTime.ElapsedGameTime.Milliseconds;
 
             if (heightInfo.IsOnHeightMap(position) == false)
             {
@@ -288,7 +246,7 @@ namespace TheGame
 
             if (currentSequenceTitle.Equals(nextSequenceTitle))
             {
-                currentAttack = currentSequence.Update(gameTime);
+                currentSequence.Update(gameTime);
             }
             else
             {
@@ -381,59 +339,6 @@ namespace TheGame
 
         #endregion
 
-        #region Draw
-
-        public override void Draw(GameTime gameTime)
-        {
-            if (direction != Vector3.Zero && state != ActorState.Attacking)
-            {
-                attackDirection = direction;
-                attackDirection = new Vector3(attackDirection.X, attackDirection.Y, -attackDirection.Z);
-            }
-
-            base.Draw(gameTime);
-
-            if (attacks.ContainsKey(currentAttack))
-            {
-                Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
-
-                AttackInfo thisAttack = attacks[currentAttack];
-                Vector3 oldPosition = this.Position;
-
-                this.Position += attackDirection * thisAttack.Distance;// +Vector3.Down;
-
-                UpdateVertices(thisAttack.TextureCoordinates, spriteInfo.SpriteUnit, thisAttack.UnitScale);
-
-                // Assign world, view, & projection matricies to basicEffect.
-                // TODO: implement rotation
-                basicEffect.World = Matrix.CreateScale(-thisAttack.Scale.X, thisAttack.Scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction);
-                //basicEffect.World = Matrix.CreateScale(thisAttack.Scale.X, thisAttack.Scale.Y, 1.0f) * Matrix.CreateRotationX(thisAttack.Rotation.X) * Matrix.CreateRotationY(thisAttack.Rotation.Y) * Matrix.CreateTranslation(position);
-                basicEffect.View = camera.View;
-                basicEffect.Projection = camera.Projection;
-
-                // TODO: Kickass alpha blend.
-                GameEngine.Graphics.RenderState.AlphaBlendEnable = true;
-                GameEngine.Graphics.RenderState.AlphaSourceBlend = Blend.One;
-                GameEngine.Graphics.RenderState.AlphaDestinationBlend = Blend.One;
-
-                // Draw billboard.
-                basicEffect.Begin();
-                basicEffect.CurrentTechnique.Passes[0].Begin();
-
-                GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
-                GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleStrip, vertices, 0, 2);
-
-                basicEffect.CurrentTechnique.Passes[0].End();
-                basicEffect.End();
-
-                GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
-
-                this.Position = oldPosition;
-            }
-        }
-
-        #endregion  // Draw
-
         #region Sprite Sequencing Methods
 
         /// <summary>
@@ -468,16 +373,6 @@ namespace TheGame
         {
             state = ActorState.Idle;
             playSequence(state.ToString() + currentSequence.Orientation.ToString());
-        }
-
-        protected void AddAttack(string title, AttackInfo attack)
-        {
-            attacks.Add(title, attack);
-        }
-
-        protected void RemoveAttack(string title)
-        {
-            attacks.Remove(title);
         }
 
         #endregion  // Sprite Sequencing Methods   // Complete, don't touch

@@ -67,7 +67,7 @@ namespace TheGame
 
         #region Constructors
 
-        public CastingAura(GameScreen parent, Library.SpellInfo spellInfo, Component3D caster, ActorList targets, Point sheetIndex)
+        public CastingAura(GameScreen parent, Library.SpellInfo spellInfo, Actor caster, List<Actor> targets, Point sheetIndex)
             : base(parent, spellInfo, caster, targets)
         {
             this.sheetIndex = sheetIndex;
@@ -75,7 +75,7 @@ namespace TheGame
 
 
 
-        public CastingAura(GameScreen parent, Library.SpellInfo spellInfo, Component3D caster, ActorList targets, int sheetColumn, int sheetRow)
+        public CastingAura(GameScreen parent, Library.SpellInfo spellInfo, Actor caster, List<Actor> targets, int sheetColumn, int sheetRow)
             : base(parent, spellInfo, caster, targets)
         {
             this.sheetIndex.X = sheetColumn;

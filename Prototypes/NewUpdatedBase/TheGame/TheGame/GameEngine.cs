@@ -33,6 +33,14 @@ namespace TheGame
 
         static SpriteBatch spriteBatch;
 
+        public static float Frand
+        {
+            get
+            {
+                return (float)Random.NextDouble();
+            }
+        }
+
         public static Random Random = new Random();
 
         /// <summary>

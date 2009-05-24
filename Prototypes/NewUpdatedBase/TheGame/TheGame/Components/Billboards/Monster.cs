@@ -37,6 +37,14 @@ namespace TheGame
                         state != ActorState.Chanting)
                         state = value;
                     break;
+                case ActorState.Walking:
+                    if (state != ActorState.Hit)
+                        state = value;
+                    break;
+                case ActorState.Idle:
+                    if (state != ActorState.Hit)
+                        state = value;
+                    break;
                 case ActorState.Override:
                     if (state == ActorState.Stun)
                     {
@@ -53,8 +61,9 @@ namespace TheGame
         public float behaviorTimer = 0.0f;
         public float attackTimer = 2000.0f;
         public float stunTimer = 0.0f;
-        public float stunDuration = 3000.0f;
+        public float stunDuration = 0.0f;
         public string monsterName;
+        public bool isStunned = false;
 
         #endregion // Fields
 
@@ -133,7 +142,7 @@ namespace TheGame
             behaviors.Add(idle);
             Behavior seek = new SeekBehavior(Parent, this, 15.0f);
             behaviors.Add(seek);
-            Behavior attack = new AttackBehavior(Parent, this, 3.5f);
+            Behavior attack = new AttackBehavior(Parent, this, 3.0f);
             Behaviors.Add(attack);
         }
 
@@ -231,6 +240,8 @@ namespace TheGame
         public void HandleStates(GameTime gameTime)
         {
             if (hasBeenHit)
+                state = ActorState.Hit;
+            if (isStunned)
                 state = ActorState.Stun;
             if (isDying)
                 state = ActorState.Dying;
@@ -259,12 +270,12 @@ namespace TheGame
         private void StunStateInput(GameTime gameTime)
         {
             speed = 0.0f;
-            stunTimer += gameTime.ElapsedGameTime.Milliseconds;
+            stunTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
             if (stunTimer >= stunDuration)
             {
                 State = ActorState.Override;
                 stunTimer = 0.0f;
-                hasBeenHit = false;
+                isStunned = false;
             }
         }
 
@@ -289,17 +300,20 @@ namespace TheGame
                     {
                         playerTarget.PhysicalHit(this.monsterStats.Damage, orientation);
                         this.hasAttacked = true;
-                        attackTimer = 1000.0f;
+                        attackTimer = 500.0f;
                     }
                 }
             }
 
-            if (attackTimer == 1500.0f)
+            if (attackTimer >= 500.0f)
             {
-                hasAttacked = false;
-                playerTarget.PrimitiveShape.ShapeColor = Color.White;
-                playerTarget = null;
-                state = ActorState.Idle;
+                if (playerTarget != null)
+                {
+                    hasAttacked = false;
+                    playerTarget.PrimitiveShape.ShapeColor = Color.White;
+                    playerTarget = null;
+                    state = ActorState.Idle;
+                }
             }
         }
 
@@ -333,6 +347,7 @@ namespace TheGame
             {
                 hasBeenHit = false;
                 state = ActorState.Idle;
+                Color = Color.White;
             }
         }
 
@@ -425,6 +440,7 @@ namespace TheGame
         public void PhysicalHit(int damage, Orientation o)
         {
             hasBeenHit = true;
+            this.Color = Color.Red;
             this.orientation = Utility.GetOppositeOrientation(o);
             this.position = position + Utility.PositionChangeBasedOnOrientation(o, 0.5f);
             this.ApplyDamage(damage);
