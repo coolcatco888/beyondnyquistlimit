@@ -1,0 +1,63 @@
+Content\ig_box.xnb
+Content\ParticleA.xnb
+Content\Skybox\redsky\redskyback.xnb
+Content\Skybox\redsky\redskyfront.xnb
+Content\Skybox\redsky\redskyleft.xnb
+Content\Skybox\redsky\redskyright.xnb
+Content\Skybox\redsky\redskytop.xnb
+Content\Terrain\MountainGrass.xnb
+Content\Terrain\rocks.xnb
+Content\Terrain\skymap.xnb
+Content\Terrain\terrain.xnb
+Content\Sprites\circles.xnb
+Content\Sprites\Sprite Sheet Knight.xnb
+Content\Sprites\cloud.xnb
+Content\GUI\blank.xnb
+Content\GUI\circGauge.xnb
+Content\GUI\healthbar.xnb
+Content\GUI\hud.xnb
+Content\GUI\itemsm.xnb
+Content\GUI\menubg.xnb
+Content\PoringSprite.xnb
+Content\Sprites\WizardSprite.xnb
+Content\GUI\charsel1.xnb
+Content\GUI\charsel2.xnb
+Content\GUI\charsel3.xnb
+Content\GUI\charsel4.xnb
+Content\GUI\Copy of itemsm.xnb
+Content\GUI\Wizardface.xnb
+Content\GUI\Knightface.xnb
+Content\GUI\Priestface.xnb
+Content\GUI\Rangerface.xnb
+Content\GUI\offarrow.xnb
+Content\Sprites\RangerSprite.xnb
+Content\Sprites\KnightSprite.xnb
+Content\Sprites\PriestSprite.xnb
+Content\BasicPoint.xnb
+Content\Skybox\skybox.xnb
+Content\Bezier.xnb
+Content\Audio\04 Never Ending Duel.xnb
+Content\Sprites\WizardSpriteInfo.xnb
+Content\Sprites\MagicCircle.xnb
+Content\Sprites\CloudInfo.xnb
+Content\PlayerSpriteSequences.xnb
+Content\PoringSpriteSequences.xnb
+Content\PoringSpriteInfo.xnb
+Content\WizardClassInfo.xnb
+Content\PoringBoundingShapes.xnb
+Content\PoringInfo.xnb
+Content\PlayerBoundingShapes.xnb
+Content\PlayerMultipleSequences.xnb
+Content\KnightClassInfo.xnb
+Content\PriestClassInfo.xnb
+Content\RangerClassInfo.xnb
+Content\Sprites\KnightSpriteInfo.xnb
+Content\Sprites\RangerSpriteInfo.xnb
+Content\Sprites\PriestSpriteInfo.xnb
+Content\GUI\menufont.xnb
+Content\ig_box_tex_0.xnb
+Content\Terrain\MountainGrass_0.xnb
+Content\Audio\Asplosions.xgs
+Content\Audio\Wave Bank.xwb
+Content\Audio\Sound Bank.xsb
+Components\GUI\MenuPanels\mainpanel.xml
