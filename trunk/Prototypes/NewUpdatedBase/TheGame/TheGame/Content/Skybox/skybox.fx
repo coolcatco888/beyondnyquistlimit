@@ -60,7 +60,7 @@ technique Simple
 {
    pass Single_Pass
    {
-        LIGHTING = FALSE;
+        //LIGHTING = FALSE;
         ZENABLE = FALSE;
         ZWRITEENABLE = FALSE;
         ALPHATESTENABLE = FALSE;
@@ -71,7 +71,7 @@ technique Simple
         VertexShader = compile vs_1_1 SimpleVS();
         PixelShader = compile ps_1_1 SimplePS();
         
-        LIGHTING = TRUE;
+        //LIGHTING = TRUE;
         ZENABLE = TRUE;
         ZWRITEENABLE = TRUE;
         ALPHATESTENABLE = FALSE;

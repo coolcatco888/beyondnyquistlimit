@@ -29,7 +29,9 @@ namespace TheGame.Game_Screens
 
         private List<ImageComponent2D> characterSelectors = new List<ImageComponent2D>();
 
-        ImageComponent2D loadingBar;
+        private ImageComponent2D loadingBar, fadeScreen;
+
+        private TextComponent2D loadingText;
 
         private Texture2D gradient;
 
@@ -61,12 +63,23 @@ namespace TheGame.Game_Screens
             SetupCharacterChoices();
             SetupCharacterChoosers();
 
-            Vector2 loadingBarScale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
-                        1.0f / (float)gradient.Height);
 
-            loadingBar = new ImageComponent2D(this, new Vector2(0, (GameEngine.Graphics.Viewport.Height / 2.0f) - 50.0f), gradient, new Color(Color.Red, 150), scale);
+            Texture2D blank = GameEngine.Content.Load<Texture2D>("GUI\\blank");
+            this.fadeScreen = new ImageComponent2D(this, Vector2.Zero, blank, new Color(Color.Black, 100), new Vector2(GameEngine.Graphics.Viewport.Width, GameEngine.Graphics.Viewport.Height));
+            fadeScreen.Initialize();
+            fadeScreen.Visible = false;
+
+            Vector2 loadingBarScale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
+                        100.0f / (float)gradient.Height);
+
+            loadingBar = new ImageComponent2D(this, new Vector2(0, (GameEngine.Graphics.Viewport.Height / 2.0f) - 50.0f), gradient, new Color(Color.Red, 150), loadingBarScale);
             loadingBar.Initialize();
             loadingBar.Visible = false;
+
+            loadingText = new TextComponent2D(this, new Vector2((float)GameEngine.Graphics.Viewport.Width / 2.0f, (float)GameEngine.Graphics.Viewport.Height / 2.0f), "Loading", Color.White, font, fontScale * 2.0f);
+            loadingText.Position = loadingText.Position - new Vector2(loadingText.Width / 2.0f, loadingText.Height / 2.0f);
+            loadingText.Initialize();
+            loadingText.Visible = false;
         }
 
         public void LoadCharacterSelectorImages()
@@ -198,7 +211,9 @@ namespace TheGame.Game_Screens
                         if (startGame)
                         {
                             //Show loading bar.
+                            fadeScreen.Visible = true;
                             loadingBar.Visible = true;
+                            loadingText.Visible = true;
                         }
                         break;
                     }

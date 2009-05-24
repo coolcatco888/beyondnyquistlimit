@@ -99,9 +99,8 @@ namespace TheGame
             float playerPosOffset = 0.0f;
             foreach (KeyValuePair<PlayerIndex, string> activePlayer in activePlayers)
             {
-                string spriteFile = "Sprites\\" + activePlayer.Value + "SpriteInfo";
-                Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@spriteFile);//Change This to be @"Sprites\\" + activePlayer.Value
-                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, /*"Wizard",TODO: set this to */activePlayer.Value,
+                Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");//Change This to be @"Sprites\\" + activePlayer.Value
+                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, "Wizard",//TODO: set this to activePlayer.Value
                      new Vector3(1.0f, 2.0f, 1.0f));
                 Vector3 newPos = player.Position;
                 newPos.X = newPos.X + playerPosOffset;
@@ -112,7 +111,7 @@ namespace TheGame
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Monster poring = new Monster(this, poringSpriteInfo, new Vector3(-25.0f + i, 0.0f, 0.0f), "Poring");
                 poring.Initialize();
