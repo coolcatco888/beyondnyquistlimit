@@ -605,5 +605,126 @@
       <IndexY>19</IndexY>
       <RowOrColumn>4</RowOrColumn>
     </Item>
+    
+    <!-- Chanting Sprite Sequences -->
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>South</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>North</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>10</IndexX>
+      <IndexY>14</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>West</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>Southwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>4</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>Northwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>10</IndexX>
+      <IndexY>14</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>East</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>5</IndexX>
+      <IndexY>9</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>Southeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>5</IndexX>
+      <IndexY>9</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
+
+    <Item>
+      <StateKey>Chanting</StateKey>
+      <OrientationKey>Northeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>3</NumBuffers>
+      <ScaleX>0</ScaleX>
+      <ScaleY>0</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>15</IndexX>
+      <IndexY>19</IndexY>
+      <RowOrColumn>4</RowOrColumn>
+    </Item>
   </Asset>
 </XnaContent>

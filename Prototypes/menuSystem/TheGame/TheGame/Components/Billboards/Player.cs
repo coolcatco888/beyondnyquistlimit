@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
+using TheGame.Components.Display;
 using Library;
 
 namespace TheGame
@@ -73,11 +74,34 @@ namespace TheGame
 
         #endregion
 
+        #region ComboSequenceFields
+        // This is the master list of moves in logical order. This array is kept
+        // around in order to draw the move list on the screen in this order.
+        Move[] moves;
+        // The move list used for move detection at runtime.
+        MoveList moveList;
+
+        // The move list is used to match against an input manager for each player.
+        InputManager[] inputManagers;
+        // Stores each players' most recent move and when they pressed it.
+        Move[] playerMoves;
+        TimeSpan[] playerMoveTimes;
+        Move[] prevMoves;
+
+        // Time until the currently "active" move dissapears from the screen.
+        readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(1.0);
+
+        SpriteFont font;
+        #endregion
+
         #region Constructor
 
         public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex, string className, Vector3 scale)
             : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, scale)
         {
+            font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
+            SetupComboLibraryAndInputManager();
+
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
 
@@ -258,6 +282,9 @@ namespace TheGame
                 case ActorState.Chanting:
                     ChantingStateInput(gamepadDevice);
                     break;
+                case ActorState.Casting:
+                    CastingStateInput(gamepadDevice);
+                    break;
                 case ActorState.Dead:
                     ActorList players = ((Level)Parent).PlayerList;
                     players.Remove((Player)this);
@@ -266,11 +293,22 @@ namespace TheGame
             }
         }
 
+        private void CastingStateInput(GamepadDevice gamepadDevice)
+        {
+            if (currentSequence.IsComplete)
+            {
+                state = ActorState.Idle;
+            }
+        }
+
         /// <summary>
         /// Input state changes while in the chanting actor state
         /// </summary>
         private void ChantingStateInput(GamepadDevice gamepadDevice)
         {
+            //DO INPUT SEQUENCE STUFF HERE
+            HandleComboMoves();
+
             speed = 0.0f;
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
@@ -460,6 +498,8 @@ namespace TheGame
 
                     boundingShapesSelf["Chanting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Chanting" + info.OrientationKey].ShapeColor = Color.Gold;
+                    boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Casting" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {
@@ -474,5 +514,76 @@ namespace TheGame
         }
 
         #endregion // Initialization Methods
+
+        #region Spell Input Sequence
+        /// <summary>
+        /// Example of how to setup the Combo Sequence Functionality
+        /// </summary>
+        private void SetupComboLibraryAndInputManager()
+        {
+            // Construct the master list of moves.
+            moves = new Move[]
+                {
+                    new Move("Jump",        Buttons.A) { IsSubMove = true },
+                    new Move("Punch",       Buttons.X) { IsSubMove = true },
+                    new Move("Activate Spell",  Buttons.A,  Buttons.X,  Buttons.Y,  Buttons.B),
+                };
+
+            // Construct a move list which will store its own copy of the moves array.
+            moveList = new MoveList(moves);
+
+            // Create an InputManager for each player with a sufficiently large buffer.
+            inputManagers = new InputManager[4];
+            for (int i = 0; i < inputManagers.Length; ++i)
+            {
+                inputManagers[i] =
+                    new InputManager((PlayerIndex)i, moveList.LongestMoveLength);
+            }
+
+            // Give each player a location to store their most recent move.
+            playerMoves = new Move[inputManagers.Length];
+            prevMoves = new Move[inputManagers.Length];
+            playerMoveTimes = new TimeSpan[inputManagers.Length];
+        }
+
+        /// <summary>
+        /// Example of keeping track of Combo Moves
+        /// </summary>
+        private void HandleComboMoves()
+        {
+            for (int i = 0; i < inputManagers.Length; ++i)
+            {
+                // Expire old moves.
+                if (GameEngine.GameTime.TotalRealTime - playerMoveTimes[i] > MoveTimeOut)
+                {
+                    playerMoves[i] = null;
+                }
+
+                // Get the updated input manager.
+                InputManager inputManager = inputManagers[i];
+                inputManager.Update(GameEngine.GameTime);
+
+                // Detection and record the current player's most recent move.
+                Move newMove = moveList.DetectMove(inputManager);
+                if (newMove != null)
+                {
+                    if (newMove != prevMoves[i])
+                    {
+                        HitTextComponent2D text = new HitTextComponent2D(Parent, new Vector2(400, 400), newMove.Name, Color.Red, font, 2.0f);
+                        text.Initialize();
+                        prevMoves[i] = newMove;
+                    }
+                    else
+                    {
+                        prevMoves[i] = newMove;
+                    }
+
+                    playerMoves[i] = newMove;
+                    playerMoveTimes[i] = GameEngine.GameTime.TotalRealTime;
+
+                }
+            }
+        }
+        #endregion
     }
 }
