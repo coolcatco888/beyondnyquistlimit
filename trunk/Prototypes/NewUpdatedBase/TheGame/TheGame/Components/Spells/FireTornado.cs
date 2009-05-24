@@ -45,6 +45,7 @@ namespace TheGame
             {
                 ((Monster)targets[0]).isStunned = true;
                 ((Monster)targets[0]).stunDuration = this.Duration;
+                ((Monster)targets[0]).Collidable = false;
             }
 
             tornado.Initialize();
@@ -56,6 +57,7 @@ namespace TheGame
             if (targets.Count == 0)
             {
                 timeRemaining = 0.0f;
+                ((Monster)targets[0]).Collidable = true;
                 return;
             }
 
@@ -94,7 +96,11 @@ namespace TheGame
                 targets[0].Position = new Vector3(targets[0].Position.X, Math.Max(timeRemaining * 12, 1.0f), targets[0].Position.Z);
             }
 
-            
+
+            if (timeRemaining <= 0.0f)
+            {
+                ((Monster)targets[0]).Collidable = true;
+            }
 
             base.Update(gameTime);
         }

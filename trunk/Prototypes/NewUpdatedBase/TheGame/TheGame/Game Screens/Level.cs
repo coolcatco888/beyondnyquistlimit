@@ -99,8 +99,9 @@ namespace TheGame
             float playerPosOffset = 0.0f;
             foreach (KeyValuePair<PlayerIndex, string> activePlayer in activePlayers)
             {
-                Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\ActorTest");//Change This to be @"Sprites\\" + activePlayer.Value
-                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, "Wizard",//TODO: set this to activePlayer.Value
+                string playerSprite = "Sprites\\" + activePlayer.Value + "SpriteInfo";
+                Library.SpriteInfo playerSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@playerSprite);//Change This to be @"Sprites\\" + activePlayer.Value
+                Player player = new Player(this, playerSpriteInfo, activePlayer.Key, activePlayer.Value,//TODO: set this to activePlayer.Value
                      new Vector3(1.0f, 2.0f, 1.0f));
                 Vector3 newPos = player.Position;
                 newPos.X = newPos.X + playerPosOffset;

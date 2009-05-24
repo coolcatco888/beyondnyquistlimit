@@ -4,7 +4,7 @@
   <Asset Type="Library.MonsterInfo">
     <Health>20</Health>
     <Mana>2</Mana>
-    <Damage>1</Damage>
+    <Damage>20</Damage>
     <Defense>0</Defense>
     <Experience>5</Experience>
   </Asset>

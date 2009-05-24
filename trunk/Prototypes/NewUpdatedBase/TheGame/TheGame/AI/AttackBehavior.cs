@@ -24,7 +24,7 @@ namespace TheGame
         {
             target = (Player)((Level)Parent).PlayerList.GetNearest(monster.Position);
             float distance = Vector3.Distance(monster.Position, target.Position);
-            if (distance <= attackRadius)
+            if (distance <= attackRadius && !(target.ActorStats.CurrentHealth <= 0))
             {
                 reacted = true;
                 desireLevel = 120;
