@@ -467,6 +467,42 @@
       <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-22T16:21:44.59375-07:00</Time>
     </Item>
+    <Item>
+      <Source>GUI\brdr.PNG</Source>
+      <Name>GUI\brdr</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdr.xnb</Output>
+      <Time>2009-05-24T01:21:51.265625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\brdrbg.PNG</Source>
+      <Name>GUI\brdrbg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrbg.xnb</Output>
+      <Time>2009-05-24T01:21:51.265625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\brdrcorner.PNG</Source>
+      <Name>GUI\brdrcorner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcorner.xnb</Output>
+      <Time>2009-05-24T01:21:51.265625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\brdrcornerbg.PNG</Source>
+      <Name>GUI\brdrcornerbg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb</Output>
+      <Time>2009-05-24T01:21:51.265625-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
