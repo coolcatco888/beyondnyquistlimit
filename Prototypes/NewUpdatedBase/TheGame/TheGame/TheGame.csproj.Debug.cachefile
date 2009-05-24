@@ -57,6 +57,12 @@ Content\Sprites\PriestSpriteInfo.xnb
 Content\GUI\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
+Content\GUI\brdr.xnb
+Content\GUI\brdrbg.xnb
+Content\GUI\brdrcorner.xnb
+Content\GUI\brdrcornerbg.xnb
+Content\Sprites\crosshair.xnb
+Content\Sprites\CrosshairInfo.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

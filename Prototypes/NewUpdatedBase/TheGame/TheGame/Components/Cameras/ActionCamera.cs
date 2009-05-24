@@ -192,7 +192,7 @@ namespace TheGame.Components.Cameras
             Vector3 dir = lookAt - position;
 
             //Calculate Rotation
-            Rotation = Quaternion.CreateFromYawPitchRoll((float)Math.Atan2(dir.X, dir.Z), (float)Math.Atan2(dir.Y, dir.Z), 0.0f);
+            Rotation = Quaternion.CreateFromYawPitchRoll((float)Math.Atan2(dir.X, dir.Z), (float)Math.Atan2(dir.Z, dir.Y), 0.0f);
 
             //Push camera a bit to the side if the player is directly under the camera
             if (Math.Floor(position.X) == Math.Floor(lookAt.X) && Math.Floor(position.Z) == Math.Floor(lookAt.Z))

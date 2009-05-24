@@ -39,6 +39,10 @@ namespace TheGame
 
         // Flag for the attack damage timer
         protected bool damageTimerActive;
+        protected int targetIndex = 0;
+        protected GroundEffect crosshair;
+
+        private float crosshairRotationIncrement = MathHelper.PiOver4 * 0.25f;
 
         // Timer used for a delay in applying damage, to match the frame of the attack swing
         protected float damageTimer;
@@ -69,16 +73,51 @@ namespace TheGame
         #region TEMPORARY - Testing Fields
 
         SpriteInfo waveInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"Sprites\\CloudInfo");
+        BillboardWave wave;
+        Spell currentSpell;
+        string spellName = "";
 
         #endregion
+
+        #region SpellSequenceFields
+        // This is the master list of moves in logical order. This array is kept
+        // around in order to draw the move list on the screen in this order.
+        Move[] spellComboLibrary;
+        // The move list used for move detection at runtime.
+        MoveList moveList;
+
+        // The move list is used to match against an input manager for each player.
+        InputManager inputManager;
+        // Stores each players' most recent move and when they pressed it.
+        Move currentPlayerMove;
+        TimeSpan currentPlayerMoveTime;
+        Move previousMove;
+
+        // Time until the currently "active" move dissapears from the screen.
+        readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(1.0);
+
+        SpriteFont font;
+        #endregion
+
 
         #region Constructor
 
         public Player(GameScreen parent, SpriteInfo spriteInfo, PlayerIndex playerIndex, string className, Vector3 scale)
             : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, scale)
         {
+            font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
+
+            crosshairRotationIncrement *= (int)playerIndex % 2 == 0 ? 1.0f : -1.0f;
+
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
+            SetupComboLibraryAndInputManager();
+
+            SpriteInfo crosshairInfo = GameEngine.Content.Load<SpriteInfo>(@"Sprites\\CrosshairInfo");
+            crosshair = new GroundEffect(this.Parent, crosshairInfo);
+            crosshair.UpdateVertices(Vector2.Zero, crosshairInfo.SpriteUnit, Vector2.One);
+            crosshair.Initialize();
+            crosshair.Visible = false;
 
 
             hasAttacked = false;
@@ -130,6 +169,10 @@ namespace TheGame
             previousState = state;
 
             UpdatePosition(gameTime);
+
+            crosshair.Rotate(new Vector3(crosshairRotationIncrement * 0.01f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f));
+            if (target != null)
+                crosshair.Position = new Vector3(target.Position.X, 0.0f, target.Position.Z);
 
             HandleInput(gameTime);
 
@@ -257,7 +300,7 @@ namespace TheGame
                     AttackingStateInput(gamepadDevice);
                     break;
                 case ActorState.Chanting:
-                    ChantingStateInput(gamepadDevice);
+                    ChantingStateInput(gamepadDevice, gameTime);
                     break;
                 case ActorState.Dead:
                     ActorList players = ((Level)Parent).PlayerList;
@@ -267,18 +310,55 @@ namespace TheGame
             }
         }
 
+        private void CastingStateInput(GamepadDevice gamepadDevice)
+        {
+            if (!spellName.Equals(""))
+            {
+                CreateSpell(spellName);
+            }
+            if (currentSequence.IsComplete)
+            {
+                state = ActorState.Idle;
+                spellName = "";
+            }
+        }
+
         /// <summary>
         /// Input state changes while in the chanting actor state
         /// </summary>
-        private void ChantingStateInput(GamepadDevice gamepadDevice)
+        private void ChantingStateInput(GamepadDevice gamepadDevice, GameTime gameTime)
         {
+            ActorList monsterList = ((Level)Parent).MonsterList;
+
+            //DO INPUT SEQUENCE STUFF HERE
+            HandleComboMove();
+            if (gamepadDevice.WasButtonPressed(Buttons.RightShoulder))
+            {
+                crosshair.Visible = true;
+                target = (Monster)monsterList[targetIndex];
+                targetIndex++;
+                if (targetIndex == monsterList.Count)
+                    targetIndex = 0;
+            }
+
+            if (gamepadDevice.WasButtonPressed(Buttons.LeftShoulder))
+            {
+                crosshair.Visible = true;
+                target = (Monster)monsterList[targetIndex];
+                targetIndex--;
+                if (targetIndex == -1)
+                    targetIndex = monsterList.Count - 1;
+            }
+
             speed = 0.0f;
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
-                currentSequence.Reset();
-                state = ActorState.Idle;
+                state = ActorState.Casting;
+                target = null;
+                crosshair.Visible = false;
             }
         }
+
 
         /// <summary>
         /// Input state changes while in the attacking actor state
@@ -515,5 +595,94 @@ namespace TheGame
         }
 
         #endregion // Initialization Methods
+
+        #region Spell Input Sequence
+        /// <summary>
+        /// Example of how to setup the Combo Sequence Functionality
+        /// </summary>
+        private void SetupComboLibraryAndInputManager()
+        {
+            // Construct the master list of moves.
+            spellComboLibrary = new Move[]
+                {
+                    new Move("Chain Beam", Buttons.DPadUp, Buttons.A),
+                    new Move("Activate Spell",  Buttons.A,  Buttons.X,  Buttons.Y,  Buttons.B),
+                };
+
+            // Construct a move list which will store its own copy of the moves array.
+            moveList = new MoveList(spellComboLibrary);
+
+            // Create an InputManager for each player with a sufficiently large buffer.
+            inputManager = new InputManager(playerIndex, moveList.LongestMoveLength);
+            //for (int i = 0; i < inputManagers.Length; ++i)
+            //{
+            //    inputManagers[i] =
+            //        new InputManager((PlayerIndex)i, moveList.LongestMoveLength);
+            //}
+
+            // Give each player a location to store their most recent move.
+            //playerMoves = new Move[inputManagers.Length];
+            //prevMoves = new Move[inputManagers.Length];
+            //playerMoveTimes = new TimeSpan[inputManagers.Length];
+        }
+
+        /// <summary>
+        /// Example of keeping track of Combo Moves
+        /// </summary>
+        private void HandleComboMove()
+        {
+
+            // Expire old moves.
+            if (GameEngine.GameTime.TotalRealTime - currentPlayerMoveTime > MoveTimeOut)
+            {
+                currentPlayerMove = null;
+            }
+
+            // Get the updated input manager.
+            inputManager.Update(GameEngine.GameTime);
+
+            // Detection and record the current player's most recent move.
+            Move newMove = moveList.DetectMove(inputManager);
+            if (newMove != null)
+            {
+                if (newMove != previousMove)
+                {
+                    //HitTextComponent2D text = new HitTextComponent2D(Parent, new Vector2(400, 400), newMove.Name, Color.Red, font, 2.0f);
+                    //text.Initialize();
+                    spellName = newMove.Name;
+                    previousMove = newMove;
+                }
+                else
+                {
+                    previousMove = newMove;
+                }
+
+                currentPlayerMove = newMove;
+                currentPlayerMoveTime = GameEngine.GameTime.TotalRealTime;
+            }
+
+        }
+
+        private void CreateSpell(string spellName)
+        {
+            switch (spellName)
+            {
+                case "Chain Beam":
+                    //TODO: make this work!!!
+                    //currentSpell = new ChainBeam(this.Parent, 500.0f);
+                    break;
+                case "Fire Tornado":
+
+                    break;
+                case "Fire Line":
+
+                    break;
+                case "Healing":
+
+                    break;
+            }
+        }
+
+        #endregion
     }
 }
