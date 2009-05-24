@@ -100,11 +100,11 @@ namespace TheGame
             : base(parent, spriteInfo, new Vector3(0.0f, 2.0f, 0.0f), Vector3.Zero, scale)
         {
             font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
-            SetupComboLibraryAndInputManager();
+            
 
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
-
+            SetupComboLibraryAndInputManager();
 
             hasAttacked = false;
             classInfo = GameEngine.Content.Load<Library.CharacterClassInfo>(@classInfoFile);
