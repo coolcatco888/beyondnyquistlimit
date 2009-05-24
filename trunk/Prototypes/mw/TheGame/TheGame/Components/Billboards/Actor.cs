@@ -13,7 +13,7 @@ using TheGame.Components.Cameras;
 
 namespace TheGame
 {
-    public class Actor : Billboard
+    public class Actor : Billboard, IAudioEmitter
     {
         #region Actor State Enum
 
@@ -412,6 +412,42 @@ namespace TheGame
                 GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
 
                 this.Position = oldPosition;
+
+                // Play attack sound.
+                if (this is Player)
+                {
+                    if (((Player)this).ClassInfo.ClassName == "Wizard")
+                    {
+                        audioManager.Play3DCue("rodSlash", this);
+                    }
+                    else if (((Player)this).ClassInfo.ClassName == "Priest")
+                    {
+                        audioManager.Play3DCue("maceSlash", this);
+                    }
+                    else
+                    {
+                        audioManager.Play3DCue("slash", this);
+                    }
+                }
+            }
+
+            // Quality audio coding.
+            if (this is Player)
+            {
+                if ((currentSequence.Title == "Walking" || currentSequence.Title == "Running") &&
+                    (currentSequence.CurrentFrame.X == 4 || currentSequence.CurrentFrame.X == 8 ||
+                    currentSequence.CurrentFrame.X == 13 || currentSequence.CurrentFrame.X == 17 ||
+                    currentSequence.CurrentFrame.X == 22 || currentSequence.CurrentFrame.X == 26))
+                {
+                    if (((Player)this).ClassInfo.ClassName == "Knight")
+                    {
+                        audioManager.Play3DCue("knight_step", this);
+                    }
+                    else
+                    {
+                        audioManager.Play3DCue("soft_step", this);
+                    }
+                }
             }
         }
 
@@ -478,5 +514,26 @@ namespace TheGame
         }
 
         #endregion // ICollidable Members
+
+        #region IAudioEmitter Members
+
+        AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+
+        public Vector3 Forward
+        {
+            get { return direction; }
+        }
+
+        public Vector3 Up
+        {
+            get { return Vector3.Up; }
+        }
+
+        public Vector3 Velocity
+        {
+            get { return direction * speed; }
+        }
+
+        #endregion
     }
 }
