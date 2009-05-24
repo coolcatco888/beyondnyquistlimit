@@ -29,11 +29,15 @@ namespace TheGame.Game_Screens
 
         private List<ImageComponent2D> characterSelectors = new List<ImageComponent2D>();
 
+        ImageComponent2D loadingBar;
+
+        private Texture2D gradient;
+
         public CharacterSelectScreen(string name)
             : base(name)
         {
 
-            Texture2D gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
+            gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
             Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width, 
                 (float)GameEngine.Graphics.Viewport.Height / (float)gradient.Height);
 
@@ -56,6 +60,13 @@ namespace TheGame.Game_Screens
             LoadCharacterSelectorImages();
             SetupCharacterChoices();
             SetupCharacterChoosers();
+
+            Vector2 loadingBarScale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
+                        1.0f / (float)gradient.Height);
+
+            loadingBar = new ImageComponent2D(this, new Vector2(0, (GameEngine.Graphics.Viewport.Height / 2.0f) - 50.0f), gradient, new Color(Color.Red, 150), scale);
+            loadingBar.Initialize();
+            loadingBar.Visible = false;
         }
 
         public void LoadCharacterSelectorImages()
@@ -148,6 +159,8 @@ namespace TheGame.Game_Screens
             choices.Add(priestChoice);
             choices.Add(rangerChoice);
 
+            
+
         }
 
         public void SetupCharacterChoosers()
@@ -182,34 +195,36 @@ namespace TheGame.Game_Screens
                     goBack = chooser.goBack;
                     if (startGame || goBack)
                     {
+                        loadingBar.Visible = true;
                         break;
                     }
                 }
+            }
+            else if (startGame)
+            {
 
-                if (startGame)
+
+                Dictionary<PlayerIndex, string> chosenCharacters = new Dictionary<PlayerIndex, string>();
+                foreach (CharacterChooser chooser in playerChoosers)
                 {
-                    Dictionary<PlayerIndex, string> chosenCharacters = new Dictionary<PlayerIndex, string>();
-                    foreach (CharacterChooser chooser in playerChoosers)
+                    if (chooser.selected)
                     {
-                        if (chooser.selected)
-                        {
-                            chosenCharacters.Add(chooser.gamepad.PlayerIndex, chooser.currentCharacter.characterName);
-                        }
+                        chosenCharacters.Add(chooser.gamepad.PlayerIndex, chooser.currentCharacter.characterName);
                     }
+                }
 
-                    GameScreen skybox = new SkyboxScreen("sky");
-                    Level level = new Level("level", "Terrain\\terrain", chosenCharacters);
-                    skybox.Initialize();
-                    level.Initialize();
-                    Dispose();
-                }
-                else if (goBack)
-                {
-                    GameScreen main = new MainMenuScreen("main");
-                    main.Initialize();
-                    main.LoadContent();
-                    Dispose();
-                }
+                GameScreen skybox = new SkyboxScreen("sky");
+                Level level = new Level("level", "Terrain\\terrain", chosenCharacters);
+                skybox.Initialize();
+                level.Initialize();
+                Dispose();
+            }
+            else if (goBack)
+            {
+                GameScreen main = new MainMenuScreen("main");
+                main.Initialize();
+                main.LoadContent();
+                Dispose();
             }
             base.Update(gameTime);
         }

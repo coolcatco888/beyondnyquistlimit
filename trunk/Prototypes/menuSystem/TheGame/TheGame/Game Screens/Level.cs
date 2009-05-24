@@ -111,11 +111,13 @@ namespace TheGame
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
-            Monster poring = new Monster(this, poringSpriteInfo, new Vector3(4.0f, 0.0f, 0.0f), "Poring");
-            poring.Initialize();
-            monsterList.Add(poring);
-
-            camera.ActorsToFollow = playerList;
+            for (int i = 0; i < 50; i++)
+            {
+                Monster poring = new Monster(this, poringSpriteInfo, new Vector3(-25.0f + i, 0.0f, 0.0f), "Poring");
+                poring.Initialize();
+                monsterList.Add(poring);
+            }
+            camera.ActorsToFollow.AddRange(playerList);
 
             //Initialize Hud screen
             HUDScreen hud = new HUDScreen("hud", this);

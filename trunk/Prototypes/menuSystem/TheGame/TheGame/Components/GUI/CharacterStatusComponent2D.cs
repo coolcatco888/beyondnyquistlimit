@@ -137,7 +137,7 @@ namespace TheGame.Components.Display
             //Update Health value position to centre of the bar if different
             if (lastHealthValue != healthBar.CurrentValue)
             {
-                healthValue.Position = relativeHealthBarPos - 
+                healthValue.Position = position + relativeHealthBarPos - 
                     new Vector2(textFont.MeasureString(healthBar.CurrentValue + "").X * 0.5f, 0);
                 healthValue.Text = healthBar.CurrentValue + "";
                 lastHealthValue = healthBar.CurrentValue;
@@ -146,7 +146,7 @@ namespace TheGame.Components.Display
             //Update Health value position to centre of the bar if different
             if (lastManaValue != manaBar.CurrentValue)
             {
-                manaValue.Position = relativeManaBarPos -
+                manaValue.Position = position + relativeManaBarPos -
                     new Vector2(textFont.MeasureString(manaBar.CurrentValue + "").X * 0.5f, 0);
                 manaValue.Text = manaBar.CurrentValue + "";
                 lastManaValue = manaBar.CurrentValue;

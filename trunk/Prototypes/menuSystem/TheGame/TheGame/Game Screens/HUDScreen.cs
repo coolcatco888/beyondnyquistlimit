@@ -18,6 +18,8 @@ namespace TheGame.Game_Screens
 
         private Dictionary<PlayerIndex, ImageComponent2D> offScreenArrows = new Dictionary<PlayerIndex, ImageComponent2D>();
 
+        private SpriteFont font;
+
         private readonly Color[] playerArrowColors = 
         {
             Color.Green,
@@ -26,11 +28,16 @@ namespace TheGame.Game_Screens
             Color.Yellow
         };
 
+        private const float HIT_TEXT_SCALE = 3.0f;
+
+        private const float PADDING = 20.0f;
+
         public HUDScreen(string name, Level level)
             : base(name)
         {
             int screenWidth = GameEngine.Graphics.Viewport.Width;
             int screenHeight = GameEngine.Graphics.Viewport.Height;
+            font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
             int screenWidthIncrement = level.PlayerList.Count > 0 ? screenWidth / level.PlayerList.Count : 0;
             int currentOffset = 0;
             int i = 0;
@@ -44,7 +51,7 @@ namespace TheGame.Game_Screens
                 Texture2D playerFace = GameEngine.Content.Load<Texture2D>("GUI\\" + characterName + "face");
                 //TODO: Add player stats once put in player
                 HUDStatusComponent2D hud = CreateCharacterStatusHUD(this, Vector2.Zero, actorStats.CurrentHealth, actorStats.MaxHealth, actorStats.CurrentMana, actorStats.MaxMana, playerInfo.ClassLevel, playerFace, playerInfo.CurrentAttackGauge, playerInfo.MaxAttackGauge);
-                Vector2 newPosition = new Vector2(10.0f + currentOffset, screenHeight - hud.Height);
+                Vector2 newPosition = new Vector2(PADDING + currentOffset, screenHeight - hud.Height - PADDING);
                 hud.Position = newPosition;
                 hud.Initialize();
                 playerHuds.Add(player, hud);
@@ -76,18 +83,46 @@ namespace TheGame.Game_Screens
             //Update Player Stats
             foreach (KeyValuePair<Player, HUDStatusComponent2D> hud in playerHuds)
             {
-                hud.Value.AttackGauge.CurrentValue = hud.Key.PlayerInfo.CurrentAttackGauge;
-                hud.Value.Healthbar.CurrentValue = hud.Key.ActorStats.CurrentHealth;
-                hud.Value.ManaBar.CurrentValue = hud.Key.ActorStats.CurrentMana;
+                Player player = hud.Key;
+                hud.Value.AttackGauge.CurrentValue = player.PlayerInfo.CurrentAttackGauge;
+                int manaDecrease = player.ActorStats.CurrentMana - hud.Value.ManaBar.CurrentValue;
+                hud.Value.ManaBar.IncreaseDecreaseValue(manaDecrease);
 
+                //Popup damage text to Player
+                int damage = player.ActorStats.CurrentHealth - hud.Value.Healthbar.CurrentValue;
+                if (damage != 0)
+                {
+                    Vector3 playerScreenPos = viewport.Project(player.Position, camera.Projection, camera.View, Matrix.Identity);
+                    Vector2 textLocation = new Vector2(playerScreenPos.X, playerScreenPos.Y);
+                    DisplayHitText(damage, textLocation);
+                    hud.Value.Healthbar.IncreaseDecreaseValue(damage);
+                }
                 DisplayOffScreenArrow(hud.Key, viewport, camera);
             }
 
-            foreach (KeyValuePair<Monster, int> monsterHealth in monsterCurrentHealth)
+            for (int i = 0; i < monsterCurrentHealth.Count; i++)
             {
-                Vector3 monsterScreenPos = viewport.Project(monsterHealth.Key.Position, camera.Projection, camera.View, Matrix.Identity);
+                Monster monster = monsterCurrentHealth.Keys.ElementAt(i);
+                if (monster.IsDisposed)
+                    continue;
+
+                //Popup damage text to Monster
+                int damage = monster.ActorStats.CurrentHealth - monsterCurrentHealth[monster];
+                if (damage != 0)
+                {
+                    Vector3 monsterScreenPos = viewport.Project(monster.Position, camera.Projection, camera.View, Matrix.Identity);
+                    Vector2 textLocation = new Vector2(monsterScreenPos.X, monsterScreenPos.Y);
+                    DisplayHitText(damage, textLocation);
+                    monsterCurrentHealth[monster] = monster.ActorStats.CurrentHealth;
+                }
             }
 
+        }
+
+        private void DisplayHitText(int damage, Vector2 textLocation)
+        {
+            HitTextComponent2D damageText = new HitTextComponent2D(this, textLocation, damage, damage < 0 ? Color.Red : Color.Green, font, HIT_TEXT_SCALE);
+            damageText.Initialize();
         }
 
         private void DisplayOffScreenArrow(Player player, Viewport viewport, Camera camera)
@@ -98,13 +133,13 @@ namespace TheGame.Game_Screens
             arrow.Rotation = 0.0f;
 
             Vector3 screenPos = viewport.Project(player.Position, camera.Projection, camera.View, Matrix.Identity);
-            if (screenPos.X < 0.0f && screenPos.Y > viewport.Height)
+            if (screenPos.X < 0.0f && screenPos.Y > viewport.Height - arrow.Height - 90.0f)
             {
                 arrow.Visible = true;
                 arrow.Rotation = MathHelper.PiOver4;
                 arrow.Position = new Vector2(arrow.Height, viewport.Height - arrow.Height - 90.0f);
             }
-            else if (screenPos.X > viewport.Width && screenPos.Y > viewport.Height)
+            else if (screenPos.X > viewport.Width && screenPos.Y > viewport.Height - arrow.Height - 90.0f)
             {
                 arrow.Visible = true;
                 arrow.Rotation = -MathHelper.PiOver4;
@@ -128,14 +163,14 @@ namespace TheGame.Game_Screens
                 arrow.Rotation = MathHelper.Pi;
                 arrow.Position = new Vector2(screenPos.X, arrow.Height);
             }
-            else if (screenPos.Y > viewport.Height)
+            else if (screenPos.Y > viewport.Height - arrow.Height - 90.0f)
             {
                 arrow.Visible = true;
                 arrow.Position = new Vector2(screenPos.X, viewport.Height - arrow.Height - 90.0f);
             }
         }
 
-        private static HUDStatusComponent2D CreateCharacterStatusHUD(GameScreen parent, Vector2 position, int currentHealth, int maxHealth, int currentMana, int maxMana, int level, Texture2D playerFace, int currentAttack, int maxAttack)
+        private HUDStatusComponent2D CreateCharacterStatusHUD(GameScreen parent, Vector2 position, int currentHealth, int maxHealth, int currentMana, int maxMana, int level, Texture2D playerFace, int currentAttack, int maxAttack)
         {
             HUDStatusComponent2D hud;
             CharacterStatusDisplayParams hudParams = new CharacterStatusDisplayParams();
@@ -155,7 +190,7 @@ namespace TheGame.Game_Screens
             hudParams.PlayerImage = playerFace;
             hudParams.PlayerImageCentrePos = new Vector2(34, 34);
             hudParams.Position = position;
-            hudParams.TextFont = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
+            hudParams.TextFont = font;
             hudParams.attackCurrentValue = currentAttack;
             hudParams.attackGaugeEmptyColor = Color.Gray;
             hudParams.attackGaugeEndAngle = MathHelper.Pi * 2.0f - MathHelper.PiOver4;

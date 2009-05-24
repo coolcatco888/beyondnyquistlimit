@@ -34,8 +34,8 @@ namespace TheGame.Components.Display
         /// <param name="value">Value of hit</param>
         /// <param name="color">Color of hit text</param>
         /// <param name="font">Font of hit text</param>
-        public HitTextComponent2D(GameScreen parent, Vector2 position, int value, Color color, SpriteFont font) 
-            : this(parent, position, value, 100, 200, color, font) 
+        public HitTextComponent2D(GameScreen parent, Vector2 position, int value, Color color, SpriteFont font, float scale) 
+            : this(parent, position, value, 100, 200, color, font, scale) 
         {
         }
 
@@ -52,10 +52,10 @@ namespace TheGame.Components.Display
         /// <param name="highLevel">Values greater or equl to this will be displayed 25% larger</param>
         /// <param name="color">Color of hit text</param>
         /// <param name="font">Font of hit text</param>
-        public HitTextComponent2D(GameScreen parent, Vector2 position, int value, int midLevel, int highLevel, Color color, SpriteFont font) 
+        public HitTextComponent2D(GameScreen parent, Vector2 position, int value, int midLevel, int highLevel, Color color, SpriteFont font, float scale) 
             : this(parent, position, (value >= 0? "+" : "") + value + "", color, font)
         {
-            base.scale = Math.Abs(value) >= highLevel ? 1.25f : Math.Abs(value) >= midLevel ? 1.0f : 0.75f;
+            base.scale = scale * (Math.Abs(value) >= highLevel ? 1.25f : Math.Abs(value) >= midLevel ? 1.0f : 0.75f);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace TheGame.Components.Display
         {
             base.Update(gameTime);
    
-            if (i < maxAliveTime)
+            if (i < maxAliveTime && gameTime.ElapsedGameTime.Milliseconds >= 15)
             {
                 //FadeIn
                 if (i < 10)
