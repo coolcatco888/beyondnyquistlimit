@@ -1,5 +1,0 @@
-D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Release\TheGamePipeline.dll
-D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\bin\x86\Release\TheGamePipeline.pdb
-D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Release\ResolveAssemblyReference.cache
-D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Release\TheGamePipeline.dll
-D:\Work\wtfjim\Prototypes\menuSystem\TerrainTest\TheGamePipeline\obj\x86\Release\TheGamePipeline.pdb

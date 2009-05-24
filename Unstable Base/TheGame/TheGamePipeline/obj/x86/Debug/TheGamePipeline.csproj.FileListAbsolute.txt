@@ -1,7 +1,0 @@
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.pdb
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\Library.dll
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\bin\x86\Debug\Library.pdb
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.dll
-D:\Work\JimsCode\Unstable Base\TheGame\TheGamePipeline\obj\x86\Debug\TheGamePipeline.pdb

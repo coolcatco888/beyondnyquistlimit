@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<XnaContent>
-  <Asset Type="Library.SpriteInfo">
-    <Width>512</Width>
-    <Height>512</Height>
-    <PadSize>0</PadSize>
-    <SpriteSheetFile>circles</SpriteSheetFile>
-  </Asset>
-</XnaContent>

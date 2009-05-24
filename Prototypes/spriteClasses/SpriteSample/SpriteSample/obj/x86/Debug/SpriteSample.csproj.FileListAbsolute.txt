@@ -1,9 +1,0 @@
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\bin\x86\Debug\SpriteSample.exe
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\bin\x86\Debug\SpriteSample.pdb
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\obj\x86\Debug\SpriteSample.exe
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\obj\x86\Debug\SpriteSample.pdb
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\bin\x86\Debug\Content\sheet.xnb
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\bin\x86\Debug\Content\sheetWalk.xnb
-D:\work\mW\09project\jimwtf\Prototypes\spriteClasses\SpriteSample\SpriteSample\bin\x86\Debug\Content\theifWalkRun.xnb

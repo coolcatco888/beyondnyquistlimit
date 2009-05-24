@@ -1,1 +1,0 @@
-D:\Work\Visual Studio 2008\Projects\AudioManager\AudioManager\Content\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -1,3 +1,0 @@
-D:\Work\GameStateManagementSample\GameStateManagementSample\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\work\jimwtf\Prototypes\menutest\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\work\jimwtf\Prototypes\menuSystem\menutest\GameStateManagement\Content\obj\x86\Debug\ResolveAssemblyReference.cache

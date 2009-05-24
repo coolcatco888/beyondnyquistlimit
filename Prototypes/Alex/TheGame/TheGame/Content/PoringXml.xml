@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<XnaContent>
-  <Asset Type="Library.SpriteInfo">
-    <Width>64</Width>
-    <Height>64</Height>
-    <PadSize>1</PadSize>
-    <SpriteSheetFile>PoringSprite</SpriteSheetFile>
-  </Asset>
-</XnaContent>

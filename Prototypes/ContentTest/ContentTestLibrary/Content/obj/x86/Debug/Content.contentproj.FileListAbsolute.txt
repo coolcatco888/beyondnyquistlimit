@@ -1,2 +1,0 @@
-D:\Work\Visual Studio 2008\Projects\ContentTest\ContentTestLibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
-D:\Work\wtfjim\Prototypes\ContentTest\ContentTestLibrary\Content\obj\x86\Debug\ResolveAssemblyReference.cache
