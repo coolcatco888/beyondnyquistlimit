@@ -27,7 +27,9 @@ namespace TheGame
             Casting,
             Hit,
             Dying,
-            Dead,
+            Dead, 
+            Stun,
+            Override
         }
 
         #endregion // Actor State Enum
@@ -53,7 +55,10 @@ namespace TheGame
         // Information about the sprite sheet the actor is using
         protected SpriteInfo spriteInfo;
 
-        protected Monster target;
+        protected Monster monsterTarget;
+        protected Player playerTarget;
+
+        protected float height;
 
         protected ActorInfo actorStats = new ActorInfo();
 
@@ -61,6 +66,20 @@ namespace TheGame
         protected Vector3 attackDirection;
 
         #endregion  // Fields
+
+        #region Fields - Flags
+
+        protected bool hasAttacked;
+        public bool HasAttacked
+        {
+            get { return hasAttacked; }
+            set { hasAttacked = value; }
+        }
+
+        public bool hasBeenHit = false;
+        public bool isDying = false;
+
+        #endregion
 
         #region Dictionaries
 
@@ -82,7 +101,7 @@ namespace TheGame
         /// <summary>
         /// Gets or sets the state of this actor.
         /// </summary>
-        public ActorState State
+        public virtual ActorState State
         {
             get { return state; }
             set { state = value; }
@@ -308,7 +327,6 @@ namespace TheGame
                     if (IsHit(p.primitiveShape))
                     {
                         position = oldPosition;
-                        primitiveShape.ShapeColor = Color.Red;
                     }
                 }
             }
@@ -321,7 +339,6 @@ namespace TheGame
                     if (IsHit(m.PrimitiveShape))
                     {
                         position = oldPosition;
-                        primitiveShape.ShapeColor = Color.Red;
                     }
                 }
             }

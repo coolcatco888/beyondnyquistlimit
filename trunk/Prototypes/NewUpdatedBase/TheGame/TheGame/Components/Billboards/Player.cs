@@ -53,13 +53,6 @@ namespace TheGame
 
         #region Fields - Flags
 
-        private bool hasAttacked;
-        public bool HasAttacked
-        {
-            get { return hasAttacked; }
-            set { hasAttacked = value; }
-        }
-
         protected PlayerInfo playerInfo;
 
         public PlayerInfo PlayerInfo
@@ -171,8 +164,8 @@ namespace TheGame
             UpdatePosition(gameTime);
 
             crosshair.Rotate(new Vector3(crosshairRotationIncrement * 0.01f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f));
-            if (target != null)
-                crosshair.Position = new Vector3(target.Position.X, 0.0f, target.Position.Z);
+            if (monsterTarget != null)
+                crosshair.Position = new Vector3(monsterTarget.Position.X, 0.0f, monsterTarget.Position.Z);
 
             HandleInput(gameTime);
 
@@ -335,7 +328,7 @@ namespace TheGame
             if (gamepadDevice.WasButtonPressed(Buttons.RightShoulder))
             {
                 crosshair.Visible = true;
-                target = (Monster)monsterList[targetIndex];
+                monsterTarget = (Monster)monsterList[targetIndex];
                 targetIndex++;
                 if (targetIndex == monsterList.Count)
                     targetIndex = 0;
@@ -344,7 +337,7 @@ namespace TheGame
             if (gamepadDevice.WasButtonPressed(Buttons.LeftShoulder))
             {
                 crosshair.Visible = true;
-                target = (Monster)monsterList[targetIndex];
+                monsterTarget = (Monster)monsterList[targetIndex];
                 targetIndex--;
                 if (targetIndex == -1)
                     targetIndex = monsterList.Count - 1;
@@ -354,7 +347,7 @@ namespace TheGame
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
             {
                 state = ActorState.Casting;
-                target = null;
+                monsterTarget = null;
                 crosshair.Visible = false;
             }
         }
@@ -371,17 +364,17 @@ namespace TheGame
             {
                 if (IsHit(m.PrimitiveShape))
                 {
-                    target = m;
+                    monsterTarget = m;
                 }
             }
 
             if (currentSequence.Title == "Attacking" && ((currentSequence.CurrentFrame.X == 4
                  || currentSequence.CurrentFrame.X == 12)) && !hasAttacked)
             {
-                if(target != null)
+                if (monsterTarget != null)
                 {
-                    target.GetHit((int)((float) actorStats.CurrentDamage * (float)playerInfo.CurrentAttackGauge / (float)playerInfo.MaxAttackGauge), 
-                        orientation, 0.5f);
+                    monsterTarget.PhysicalHit((int)((float)actorStats.CurrentDamage * (float)playerInfo.CurrentAttackGauge / (float)playerInfo.MaxAttackGauge), 
+                        orientation);
                     this.hasAttacked = true;
                 }
                 playerInfo.CurrentAttackGauge = 0;
@@ -390,7 +383,7 @@ namespace TheGame
             if (currentSequence.IsComplete)
             {
                 hasAttacked = false;
-                target = null;
+                monsterTarget = null;
                 state = ActorState.Idle;
             }
         }
@@ -684,5 +677,20 @@ namespace TheGame
         }
 
         #endregion
+
+        public void ApplyDamage(int damage)
+        {
+            actorStats.CurrentHealth -= damage;
+            if (actorStats.CurrentHealth <= 0)
+                this.isDying = true;
+        }
+
+        public void PhysicalHit(int damage, Orientation o)
+        {
+            hasBeenHit = true;
+            this.orientation = Utility.GetOppositeOrientation(o);
+            this.position = position + Utility.PositionChangeBasedOnOrientation(o, 0.5f);
+            this.ApplyDamage(damage);
+        }
     }
 }

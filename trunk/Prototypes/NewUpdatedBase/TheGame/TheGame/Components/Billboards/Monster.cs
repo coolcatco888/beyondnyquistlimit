@@ -19,7 +19,41 @@ namespace TheGame
             set { monsterStats = value; }
         }
 
-        public bool hasBeenHit = false;
+        public override Actor.ActorState State
+        {
+            get { return base.State; }
+            set
+            {
+                SetState(value);
+            }
+        }
+
+        private void SetState(ActorState value)
+        {
+            switch (value)
+            {
+                case ActorState.Attacking:
+                    if (state != ActorState.Hit && state != ActorState.Casting &&
+                        state != ActorState.Chanting)
+                        state = value;
+                    break;
+                case ActorState.Override:
+                    if (state == ActorState.Stun)
+                    {
+                        state = ActorState.Idle;
+                    }
+                    break;
+                default:
+                    state = value;
+                    break;
+            }
+        }
+
+        public bool isDead = false;
+        public float behaviorTimer = 0.0f;
+        public float attackTimer = 2000.0f;
+        public float stunTimer = 0.0f;
+        public float stunDuration = 3000.0f;
         public string monsterName;
 
         #endregion // Fields
@@ -29,7 +63,7 @@ namespace TheGame
         public Monster(GameScreen parent, SpriteInfo spriteInfo, Vector3 position, string monsterName)
             : base(parent, spriteInfo, position)
         {
-            behaviors = new Dictionary<ObjectType, Behaviors>();
+            behaviors = new List<Behavior>();
             type = ObjectType.Monster;
             this.monsterName = monsterName;
         }
@@ -64,7 +98,7 @@ namespace TheGame
 
             UpdateAI(gameTime);
 
-            HandleStates();
+            HandleStates(gameTime);
 
             base.Update(gameTime);
         }
@@ -94,10 +128,13 @@ namespace TheGame
         private void InitializeBehaviours()
         {
             Behavior wander = new WanderBehavior(Parent, this);
-            Behaviors baseBehavior = new Behaviors();
-            baseBehavior.Add(wander);
-
-            behaviors.Add(ObjectType.None, baseBehavior);
+            behaviors.Add(wander);
+            Behavior idle = new IdleBehavior(Parent, this);
+            behaviors.Add(idle);
+            Behavior seek = new SeekBehavior(Parent, this, 15.0f);
+            behaviors.Add(seek);
+            Behavior attack = new AttackBehavior(Parent, this, 3.5f);
+            Behaviors.Add(attack);
         }
 
         private void InitializeSpriteSequences()
@@ -143,7 +180,8 @@ namespace TheGame
         /// <param name="x">Y texture coordinate offset</param>
         private void InitializeBoundingShapes()
         {
-            string monsterBounds = monsterName + "BoundingShapes";
+            string monsterBounds = this.monsterName + "BoundingShapes";
+
             List<BoundingShapeInfo> shapesInfo = GameEngine.Content.Load<List<BoundingShapeInfo>>(@monsterBounds);
 
             foreach (BoundingShapeInfo info in shapesInfo)
@@ -159,6 +197,9 @@ namespace TheGame
                     boundingShapesSelf["Running" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Running" + info.OrientationKey].ShapeColor = Color.Ivory;
 
+                    boundingShapesSelf["Attacking" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Attacking" + info.OrientationKey].ShapeColor = Color.Black;
+
                     boundingShapesSelf["Hit" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Hit" + info.OrientationKey].ShapeColor = Color.Red;
 
@@ -168,7 +209,8 @@ namespace TheGame
                     boundingShapesSelf["Dead" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Dead" + info.OrientationKey].ShapeColor = Color.Black;
 
-
+                    boundingShapesSelf["Stun" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Stun" + info.OrientationKey].ShapeColor = Color.Black;
                 }
                 else if (info.StateKey == "Others")
                 {
@@ -186,10 +228,22 @@ namespace TheGame
 
         #region Input Methods
 
-        public void HandleStates()
+        public void HandleStates(GameTime gameTime)
         {
+            if (hasBeenHit)
+                state = ActorState.Stun;
+            if (isDying)
+                state = ActorState.Dying;
+            if (isDead)
+                state = ActorState.Dead;
             switch (state)
             {
+                case ActorState.Stun:
+                    StunStateInput(gameTime);
+                    break;
+                case ActorState.Attacking:
+                    AttackingStateInput(gameTime);
+                    break;
                 case ActorState.Hit:
                     HitStateInput();
                     break;
@@ -199,6 +253,53 @@ namespace TheGame
                 case ActorState.Dying:
                     DyingStateInput();
                     break;
+            }
+        }
+
+        private void StunStateInput(GameTime gameTime)
+        {
+            speed = 0.0f;
+            stunTimer += gameTime.ElapsedGameTime.Milliseconds;
+            if (stunTimer >= stunDuration)
+            {
+                State = ActorState.Override;
+                stunTimer = 0.0f;
+                hasBeenHit = false;
+            }
+        }
+
+        private void AttackingStateInput(GameTime gameTime)
+        {
+            attackTimer -= gameTime.ElapsedGameTime.Milliseconds;
+            speed = 0.0f;
+            if (attackTimer <= 0.0f)
+            {
+                if (currentSequence.Title == "Attacking" && ((currentSequence.CurrentFrame.X == 4
+                 || currentSequence.CurrentFrame.X == 12)) && !hasAttacked)
+                {
+                    foreach (Player p in ((Level)Parent).PlayerList)
+                    {
+                        if (IsHit(p.PrimitiveShape))
+                        {
+                            playerTarget = p;
+                            playerTarget.PrimitiveShape.ShapeColor = Color.Blue;
+                        }
+                    }
+                    if (playerTarget != null)
+                    {
+                        playerTarget.PhysicalHit(this.monsterStats.Damage, orientation);
+                        this.hasAttacked = true;
+                        attackTimer = 1000.0f;
+                    }
+                }
+            }
+
+            if (attackTimer == 1500.0f)
+            {
+                hasAttacked = false;
+                playerTarget.PrimitiveShape.ShapeColor = Color.White;
+                playerTarget = null;
+                state = ActorState.Idle;
             }
         }
 
@@ -219,14 +320,20 @@ namespace TheGame
         {
             speed = 0.0f;
             if (currentSequence.IsComplete)
-                state = ActorState.Dead;
+            {
+                isDead = true;
+                isDying = false;
+            }
         }
 
         private void HitStateInput()
         {
             speed = 0.0f;
             if (currentSequence.IsComplete)
+            {
+                hasBeenHit = false;
                 state = ActorState.Idle;
+            }
         }
 
         #endregion // Input methods
@@ -235,17 +342,50 @@ namespace TheGame
 
         public void UpdateAI(GameTime gameTime)
         {
-            foreach (Behaviors reactions in behaviors.Values)
+            behaviorTimer += (float)gameTime.ElapsedGameTime.Milliseconds;
+            int desireTotal = 0;
+            int runningTotal = 0;
+            int prevTotal = 0;
+
+            reactions = new List<Behavior>();
+
+            foreach (Behavior behavior in behaviors)
             {
-                foreach (Behavior reaction in reactions)
+                if (behaviorTimer >= behavior.CurrentTimeInterval || behavior.UpdateTimeInterval == 0.0f)
                 {
-                    reaction.Update(gameTime);
-                    if (reaction.IsReacted)
+                    behavior.React(gameTime);
+                    behavior.CurrentTimeInterval += behavior.UpdateTimeInterval;
+                    if (behavior.IsReacted)
                     {
-                        reaction.Reset();
+                        desireTotal += behavior.DesireLevel;
+                        reactions.Add(behavior);
+                        behavior.Reset();
                     }
                 }
             }
+
+            int num = GameEngine.Random.Next(desireTotal) + 1;
+
+            foreach (Behavior reaction in reactions)
+            {
+                prevTotal = runningTotal;
+                runningTotal += reaction.DesireLevel;
+                if (num > prevTotal && num <= runningTotal)
+                {
+                    reaction.Update(gameTime);
+                    break;
+                }
+            }
+
+            if (behaviorTimer == 10000.0f)
+            {
+                foreach (Behavior behavior in behaviors)
+                {
+                    behavior.ResetTimeInterval();
+                }
+                behaviorTimer = 0.0f;
+            }
+
         }
 
         protected override void CheckBillboardBoundingBoxes(Vector3 oldPosition)
@@ -266,42 +406,28 @@ namespace TheGame
 
         #region IAi Members
 
-        protected Dictionary<ObjectType, Behaviors> behaviors;
-        public Dictionary<ObjectType, Behaviors> Behaviors
+        protected List<Behavior> behaviors;
+        public List<Behavior> Behaviors
         {
             get { return behaviors; }
         }
 
-        public void React(Billboard otherObject, GameTime gameTime)
-        {
-            Behaviors reactions = Behaviors[otherObject.Type];
-
-            foreach (Behavior reaction in reactions)
-            {
-                reaction.React(otherObject, gameTime);
-            }
-        }
-
+        protected List<Behavior> reactions;
         #endregion
 
-        #region Damage Helper Methods
-
-        public void ApplyDamage(int value)
+        public void ApplyDamage(int damage)
         {
-            actorStats.CurrentHealth -= value;
+            actorStats.CurrentHealth -= damage;
             if (actorStats.CurrentHealth <= 0)
-                state = ActorState.Dying;
+                this.isDying = true;
         }
 
-        public void GetHit(int damage, Orientation o, float delta)
+        public void PhysicalHit(int damage, Orientation o)
         {
-            this.state = ActorState.Hit;
+            hasBeenHit = true;
             this.orientation = Utility.GetOppositeOrientation(o);
-            this.position = position + Utility.PositionChangeBasedOnOrientation(o, delta);
-            currentSequence = sequences["Hit" + orientation.ToString()];
+            this.position = position + Utility.PositionChangeBasedOnOrientation(o, 0.5f);
             this.ApplyDamage(damage);
         }
-
-        #endregion // Damage Helper Methods
     }
 }
