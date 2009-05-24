@@ -115,8 +115,10 @@ namespace TheGame
 
             SpriteInfo crosshairInfo = GameEngine.Content.Load<SpriteInfo>(@"Sprites\\CrosshairInfo");
             crosshair = new GroundEffect(this.Parent, crosshairInfo);
+            crosshair.UpdateVertices(Vector2.Zero, crosshairInfo.SpriteUnit, Vector2.One);
             crosshair.Initialize();
-            parent.Components.Add(crosshair);
+            crosshair.Visible = false;
+
 
             hasAttacked = false;
             classInfo = GameEngine.Content.Load<Library.CharacterClassInfo>(@classInfoFile);
@@ -165,6 +167,10 @@ namespace TheGame
             previousState = state;
 
             UpdatePosition(gameTime);
+
+            crosshair.Rotate(new Vector3(crosshairRotationIncrement * 0.01f * gameTime.ElapsedGameTime.Milliseconds, 0.0f, 0.0f));
+            if (target != null)
+                crosshair.Position = new Vector3(target.Position.X, 0.0f, target.Position.Z);
 
             HandleInput(gameTime);
 
@@ -329,22 +335,20 @@ namespace TheGame
             HandleComboMove();
             if (gamepadDevice.WasButtonPressed(Buttons.RightShoulder))
             {
+                crosshair.Visible = true;
                 target = (Monster)monsterList[targetIndex];
                 targetIndex++;
                 if (targetIndex == monsterList.Count)
-                    targetIndex = 0;
-
-                crosshair.Position = this.position;
-                crosshair.Rotate(new Vector3(crosshairRotationIncrement, 0.0f, 0.0f));
-                
+                    targetIndex = 0;             
             }
 
             if (gamepadDevice.WasButtonPressed(Buttons.LeftShoulder))
             {
+                crosshair.Visible = true;
                 target = (Monster)monsterList[targetIndex];
                 targetIndex--;
                 if (targetIndex == -1)
-                    targetIndex = monsterList.Count - 1;
+                    targetIndex = monsterList.Count - 1; 
             }
 
             speed = 0.0f;
@@ -352,6 +356,7 @@ namespace TheGame
             {
                 state = ActorState.Casting;
                 target = null;
+                crosshair.Visible = false;
             }
         }
 
