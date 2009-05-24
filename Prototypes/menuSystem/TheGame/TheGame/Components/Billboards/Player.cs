@@ -77,16 +77,16 @@ namespace TheGame
         #region ComboSequenceFields
         // This is the master list of moves in logical order. This array is kept
         // around in order to draw the move list on the screen in this order.
-        Move[] moves;
+        Move[] spellComboLibrary;
         // The move list used for move detection at runtime.
         MoveList moveList;
 
         // The move list is used to match against an input manager for each player.
-        InputManager[] inputManagers;
+        InputManager inputManager;
         // Stores each players' most recent move and when they pressed it.
-        Move[] playerMoves;
-        TimeSpan[] playerMoveTimes;
-        Move[] prevMoves;
+        Move currentPlayerMove;
+        TimeSpan currentPlayerMoveTime;
+        Move previousMove;
 
         // Time until the currently "active" move dissapears from the screen.
         readonly TimeSpan MoveTimeOut = TimeSpan.FromSeconds(1.0);
@@ -307,7 +307,7 @@ namespace TheGame
         private void ChantingStateInput(GamepadDevice gamepadDevice)
         {
             //DO INPUT SEQUENCE STUFF HERE
-            HandleComboMoves();
+            HandleComboMove();
 
             speed = 0.0f;
             if (gamepadDevice.WasButtonReleased(Buttons.RightTrigger))
@@ -522,7 +522,7 @@ namespace TheGame
         private void SetupComboLibraryAndInputManager()
         {
             // Construct the master list of moves.
-            moves = new Move[]
+            spellComboLibrary = new Move[]
                 {
                     new Move("Jump",        Buttons.A) { IsSubMove = true },
                     new Move("Punch",       Buttons.X) { IsSubMove = true },
@@ -530,59 +530,57 @@ namespace TheGame
                 };
 
             // Construct a move list which will store its own copy of the moves array.
-            moveList = new MoveList(moves);
+            moveList = new MoveList(spellComboLibrary);
 
             // Create an InputManager for each player with a sufficiently large buffer.
-            inputManagers = new InputManager[4];
-            for (int i = 0; i < inputManagers.Length; ++i)
-            {
-                inputManagers[i] =
-                    new InputManager((PlayerIndex)i, moveList.LongestMoveLength);
-            }
+            inputManager = new InputManager(playerIndex, moveList.LongestMoveLength);
+            //for (int i = 0; i < inputManagers.Length; ++i)
+            //{
+            //    inputManagers[i] =
+            //        new InputManager((PlayerIndex)i, moveList.LongestMoveLength);
+            //}
 
             // Give each player a location to store their most recent move.
-            playerMoves = new Move[inputManagers.Length];
-            prevMoves = new Move[inputManagers.Length];
-            playerMoveTimes = new TimeSpan[inputManagers.Length];
+            //playerMoves = new Move[inputManagers.Length];
+            //prevMoves = new Move[inputManagers.Length];
+            //playerMoveTimes = new TimeSpan[inputManagers.Length];
         }
 
         /// <summary>
         /// Example of keeping track of Combo Moves
         /// </summary>
-        private void HandleComboMoves()
+        private void HandleComboMove()
         {
-            for (int i = 0; i < inputManagers.Length; ++i)
+
+            // Expire old moves.
+            if (GameEngine.GameTime.TotalRealTime - currentPlayerMoveTime > MoveTimeOut)
             {
-                // Expire old moves.
-                if (GameEngine.GameTime.TotalRealTime - playerMoveTimes[i] > MoveTimeOut)
-                {
-                    playerMoves[i] = null;
-                }
-
-                // Get the updated input manager.
-                InputManager inputManager = inputManagers[i];
-                inputManager.Update(GameEngine.GameTime);
-
-                // Detection and record the current player's most recent move.
-                Move newMove = moveList.DetectMove(inputManager);
-                if (newMove != null)
-                {
-                    if (newMove != prevMoves[i])
-                    {
-                        HitTextComponent2D text = new HitTextComponent2D(Parent, new Vector2(400, 400), newMove.Name, Color.Red, font, 2.0f);
-                        text.Initialize();
-                        prevMoves[i] = newMove;
-                    }
-                    else
-                    {
-                        prevMoves[i] = newMove;
-                    }
-
-                    playerMoves[i] = newMove;
-                    playerMoveTimes[i] = GameEngine.GameTime.TotalRealTime;
-
-                }
+                currentPlayerMove = null;
             }
+
+            // Get the updated input manager.
+            inputManager.Update(GameEngine.GameTime);
+
+            // Detection and record the current player's most recent move.
+            Move newMove = moveList.DetectMove(inputManager);
+            if (newMove != null)
+            {
+                if (newMove != previousMove)
+                {
+                    HitTextComponent2D text = new HitTextComponent2D(Parent, new Vector2(400, 400), newMove.Name, Color.Red, font, 2.0f);
+                    text.Initialize();
+                    previousMove = newMove;
+                }
+                else
+                {
+                    previousMove = newMove;
+                }
+
+                currentPlayerMove = newMove;
+                currentPlayerMoveTime = GameEngine.GameTime.TotalRealTime;
+
+            }
+            
         }
         #endregion
     }
