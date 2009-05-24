@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="Library.CharacterClassInfo">
+    <ClassName>Ranger</ClassName>
+    <Description>A woodswoman that wields a sharp dagger and has nature as an ally</Description>
+    <BaseHealth>75</BaseHealth>
+    <BaseMana>50</BaseMana>
+    <BaseDamage>7</BaseDamage>
+    <BaseDefense>2</BaseDefense>
+    <GainHealth>20</GainHealth>
+    <GainMana>15</GainMana>
+    <GainDamage>4</GainDamage>
+    <GainDefense>2</GainDefense>
+  </Asset>
+</XnaContent>

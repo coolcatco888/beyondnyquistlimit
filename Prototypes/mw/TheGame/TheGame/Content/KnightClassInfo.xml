@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent>
+  <Asset Type="Library.CharacterClassInfo">
+    <ClassName>Knight</ClassName>
+    <Description>Swordsman protector and cavalier...</Description>
+    <BaseHealth>100</BaseHealth>
+    <BaseMana>25</BaseMana>
+    <BaseDamage>10</BaseDamage>
+    <BaseDefense>8</BaseDefense>
+    <GainHealth>50</GainHealth>
+    <GainMana>10</GainMana>
+    <GainDamage>5</GainDamage>
+    <GainDefense>4</GainDefense>
+  </Asset>
+</XnaContent>
