@@ -51,7 +51,8 @@ namespace TheGame.Game_Screens
                 Texture2D playerFace = GameEngine.Content.Load<Texture2D>("GUI\\" + characterName + "face");
                 //TODO: Add player stats once put in player
                 HUDStatusComponent2D hud = CreateCharacterStatusHUD(this, Vector2.Zero, actorStats.CurrentHealth, actorStats.MaxHealth, actorStats.CurrentMana, actorStats.MaxMana, playerInfo.ClassLevel, playerFace, playerInfo.CurrentAttackGauge, playerInfo.MaxAttackGauge);
-                Vector2 newPosition = new Vector2(PADDING + currentOffset, screenHeight - hud.Height - PADDING);
+                float padding = i == 0 ? PADDING : PADDING / (float) i + 1.0f;
+                Vector2 newPosition = new Vector2(padding + currentOffset, screenHeight - hud.Height - PADDING);
                 hud.Position = newPosition;
                 hud.Initialize();
                 playerHuds.Add(player, hud);
@@ -163,7 +164,7 @@ namespace TheGame.Game_Screens
                 arrow.Rotation = MathHelper.Pi;
                 arrow.Position = new Vector2(screenPos.X, arrow.Height);
             }
-            else if (screenPos.Y > viewport.Height - arrow.Height - 90.0f)
+            else if (screenPos.Y > viewport.Height - arrow.Height)
             {
                 arrow.Visible = true;
                 arrow.Position = new Vector2(screenPos.X, viewport.Height - arrow.Height - 90.0f);
