@@ -195,7 +195,11 @@ namespace TheGame.Game_Screens
                     goBack = chooser.goBack;
                     if (startGame || goBack)
                     {
-                        loadingBar.Visible = true;
+                        if (startGame)
+                        {
+                            //Show loading bar.
+                            loadingBar.Visible = true;
+                        }
                         break;
                     }
                 }
