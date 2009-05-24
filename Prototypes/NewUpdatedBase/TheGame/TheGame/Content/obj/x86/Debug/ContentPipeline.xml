@@ -611,6 +611,15 @@
       <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb</Output>
       <Time>2009-05-24T05:05:52.671875-07:00</Time>
     </Item>
+    <Item>
+      <Source>GUI\gamebanner.PNG</Source>
+      <Name>GUI\gamebanner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\gamebanner.xnb</Output>
+      <Time>2009-05-24T05:57:31.015625-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
