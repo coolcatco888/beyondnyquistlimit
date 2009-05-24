@@ -24,7 +24,8 @@ namespace TheGame.Game_Screens
         /// </summary>
         public override void LoadContent()
         {
-            Texture2D gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
+            Texture2D gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar"),
+                gameBanner = GameEngine.Content.Load<Texture2D>("GUI\\gamebanner");
             Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
                 (float)GameEngine.Graphics.Viewport.Height / (float)gradient.Height);
             (new ImageComponent2D(this, Vector2.Zero, gradient, Color.CornflowerBlue, scale)).Initialize();
@@ -44,8 +45,10 @@ namespace TheGame.Game_Screens
             Texture2D borderCorner = GameEngine.Content.Load<Texture2D>("GUI\\brdrcorner");
             Texture2D borderCornerBG = GameEngine.Content.Load<Texture2D>("GUI\\brdrcornerbg");
 
-            BorderedPanel borderPanel = new BorderedPanel(this, new Vector2(200, 200), border, borderCorner, borderBG, borderCornerBG, bg, new Vector2(100, 100), Color.Black);
-            borderPanel.Initialize();
+            //BorderedPanel borderPanel = new BorderedPanel(this, new Vector2(200, 200), border, borderCorner, borderBG, borderCornerBG, bg, new Vector2(100, 100), Color.Black);
+            //borderPanel.Initialize();
+
+            (new ImageComponent2D(this, new Vector2((GameEngine.Graphics.Viewport.Width / 2.0f) - (gameBanner.Width / 2.0f), 35.0f), gameBanner, Color.White)).Initialize();
 
             //CreateCharacterStatusHUD();//Uncomment this to see the HUD
             base.LoadContent();

@@ -309,3 +309,4 @@ D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\G
 D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb
 D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\crosshair.xnb
 D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb
+D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\gamebanner.xnb
