@@ -1,17 +1,8 @@
 <panel>
   <position>
     <xpos>250</xpos>
-    <ypos>200</ypos>
+    <ypos>275</ypos>
   </position>
-  
-	<image2d>
-		<xpos>0</xpos>
-		<ypos>0</ypos>
-		<name>GUI\menubg</name>
-		<rcolor>255</rcolor>
-		<gcolor>255</gcolor>
-		<bcolor>255</bcolor>
-	</image2d>
 
 	<text2d>
 		<xpos>10</xpos>
