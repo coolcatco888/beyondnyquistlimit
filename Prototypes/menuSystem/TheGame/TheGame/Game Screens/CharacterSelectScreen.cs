@@ -40,7 +40,7 @@ namespace TheGame.Game_Screens
         {
 
             gradient = GameEngine.Content.Load<Texture2D>("GUI\\healthbar");
-            Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width, 
+            Vector2 scale = new Vector2((float)GameEngine.Graphics.Viewport.Width / (float)gradient.Width,
                 (float)GameEngine.Graphics.Viewport.Height / (float)gradient.Height);
 
             (new ImageComponent2D(this, Vector2.Zero, gradient, Color.CornflowerBlue, scale)).Initialize();
@@ -52,9 +52,9 @@ namespace TheGame.Game_Screens
 
             font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
             (new TextComponent2D(this, new Vector2(200, 30), "Choose Your Warrior", Color.White, font)
-                {
-                    Scale = fontScale + 1.0f
-                }).Initialize();
+            {
+                Scale = fontScale + 1.0f
+            }).Initialize();
             (new TextComponent2D(this, new Vector2(250, 500), "Push Start to Play", Color.White, font)
             {
                 Scale = fontScale
@@ -104,9 +104,9 @@ namespace TheGame.Game_Screens
 
             wizard.PanelItems.Add(new ImageComponent2D(this, position, wizardFace));
             wizard.PanelItems.Add(new TextComponent2D(this, fontPosition, "Wizard", Color.White, font)
-                {
-                    Scale = fontScale,
-                });
+            {
+                Scale = fontScale,
+            });
 
             knight.PanelItems.Add(new ImageComponent2D(this, position, knightFace));
             knight.PanelItems.Add(new TextComponent2D(this, fontPosition, "Knight", Color.White, font)
@@ -172,14 +172,14 @@ namespace TheGame.Game_Screens
             choices.Add(priestChoice);
             choices.Add(rangerChoice);
 
-            
+
 
         }
 
         public void SetupCharacterChoosers()
         {
-           
-            for(int i = 0; i < 4; i++)
+
+            for (int i = 0; i < 4; i++)
             {
                 if (inputHub[(PlayerIndex)i].IsConnected)
                 {
@@ -192,14 +192,14 @@ namespace TheGame.Game_Screens
                     chooser.selector = selector;
                     playerChoosers.Add(chooser);
                 }
-                
+
             }
         }
 
         public override void Update(GameTime gameTime)
         {
-            
-            if(!startGame && !goBack)
+
+            if (!startGame && !goBack)
             {
                 foreach (CharacterChooser chooser in playerChoosers)
                 {
@@ -296,12 +296,12 @@ namespace TheGame.Game_Screens
 
             if (gamepad != null && gamepad.Enabled && currentCharacter != null && !selected)
             {
-                if (gamepad.WasButtonPressed(Buttons.LeftThumbstickUp) 
+                if (gamepad.WasButtonPressed(Buttons.LeftThumbstickUp)
                     && currentCharacter.up != null)
                 {
                     currentCharacter = currentCharacter.up;
                 }
-                else if (gamepad.WasButtonPressed(Buttons.LeftThumbstickDown) 
+                else if (gamepad.WasButtonPressed(Buttons.LeftThumbstickDown)
                     && currentCharacter.down != null)
                 {
                     currentCharacter = currentCharacter.down;
@@ -311,7 +311,7 @@ namespace TheGame.Game_Screens
                 {
                     currentCharacter = currentCharacter.left;
                 }
-                else if (gamepad.WasButtonPressed(Buttons.LeftThumbstickRight) 
+                else if (gamepad.WasButtonPressed(Buttons.LeftThumbstickRight)
                     && currentCharacter.right != null)
                 {
                     currentCharacter = currentCharacter.right;
@@ -337,7 +337,7 @@ namespace TheGame.Game_Screens
             {
                 startGame = true;
             }
-            
+
 
         }
 
