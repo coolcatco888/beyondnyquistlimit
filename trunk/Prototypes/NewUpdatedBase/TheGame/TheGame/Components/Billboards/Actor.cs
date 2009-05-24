@@ -13,7 +13,7 @@ using TheGame.Components.Cameras;
 
 namespace TheGame
 {
-    public class Actor : Billboard
+    public class Actor : Billboard, IAudioEmitter
     {
         #region Actor State Enum
 
@@ -60,6 +60,9 @@ namespace TheGame
 
         protected ActorInfo actorStats = new ActorInfo();
 
+        protected string currentAttack = "";
+        protected Vector3 attackDirection;
+
         protected float height;
 
         //protected Vector3 direction = Vector3.Forward;
@@ -89,6 +92,9 @@ namespace TheGame
 
         // Dictionary of sprite sequences for the actor to use at different states and orientations
         protected Dictionary<string, SpriteSequence> sequences = new Dictionary<string, SpriteSequence>();
+
+        // Dictionary of slash attacks.
+        protected Dictionary<string, AttackInfo> attacks = new Dictionary<string, AttackInfo>();
 
         #endregion // Dictionaries
 
@@ -158,6 +164,89 @@ namespace TheGame
         public override void Initialize()
         {
             base.Initialize();
+
+            // TEMPORARY ADD ATTACKS
+            AttackInfo infoSW = new AttackInfo();
+            infoSW.Distance = 1.0f;
+            infoSW.Rotation = new Vector2(0.0f, 0.0f);
+            infoSW.Scale = new Vector2(2.0f, 2.0f);
+            infoSW.UnitScale = new Vector2(2.0f, 1.0f);
+            infoSW.TextureCoordinates = new Vector2(16, 5);
+
+            attacks.Add("SouthSlash", infoSW);
+            attacks.Add("SouthwestSlash", infoSW);
+            attacks.Add("WestSlash", infoSW);
+
+            AttackInfo infoSE = new AttackInfo();
+            infoSE.Distance = 1.0f;
+            infoSE.Rotation = new Vector2(0.0f, 0.0f);
+            infoSE.Scale = new Vector2(2.0f, 2.0f);
+            infoSE.UnitScale = new Vector2(2.0f, 1.0f);
+            infoSE.TextureCoordinates = new Vector2(18, 5);
+
+            attacks.Add("EastSlash", infoSE);
+            attacks.Add("SoutheastSlash", infoSE);
+
+            AttackInfo infoNW = new AttackInfo();
+            infoNW.Distance = 1.0f;
+            infoNW.Rotation = new Vector2(0.0f, 0.0f);
+            infoNW.Scale = new Vector2(2.0f, 2.0f);
+            infoNW.UnitScale = new Vector2(2.0f, 1.0f);
+            infoNW.TextureCoordinates = new Vector2(16, 6);
+
+            attacks.Add("NorthSlash", infoNW);
+            attacks.Add("NorthwestSlash", infoNW);
+
+            AttackInfo infoNE = new AttackInfo();
+            infoNE.Distance = 1.0f;
+            infoNE.Rotation = new Vector2(0.0f, 0.0f);
+            infoNE.Scale = new Vector2(2.0f, 2.0f);
+            infoNE.UnitScale = new Vector2(2.0f, 1.0f);
+            infoNE.TextureCoordinates = new Vector2(18, 6);
+
+            attacks.Add("NortheastSlash", infoNE);
+
+
+            // TEMPORARY ADD ATTACKS
+            AttackInfo infoHSW = new AttackInfo();
+            infoHSW.Distance = 1.0f;
+            infoHSW.Rotation = new Vector2(0.0f, 0.0f);
+            infoHSW.Scale = new Vector2(2.0f, 2.0f);
+            infoHSW.UnitScale = new Vector2(2.0f, 1.0f);
+            infoHSW.TextureCoordinates = new Vector2(24, 7);
+
+            attacks.Add("SouthHeavySlash", infoHSW);
+            attacks.Add("SouthwestHeavySlash", infoHSW);
+            attacks.Add("WestHeavySlash", infoHSW);
+
+            AttackInfo infoHSE = new AttackInfo();
+            infoHSE.Distance = 1.0f;
+            infoHSE.Rotation = new Vector2(0.0f, 0.0f);
+            infoHSE.Scale = new Vector2(2.0f, 2.0f);
+            infoHSE.UnitScale = new Vector2(2.0f, 1.0f);
+            infoHSE.TextureCoordinates = new Vector2(26, 7);
+
+            attacks.Add("EastHeavySlash", infoHSE);
+            attacks.Add("SoutheastHeavySlash", infoHSE);
+
+            AttackInfo infoHNW = new AttackInfo();
+            infoHNW.Distance = 1.0f;
+            infoHNW.Rotation = new Vector2(0.0f, 0.0f);
+            infoHNW.Scale = new Vector2(2.0f, 2.0f);
+            infoHNW.UnitScale = new Vector2(2.0f, 1.0f);
+            infoHNW.TextureCoordinates = new Vector2(24, 8);
+
+            attacks.Add("NorthHeavySlash", infoHNW);
+            attacks.Add("NorthwestHeavySlash", infoHNW);
+
+            AttackInfo infoHNE = new AttackInfo();
+            infoHNE.Distance = 1.0f;
+            infoHNE.Rotation = new Vector2(0.0f, 0.0f);
+            infoHNE.Scale = new Vector2(2.0f, 2.0f);
+            infoHNE.UnitScale = new Vector2(2.0f, 1.0f);
+            infoHNE.TextureCoordinates = new Vector2(26, 8);
+
+            attacks.Add("NortheastHeavySlash", infoHNE);
         }
         #endregion // Initialization
 
@@ -241,19 +330,35 @@ namespace TheGame
 
         private void UpdateSpriteSequence(GameTime gameTime)
         {
-            string nextSequenceTitle = state.ToString() + orientation.ToString();
-            string currentSequenceTitle = currentSequence.Title + currentSequence.Orientation.ToString();
-
-            if (currentSequenceTitle.Equals(nextSequenceTitle))
+            string nextSequenceTitle;
+            string currentSequenceTitle;
+            if (currentSequence.Title == "AttackingHeavy" && state == ActorState.Attacking)
             {
-                currentSequence.Update(gameTime);
+                nextSequenceTitle = "AttackingHeavy" + orientation.ToString();
             }
             else
             {
-                currentSequence.Reset();
-                if (nextSequenceTitle == "AttackingSouth")
+                nextSequenceTitle = state.ToString() + orientation.ToString();
+            }
+            currentSequenceTitle = currentSequence.Title + currentSequence.Orientation.ToString();
+
+            if (currentSequenceTitle.Equals(nextSequenceTitle))
+            {
+                currentAttack = currentSequence.Update(gameTime);
+            }
+            else
+            {
+                if (state.ToString() == "Attacking" && this is Player)
                 {
+                    GamepadDevice gamepadDevice = ((InputHub)GameEngine.Services.GetService(typeof(InputHub)))[((Player)this).PlayerIndex];
+
+                    if (gamepadDevice.WasButtonPressed(Buttons.X))
+                    {
+                        nextSequenceTitle = "AttackingHeavy" + orientation.ToString();
+                    }
                 }
+
+                currentSequence.Reset();
                 playSequence(nextSequenceTitle);
             }
         }
@@ -339,6 +444,99 @@ namespace TheGame
 
         #endregion
 
+        #region Draw
+
+        public override void Draw(GameTime gameTime)
+        {
+            if (direction != Vector3.Zero && state != ActorState.Attacking)
+            {
+                attackDirection = direction;
+                attackDirection = new Vector3(attackDirection.X, attackDirection.Y, -attackDirection.Z);
+            }
+
+            base.Draw(gameTime);
+
+            if (attacks.ContainsKey(currentAttack))
+            {
+                Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
+
+                AttackInfo thisAttack = attacks[currentAttack];
+                Vector3 oldPosition = this.Position;
+
+                this.Position += attackDirection * thisAttack.Distance;// +Vector3.Down;
+
+                UpdateVertices(thisAttack.TextureCoordinates, spriteInfo.SpriteUnit, thisAttack.UnitScale);
+
+                // Assign world, view, & projection matricies to basicEffect.
+                // TODO: implement rotation
+                effect.Parameters["Color"].SetValue(Color.ToVector4());
+                effect.Parameters["World"].SetValue(Matrix.CreateScale(-thisAttack.Scale.X, thisAttack.Scale.Y, 1.0f) * Matrix.CreateBillboard(position, camera.Position, Vector3.Up, camera.Direction));
+                effect.Parameters["View"].SetValue(camera.View);
+                effect.Parameters["Projection"].SetValue(camera.Projection);
+
+                // TODO: Kickass alpha blend.
+                GameEngine.Graphics.RenderState.AlphaBlendEnable = true;
+                GameEngine.Graphics.RenderState.AlphaSourceBlend = Blend.One;
+                GameEngine.Graphics.RenderState.AlphaDestinationBlend = Blend.One;
+
+                // Draw billboard.
+                effect.Begin();
+                effect.CurrentTechnique.Passes[0].Begin();
+
+                GameEngine.Graphics.VertexDeclaration = vertexDeclaration;
+                GameEngine.Graphics.DrawUserPrimitives(PrimitiveType.TriangleStrip, vertices, 0, 2);
+
+                effect.CurrentTechnique.Passes[0].End();
+                effect.End();
+
+                GameEngine.Graphics.RenderState.AlphaBlendEnable = false;
+
+                this.Position = oldPosition;
+
+                // Play attack sound.
+                if (this is Player)
+                {
+                    //if (((Player)this).ClassInfo.ClassName == "Wizard")
+                    //{
+                    //    audioManager.Play3DCue("rodSlash", this);
+                    //}
+                    //else if (((Player)this).ClassInfo.ClassName == "Priest")
+                    //{
+                    //    audioManager.Play3DCue("maceSlash", this);
+                    //}
+                    //else
+                    //{
+                    //    audioManager.Play3DCue("slash", this);
+                    //}
+
+                    audioManager.SoundBank.PlayCue("slash");
+                }
+            }
+
+            // Quality audio coding.
+            if (this is Player)
+            {
+                if ((currentSequence.Title == "Walking" || currentSequence.Title == "Running") &&
+                    (currentSequence.CurrentFrame.X == 4 || currentSequence.CurrentFrame.X == 8 ||
+                    currentSequence.CurrentFrame.X == 13 || currentSequence.CurrentFrame.X == 17 ||
+                    currentSequence.CurrentFrame.X == 22 || currentSequence.CurrentFrame.X == 26))
+                {
+                    if (((Player)this).ClassInfo.ClassName == "Knight")
+                    {
+                        audioManager.SoundBank.PlayCue("knight_step");
+                        //audioManager.Play3DCue("knight_step", this);
+                    }
+                    else
+                    {
+                        audioManager.SoundBank.PlayCue("soft_step");
+                        //audioManager.Play3DCue("soft_step", this);
+                    }
+                }
+            }
+        }
+
+        #endregion  // Draw
+
         #region Sprite Sequencing Methods
 
         /// <summary>
@@ -375,6 +573,16 @@ namespace TheGame
             playSequence(state.ToString() + currentSequence.Orientation.ToString());
         }
 
+        protected void AddAttack(string title, AttackInfo attack)
+        {
+            attacks.Add(title, attack);
+        }
+
+        protected void RemoveAttack(string title)
+        {
+            attacks.Remove(title);
+        }
+
         #endregion  // Sprite Sequencing Methods   // Complete, don't touch
 
         #region ICollidable Members
@@ -391,6 +599,27 @@ namespace TheGame
 
         #endregion // ICollidable Members
 
-        public virtual void ApplyDamage(int damage) {}
+        public virtual void ApplyDamage(int damage) { }
+
+        #region IAudioEmitter Members
+
+        protected AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+
+        public Vector3 Forward
+        {
+            get { return Vector3.Forward; }// direction; }
+        }
+
+        public Vector3 Up
+        {
+            get { return Vector3.Up; }
+        }
+
+        public Vector3 Velocity
+        {
+            get { return Vector3.Zero; }// direction* speed; }
+        }
+
+        #endregion
     }
 }

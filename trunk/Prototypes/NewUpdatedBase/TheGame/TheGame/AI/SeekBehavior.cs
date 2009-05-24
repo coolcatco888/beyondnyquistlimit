@@ -23,11 +23,14 @@ namespace TheGame
         public override void React(GameTime gameTime)
         {
             target = (Player)((Level)Parent).PlayerList.GetNearest(monster.Position);
-            float distance = Vector3.Distance(monster.Position, target.Position);
-            if (distance < sightRadius)
+            if (target != null)
             {
-                reacted = true;
-                desireLevel = 10;
+                float distance = Vector3.Distance(monster.Position, target.Position);
+                if (distance < sightRadius)
+                {
+                    reacted = true;
+                    desireLevel = 10;
+                }
             }
         }
 

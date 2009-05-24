@@ -112,9 +112,9 @@ namespace TheGame
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 10; i++)
             {
-                Monster poring = new Monster(this, poringSpriteInfo, new Vector3(-25.0f + i, 0.0f, 0.0f), "Poring");
+                Monster poring = new Monster(this, poringSpriteInfo, new Vector3(2.0f * i, 0.0f, 1.0f * i), "Poring");
                 poring.Initialize();
                 monsterList.Add(poring);
             }
@@ -124,6 +124,11 @@ namespace TheGame
             //Initialize Hud screen
             HUDScreen hud = new HUDScreen("hud", this);
             hud.Initialize();
+
+            // Stop audio & begin game music
+            AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+            audioManager.StopAllCues();
+            audioManager.Play3DCue("music_level", this);
 
             base.Initialize();
         }

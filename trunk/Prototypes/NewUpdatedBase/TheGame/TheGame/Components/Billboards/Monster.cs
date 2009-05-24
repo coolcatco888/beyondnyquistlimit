@@ -116,12 +116,12 @@ namespace TheGame
 
         #region Draw
 
-        public override void Draw(GameTime gameTime)
-        {
-            boundingShapesSelf[state.ToString() + orientation.ToString()].Draw(primitiveBatch);
-            primitiveShape.Draw(primitiveBatch);
-            base.Draw(gameTime);
-        }
+        //public override void Draw(GameTime gameTime)
+        //{
+        //    boundingShapesSelf[state.ToString() + orientation.ToString()].Draw(primitiveBatch);
+        //    primitiveShape.Draw(primitiveBatch);
+        //    base.Draw(gameTime);
+        //}
 
         #endregion // Draw
 

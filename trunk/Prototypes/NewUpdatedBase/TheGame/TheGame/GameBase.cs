@@ -57,6 +57,10 @@ namespace TheGame
             ActionCamera camera = new ActionCamera(GameEngine.BaseScreen);
             GameEngine.Services.AddService(typeof(Camera), (object)(camera));
 
+            AudioManager audioManager = new AudioManager(GameEngine.BaseScreen);
+            audioManager.Initialize();
+            GameEngine.Services.AddService(typeof(AudioManager), audioManager);
+
             InputHub inputHub = new InputHub();
             GameEngine.Services.AddService(typeof(InputHub), inputHub);
 

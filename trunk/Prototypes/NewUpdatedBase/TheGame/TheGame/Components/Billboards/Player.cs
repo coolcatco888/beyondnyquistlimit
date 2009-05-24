@@ -111,7 +111,7 @@ namespace TheGame
 
             this.playerIndex = playerIndex;
             string classInfoFile = className + "ClassInfo";
-            SetupComboLibraryAndInputManager();
+            
 
             SpriteInfo crosshairInfo = GameEngine.Content.Load<SpriteInfo>(@"Sprites\\CrosshairInfo");
             crosshair = new GroundEffect(this.Parent, crosshairInfo);
@@ -125,6 +125,7 @@ namespace TheGame
             actorStats = new ActorInfo();
             playerInfo = new PlayerInfo(className);//TODO: new PlayerInfo() should be loaded from xml
             actorStats.PopulateFields(playerInfo, classInfo);
+            SetupComboLibraryAndInputManager();
         }
 
         #endregion // Constructor
@@ -185,12 +186,12 @@ namespace TheGame
 
         // TESTING PURPOSES ONLY - used only to test the positions of the shapes
         // Draws the bounding shape
-        public override void Draw(GameTime gameTime)
-        {
-            boundingShapesSelf[state.ToString() + orientation.ToString()].Draw(primitiveBatch);
-            primitiveShape.Draw(primitiveBatch);
-            base.Draw(gameTime);
-        }
+        //public override void Draw(GameTime gameTime)
+        //{
+        //    boundingShapesSelf[state.ToString() + orientation.ToString()].Draw(primitiveBatch);
+        //    primitiveShape.Draw(primitiveBatch);
+        //    base.Draw(gameTime);
+        //}
         // End Testing
 
         #endregion // Draw
@@ -378,6 +379,7 @@ namespace TheGame
             {
                 crosshair.Visible = true;
                 monsterTarget = (Monster)monsterList[targetIndex];
+                crosshair.Position = monsterTarget.Position;
                 targetIndex++;
                 if (targetIndex == monsterList.Count)
                     targetIndex = 0;
@@ -389,6 +391,7 @@ namespace TheGame
             {
                 crosshair.Visible = true;
                 playerTarget = (Player)playerList[targetIndex];
+                crosshair.Position = playerTarget.position;
                 targetIndex++;
                 if (targetIndex == playerList.Count)
                     targetIndex = 0;
@@ -431,6 +434,18 @@ namespace TheGame
                 playerInfo.CurrentAttackGauge = 0;
             }
 
+            if (currentSequence.Title == "AttackingHeavy" && ((currentSequence.CurrentFrame.X == 4
+                 || currentSequence.CurrentFrame.X == 12)) && !hasAttacked)
+            {
+                if (monsterTarget != null)
+                {
+                    monsterTarget.PhysicalHit((int)((float)actorStats.CurrentDamage * 2 * (float)playerInfo.CurrentAttackGauge / (float)playerInfo.MaxAttackGauge),
+                        orientation);
+                    this.hasAttacked = true;
+                }
+                playerInfo.CurrentAttackGauge = 0;
+            }
+
             if (currentSequence.IsComplete)
             {
                 hasAttacked = false;
@@ -452,7 +467,7 @@ namespace TheGame
             {
                 state = ActorState.Idle;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
@@ -479,7 +494,7 @@ namespace TheGame
             {
                 state = ActorState.Idle;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
@@ -507,7 +522,7 @@ namespace TheGame
                 else
                     state = ActorState.Walking;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
@@ -659,11 +674,10 @@ namespace TheGame
         private void SetupComboLibraryAndInputManager()
         {
             // Construct the master list of moves.
-            spellComboLibrary = new Move[]
+             spellComboLibrary = new Move[]
                 {
                     new Move("Fire Tornado", Buttons.A),
-                    new Move("Healing", Buttons.B),
-                    new Move("Activate Spell",  Buttons.A,  Buttons.X,  Buttons.Y,  Buttons.B),
+                    new Move("Healing", Buttons.B)
                 };
 
             // Construct a move list which will store its own copy of the moves array.
@@ -724,51 +738,37 @@ namespace TheGame
         private void CreateSpell(string spellName)
         {
             SpellInfo spellInfo;
-            if(classInfo.ClassName.Equals("Wizard"))
+            switch (spellName)
             {
-                switch (spellName)
-                {
-                    case "Chain Beam":
-                        //TODO: make this work!!!
-                        //currentSpell = new ChainBeam(this.Parent, 500.0f);
-                        break;
-                    case "Fire Tornado":
-                            spellInfo = new SpellInfo();
-                            spellInfo.Duration = 4.0f;
-                            spellInfo.Damage = 3;
-                            spellInfo.TickFrequency = 0.2f;
-                            currentSpell = new FireTornado(this.Parent, spellInfo, this, ((Level)Parent).MonsterList.GetAllWithinRange(this.position, 15.0f));
-                            currentSpell.Initialize();
-                        break;
-                    case "Fire Line":
+                case "Chain Beam":
+                    //TODO: make this work!!!
+                    //currentSpell = new ChainBeam(this.Parent, 500.0f);
+                    break;
+                case "Fire Tornado":
+                        spellInfo = new SpellInfo();
+                        spellInfo.Duration = 4.0f;
+                        spellInfo.Damage = 3;
+                        spellInfo.TickFrequency = 0.2f;
+                        currentSpell = new FireTornado(this.Parent, spellInfo, this, ((Level)Parent).MonsterList.GetAllWithinRange(this.position, 15.0f));
+                        currentSpell.Initialize();
+                    break;
+                case "Fire Line":
 
-                        break;
-                }
-            }
-
-            else if(classInfo.ClassName.Equals("Priest"))
-            {
-                List<Actor> list = new List<Actor>();
+                    break;
+                case "Healing":
+                    List<Actor> list = new List<Actor>();
                 
-                if(playerTarget != null)
-                    list.Add(playerTarget);
-
-                switch(spellName)
-                {
-                    case "Healing":
-                        if (classInfo.ClassName.Equals("Priest"))
-                        {
-                            spellInfo = new SpellInfo();
-                            spellInfo.Duration = 1.5f;
-                            spellInfo.Damage = 20;
-                            spellInfo.TickFrequency = 1.0f;
-                            currentSpell = new Healing(this.Parent, spellInfo, this, list);
-                            currentSpell.Initialize();
-                        }
+                        if(playerTarget != null)
+                            list.Add(playerTarget);
+                        spellInfo = new SpellInfo();
+                        spellInfo.Duration = 1.5f;
+                        spellInfo.Damage = 20;
+                        spellInfo.TickFrequency = 1.0f;
+                        currentSpell = new Healing(this.Parent, spellInfo, this, list);
+                        currentSpell.Initialize();
                         break; 
                 }
             }
-        }
 
         #endregion
 

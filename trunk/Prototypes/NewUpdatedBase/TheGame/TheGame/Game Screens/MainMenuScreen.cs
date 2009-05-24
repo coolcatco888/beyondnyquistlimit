@@ -102,6 +102,14 @@ namespace TheGame.Game_Screens
 
         }
 
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+            audioManager.Play3DCue("music_menu", this);
+        }
+
         /// <summary>
         /// All handles keyboard and controller input
         /// </summary>

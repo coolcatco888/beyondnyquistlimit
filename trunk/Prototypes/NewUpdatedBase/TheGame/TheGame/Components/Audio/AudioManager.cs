@@ -14,9 +14,9 @@ namespace TheGame
         #region Fields
 
         // XACT objects
-        AudioEngine audioEngine;
-        WaveBank    waveBank;
-        SoundBank   soundBank;
+        private AudioEngine audioEngine;
+        private WaveBank    waveBank;
+        private SoundBank   soundBank;
 
         /// <summary>
         /// Point that will be hearing the 3D sounds (camera).
@@ -35,15 +35,34 @@ namespace TheGame
         /// <summary>
         /// Currently playing 3D sounds.
         /// </summary>
-        List<Cue3D> activeCues = new List<Cue3D>();
+        private List<Cue3D> activeCues = new List<Cue3D>();
 
         /// <summary>
         /// Currently unused Cue3D containers.
         /// These are stored so they may be reused.
         /// </summary>
-        Stack<Cue3D> cuePool = new Stack<Cue3D>();
+        private Stack<Cue3D> cuePool = new Stack<Cue3D>();
 
         #endregion  // Fields
+
+        #region Accessors
+
+        public AudioEngine AudioEngine
+        {
+            get { return audioEngine; }
+        }
+
+        public SoundBank SoundBank
+        {
+            get { return soundBank; }
+        }
+
+        public WaveBank WaveBank
+        {
+            get { return waveBank; }
+        }
+
+        #endregion
 
         public AudioManager(GameScreen parent) : base(parent)
         {
@@ -55,9 +74,9 @@ namespace TheGame
         /// </summary>
         public override void Initialize()
         {
-            audioEngine = new AudioEngine("Content/Asplosions.xgs");
-            waveBank = new WaveBank(audioEngine, "Content/Wave Bank.xwb");
-            soundBank = new SoundBank(audioEngine, "Content/Sound Bank.xsb");
+            audioEngine = new AudioEngine("Content\\Audio\\Asplosions.xgs");
+            waveBank = new WaveBank(audioEngine, "Content\\Audio\\Wave Bank.xwb");
+            soundBank = new SoundBank(audioEngine, "Content\\Audio\\Sound Bank.xsb");
 
             base.Initialize();
         }
@@ -178,6 +197,14 @@ namespace TheGame
             for (int i = 0; i < activeCues.Count; i++)
             {
                 activeCues[i].Cue.Resume();
+            }
+        }
+
+        public void StopAllCues()
+        {
+            for (int i = 0; i < activeCues.Count; i++)
+            {
+                activeCues[i].Cue.Stop(AudioStopOptions.Immediate);
             }
         }
 
