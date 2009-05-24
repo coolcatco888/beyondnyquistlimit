@@ -9,10 +9,14 @@
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = &lt;none&gt;;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 0;
+    PC Bank Last Modified High = 0;
     Header Last Modified Low = 0;
     Header Last Modified High = 0;
-    Bank Last Revised Low = 2170176306;
-    Bank Last Revised High = 30003689;
+    Bank Last Revised Low = 3852957488;
+    Bank Last Revised High = 30006397;
 
     Wave
     {
@@ -32,8 +36,376 @@
             Loop Region Offset = 0;
             Loop Region Length = 0;
             File Type = 1;
-            Last Modified Low = 3600949736;
-            Last Modified High = 30002609;
+            Last Modified Low = 4166593312;
+            Last Modified High = 30006303;
+        }
+    }
+
+    Wave
+    {
+        Name = knightStep01;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep01.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 34518;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2452605014;
+            Last Modified High = 30006391;
+        }
+    }
+
+    Wave
+    {
+        Name = knightStep02;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep02.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 36240;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = knightStep03;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep03.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 34316;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = knightStep04;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\knightStep04.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 32616;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = maceSlash01;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\maceSlash01.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 58238;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = maceSlash02;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\maceSlash02.wav;
+        Build Settings Last Modified Low = 2710918968;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 58886;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = rodSlash01;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\rodSlash01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 50558;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = slash01;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 19922;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = slash02;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash02.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 21558;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = slash03;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slash03.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 19758;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = slashRecharge;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\slashRecharge.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 68970;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = softStep01;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep01.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 16002;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = softStep02;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep02.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 15062;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = softStep03;
+        File = D:\work\mW\09project\jimwtf\Prototypes\mw\TheGame\TheGame\Content\Audio\audio\softStep03.wav;
+        Build Settings Last Modified Low = 2711075218;
+        Build Settings Last Modified High = 30006392;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 1;
+            Sampling Rate = 22050;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 14456;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 0;
+            Last Modified High = 0;
+        }
+    }
+
+    Wave
+    {
+        Name = music_level;
+        File = audio\music_level.wav;
+        Build Settings Last Modified Low = 3724988738;
+        Build Settings Last Modified High = 30006397;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 19699604;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 1032957488;
+            Last Modified High = 30006397;
+        }
+    }
+
+    Wave
+    {
+        Name = music_menu;
+        File = audio\music_menu.wav;
+        Build Settings Last Modified Low = 3724988738;
+        Build Settings Last Modified High = 30006397;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 44100;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 31575812;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 3406987284;
+            Last Modified High = 30006396;
         }
     }
 }

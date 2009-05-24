@@ -124,6 +124,11 @@ namespace TheGame
             HUDScreen hud = new HUDScreen("hud", this);
             hud.Initialize();
 
+            // Stop audio & begin game music
+            AudioManager audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+            audioManager.StopAllCues();
+            audioManager.Play3DCue("music_level", this);
+
             base.Initialize();
         }
 

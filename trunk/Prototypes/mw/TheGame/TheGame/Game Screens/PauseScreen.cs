@@ -18,6 +18,8 @@ namespace TheGame.Game_Screens
 
         private GameScreen previousScreen;
 
+        private AudioManager audioManager;
+
         private void CreateMenu()
         {
             SpriteFont font = GameEngine.Content.Load<SpriteFont>("GUI\\menufont");
@@ -53,11 +55,20 @@ namespace TheGame.Game_Screens
 
         }
 
+        public override void Initialize()
+        {
+            base.Initialize();
+
+            audioManager = (AudioManager)GameEngine.Services.GetService(typeof(AudioManager));
+            audioManager.PauseAllCues();
+        }
+
         protected override void HandleInput()
         {
             
             if (keyboardDevice.WasKeyPressed(Keys.Escape) || masterInput.WasButtonPressed(Buttons.Start))
             {
+                audioManager.ResumeAllCues();
                 Dispose();
             }
 
@@ -66,6 +77,7 @@ namespace TheGame.Game_Screens
                 switch (menu.GetCurrentText())
                 {
                     case "Continue Game":
+                        audioManager.ResumeAllCues();
                         Dispose();
                         break;
                     case "Exit Game":

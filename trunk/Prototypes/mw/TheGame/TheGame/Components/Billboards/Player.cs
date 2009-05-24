@@ -126,6 +126,11 @@ namespace TheGame
             {
                 playerInfo.CurrentAttackGauge += 10;
                 gaugeTimer = 0;
+
+                if (playerInfo.CurrentAttackGauge == 90)
+                {
+                    audioManager.SoundBank.PlayCue("slashRecharge");
+                }
             }
             previousState = state;
 
@@ -307,6 +312,18 @@ namespace TheGame
                 playerInfo.CurrentAttackGauge = 0;
             }
 
+            if (currentSequence.Title == "AttackingHeavy" && ((currentSequence.CurrentFrame.X == 4
+                 || currentSequence.CurrentFrame.X == 12)) && !hasAttacked)
+            {
+                if (target != null)
+                {
+                    target.GetHit((int)((float)actorStats.CurrentDamage * 2 * (float)playerInfo.CurrentAttackGauge / (float)playerInfo.MaxAttackGauge),
+                        orientation, 0.5f);
+                    this.hasAttacked = true;
+                }
+                playerInfo.CurrentAttackGauge = 0;
+            }
+
             if (currentSequence.IsComplete)
             {
                 hasAttacked = false;
@@ -328,7 +345,7 @@ namespace TheGame
             {
                 state = ActorState.Idle;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
@@ -355,7 +372,7 @@ namespace TheGame
             {
                 state = ActorState.Idle;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
@@ -383,7 +400,7 @@ namespace TheGame
                 else
                     state = ActorState.Walking;
             }
-            else if (gamepadDevice.WasButtonPressed(Buttons.B))
+            else if (gamepadDevice.WasButtonPressed(Buttons.B) || gamepadDevice.WasButtonPressed(Buttons.X))
             {
                 state = ActorState.Attacking;
             }
