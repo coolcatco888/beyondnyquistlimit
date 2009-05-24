@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline" xmlns:Graphics="Microsoft.Xna.Framework.Graphics" xmlns:Processors="Microsoft.Xna.Framework.Content.Pipeline.Processors">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>ig_box.fbx</Source>
+      <Name>ig_box</Name>
+      <Importer>FbxImporter</Importer>
+      <Processor>ModelProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ig_box.xnb</Output>
+      <Time>2009-05-22T16:21:45.90625-07:00</Time>
+      <Dependency>
+        <Key>obj\Xbox 360\Release\ig_box_0.xml</Key>
+        <Value>2009-05-23T19:50:33.9375-07:00</Value>
+      </Dependency>
+      <Request>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ig_box_tex_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>ParticleA.dds</Source>
+      <Name>ParticleA</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ParticleA.xnb</Output>
+      <Time>2009-05-22T16:21:46-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\redsky\redskyback.bmp</Source>
+      <Name>Skybox\redsky\redskyback</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyback.xnb</Output>
+      <Time>2009-05-22T16:21:37.90625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\redsky\redskyfront.bmp</Source>
+      <Name>Skybox\redsky\redskyfront</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyfront.xnb</Output>
+      <Time>2009-05-22T16:21:37.90625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\redsky\redskyleft.bmp</Source>
+      <Name>Skybox\redsky\redskyleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyleft.xnb</Output>
+      <Time>2009-05-22T16:21:37.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\redsky\redskyright.bmp</Source>
+      <Name>Skybox\redsky\redskyright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyright.xnb</Output>
+      <Time>2009-05-22T16:21:37.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\redsky\redskytop.bmp</Source>
+      <Name>Skybox\redsky\redskytop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskytop.xnb</Output>
+      <Time>2009-05-22T16:21:37.90625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\MountainGrass.png</Source>
+      <Name>Terrain\MountainGrass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\MountainGrass.xnb</Output>
+      <Time>2009-05-22T16:21:44.59375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\rocks.bmp</Source>
+      <Name>Terrain\rocks</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\rocks.xnb</Output>
+      <Time>2009-05-22T16:21:44.609375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\skymap.bmp</Source>
+      <Name>Terrain\skymap</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\skymap.xnb</Output>
+      <Time>2009-05-22T16:21:44.5625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\terrain.bmp</Source>
+      <Name>Terrain\terrain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TerrainProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\terrain.xnb</Output>
+      <Time>2009-05-22T16:21:44.546875-07:00</Time>
+      <Request>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\MountainGrass_0.xnb</Request>
+    </Item>
+    <Item>
+      <Source>Sprites\circles.png</Source>
+      <Name>Sprites\circles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\circles.xnb</Output>
+      <Time>2009-05-22T16:21:39.125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Sprite Sheet Knight.png</Source>
+      <Name>Sprites\Sprite Sheet Knight</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\Sprite Sheet Knight.xnb</Output>
+      <Time>2009-05-22T16:21:39.140625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\cloud.png</Source>
+      <Name>Sprites\cloud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\cloud.xnb</Output>
+      <Time>2009-05-22T16:21:39.140625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\blank.png</Source>
+      <Name>GUI\blank</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\blank.xnb</Output>
+      <Time>2009-05-22T16:18:13.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\circGauge.PNG</Source>
+      <Name>GUI\circGauge</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\circGauge.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\healthbar.PNG</Source>
+      <Name>GUI\healthbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\healthbar.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\hud.PNG</Source>
+      <Name>GUI\hud</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\hud.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\itemsm.PNG</Source>
+      <Name>GUI\itemsm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\itemsm.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\menubg.png</Source>
+      <Name>GUI\menubg</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\menubg.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PoringSprite.png</Source>
+      <Name>PoringSprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSprite.xnb</Output>
+      <Time>2009-05-22T16:21:45.984375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\WizardSprite.png</Source>
+      <Name>Sprites\WizardSprite</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\WizardSprite.xnb</Output>
+      <Time>2009-05-22T16:21:39.15625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel1.PNG</Source>
+      <Name>GUI\charsel1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel1.xnb</Output>
+      <Time>2009-05-22T16:18:13.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel2.PNG</Source>
+      <Name>GUI\charsel2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel2.xnb</Output>
+      <Time>2009-05-22T16:18:13.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel3.PNG</Source>
+      <Name>GUI\charsel3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel3.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\charsel4.PNG</Source>
+      <Name>GUI\charsel4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel4.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Copy of itemsm.PNG</Source>
+      <Name>GUI\Copy of itemsm</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Copy of itemsm.xnb</Output>
+      <Time>2009-05-22T19:34:34.375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Wizardface.PNG</Source>
+      <Name>GUI\Wizardface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Wizardface.xnb</Output>
+      <Time>2009-05-22T19:34:46.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Knightface.PNG</Source>
+      <Name>GUI\Knightface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Knightface.xnb</Output>
+      <Time>2009-05-22T19:34:48.796875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Priestface.PNG</Source>
+      <Name>GUI\Priestface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Priestface.xnb</Output>
+      <Time>2009-05-22T19:34:54.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\Rangerface.PNG</Source>
+      <Name>GUI\Rangerface</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Rangerface.xnb</Output>
+      <Time>2009-05-22T19:34:56.703125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\offarrow.PNG</Source>
+      <Name>GUI\offarrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\offarrow.xnb</Output>
+      <Time>2009-05-23T14:50:09.78125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>BasicPoint.fx</Source>
+      <Name>BasicPoint</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\BasicPoint.xnb</Output>
+      <Time>2009-05-22T16:21:45.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Skybox\skybox.fx</Source>
+      <Name>Skybox\skybox</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\skybox.xnb</Output>
+      <Time>2009-05-23T19:51:54.390625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Bezier.fx</Source>
+      <Name>Bezier</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Bezier.xnb</Output>
+      <Time>2009-05-22T16:21:45.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\04 Never Ending Duel.wav</Source>
+      <Name>Audio\04 Never Ending Duel</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Audio\04 Never Ending Duel.xnb</Output>
+      <Time>2009-05-22T16:21:43.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\ActorTest.xml</Source>
+      <Name>Sprites\ActorTest</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\ActorTest.xnb</Output>
+      <Time>2009-05-22T16:21:39.109375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\MagicCircle.xml</Source>
+      <Name>Sprites\MagicCircle</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\MagicCircle.xnb</Output>
+      <Time>2009-05-22T16:21:39.09375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\CloudInfo.xml</Source>
+      <Name>Sprites\CloudInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\CloudInfo.xnb</Output>
+      <Time>2009-05-22T16:21:39.109375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerSpriteSequences.xml</Source>
+      <Name>PlayerSpriteSequences</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PlayerSpriteSequences.xnb</Output>
+      <Time>2009-05-22T16:21:45.9375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PoringSpriteSequences.xml</Source>
+      <Name>PoringSpriteSequences</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSpriteSequences.xnb</Output>
+      <Time>2009-05-22T16:21:45.9375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PoringSpriteInfo.xml</Source>
+      <Name>PoringSpriteInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSpriteInfo.xnb</Output>
+      <Time>2009-05-22T16:21:45.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>WizardClassInfo.xml</Source>
+      <Name>WizardClassInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\WizardClassInfo.xnb</Output>
+      <Time>2009-05-22T16:21:45.953125-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PoringBoundingShapes.xml</Source>
+      <Name>PoringBoundingShapes</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringBoundingShapes.xnb</Output>
+      <Time>2009-05-22T16:21:45.921875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PoringInfo.xml</Source>
+      <Name>PoringInfo</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringInfo.xnb</Output>
+      <Time>2009-05-22T16:21:45.984375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PlayerBoundingShapes.xml</Source>
+      <Name>PlayerBoundingShapes</Name>
+      <Importer>XmlImporter</Importer>
+      <Processor>PassThroughProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PlayerBoundingShapes.xnb</Output>
+      <Time>2009-05-22T16:21:45.90625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>GUI\menufont.spritefont</Source>
+      <Name>GUI\menufont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\menufont.xnb</Output>
+      <Time>2009-05-22T16:18:13.96875-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ig_box.fbx</Source>
+      <Importer>FbxImporter</Importer>
+      <Options>IntermediateFile, DontCacheImportedData</Options>
+      <Output>obj\Xbox 360\Release\ig_box_0.xml</Output>
+      <Time>2009-05-22T16:21:45.90625-07:00</Time>
+    </Item>
+    <Item>
+      <Source>ig_box_tex.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ig_box_tex_0.xnb</Output>
+      <Time>2009-05-22T16:21:45.984375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Terrain\MountainGrass.png</Source>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Parameters>
+        <Data Key="ColorKeyColor" Type="Graphics:Color">FFFF00FF</Data>
+        <Data Key="ColorKeyEnabled" Type="bool">true</Data>
+        <Data Key="TextureFormat" Type="Processors:TextureProcessorOutputFormat">DxtCompressed</Data>
+        <Data Key="GenerateMipmaps" Type="bool">true</Data>
+        <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
+      </Parameters>
+      <Options>None</Options>
+      <Output>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\MountainGrass_0.xnb</Output>
+      <Time>2009-05-22T16:21:44.59375-07:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Xbox360</TargetPlatform>
+      <BuildConfiguration>Release</BuildConfiguration>
+      <CompressContent>true</CompressContent>
+      <RootDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\Xbox 360\Release\</IntermediateDirectory>
+      <OutputDirectory>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Xbox 360\Release\TheGamePipeline.dll</Key>
+        <Value>2009-05-23T19:49:15.0625-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2008-10-10T17:42:32-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2008-10-10T17:43:28-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2008-10-10T17:43:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2008-10-10T17:48:18-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v3.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2008-10-10T17:48:50-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\WINDOWS\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\3.0.0.0__6d5c3888ef60e27d\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2009-04-15T12:57:07-07:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

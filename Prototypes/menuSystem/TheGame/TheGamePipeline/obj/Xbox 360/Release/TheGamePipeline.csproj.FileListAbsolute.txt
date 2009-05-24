@@ -1,0 +1,7 @@
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Xbox 360\Release\TheGamePipeline.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Xbox 360\Release\TheGamePipeline.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Xbox 360\Release\Library.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Xbox 360\Release\Library.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Xbox 360\Release\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Xbox 360\Release\TheGamePipeline.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Xbox 360\Release\TheGamePipeline.pdb

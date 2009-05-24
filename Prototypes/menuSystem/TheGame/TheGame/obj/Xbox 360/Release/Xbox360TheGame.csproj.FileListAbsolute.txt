@@ -1,0 +1,61 @@
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\Xbox 360\Release\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\Xbox 360\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Components\GUI\MenuPanels\mainpanel.xml
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ig_box.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ParticleA.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyback.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyfront.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyleft.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskyright.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\redsky\redskytop.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\MountainGrass.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\rocks.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\skymap.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\terrain.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\circles.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\Sprite Sheet Knight.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\cloud.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\blank.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\circGauge.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\healthbar.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\hud.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\itemsm.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\menubg.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSprite.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\WizardSprite.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel1.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel2.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel3.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\charsel4.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Copy of itemsm.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Wizardface.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Knightface.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Priestface.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\Rangerface.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\offarrow.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\BasicPoint.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Skybox\skybox.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Bezier.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Audio\04 Never Ending Duel.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\ActorTest.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\MagicCircle.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Sprites\CloudInfo.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PlayerSpriteSequences.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSpriteSequences.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringSpriteInfo.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\WizardClassInfo.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringBoundingShapes.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PoringInfo.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\PlayerBoundingShapes.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\GUI\menufont.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\ig_box_tex_0.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Terrain\MountainGrass_0.xnb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Audio\Asplosions.xgs
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Audio\Wave Bank.xwb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Content\Audio\Sound Bank.xsb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\TheGame.exe
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\TheGame.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Library.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\bin\Xbox 360\Release\Library.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\Xbox 360\Release\TheGame.exe
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\obj\Xbox 360\Release\TheGame.pdb
