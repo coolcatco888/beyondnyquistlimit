@@ -1,0 +1,2 @@
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\Xbox 360\Release\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\TheGame\Content\obj\Xbox 360\Release\Audio\Asplosions.xml

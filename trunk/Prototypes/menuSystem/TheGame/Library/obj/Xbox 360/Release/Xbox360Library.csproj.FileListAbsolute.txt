@@ -1,0 +1,6 @@
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\Xbox 360\Release\Library.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\bin\Xbox 360\Release\Library.pdb
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\Xbox 360\Release\ResolveAssemblyReference.cache
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\Xbox 360\Release\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\Xbox 360\Release\Library.dll
+D:\work\jimwtf\Prototypes\menuSystem\TheGame\Library\obj\Xbox 360\Release\Library.pdb

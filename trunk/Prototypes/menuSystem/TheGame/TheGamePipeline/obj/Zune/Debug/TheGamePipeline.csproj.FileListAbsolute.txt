@@ -1,0 +1,7 @@
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Zune\Debug\TheGamePipeline.dll
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Zune\Debug\TheGamePipeline.pdb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Zune\Debug\Library.dll
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\bin\Zune\Debug\Library.pdb
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Zune\Debug\ResolveAssemblyReference.cache
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Zune\Debug\TheGamePipeline.dll
+D:\Work\jimwtf\Prototypes\menuSystem\TheGame\TheGamePipeline\obj\Zune\Debug\TheGamePipeline.pdb

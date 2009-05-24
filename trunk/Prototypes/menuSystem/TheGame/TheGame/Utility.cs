@@ -36,10 +36,43 @@ namespace TheGame
         public static Orientation GetOrientationFromString(string value)
         {
             Orientation orientation = Orientation.South;
-            foreach (Orientation o in Enum.GetValues(typeof(Orientation)))
+            //Leave it like this because Enum.GetValues does not compile on XBOX 360
+            //foreach (Orientation o in Enum.GetValues(typeof(Orientation)))
+            //{
+            //    if (o.ToString() == value)
+            //        orientation = o;
+            //}
+            if (value == Orientation.South.ToString())
             {
-                if (o.ToString() == value)
-                    orientation = o;
+                return Orientation.South;
+            }
+            else if (value == Orientation.Southwest.ToString())
+            {
+                return Orientation.Southwest;
+            }
+            else if (value == Orientation.Southeast.ToString())
+            {
+                return Orientation.Southeast;
+            }
+            else if (value == Orientation.Northwest.ToString())
+            {
+                return Orientation.Northwest;
+            }
+            else if (value == Orientation.Northeast.ToString())
+            {
+                return Orientation.Northeast;
+            }
+            else if (value == Orientation.North.ToString())
+            {
+                return Orientation.North;
+            }
+            else if (value == Orientation.West.ToString())
+            {
+                return Orientation.West;
+            }
+            else if (value == Orientation.East.ToString())
+            {
+                return Orientation.East;
             }
 
             return orientation;
