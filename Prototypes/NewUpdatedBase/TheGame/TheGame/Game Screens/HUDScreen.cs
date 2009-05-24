@@ -90,7 +90,7 @@ namespace TheGame.Game_Screens
                 hud.Value.ManaBar.IncreaseDecreaseValue(manaDecrease);
 
                 //Popup damage text to Player
-                int damage = player.ActorStats.CurrentHealth - hud.Value.Healthbar.CurrentValue;
+                int damage = (player.ActorStats.CurrentHealth < player.ActorStats.MaxHealth ? player.ActorStats.CurrentHealth : player.ActorStats.MaxHealth) - hud.Value.Healthbar.CurrentValue;
                 if (damage != 0)
                 {
                     Vector3 playerScreenPos = viewport.Project(player.Position, camera.Projection, camera.View, Matrix.Identity);
@@ -108,7 +108,7 @@ namespace TheGame.Game_Screens
                     continue;
 
                 //Popup damage text to Monster
-                int damage = monster.ActorStats.CurrentHealth - monsterCurrentHealth[monster];
+                int damage = (monster.ActorStats.CurrentHealth < monster.ActorStats.MaxHealth ? monster.ActorStats.CurrentHealth : monster.ActorStats.MaxHealth) - monsterCurrentHealth[monster];
                 if (damage != 0)
                 {
                     Vector3 monsterScreenPos = viewport.Project(monster.Position, camera.Projection, camera.View, Matrix.Identity);

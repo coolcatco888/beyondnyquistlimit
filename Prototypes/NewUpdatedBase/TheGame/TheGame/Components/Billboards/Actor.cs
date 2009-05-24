@@ -390,5 +390,7 @@ namespace TheGame
         }
 
         #endregion // ICollidable Members
+
+        public virtual void ApplyDamage(int damage) {}
     }
 }

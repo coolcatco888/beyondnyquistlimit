@@ -32,6 +32,7 @@ namespace TheGame
             Camera camera = (Camera)GameEngine.Services.GetService(typeof(Camera));
 
             // Assign world, view, & projection matricies to basicEffect.
+            effect.Parameters["Color"].SetValue(Color.ToVector4());
             effect.Parameters["World"].SetValue(Matrix.CreateScale(scale.X, scale.Y, 1.0f) * Matrix.CreateRotationX(-MathHelper.PiOver2) * Matrix.CreateFromQuaternion(rotation) * Matrix.CreateTranslation(position));
             effect.Parameters["View"].SetValue(camera.View);
             effect.Parameters["Projection"].SetValue(camera.Projection);

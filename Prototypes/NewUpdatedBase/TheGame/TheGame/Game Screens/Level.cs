@@ -112,7 +112,7 @@ namespace TheGame
             }
 
             Library.SpriteInfo poringSpriteInfo = GameEngine.Content.Load<Library.SpriteInfo>(@"PoringSpriteInfo");
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < 2; i++)
             {
                 Monster poring = new Monster(this, poringSpriteInfo, new Vector3(-25.0f + i, 0.0f, 0.0f), "Poring");
                 poring.Initialize();

@@ -430,7 +430,7 @@ namespace TheGame
         protected List<Behavior> reactions;
         #endregion
 
-        public void ApplyDamage(int damage)
+        public override void ApplyDamage(int damage)
         {
             actorStats.CurrentHealth -= damage;
             if (actorStats.CurrentHealth <= 0)
