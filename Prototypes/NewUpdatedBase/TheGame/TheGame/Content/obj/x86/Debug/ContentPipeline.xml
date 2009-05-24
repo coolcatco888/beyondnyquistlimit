@@ -7,13 +7,13 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box.xnb</Output>
       <Time>2009-05-24T06:16:26.21875-07:00</Time>
       <Dependency>
         <Key>obj\x86\Debug\ig_box_0.xml</Key>
-        <Value>2009-05-24T06:18:33.546875-07:00</Value>
+        <Value>2009-05-24T07:53:58.3125-07:00</Value>
       </Dependency>
-      <Request>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
+      <Request>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Request>
     </Item>
     <Item>
       <Source>ParticleA.dds</Source>
@@ -21,7 +21,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ParticleA.xnb</Output>
       <Time>2009-05-24T06:16:26.34375-07:00</Time>
     </Item>
     <Item>
@@ -30,7 +30,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyback.xnb</Output>
       <Time>2009-05-24T06:16:16.140625-07:00</Time>
     </Item>
     <Item>
@@ -39,7 +39,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyfront.xnb</Output>
       <Time>2009-05-24T06:16:16.15625-07:00</Time>
     </Item>
     <Item>
@@ -48,7 +48,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyleft.xnb</Output>
       <Time>2009-05-24T06:16:16.171875-07:00</Time>
     </Item>
     <Item>
@@ -57,7 +57,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskyright.xnb</Output>
       <Time>2009-05-24T06:16:16.171875-07:00</Time>
     </Item>
     <Item>
@@ -66,7 +66,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\redsky\redskytop.xnb</Output>
       <Time>2009-05-24T06:16:16.15625-07:00</Time>
     </Item>
     <Item>
@@ -75,7 +75,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass.xnb</Output>
       <Time>2009-05-24T06:16:25.203125-07:00</Time>
     </Item>
     <Item>
@@ -84,7 +84,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\rocks.xnb</Output>
       <Time>2009-05-24T06:16:25.21875-07:00</Time>
     </Item>
     <Item>
@@ -93,7 +93,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\skymap.xnb</Output>
       <Time>2009-05-24T06:16:25.171875-07:00</Time>
     </Item>
     <Item>
@@ -102,9 +102,9 @@
       <Importer>TextureImporter</Importer>
       <Processor>TerrainProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\terrain.xnb</Output>
       <Time>2009-05-24T06:16:25.171875-07:00</Time>
-      <Request>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
+      <Request>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Request>
     </Item>
     <Item>
       <Source>Sprites\circles.png</Source>
@@ -112,7 +112,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\circles.xnb</Output>
       <Time>2009-05-24T06:16:18.890625-07:00</Time>
     </Item>
     <Item>
@@ -121,7 +121,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\Sprite Sheet Knight.xnb</Output>
       <Time>2009-05-24T06:16:18.890625-07:00</Time>
     </Item>
     <Item>
@@ -130,7 +130,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\cloud.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\cloud.xnb</Output>
       <Time>2009-05-24T06:16:18.921875-07:00</Time>
     </Item>
     <Item>
@@ -139,7 +139,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\blank.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\blank.xnb</Output>
       <Time>2009-05-24T06:16:17.578125-07:00</Time>
     </Item>
     <Item>
@@ -148,7 +148,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\circGauge.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\circGauge.xnb</Output>
       <Time>2009-05-24T06:16:17.578125-07:00</Time>
     </Item>
     <Item>
@@ -157,7 +157,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\healthbar.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\healthbar.xnb</Output>
       <Time>2009-05-24T06:16:17.609375-07:00</Time>
     </Item>
     <Item>
@@ -166,7 +166,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\hud.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\hud.xnb</Output>
       <Time>2009-05-24T06:16:17.5625-07:00</Time>
     </Item>
     <Item>
@@ -175,7 +175,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\itemsm.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\itemsm.xnb</Output>
       <Time>2009-05-24T06:16:17.484375-07:00</Time>
     </Item>
     <Item>
@@ -184,7 +184,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\menubg.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\menubg.xnb</Output>
       <Time>2009-05-24T06:16:17.546875-07:00</Time>
     </Item>
     <Item>
@@ -193,7 +193,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSprite.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSprite.xnb</Output>
       <Time>2009-05-24T06:16:26.3125-07:00</Time>
     </Item>
     <Item>
@@ -202,7 +202,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSprite.xnb</Output>
       <Time>2009-05-24T06:16:18.9375-07:00</Time>
     </Item>
     <Item>
@@ -211,7 +211,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel1.xnb</Output>
       <Time>2009-05-24T06:16:17.484375-07:00</Time>
     </Item>
     <Item>
@@ -220,7 +220,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel2.xnb</Output>
       <Time>2009-05-24T06:16:17.515625-07:00</Time>
     </Item>
     <Item>
@@ -229,7 +229,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel3.xnb</Output>
       <Time>2009-05-24T06:16:17.53125-07:00</Time>
     </Item>
     <Item>
@@ -238,7 +238,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\charsel4.xnb</Output>
       <Time>2009-05-24T06:16:17.53125-07:00</Time>
     </Item>
     <Item>
@@ -247,7 +247,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Copy of itemsm.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Copy of itemsm.xnb</Output>
       <Time>2009-05-24T06:16:17.546875-07:00</Time>
     </Item>
     <Item>
@@ -256,7 +256,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Wizardface.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Wizardface.xnb</Output>
       <Time>2009-05-24T06:16:17.5625-07:00</Time>
     </Item>
     <Item>
@@ -265,7 +265,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Knightface.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Knightface.xnb</Output>
       <Time>2009-05-24T06:16:17.515625-07:00</Time>
     </Item>
     <Item>
@@ -274,7 +274,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Priestface.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Priestface.xnb</Output>
       <Time>2009-05-24T06:16:17.578125-07:00</Time>
     </Item>
     <Item>
@@ -283,7 +283,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Rangerface.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\Rangerface.xnb</Output>
       <Time>2009-05-24T06:16:17.46875-07:00</Time>
     </Item>
     <Item>
@@ -292,7 +292,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\offarrow.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\offarrow.xnb</Output>
       <Time>2009-05-24T06:16:17.5625-07:00</Time>
     </Item>
     <Item>
@@ -301,7 +301,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\RangerSprite.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\RangerSprite.xnb</Output>
       <Time>2009-05-24T06:16:18.90625-07:00</Time>
     </Item>
     <Item>
@@ -310,7 +310,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\KnightSprite.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\KnightSprite.xnb</Output>
       <Time>2009-05-24T06:16:18.9375-07:00</Time>
     </Item>
     <Item>
@@ -319,7 +319,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\PriestSprite.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\PriestSprite.xnb</Output>
       <Time>2009-05-24T06:16:18.828125-07:00</Time>
     </Item>
     <Item>
@@ -328,7 +328,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdr.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdr.xnb</Output>
       <Time>2009-05-24T06:16:17.609375-07:00</Time>
     </Item>
     <Item>
@@ -337,7 +337,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrbg.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrbg.xnb</Output>
       <Time>2009-05-24T06:16:17.5-07:00</Time>
     </Item>
     <Item>
@@ -346,7 +346,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcorner.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcorner.xnb</Output>
       <Time>2009-05-24T06:16:17.5-07:00</Time>
     </Item>
     <Item>
@@ -355,7 +355,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\brdrcornerbg.xnb</Output>
       <Time>2009-05-24T06:16:17.53125-07:00</Time>
     </Item>
     <Item>
@@ -364,7 +364,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\crosshair.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\crosshair.xnb</Output>
       <Time>2009-05-24T06:16:18.828125-07:00</Time>
     </Item>
     <Item>
@@ -373,8 +373,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\gamebanner.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\gamebanner.xnb</Output>
       <Time>2009-05-24T06:16:17.484375-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\explosion.png</Source>
+      <Name>Sprites\explosion</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\explosion.xnb</Output>
+      <Time>2009-05-24T07:30:51.5-07:00</Time>
     </Item>
     <Item>
       <Source>BasicPoint.fx</Source>
@@ -382,7 +391,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\BasicPoint.xnb</Output>
       <Time>2009-05-24T06:16:26.3125-07:00</Time>
     </Item>
     <Item>
@@ -391,7 +400,7 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Skybox\skybox.xnb</Output>
       <Time>2009-05-24T06:16:16.21875-07:00</Time>
     </Item>
     <Item>
@@ -400,8 +409,17 @@
       <Importer>EffectImporter</Importer>
       <Processor>EffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Bezier.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Bezier.xnb</Output>
       <Time>2009-05-24T06:16:26.25-07:00</Time>
+    </Item>
+    <Item>
+      <Source>PositionTexture.fx</Source>
+      <Name>PositionTexture</Name>
+      <Importer>EffectImporter</Importer>
+      <Processor>EffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PositionTexture.xnb</Output>
+      <Time>2009-05-24T06:23:15.078125-07:00</Time>
     </Item>
     <Item>
       <Source>Audio\04 Never Ending Duel.wav</Source>
@@ -409,7 +427,7 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Audio\04 Never Ending Duel.xnb</Output>
       <Time>2009-05-24T06:16:24.375-07:00</Time>
     </Item>
     <Item>
@@ -418,7 +436,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSpriteInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\WizardSpriteInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.859375-07:00</Time>
     </Item>
     <Item>
@@ -427,7 +445,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\MagicCircle.xnb</Output>
       <Time>2009-05-24T06:16:18.828125-07:00</Time>
     </Item>
     <Item>
@@ -436,7 +454,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CloudInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CloudInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.859375-07:00</Time>
     </Item>
     <Item>
@@ -445,8 +463,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb</Output>
-      <Time>2009-05-24T07:22:25.3125-07:00</Time>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerSpriteSequences.xnb</Output>
+      <Time>2009-05-24T08:22:21.078125-07:00</Time>
     </Item>
     <Item>
       <Source>PoringSpriteSequences.xml</Source>
@@ -454,7 +472,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteSequences.xnb</Output>
       <Time>2009-05-24T06:45:35.78125-07:00</Time>
     </Item>
     <Item>
@@ -463,7 +481,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringSpriteInfo.xnb</Output>
       <Time>2009-05-24T06:16:26.28125-07:00</Time>
     </Item>
     <Item>
@@ -472,7 +490,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\WizardClassInfo.xnb</Output>
       <Time>2009-05-24T06:16:26.296875-07:00</Time>
     </Item>
     <Item>
@@ -481,8 +499,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringBoundingShapes.xnb</Output>
-      <Time>2009-05-24T06:51:46.890625-07:00</Time>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringBoundingShapes.xnb</Output>
+      <Time>2009-05-24T08:07:23.171875-07:00</Time>
     </Item>
     <Item>
       <Source>PoringInfo.xml</Source>
@@ -490,8 +508,8 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringInfo.xnb</Output>
-      <Time>2009-05-24T06:16:26.328125-07:00</Time>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PoringInfo.xnb</Output>
+      <Time>2009-05-24T08:21:13.15625-07:00</Time>
     </Item>
     <Item>
       <Source>PlayerBoundingShapes.xml</Source>
@@ -499,7 +517,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerBoundingShapes.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerBoundingShapes.xnb</Output>
       <Time>2009-05-24T06:16:26.21875-07:00</Time>
     </Item>
     <Item>
@@ -508,7 +526,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerMultipleSequences.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PlayerMultipleSequences.xnb</Output>
       <Time>2009-05-24T06:16:26.203125-07:00</Time>
     </Item>
     <Item>
@@ -517,7 +535,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\KnightClassInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\KnightClassInfo.xnb</Output>
       <Time>2009-05-24T06:16:26.234375-07:00</Time>
     </Item>
     <Item>
@@ -526,7 +544,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PriestClassInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PriestClassInfo.xnb</Output>
       <Time>2009-05-24T06:16:26.296875-07:00</Time>
     </Item>
     <Item>
@@ -535,7 +553,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\RangerClassInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\RangerClassInfo.xnb</Output>
       <Time>2009-05-24T06:16:26.203125-07:00</Time>
     </Item>
     <Item>
@@ -544,7 +562,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\KnightSpriteInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\KnightSpriteInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.875-07:00</Time>
     </Item>
     <Item>
@@ -553,7 +571,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\RangerSpriteInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\RangerSpriteInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.8125-07:00</Time>
     </Item>
     <Item>
@@ -562,7 +580,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\PriestSpriteInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\PriestSpriteInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.90625-07:00</Time>
     </Item>
     <Item>
@@ -571,7 +589,7 @@
       <Importer>XmlImporter</Importer>
       <Processor>PassThroughProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\CrosshairInfo.xnb</Output>
       <Time>2009-05-24T06:16:18.921875-07:00</Time>
     </Item>
     <Item>
@@ -580,7 +598,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\menufont.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\GUI\menufont.xnb</Output>
       <Time>2009-05-24T06:16:17.515625-07:00</Time>
     </Item>
     <Item>
@@ -602,7 +620,7 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\ig_box_tex_0.xnb</Output>
       <Time>2009-05-24T06:16:26.328125-07:00</Time>
     </Item>
     <Item>
@@ -617,40 +635,22 @@
         <Data Key="ResizeToPowerOfTwo" Type="bool">false</Data>
       </Parameters>
       <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
+      <Output>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Terrain\MountainGrass_0.xnb</Output>
       <Time>2009-05-24T06:16:25.203125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>PositionTexture.fx</Source>
-      <Name>PositionTexture</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\PositionTexture.xnb</Output>
-      <Time>2009-05-24T06:23:15.078125-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Sprites\explosion.png</Source>
-      <Name>Sprites\explosion</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\Sprites\explosion.xnb</Output>
-      <Time>2009-05-24T07:30:51.5-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\Content\</RootDirectory>
-      <LoggerRootDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\Content\</RootDirectory>
+      <LoggerRootDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\Content\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGame\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>D:\work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
+        <Key>D:\Work\jimwtf\Prototypes\NewUpdatedBase\TheGame\TheGamePipeline\bin\x86\Debug\TheGamePipeline.dll</Key>
         <Value>2009-05-24T06:18:28.078125-07:00</Value>
       </Assembly>
       <Assembly>

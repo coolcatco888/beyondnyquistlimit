@@ -76,6 +76,7 @@ namespace TheGame
         BillboardWave wave;
         Spell currentSpell;
         public string spellName = "";
+        float deathTimer = 0.0f;
 
         #endregion
 
@@ -283,7 +284,11 @@ namespace TheGame
         {
             GamepadDevice gamepadDevice = ((InputHub)GameEngine.Services.GetService(typeof(InputHub)))[playerIndex];
             KeyboardDevice keyboardDevice = (KeyboardDevice)GameEngine.Services.GetService(typeof(KeyboardDevice));
-            
+
+            if (hasBeenHit)
+                state = ActorState.Hit;
+            if (isDying)
+                state = ActorState.Dying;
             switch (previousState)
             {
                 case ActorState.Idle:
@@ -298,17 +303,45 @@ namespace TheGame
                 case ActorState.Attacking:
                     AttackingStateInput(gamepadDevice);
                     break;
+                case ActorState.Hit:
+                    HitStateInput();
+                    break;
                 case ActorState.Chanting:
                     ChantingStateInput(gamepadDevice, gameTime);
                     break;
                 case ActorState.Casting:
                     CastingStateInput(gamepadDevice);
                     break;
+                case ActorState.Dying:
+                    DyingStateInput(gameTime);
+                    break;
                 case ActorState.Dead:
                     ActorList players = ((Level)Parent).PlayerList;
                     players.Remove((Player)this);
                     this.Dispose();
                     break;
+            }
+        }
+
+        private void DyingStateInput(GameTime gameTime)
+        {
+            deathTimer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (deathTimer >= 5.0f)
+            {
+                state = ActorState.Dead;
+                isDying = false;
+            }
+        }
+
+        private void HitStateInput()
+        {
+            speed = 0.0f;
+            if (currentSequence.IsComplete)
+            {
+                hasBeenHit = false;
+                state = ActorState.Idle;
+                Color = Color.White;
             }
         }
 
@@ -411,7 +444,7 @@ namespace TheGame
         {
             direction = new Vector3(gamepadDevice.LeftStickPosition.X, 0.0f, gamepadDevice.LeftStickPosition.Y);
             UpdateOrientation();
-            speed = 0.02f;
+            speed = 0.01f;
 
             if (gamepadDevice.LeftStickPosition == Vector2.Zero)
             {
@@ -593,6 +626,12 @@ namespace TheGame
 
                     boundingShapesSelf["Casting" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
                     boundingShapesSelf["Casting" + info.OrientationKey].ShapeColor = Color.Gold;
+
+                    boundingShapesSelf["Hit" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Hit" + info.OrientationKey].ShapeColor = Color.Gold;
+
+                    boundingShapesSelf["Dying" + info.OrientationKey] = new PrimitiveShape(position, new Vector2(scale.X, scale.Y), info.Verts);
+                    boundingShapesSelf["Dying" + info.OrientationKey].ShapeColor = Color.Gold;
                 }
                 else if (info.StateKey == "Others")
                 {
@@ -714,6 +753,7 @@ namespace TheGame
         public void PhysicalHit(int damage, Orientation o)
         {
             hasBeenHit = true;
+            this.Color = Color.Red;
             this.orientation = Utility.GetOppositeOrientation(o);
             this.position = position + Utility.PositionChangeBasedOnOrientation(o, 0.5f);
             this.ApplyDamage(damage);

@@ -142,7 +142,7 @@ namespace TheGame
             behaviors.Add(idle);
             Behavior seek = new SeekBehavior(Parent, this, 15.0f);
             behaviors.Add(seek);
-            Behavior attack = new AttackBehavior(Parent, this, 3.0f);
+            Behavior attack = new AttackBehavior(Parent, this, 3.2f);
             Behaviors.Add(attack);
         }
 

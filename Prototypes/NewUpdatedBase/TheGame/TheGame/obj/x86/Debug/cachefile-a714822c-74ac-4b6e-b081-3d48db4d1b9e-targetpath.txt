@@ -39,9 +39,11 @@ Content\GUI\brdrcorner.xnb
 Content\GUI\brdrcornerbg.xnb
 Content\Sprites\crosshair.xnb
 Content\GUI\gamebanner.xnb
+Content\Sprites\explosion.xnb
 Content\BasicPoint.xnb
 Content\Skybox\skybox.xnb
 Content\Bezier.xnb
+Content\PositionTexture.xnb
 Content\Audio\04 Never Ending Duel.xnb
 Content\Sprites\WizardSpriteInfo.xnb
 Content\Sprites\MagicCircle.xnb
@@ -64,8 +66,6 @@ Content\Sprites\CrosshairInfo.xnb
 Content\GUI\menufont.xnb
 Content\ig_box_tex_0.xnb
 Content\Terrain\MountainGrass_0.xnb
-Content\PositionTexture.xnb
-Content\Sprites\explosion.xnb
 Content\Audio\Asplosions.xgs
 Content\Audio\Wave Bank.xwb
 Content\Audio\Sound Bank.xsb

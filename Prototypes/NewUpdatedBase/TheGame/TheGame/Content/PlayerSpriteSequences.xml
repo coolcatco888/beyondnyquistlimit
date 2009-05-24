@@ -553,7 +553,7 @@
     <Item>
       <StateKey>Casting</StateKey>
       <OrientationKey>South</OrientationKey>
-      <IsLoop>false</IsLoop>
+      <IsLoop>true</IsLoop>
       <SequenceVelocity>0.0</SequenceVelocity>
       <NumBuffers>4</NumBuffers>
       <ScaleX>1</ScaleX>
@@ -570,7 +570,7 @@
     <Item>
       <StateKey>Casting</StateKey>
       <OrientationKey>North</OrientationKey>
-      <IsLoop>false</IsLoop>
+      <IsLoop>true</IsLoop>
       <SequenceVelocity>0.0</SequenceVelocity>
       <NumBuffers>4</NumBuffers>
       <ScaleX>1</ScaleX>
@@ -682,6 +682,280 @@
       <IndexX>19</IndexX>
       <IndexY>19</IndexY>
       <RowOrColumn>4</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <!-- Hit Sprite Sequences -->
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>South</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>1</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>North</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>4</IndexX>
+      <IndexY>5</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>West</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>1</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>Southwest</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>1</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>Northwest</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>4</IndexX>
+      <IndexY>5</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>East</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>2</IndexX>
+      <IndexY>3</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>Southeast</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>4</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>2</IndexX>
+      <IndexY>3</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Hit</StateKey>
+      <OrientationKey>Northeast</OrientationKey>
+      <IsLoop>false</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>1</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>6</IndexX>
+      <IndexY>7</IndexY>
+      <RowOrColumn>9</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <!-- Dying Sprite Sequences -->
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>South</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>0</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>North</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>2</IndexX>
+      <IndexY>2</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>West</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>0</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>Southwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>0</IndexX>
+      <IndexY>0</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>Northwest</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>2</IndexX>
+      <IndexY>2</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>East</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>1</IndexX>
+      <IndexY>1</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>Southeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>true</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>1</IndexX>
+      <IndexY>1</IndexY>
+      <RowOrColumn>10</RowOrColumn>
+      <AttackKey>0</AttackKey>
+      <AttackValue></AttackValue>
+    </Item>
+
+    <Item>
+      <StateKey>Dying</StateKey>
+      <OrientationKey>Northeast</OrientationKey>
+      <IsLoop>true</IsLoop>
+      <SequenceVelocity>0.0</SequenceVelocity>
+      <NumBuffers>2</NumBuffers>
+      <ScaleX>2</ScaleX>
+      <ScaleY>1</ScaleY>
+      <ChangeScale>false</ChangeScale>
+      <IsARowOrColumn>true</IsARowOrColumn>
+      <IndexX>3</IndexX>
+      <IndexY>3</IndexY>
+      <RowOrColumn>10</RowOrColumn>
       <AttackKey>0</AttackKey>
       <AttackValue></AttackValue>
     </Item>
